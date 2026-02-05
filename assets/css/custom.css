@@ -1,0 +1,477 @@
+/* Custom Styles for Thato Mapheto Portfolio */
+:root {
+    --primary-teal: #0f766e;
+    --secondary-gray: #111827;
+    --accent-green: #10b981;
+    --card-bg: #ffffff;
+    --muted: #6b7280;
+    --light-bg: #f8fafc;
+    --border-color: #e2e8f0;
+}
+
+/* Tag Styles */
+.energy-tag {
+    background: linear-gradient(135deg, var(--accent-green), var(--primary-teal));
+    color: white;
+    border: none;
+}
+
+.finance-tag {
+    background: linear-gradient(135deg, #3b82f6, #1d4ed8);
+    color: white;
+    border: none;
+}
+
+.data-tag {
+    background: linear-gradient(135deg, #8b5cf6, #7c3aed);
+    color: white;
+    border: none;
+}
+
+.skill-tag,
+.tech-tag,
+.cert-badge {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    margin: 0.3rem;
+    border-radius: 25px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.cert-badge.in-progress {
+    background: #6b7280;
+    color: white;
+}
+
+.skill-tag:hover,
+.tech-tag:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+/* Intro Section */
+#intro {
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('../images/solar-energy-bg.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+#intro h1 {
+    color: white;
+    font-size: 3.5rem;
+    margin-bottom: 1rem;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+#intro .tagline {
+    color: var(--accent-green);
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+}
+
+#intro .intro-text {
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 1.1rem;
+    max-width: 800px;
+    margin: 0 auto 2rem;
+    line-height: 1.8;
+}
+
+/* Header */
+.header-logo {
+    color: var(--primary-teal) !important;
+    font-weight: 700;
+}
+
+/* Profile Section */
+#main .post.featured {
+    margin-bottom: 4rem;
+}
+
+.profile-portrait {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.portrait-container {
+    width: 250px;
+    height: 250px;
+    margin: 0 auto;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 4px solid var(--accent-green);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.portrait-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.portrait-info h3 {
+    margin: 1.5rem 0 0.5rem;
+    color: var(--primary-teal);
+}
+
+.portrait-info p {
+    color: var(--muted);
+    margin-bottom: 0.5rem;
+}
+
+.portrait-tags {
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem;
+    margin-top: 1rem;
+}
+
+.portrait-tags .skill-tag {
+    font-size: 0.8rem;
+}
+
+/* Box Styles */
+.box {
+    background: var(--card-bg);
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    border: 1px solid var(--border-color);
+}
+
+.highlight-text {
+    color: var(--primary-teal);
+    font-weight: 600;
+}
+
+.energy-section {
+    border-left: 4px solid var(--accent-green);
+    padding-left: 1.5rem;
+    margin: 2rem 0;
+    background: rgba(16, 185, 129, 0.05);
+    padding: 1.5rem;
+    border-radius: 0 8px 8px 0;
+}
+
+.quick-stats {
+    margin-top: 2rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--border-color);
+}
+
+.stats-grid {
+    margin-top: 1rem;
+}
+
+.stat-item {
+    text-align: center;
+}
+
+.stat-number {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--primary-teal);
+}
+
+.stat-label {
+    font-size: 0.9rem;
+    color: var(--muted);
+}
+
+/* Value Cards */
+.value-card {
+    background: var(--light-bg);
+    padding: 1.5rem;
+    border-radius: 8px;
+    margin-bottom: 1.5rem;
+    border: 1px solid var(--border-color);
+    height: 100%;
+    transition: transform 0.3s ease;
+}
+
+.value-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+}
+
+.value-card h3 {
+    color: var(--primary-teal);
+    margin-bottom: 1rem;
+}
+
+.value-card ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.value-card li {
+    margin-bottom: 0.75rem;
+    color: var(--muted);
+    position: relative;
+    padding-left: 1.5rem;
+}
+
+.value-card li:before {
+    content: "✓";
+    color: var(--accent-green);
+    font-weight: bold;
+    position: absolute;
+    left: 0;
+}
+
+.skill-tags {
+    margin-top: 1rem;
+}
+
+/* Project Card */
+.project-card {
+    background: var(--card-bg);
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    margin-bottom: 2rem;
+    border-top: 4px solid var(--accent-green);
+}
+
+.project-card h3 {
+    color: var(--primary-teal);
+    margin-bottom: 1rem;
+}
+
+.project-card h4 {
+    color: var(--secondary-gray);
+    margin: 1.5rem 0 1rem;
+}
+
+.tech-stack {
+    margin: 1.5rem 0;
+}
+
+.highlight-box {
+    background: linear-gradient(135deg, rgba(15, 118, 110, 0.1), rgba(16, 185, 129, 0.1));
+    padding: 2rem;
+    border-radius: 8px;
+    margin: 2rem 0;
+    border-left: 4px solid var(--primary-teal);
+}
+
+/* Contact Section */
+.contact-info {
+    padding: 1.5rem;
+    background: var(--light-bg);
+    border-radius: 8px;
+    border: 1px solid var(--border-color);
+}
+
+.contact-info a {
+    color: var(--primary-teal);
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.2s ease;
+}
+
+.contact-info a:hover {
+    color: var(--accent-green);
+    text-decoration: underline;
+}
+
+.cv-download {
+    margin-top: 1.5rem;
+}
+
+/* Footer */
+#footer {
+    background: var(--light-bg);
+    padding: 3rem 0 2rem;
+    border-top: 1px solid var(--border-color);
+}
+
+#footer .split.contact section {
+    padding: 0 2rem;
+}
+
+.footer-portrait {
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+
+.footer-portrait-container {
+    width: 120px;
+    height: 120px;
+    margin: 0 auto;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 3px solid var(--accent-green);
+}
+
+.footer-portrait-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.footer-tagline {
+    color: var(--muted);
+    font-size: 0.9rem;
+    margin-top: 0.5rem;
+}
+
+.footer-cv {
+    text-align: center;
+}
+
+.footer-links a {
+    color: var(--primary-teal);
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.2s ease;
+}
+
+.footer-links a:hover {
+    color: var(--accent-green);
+}
+
+.connect-title {
+    margin-top: 2rem;
+}
+
+.connect-info a {
+    color: var(--primary-teal);
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.connect-info a:hover {
+    text-decoration: underline;
+}
+
+/* Copyright */
+#copyright {
+    background: var(--secondary-gray);
+    color: white;
+    padding: 2rem;
+    text-align: center;
+}
+
+#copyright a {
+    color: var(--accent-green);
+    text-decoration: none;
+}
+
+#copyright a:hover {
+    text-decoration: underline;
+}
+
+#copyright ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+#copyright li {
+    display: inline-block;
+    margin: 0 1rem;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+/* Responsive Adjustments */
+@media screen and (max-width: 980px) {
+    #intro h1 {
+        font-size: 2.5rem;
+    }
+
+    #intro .tagline {
+        font-size: 1.25rem;
+    }
+
+    .portrait-container {
+        width: 200px;
+        height: 200px;
+    }
+
+    .stats-grid .col-4 {
+        margin-bottom: 1rem;
+    }
+}
+
+@media screen and (max-width: 736px) {
+    #intro h1 {
+        font-size: 2rem;
+    }
+
+    #intro .tagline {
+        font-size: 1.1rem;
+    }
+
+    .portrait-container {
+        width: 150px;
+        height: 150px;
+    }
+
+    #footer .split.contact {
+        flex-direction: column;
+    }
+
+    #footer .split.contact section {
+        margin-bottom: 2rem;
+        padding: 0;
+    }
+
+    #copyright ul {
+        flex-direction: column;
+    }
+
+    #copyright li {
+        margin: 0.5rem 0;
+    }
+}
+
+/* Navigation Styles */
+#nav .links li.active a {
+    color: var(--accent-green) !important;
+    font-weight: 600;
+}
+
+#nav .links li.active:after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 20px;
+    height: 2px;
+    background: var(--accent-green);
+}
+
+#nav .links li {
+    position: relative;
+}
+
+#nav .links a {
+    transition: color 0.3s ease;
+}
+
+#nav .links a:hover {
+    color: var(--accent-green) !important;
+}
+
+/* Section Spacing for Better Navigation */
+section[id],
+article[id] {
+    scroll-margin-top: 80px;
+    /* Adjust based on header height */
+}
+
+#main {
+    scroll-margin-top: 0;
+}
