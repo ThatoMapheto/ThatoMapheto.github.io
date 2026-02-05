@@ -378,3 +378,54 @@ function testResendConnection() {
     console.log('Resend integration loaded successfully.');
     console.log('Contact form will send emails to: thatomapheto6@gmail.com');
 }
+
+// Mobile-specific improvements
+function initMobileOptimizations() {
+    // Prevent zoom on form inputs in iOS
+    document.addEventListener('touchstart', function () { }, { passive: true });
+
+    // Improve touch scrolling
+    document.documentElement.style.scrollBehavior = 'smooth';
+
+    // Fix :hover on touch devices
+    if ('ontouchstart' in window) {
+        document.body.classList.add('touch-device');
+    }
+
+    // Adjust header spacing for mobile
+    function adjustHeaderSpacing() {
+        const nav = document.getElementById('nav');
+        const main = document.getElementById('main');
+
+        if (window.innerWidth <= 736 && nav && main) {
+            const navHeight = nav.offsetHeight;
+            main.style.paddingTop = navHeight + 'px';
+        } else {
+            main.style.paddingTop = '';
+        }
+    }
+
+    // Run on load and resize
+    adjustHeaderSpacing();
+    window.addEventListener('resize', adjustHeaderSpacing);
+
+    // Add CSS class for mobile detection
+    if (window.innerWidth <= 736) {
+        document.body.classList.add('is-mobile');
+    }
+
+    window.addEventListener('resize', function () {
+        if (window.innerWidth <= 736) {
+            document.body.classList.add('is-mobile');
+        } else {
+            document.body.classList.remove('is-mobile');
+        }
+    });
+}
+
+// Add to your DOMContentLoaded function
+document.addEventListener('DOMContentLoaded', function () {
+    // ... existing code ...
+    initMobileOptimizations();
+    // ... existing code ...
+});
