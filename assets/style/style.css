@@ -1209,12 +1209,21 @@ footer strong {
 	.proj-hero,
 	.proj-block,
 	.proj-cta {
-		padding: 2.5rem 2rem;
+		padding: 2rem 1.5rem;
+	}
+
+	/* Fix for project section on tablet */
+	.proj-hero h2 {
+		font-size: 1.8rem;
+	}
+
+	.proj-block h3 {
+		font-size: 1.4rem;
 	}
 
 	.arch-steps {
 		flex-direction: column;
-		gap: 1rem;
+		gap: 1.5rem;
 	}
 
 	.arch-step:not(:last-child)::after {
@@ -1222,13 +1231,24 @@ footer strong {
 		right: auto;
 		left: 50%;
 		top: auto;
-		bottom: -16px;
+		bottom: -20px;
+		transform: translateX(-50%);
+	}
+
+	.arch-step {
+		width: 100%;
 	}
 
 	.dash-grid,
 	.insights-grid,
 	.reuse-grid {
-		grid-template-columns: 1fr 1fr;
+		grid-template-columns: 1fr;
+		gap: 1rem;
+	}
+
+	/* Fix for dashboard cards spanning columns */
+	.dash-card[style*="grid-column: span 2"] {
+		grid-column: span 1 !important;
 	}
 
 	.cert-grid,
@@ -1255,6 +1275,42 @@ footer strong {
 
 	.proj-2col {
 		grid-template-columns: 1fr;
+		gap: 1.5rem;
+	}
+
+	/* Fix for ERD placeholder */
+	.erd-placeholder {
+		padding: 2rem 1rem;
+	}
+
+	.erd-placeholder img {
+		height: auto;
+	}
+
+	/* Fix for dashboard images grid */
+	#projects .proj-block>div[style*="display: grid"] {
+		grid-template-columns: 1fr !important;
+		gap: 1rem !important;
+	}
+
+	/* Fix for tools pills */
+	.tools-list {
+		gap: 0.6rem;
+	}
+
+	.tool-pill {
+		padding: 0.5rem 1rem;
+		font-size: 0.8rem;
+	}
+
+	/* Fix for insights grid */
+	.insights-grid {
+		grid-template-columns: 1fr;
+	}
+
+	/* Fix for reuse grid */
+	.reuse-grid {
+		grid-template-columns: repeat(2, 1fr);
 	}
 }
 
@@ -1268,16 +1324,136 @@ footer strong {
 	}
 
 	.hero h1 {
-		font-size: 2.4rem;
+		font-size: 2.2rem;
 	}
 
 	.section-title {
-		font-size: 2rem;
+		font-size: 1.8rem;
 	}
 
 	.dash-grid,
 	.insights-grid,
 	.reuse-grid {
 		grid-template-columns: 1fr;
+	}
+
+	/* Further mobile refinements for project section */
+	.proj-hero {
+		padding: 1.5rem;
+	}
+
+	.proj-hero h2 {
+		font-size: 1.5rem;
+	}
+
+	.proj-hero p {
+		font-size: 0.95rem;
+	}
+
+	.proj-block {
+		padding: 1.5rem;
+	}
+
+	.proj-block h3 {
+		font-size: 1.3rem;
+		margin-bottom: 1rem;
+	}
+
+	.proj-block p,
+	.proj-block li {
+		font-size: 0.9rem;
+		line-height: 1.6;
+	}
+
+	.tech-badges {
+		gap: 0.5rem;
+	}
+
+	.tech-badge {
+		font-size: 0.7rem;
+		padding: 0.25rem 0.75rem;
+	}
+
+	/* Fix architecture steps for mobile */
+	.arch-step-box {
+		padding: 1rem;
+	}
+
+	.arch-step-num {
+		font-size: 1.3rem;
+	}
+
+	.arch-step-name {
+		font-size: 0.7rem;
+	}
+
+	.arch-step-tech {
+		font-size: 0.7rem;
+	}
+
+	.arch-step-desc {
+		font-size: 0.75rem;
+	}
+
+	/* Fix dashboard cards */
+	.dash-card {
+		padding: 1.2rem;
+	}
+
+	.dash-card h4 {
+		font-size: 0.9rem;
+	}
+
+	.dash-card p {
+		font-size: 0.8rem;
+	}
+
+	/* Fix insight cards */
+	.insight-card {
+		padding: 1rem;
+	}
+
+	.insight-card p {
+		font-size: 0.8rem;
+	}
+
+	/* Fix reuse grid on very small screens */
+	.reuse-grid {
+		grid-template-columns: 1fr;
+	}
+
+	.reuse-card {
+		padding: 1rem;
+	}
+
+	/* Fix CTA section */
+	.proj-cta {
+		padding: 2rem 1.5rem;
+	}
+
+	.proj-cta h3 {
+		font-size: 1.4rem;
+	}
+
+	.proj-cta p {
+		font-size: 0.85rem;
+	}
+
+	/* Fix confirmation note */
+	.conf-note {
+		padding: 0.75rem 1rem;
+		font-size: 0.75rem;
+	}
+
+	/* Fix dashboard images */
+	#projects .proj-block>div[style*="display: grid"] img {
+		border-radius: 12px;
+	}
+
+	/* Additional fix for dashboard images container */
+	@media (max-width: 900px) {
+		.dashboard-images {
+			grid-template-columns: 1fr !important;
+		}
 	}
 }
