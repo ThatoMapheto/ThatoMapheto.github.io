@@ -619,7 +619,7 @@ section {
 }
 
 .proj-block-label {
-	font-size: .72rem;
+	font-size: rem;
 	font-weight: 700;
 	letter-spacing: .15em;
 	text-transform: uppercase;
