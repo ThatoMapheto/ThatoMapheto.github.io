@@ -1453,3 +1453,111 @@ footer strong {
 	-webkit-transform: translateZ(0);
 	transform: translateZ(0);
 }
+
+
+/* Add these styles to your CSS file */
+
+/* Hero target roles */
+.hero-target {
+	font-size: 0.9rem;
+	color: var(--gold);
+	margin-bottom: 1.2rem;
+	font-weight: 500;
+	letter-spacing: 0.02em;
+}
+
+/* Hero social links */
+.hero-social {
+	display: flex;
+	gap: 1.2rem;
+	margin-bottom: 2rem;
+	flex-wrap: wrap;
+}
+
+.social-icon {
+	display: inline-flex;
+	align-items: center;
+	gap: 0.5rem;
+	color: var(--ocean);
+	text-decoration: none;
+	font-size: 0.85rem;
+	font-weight: 500;
+	transition: color 0.2s;
+}
+
+.social-icon:hover {
+	color: var(--gold);
+}
+
+/* Project links */
+.project-links {
+	display: flex;
+	gap: 1rem;
+	margin-top: 1.5rem;
+	flex-wrap: wrap;
+}
+
+.project-link {
+	display: inline-flex;
+	align-items: center;
+	gap: 0.5rem;
+	background: rgba(255, 255, 255, 0.1);
+	border: 1px solid rgba(255, 255, 255, 0.2);
+	color: #d0e8f5;
+	padding: 0.5rem 1rem;
+	border-radius: 30px;
+	text-decoration: none;
+	font-size: 0.85rem;
+	font-weight: 500;
+	transition: all 0.2s;
+}
+
+.project-link:hover {
+	background: var(--gold);
+	color: var(--navy);
+	border-color: var(--gold);
+}
+
+/* Timeline list styling */
+.tl-list {
+	list-style: none;
+	padding-left: 0;
+	margin-top: 0.5rem;
+}
+
+.tl-list li {
+	font-size: 0.9rem;
+	color: #4a6478;
+	font-weight: 300;
+	line-height: 1.7;
+	margin-bottom: 0.5rem;
+	padding-left: 1.2rem;
+	position: relative;
+}
+
+.tl-list li::before {
+	content: "•";
+	color: var(--gold);
+	font-weight: bold;
+	position: absolute;
+	left: 0;
+}
+
+/* Certification note */
+.cert-note {
+	margin-top: 2rem;
+	padding: 1rem;
+	background: var(--soft);
+	border-radius: 16px;
+	text-align: center;
+}
+
+.cert-note p {
+	font-size: 0.85rem;
+	color: var(--ocean);
+}
+
+.cert-note i {
+	color: var(--gold);
+	margin-right: 0.5rem;
+}
