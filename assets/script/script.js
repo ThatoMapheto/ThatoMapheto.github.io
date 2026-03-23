@@ -7,7 +7,6 @@ document.querySelectorAll('a[href^="#"]').forEach(a => {
 	});
 });
 
-// Intersection Observer for fade-in
 const observer = new IntersectionObserver((entries) => {
 	entries.forEach(entry => {
 		if (entry.isIntersecting) {
@@ -15,7 +14,10 @@ const observer = new IntersectionObserver((entries) => {
 			observer.unobserve(entry.target);
 		}
 	});
-}, { threshold: 0.1 });
+}, {
+	threshold: 0,        // ← change from 0.1 to 0
+	rootMargin: '0px 0px -50px 0px'
+});
 
 document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
 
