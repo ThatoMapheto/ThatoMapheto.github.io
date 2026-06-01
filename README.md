@@ -7,7 +7,7 @@ Finance, Data & Renewable Energy Analytics Professional Portfolio Website.
 - Contact form with email integration
 - Project showcase
 - Skills & certifications display
-
+ 
 ## Technologies Used
 - HTML5
 - CSS3
