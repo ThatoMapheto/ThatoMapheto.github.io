@@ -2,701 +2,2670 @@
 <html lang="en">
 
 <head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<meta name="description"
-		content="Thato Mapheto - Finance, Data & Renewable Energy Professional specializing in SQL, Power BI, SAP, and financial analytics. Proven track record of recovering R11 million in SAP commitments.">
-	<meta name="keywords"
-		content="Finance, Data Analytics, SQL, Power BI, SAP, Renewable Energy, Financial Analyst, Data Analyst">
-	<meta name="author" content="Thato Mapheto">
-	<title>Thato Mapheto · Finance, Data & Energy</title>
-	<link rel="preconnect" href="https://fonts.googleapis.com">
-	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-	<link
-		href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,300&display=swap"
-		rel="stylesheet">
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-	<link rel="stylesheet" href="./assets/style/style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description"
+    content="Finance & technology professional. Business modernization consultant. Founder of NimbusX. Helping growing businesses modernize through analytics, digital systems, and operational thinking.">
+  <title>Portfolio — Finance, Analytics & Business Modernization</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Syne:wght@400;500;600;700;800&family=JetBrains+Mono:wght@300;400&display=swap"
+    rel="stylesheet">
+  <style>
+    /* ===== RESET & BASE ===== */
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
 
+    html {
+      scroll-behavior: smooth;
+      font-size: 16px;
+    }
+
+    :root {
+      --ink: #0a0a0b;
+      --ink-2: #111114;
+      --ink-3: #181820;
+      --surface: #1a1a24;
+      --surface-2: #22222e;
+      --border: rgba(255, 255, 255, 0.06);
+      --border-2: rgba(255, 255, 255, 0.1);
+      --gold: #c9a84c;
+      --gold-light: #e8c97a;
+      --gold-dim: rgba(201, 168, 76, 0.15);
+      --slate: #8a8fa8;
+      --slate-light: #b0b5cc;
+      --white: #f0f0f4;
+      --white-dim: rgba(240, 240, 244, 0.7);
+      --accent: #4a7fd4;
+      --accent-dim: rgba(74, 127, 212, 0.12);
+      --glow: rgba(201, 168, 76, 0.08);
+      --nav-h: 72px;
+      --ff-display: 'Cormorant Garamond', Georgia, serif;
+      --ff-sans: 'Syne', sans-serif;
+      --ff-mono: 'JetBrains Mono', monospace;
+      --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+      --ease-in-out: cubic-bezier(0.45, 0, 0.55, 1);
+    }
+
+    body {
+      background: var(--ink);
+      color: var(--white);
+      font-family: var(--ff-sans);
+      overflow-x: hidden;
+      line-height: 1.6;
+    }
+
+    ::selection {
+      background: var(--gold-dim);
+      color: var(--gold-light);
+    }
+
+    /* ===== SCROLLBAR ===== */
+    ::-webkit-scrollbar {
+      width: 3px;
+    }
+
+    ::-webkit-scrollbar-track {
+      background: var(--ink);
+    }
+
+    ::-webkit-scrollbar-thumb {
+      background: var(--gold);
+      border-radius: 2px;
+    }
+
+    /* ===== NAV ===== */
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: var(--nav-h);
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      padding: 0 clamp(1.5rem, 5vw, 4rem);
+      transition: background 0.4s ease, border-bottom 0.4s ease;
+    }
+
+    nav.scrolled {
+      background: rgba(10, 10, 11, 0.92);
+      backdrop-filter: blur(20px);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .nav-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 100%;
+      max-width: 1320px;
+      margin: 0 auto;
+    }
+
+    .nav-logo {
+      font-family: var(--ff-display);
+      font-size: 1.35rem;
+      font-weight: 500;
+      letter-spacing: 0.02em;
+      color: var(--white);
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+    }
+
+    .nav-logo .logo-dot {
+      width: 6px;
+      height: 6px;
+      background: var(--gold);
+      border-radius: 50%;
+      flex-shrink: 0;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 2.5rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      font-family: var(--ff-sans);
+      font-size: 0.78rem;
+      font-weight: 500;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--slate);
+      text-decoration: none;
+      transition: color 0.25s;
+    }
+
+    .nav-links a:hover {
+      color: var(--white);
+    }
+
+    .nav-cta {
+      font-family: var(--ff-sans);
+      font-size: 0.78rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--gold);
+      text-decoration: none;
+      border: 1px solid rgba(201, 168, 76, 0.35);
+      padding: 0.55rem 1.3rem;
+      border-radius: 2px;
+      transition: all 0.25s;
+    }
+
+    .nav-cta:hover {
+      background: var(--gold-dim);
+      border-color: var(--gold);
+      color: var(--gold-light);
+    }
+
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      cursor: pointer;
+      padding: 4px;
+      background: none;
+      border: none;
+    }
+
+    .hamburger span {
+      display: block;
+      width: 24px;
+      height: 1.5px;
+      background: var(--white);
+      transition: all 0.3s;
+    }
+
+    .mobile-nav {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(10, 10, 11, 0.97);
+      backdrop-filter: blur(20px);
+      z-index: 99;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 2rem;
+    }
+
+    .mobile-nav.open {
+      display: flex;
+    }
+
+    .mobile-nav a {
+      font-family: var(--ff-display);
+      font-size: 2.2rem;
+      font-weight: 400;
+      color: var(--white);
+      text-decoration: none;
+      letter-spacing: 0.02em;
+      transition: color 0.2s;
+    }
+
+    .mobile-nav a:hover {
+      color: var(--gold);
+    }
+
+    .mobile-close {
+      position: absolute;
+      top: 1.5rem;
+      right: 1.5rem;
+      background: none;
+      border: none;
+      color: var(--slate);
+      font-size: 1.5rem;
+      cursor: pointer;
+    }
+
+    /* ===== HERO PORTRAIT ===== */
+    .hero-image-block {
+      position: absolute;
+      top: 50%;
+      right: clamp(3rem, 8vw, 8rem);
+      transform: translateY(-40%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1rem;
+      opacity: 0;
+      animation: fadeIn 1s ease 1.2s forwards;
+      z-index: 2;
+    }
+
+    .hero-portrait {
+      width: clamp(220px, 22vw, 320px);
+      aspect-ratio: 3 / 4;
+      object-fit: cover;
+      object-position: center top;
+      border-radius: 2px;
+      filter: grayscale(20%) contrast(1.05);
+      border: 1px solid var(--border-2);
+      box-shadow:
+        0 0 0 1px rgba(201, 168, 76, 0.12),
+        0 40px 80px rgba(0, 0, 0, 0.5);
+      transition: filter 0.4s ease;
+    }
+
+    .hero-portrait:hover {
+      filter: grayscale(0%) contrast(1.05);
+    }
+
+    .hero-portrait-label {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.2rem;
+      padding: 0.75rem 1.25rem;
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid var(--border);
+      border-radius: 2px;
+      backdrop-filter: blur(10px);
+    }
+
+    .portrait-name {
+      font-family: var(--ff-display);
+      font-size: 1rem;
+      font-weight: 500;
+      color: var(--white);
+      letter-spacing: 0.02em;
+    }
+
+    .portrait-title {
+      font-family: var(--ff-mono);
+      font-size: 0.62rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--gold);
+    }
+
+    @media (max-width: 1100px) {
+      .hero-image-block {
+        position: static;
+        transform: none;
+        flex-direction: row;
+        align-items: center;
+        gap: 1.25rem;
+        margin-bottom: 2rem;
+        opacity: 1;
+        animation: none;
+      }
+
+      .hero-portrait {
+        width: 64px;
+        height: 64px;
+        aspect-ratio: 1 / 1;
+        border-radius: 50%;
+        object-position: center top;
+        flex-shrink: 0;
+      }
+
+      .hero-portrait-label {
+        align-items: flex-start;
+        padding: 0;
+        background: none;
+        border: none;
+        backdrop-filter: none;
+      }
+    }
+
+    /* ===== HERO ===== */
+    #hero {
+      position: relative;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      overflow: hidden;
+      padding: 0 clamp(1.5rem, 5vw, 4rem);
+    }
+
+    .hero-bg {
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse 80% 60% at 60% 40%, rgba(201, 168, 76, 0.04) 0%, transparent 70%),
+        radial-gradient(ellipse 50% 40% at 10% 80%, rgba(74, 127, 212, 0.05) 0%, transparent 60%),
+        linear-gradient(160deg, var(--ink) 0%, var(--ink-2) 50%, var(--ink-3) 100%);
+    }
+
+    .hero-grid-lines {
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+      background-size: 60px 60px;
+      mask-image: radial-gradient(ellipse 80% 70% at 50% 50%, black 0%, transparent 80%);
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      width: 100%;
+      max-width: 1320px;
+      margin: 0 auto;
+      padding-top: var(--nav-h);
+    }
+
+    .hero-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.75rem;
+      margin-bottom: 2rem;
+      opacity: 0;
+      animation: fadeUp 0.8s var(--ease-out) 0.2s forwards;
+    }
+
+    .hero-eyebrow-line {
+      width: 32px;
+      height: 1px;
+      background: var(--gold);
+    }
+
+    .hero-eyebrow-text {
+      font-family: var(--ff-mono);
+      font-size: 0.72rem;
+      font-weight: 400;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--gold);
+    }
+
+    .hero-name {
+      font-family: var(--ff-display);
+      font-size: clamp(3.2rem, 8vw, 7.5rem);
+      font-weight: 300;
+      line-height: 1.0;
+      letter-spacing: -0.01em;
+      color: var(--white);
+      margin-bottom: 1rem;
+      opacity: 0;
+      animation: fadeUp 0.9s var(--ease-out) 0.35s forwards;
+    }
+
+    .hero-name em {
+      font-style: italic;
+      color: var(--gold-light);
+    }
+
+    .hero-tagline {
+      font-family: var(--ff-display);
+      font-size: clamp(1.3rem, 3vw, 2.2rem);
+      font-weight: 300;
+      font-style: italic;
+      color: var(--slate-light);
+      max-width: 680px;
+      line-height: 1.4;
+      margin-bottom: 2.5rem;
+      opacity: 0;
+      animation: fadeUp 0.9s var(--ease-out) 0.5s forwards;
+    }
+
+    .hero-desc {
+      font-size: 1rem;
+      color: var(--slate);
+      max-width: 520px;
+      line-height: 1.75;
+      margin-bottom: 3rem;
+      opacity: 0;
+      animation: fadeUp 0.9s var(--ease-out) 0.65s forwards;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      margin-bottom: 4rem;
+      opacity: 0;
+      animation: fadeUp 0.9s var(--ease-out) 0.8s forwards;
+    }
+
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      background: var(--gold);
+      color: var(--ink);
+      font-family: var(--ff-sans);
+      font-size: 0.82rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      text-decoration: none;
+      padding: 0.9rem 2rem;
+      border-radius: 2px;
+      transition: all 0.25s;
+    }
+
+    .btn-primary:hover {
+      background: var(--gold-light);
+      transform: translateY(-1px);
+    }
+
+    .btn-ghost {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      background: transparent;
+      color: var(--white);
+      font-family: var(--ff-sans);
+      font-size: 0.82rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      text-decoration: none;
+      padding: 0.9rem 2rem;
+      border: 1px solid var(--border-2);
+      border-radius: 2px;
+      transition: all 0.25s;
+    }
+
+    .btn-ghost:hover {
+      border-color: var(--white);
+      background: rgba(255, 255, 255, 0.04);
+    }
+
+    .hero-metrics {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2.5rem;
+      padding-top: 3rem;
+      border-top: 1px solid var(--border);
+      opacity: 0;
+      animation: fadeUp 0.9s var(--ease-out) 1s forwards;
+    }
+
+    .metric {
+      display: flex;
+      flex-direction: column;
+      gap: 0.25rem;
+    }
+
+    .metric-value {
+      font-family: var(--ff-display);
+      font-size: clamp(1.8rem, 4vw, 2.8rem);
+      font-weight: 500;
+      color: var(--white);
+      line-height: 1;
+    }
+
+    .metric-value span {
+      color: var(--gold);
+    }
+
+    .metric-label {
+      font-family: var(--ff-mono);
+      font-size: 0.68rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--slate);
+    }
+
+    .hero-scroll-hint {
+      position: absolute;
+      bottom: 2.5rem;
+      right: clamp(1.5rem, 5vw, 4rem);
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      opacity: 0;
+      animation: fadeIn 1s ease 1.5s forwards;
+    }
+
+    .scroll-line {
+      width: 40px;
+      height: 1px;
+      background: var(--border-2);
+    }
+
+    .scroll-text {
+      font-family: var(--ff-mono);
+      font-size: 0.65rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--slate);
+      writing-mode: vertical-rl;
+    }
+
+    /* Floating badge */
+    .hero-badge {
+      position: absolute;
+      top: 35%;
+      right: clamp(2rem, 8vw, 10rem);
+      width: 130px;
+      height: 130px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      animation: fadeIn 1s ease 1.2s forwards;
+    }
+
+    .badge-ring {
+      position: absolute;
+      inset: 0;
+      border: 1px solid rgba(201, 168, 76, 0.2);
+      border-radius: 50%;
+      animation: spin 20s linear infinite;
+    }
+
+    .badge-ring::before {
+      content: '';
+      position: absolute;
+      top: -2px;
+      left: 50%;
+      width: 4px;
+      height: 4px;
+      background: var(--gold);
+      border-radius: 50%;
+      transform: translateX(-50%);
+    }
+
+    .badge-inner {
+      text-align: center;
+    }
+
+    .badge-inner .badge-title {
+      font-family: var(--ff-display);
+      font-size: 0.95rem;
+      font-weight: 500;
+      color: var(--gold-light);
+      line-height: 1.2;
+    }
+
+    .badge-inner .badge-sub {
+      font-family: var(--ff-mono);
+      font-size: 0.6rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--slate);
+      margin-top: 0.3rem;
+    }
+
+    @media (max-width: 900px) {
+      .hero-badge {
+        display: none;
+      }
+    }
+
+    /* ===== SECTION COMMONS ===== */
+    section {
+      padding: clamp(5rem, 10vw, 9rem) clamp(1.5rem, 5vw, 4rem);
+    }
+
+    .container {
+      max-width: 1320px;
+      margin: 0 auto;
+    }
+
+    .section-label {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      font-family: var(--ff-mono);
+      font-size: 0.68rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 1.5rem;
+    }
+
+    .section-label::before {
+      content: '';
+      display: block;
+      width: 24px;
+      height: 1px;
+      background: var(--gold);
+    }
+
+    .section-title {
+      font-family: var(--ff-display);
+      font-size: clamp(2.2rem, 5vw, 4.2rem);
+      font-weight: 400;
+      line-height: 1.1;
+      color: var(--white);
+      margin-bottom: 1.5rem;
+    }
+
+    .section-title em {
+      font-style: italic;
+      color: var(--gold-light);
+    }
+
+    .section-body {
+      font-size: 1.05rem;
+      color: var(--slate);
+      line-height: 1.8;
+      max-width: 600px;
+    }
+
+    /* ===== ABOUT ===== */
+    #about {
+      background: var(--ink-2);
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 6rem;
+      align-items: start;
+    }
+
+    .about-left {}
+
+    .about-right {
+      display: flex;
+      flex-direction: column;
+      gap: 3rem;
+    }
+
+    .about-statement {
+      font-family: var(--ff-display);
+      font-size: clamp(1.4rem, 2.5vw, 2rem);
+      font-weight: 400;
+      line-height: 1.45;
+      color: var(--white-dim);
+      margin-top: 2rem;
+    }
+
+    .about-statement strong {
+      color: var(--white);
+      font-weight: 500;
+    }
+
+    .about-statement em {
+      color: var(--gold-light);
+      font-style: italic;
+    }
+
+    .about-pillars {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+    }
+
+    .pillar {
+      padding: 1.75rem 0;
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      gap: 1.5rem;
+      align-items: flex-start;
+    }
+
+    .pillar:first-child {
+      border-top: 1px solid var(--border);
+    }
+
+    .pillar-num {
+      font-family: var(--ff-mono);
+      font-size: 0.65rem;
+      letter-spacing: 0.1em;
+      color: var(--gold);
+      padding-top: 0.3rem;
+      flex-shrink: 0;
+    }
+
+    .pillar-content h4 {
+      font-family: var(--ff-sans);
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: var(--white);
+      margin-bottom: 0.4rem;
+    }
+
+    .pillar-content p {
+      font-size: 0.88rem;
+      color: var(--slate);
+      line-height: 1.65;
+    }
+
+    .nimbusx-callout {
+      background: linear-gradient(135deg, rgba(201, 168, 76, 0.08) 0%, rgba(74, 127, 212, 0.05) 100%);
+      border: 1px solid rgba(201, 168, 76, 0.2);
+      border-radius: 4px;
+      padding: 2rem;
+    }
+
+    .nimbusx-callout .nx-label {
+      font-family: var(--ff-mono);
+      font-size: 0.65rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 0.75rem;
+    }
+
+    .nimbusx-callout p {
+      font-size: 0.9rem;
+      color: var(--slate-light);
+      line-height: 1.7;
+    }
+
+    .nimbusx-callout a {
+      color: var(--gold);
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    @media (max-width: 900px) {
+      .about-grid {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+      }
+    }
+
+    /* ===== SERVICES ===== */
+    #services {
+      background: var(--ink);
+    }
+
+    .services-header {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: end;
+      margin-bottom: 5rem;
+    }
+
+    .services-intro {
+      font-family: var(--ff-display);
+      font-size: clamp(1rem, 1.8vw, 1.35rem);
+      font-weight: 400;
+      color: var(--slate-light);
+      line-height: 1.7;
+      font-style: italic;
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1px;
+      background: var(--border);
+      border: 1px solid var(--border);
+    }
+
+    .service-card {
+      background: var(--ink);
+      padding: 2.5rem;
+      position: relative;
+      overflow: hidden;
+      transition: background 0.3s;
+      cursor: default;
+    }
+
+    .service-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 2px;
+      background: linear-gradient(90deg, var(--gold) 0%, transparent 100%);
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.4s var(--ease-out);
+    }
+
+    .service-card:hover {
+      background: var(--ink-2);
+    }
+
+    .service-card:hover::before {
+      transform: scaleX(1);
+    }
+
+    .service-icon {
+      width: 44px;
+      height: 44px;
+      margin-bottom: 2rem;
+      color: var(--gold);
+      opacity: 0.8;
+    }
+
+    .service-card h3 {
+      font-family: var(--ff-display);
+      font-size: 1.4rem;
+      font-weight: 500;
+      color: var(--white);
+      margin-bottom: 1rem;
+      line-height: 1.2;
+    }
+
+    .service-card .service-problem {
+      font-size: 0.82rem;
+      font-style: italic;
+      color: var(--slate);
+      margin-bottom: 1rem;
+      padding-left: 0.75rem;
+      border-left: 2px solid var(--gold-dim);
+    }
+
+    .service-card p {
+      font-size: 0.88rem;
+      color: var(--slate);
+      line-height: 1.7;
+    }
+
+    .service-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+      margin-top: 1.5rem;
+    }
+
+    .tag {
+      font-family: var(--ff-mono);
+      font-size: 0.65rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--slate);
+      border: 1px solid var(--border-2);
+      padding: 0.25rem 0.65rem;
+      border-radius: 2px;
+    }
+
+    @media (max-width: 1100px) {
+      .services-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 700px) {
+      .services-header {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+        margin-bottom: 3rem;
+      }
+
+      .services-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    /* ===== WORK / CASE STUDIES ===== */
+    #work {
+      background: var(--ink-2);
+      overflow: hidden;
+    }
+
+    .work-header {
+      margin-bottom: 5rem;
+    }
+
+    .case-studies {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+    }
+
+    .case-study {
+      border-top: 1px solid var(--border);
+      padding: 3.5rem 0;
+      display: grid;
+      grid-template-columns: 80px 1fr auto;
+      gap: 3rem;
+      align-items: start;
+      cursor: pointer;
+      transition: background 0.3s;
+      position: relative;
+    }
+
+    .case-study:last-child {
+      border-bottom: 1px solid var(--border);
+    }
+
+    .case-study:hover {
+      background: rgba(255, 255, 255, 0.01);
+    }
+
+    .case-study:hover .cs-arrow {
+      transform: translate(4px, -4px);
+    }
+
+    .cs-num {
+      font-family: var(--ff-mono);
+      font-size: 0.7rem;
+      letter-spacing: 0.1em;
+      color: var(--gold);
+      padding-top: 0.5rem;
+    }
+
+    .cs-body {
+      flex: 1;
+    }
+
+    .cs-category {
+      font-family: var(--ff-mono);
+      font-size: 0.65rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--slate);
+      margin-bottom: 0.6rem;
+    }
+
+    .cs-title {
+      font-family: var(--ff-display);
+      font-size: clamp(1.5rem, 3vw, 2.5rem);
+      font-weight: 400;
+      color: var(--white);
+      line-height: 1.2;
+      margin-bottom: 1rem;
+    }
+
+    .cs-desc {
+      font-size: 0.9rem;
+      color: var(--slate);
+      line-height: 1.7;
+      max-width: 600px;
+    }
+
+    .cs-impact {
+      margin-top: 1.5rem;
+      display: flex;
+      gap: 2rem;
+      flex-wrap: wrap;
+    }
+
+    .cs-stat {
+      display: flex;
+      flex-direction: column;
+      gap: 0.2rem;
+    }
+
+    .cs-stat-value {
+      font-family: var(--ff-display);
+      font-size: 1.6rem;
+      font-weight: 500;
+      color: var(--gold-light);
+    }
+
+    .cs-stat-label {
+      font-family: var(--ff-mono);
+      font-size: 0.62rem;
+      letter-spacing: 0.1em;
+      color: var(--slate);
+      text-transform: uppercase;
+    }
+
+    .cs-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+      margin-top: 1.25rem;
+    }
+
+    .cs-arrow {
+      font-size: 1.2rem;
+      color: var(--slate);
+      margin-top: 0.5rem;
+      transition: transform 0.3s var(--ease-out), color 0.3s;
+      flex-shrink: 0;
+    }
+
+    .case-study:hover .cs-arrow {
+      color: var(--gold);
+    }
+
+    @media (max-width: 700px) {
+      .case-study {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+      }
+
+      .cs-num {
+        padding-top: 0;
+      }
+
+      .cs-arrow {
+        display: none;
+      }
+    }
+
+    /* ===== NIMBUSX ===== */
+    #nimbusx {
+      background: linear-gradient(160deg, var(--ink-3) 0%, var(--surface) 100%);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      overflow: hidden;
+      position: relative;
+    }
+
+    .nx-bg-mark {
+      position: absolute;
+      top: 50%;
+      right: -100px;
+      transform: translateY(-50%);
+      font-family: var(--ff-display);
+      font-size: 20rem;
+      font-weight: 300;
+      color: rgba(201, 168, 76, 0.03);
+      pointer-events: none;
+      user-select: none;
+      line-height: 1;
+      white-space: nowrap;
+    }
+
+    .nx-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 6rem;
+      align-items: center;
+      position: relative;
+      z-index: 2;
+    }
+
+    .nx-brand-mark {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+      margin-bottom: 2rem;
+    }
+
+    .nx-wordmark {
+      font-family: var(--ff-display);
+      font-size: 3.5rem;
+      font-weight: 400;
+      color: var(--white);
+      letter-spacing: -0.02em;
+      line-height: 1;
+    }
+
+    .nx-wordmark span {
+      color: var(--gold);
+    }
+
+    .nx-descriptor {
+      font-family: var(--ff-mono);
+      font-size: 0.7rem;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--slate);
+    }
+
+    .nx-statement {
+      font-family: var(--ff-display);
+      font-size: clamp(1.2rem, 2.5vw, 1.75rem);
+      font-weight: 400;
+      font-style: italic;
+      color: var(--slate-light);
+      line-height: 1.5;
+      margin-bottom: 2rem;
+    }
+
+    .nx-statement strong {
+      color: var(--white);
+      font-style: normal;
+      font-weight: 500;
+    }
+
+    .nx-right {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+
+    .nx-focus-areas {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1px;
+      background: var(--border);
+      border: 1px solid var(--border);
+    }
+
+    .nx-focus {
+      background: var(--ink-3);
+      padding: 1.5rem;
+      transition: background 0.3s;
+    }
+
+    .nx-focus:hover {
+      background: var(--surface);
+    }
+
+    .nx-focus-icon {
+      font-size: 1.25rem;
+      margin-bottom: 0.75rem;
+    }
+
+    .nx-focus h4 {
+      font-family: var(--ff-sans);
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--white);
+      margin-bottom: 0.35rem;
+    }
+
+    .nx-focus p {
+      font-size: 0.8rem;
+      color: var(--slate);
+      line-height: 1.6;
+    }
+
+    .nx-cta-row {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    @media (max-width: 900px) {
+      .nx-grid {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+      }
+
+      .nx-bg-mark {
+        display: none;
+      }
+    }
+
+    /* ===== STACK ===== */
+    #stack {
+      background: var(--ink);
+    }
+
+    .stack-groups {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 2.5rem;
+      margin-top: 4rem;
+    }
+
+    .stack-group h4 {
+      font-family: var(--ff-mono);
+      font-size: 0.65rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 1.25rem;
+      padding-bottom: 0.75rem;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .stack-items {
+      display: flex;
+      flex-direction: column;
+      gap: 0.65rem;
+    }
+
+    .stack-item {
+      font-size: 0.88rem;
+      color: var(--slate-light);
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+    }
+
+    .stack-item::before {
+      content: '';
+      width: 4px;
+      height: 4px;
+      background: var(--border-2);
+      border-radius: 50%;
+      flex-shrink: 0;
+      transition: background 0.2s;
+    }
+
+    .stack-item:hover::before {
+      background: var(--gold);
+    }
+
+    .stack-item:hover {
+      color: var(--white);
+    }
+
+    @media (max-width: 1100px) {
+      .stack-groups {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+
+    @media (max-width: 700px) {
+      .stack-groups {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2rem;
+      }
+    }
+
+    /* ===== EXPERIENCE ===== */
+    #experience {
+      background: var(--ink-2);
+    }
+
+    .exp-layout {
+      display: grid;
+      grid-template-columns: 280px 1fr;
+      gap: 6rem;
+      margin-top: 4rem;
+    }
+
+    .exp-sidebar {
+      position: sticky;
+      top: calc(var(--nav-h) + 2rem);
+      height: fit-content;
+    }
+
+    .exp-sidebar p {
+      font-size: 0.9rem;
+      color: var(--slate);
+      line-height: 1.75;
+      margin-bottom: 2rem;
+    }
+
+    .exp-timeline {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+    }
+
+    .exp-item {
+      padding: 2.5rem 0;
+      border-bottom: 1px solid var(--border);
+      display: grid;
+      grid-template-columns: 1fr 3fr;
+      gap: 3rem;
+    }
+
+    .exp-item:first-child {
+      padding-top: 0;
+    }
+
+    .exp-meta {}
+
+    .exp-period {
+      font-family: var(--ff-mono);
+      font-size: 0.68rem;
+      letter-spacing: 0.1em;
+      color: var(--gold);
+      margin-bottom: 0.35rem;
+      text-transform: uppercase;
+    }
+
+    .exp-company {
+      font-size: 0.8rem;
+      color: var(--slate);
+      font-style: italic;
+    }
+
+    .exp-details {}
+
+    .exp-role {
+      font-family: var(--ff-display);
+      font-size: 1.35rem;
+      font-weight: 500;
+      color: var(--white);
+      margin-bottom: 0.75rem;
+    }
+
+    .exp-desc {
+      font-size: 0.88rem;
+      color: var(--slate);
+      line-height: 1.75;
+      margin-bottom: 1.25rem;
+    }
+
+    .exp-highlights {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+
+    .exp-highlight {
+      font-size: 0.84rem;
+      color: var(--slate-light);
+      display: flex;
+      align-items: flex-start;
+      gap: 0.75rem;
+      line-height: 1.6;
+    }
+
+    .exp-highlight::before {
+      content: '→';
+      color: var(--gold);
+      flex-shrink: 0;
+      margin-top: 0.05em;
+      font-size: 0.8rem;
+    }
+
+    @media (max-width: 900px) {
+      .exp-layout {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+      }
+
+      .exp-sidebar {
+        position: static;
+      }
+
+      .exp-item {
+        grid-template-columns: 1fr;
+        gap: 0.75rem;
+      }
+    }
+
+    /* ===== THOUGHT LEADERSHIP ===== */
+    #insights {
+      background: var(--ink);
+    }
+
+    .insights-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+      margin-top: 4rem;
+    }
+
+    .insight-card {
+      border: 1px solid var(--border);
+      padding: 2rem;
+      background: var(--ink-2);
+      border-radius: 2px;
+      transition: border-color 0.3s, background 0.3s;
+      cursor: pointer;
+    }
+
+    .insight-card:hover {
+      border-color: rgba(201, 168, 76, 0.25);
+      background: var(--ink-3);
+    }
+
+    .insight-cat {
+      font-family: var(--ff-mono);
+      font-size: 0.62rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 1rem;
+    }
+
+    .insight-card h3 {
+      font-family: var(--ff-display);
+      font-size: 1.2rem;
+      font-weight: 500;
+      color: var(--white);
+      line-height: 1.35;
+      margin-bottom: 0.75rem;
+    }
+
+    .insight-card p {
+      font-size: 0.84rem;
+      color: var(--slate);
+      line-height: 1.7;
+    }
+
+    .insight-footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 1.5rem;
+      padding-top: 1.25rem;
+      border-top: 1px solid var(--border);
+    }
+
+    .insight-date {
+      font-family: var(--ff-mono);
+      font-size: 0.62rem;
+      letter-spacing: 0.1em;
+      color: var(--slate);
+    }
+
+    .insight-read {
+      font-size: 0.75rem;
+      color: var(--gold);
+      letter-spacing: 0.05em;
+    }
+
+    @media (max-width: 1100px) {
+      .insights-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 700px) {
+      .insights-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    /* ===== CONTACT ===== */
+    #contact {
+      background: linear-gradient(160deg, var(--ink-3) 0%, var(--surface) 100%);
+      border-top: 1px solid var(--border);
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 8rem;
+      align-items: start;
+    }
+
+    .contact-left {}
+
+    .contact-channels {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+      margin-top: 3rem;
+    }
+
+    .channel {
+      display: flex;
+      align-items: center;
+      gap: 1.25rem;
+      padding: 1.25rem 0;
+      border-bottom: 1px solid var(--border);
+      text-decoration: none;
+      transition: padding-left 0.3s var(--ease-out);
+    }
+
+    .channel:first-child {
+      border-top: 1px solid var(--border);
+    }
+
+    .channel:hover {
+      padding-left: 0.5rem;
+    }
+
+    .channel-icon {
+      width: 40px;
+      height: 40px;
+      border: 1px solid var(--border-2);
+      border-radius: 2px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--gold);
+      font-size: 1rem;
+      flex-shrink: 0;
+      transition: border-color 0.3s, background 0.3s;
+    }
+
+    .channel:hover .channel-icon {
+      border-color: var(--gold);
+      background: var(--gold-dim);
+    }
+
+    .channel-label {
+      font-family: var(--ff-mono);
+      font-size: 0.65rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--slate);
+      display: block;
+      margin-bottom: 0.15rem;
+    }
+
+    .channel-value {
+      font-size: 0.9rem;
+      color: var(--white);
+    }
+
+    .contact-right {}
+
+    .contact-form {
+      display: flex;
+      flex-direction: column;
+      gap: 1.25rem;
+    }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+    }
+
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+
+    .form-group label {
+      font-family: var(--ff-mono);
+      font-size: 0.65rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--slate);
+    }
+
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid var(--border-2);
+      color: var(--white);
+      font-family: var(--ff-sans);
+      font-size: 0.9rem;
+      padding: 0.85rem 1rem;
+      border-radius: 2px;
+      outline: none;
+      transition: border-color 0.25s;
+      width: 100%;
+      appearance: none;
+    }
+
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus {
+      border-color: rgba(201, 168, 76, 0.4);
+    }
+
+    .form-group textarea {
+      resize: vertical;
+      min-height: 120px;
+    }
+
+    .form-group select {
+      cursor: pointer;
+    }
+
+    .form-group select option {
+      background: var(--ink-2);
+    }
+
+    @media (max-width: 900px) {
+      .contact-grid {
+        grid-template-columns: 1fr;
+        gap: 4rem;
+      }
+
+      .form-row {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    /* ===== FOOTER ===== */
+    footer {
+      background: var(--ink);
+      border-top: 1px solid var(--border);
+      padding: 3rem clamp(1.5rem, 5vw, 4rem);
+    }
+
+    .footer-inner {
+      max-width: 1320px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+    }
+
+    .footer-logo-text {
+      font-family: var(--ff-display);
+      font-size: 1.1rem;
+      color: var(--white);
+    }
+
+    .footer-copy {
+      font-family: var(--ff-mono);
+      font-size: 0.65rem;
+      letter-spacing: 0.1em;
+      color: var(--slate);
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 2rem;
+    }
+
+    .footer-links a {
+      font-family: var(--ff-mono);
+      font-size: 0.65rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--slate);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .footer-links a:hover {
+      color: var(--gold);
+    }
+
+    /* ===== ANIMATIONS ===== */
+    @keyframes fadeUp {
+      from {
+        opacity: 0;
+        transform: translateY(24px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+      }
+
+      to {
+        opacity: 1;
+      }
+    }
+
+    @keyframes spin {
+      from {
+        transform: rotate(0deg);
+      }
+
+      to {
+        transform: rotate(360deg);
+      }
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.8s var(--ease-out), transform 0.8s var(--ease-out);
+    }
+
+    .reveal.in {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .reveal-delay-1 {
+      transition-delay: 0.1s;
+    }
+
+    .reveal-delay-2 {
+      transition-delay: 0.2s;
+    }
+
+    .reveal-delay-3 {
+      transition-delay: 0.3s;
+    }
+
+    .reveal-delay-4 {
+      transition-delay: 0.4s;
+    }
+
+    .reveal-delay-5 {
+      transition-delay: 0.5s;
+    }
+
+    /* ===== DIVIDER ===== */
+    .section-divider {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+      margin-bottom: 4rem;
+    }
+
+    .divider-line {
+      flex: 1;
+      height: 1px;
+      background: var(--border);
+    }
+
+    .divider-mark {
+      width: 6px;
+      height: 6px;
+      background: var(--gold);
+      border-radius: 50%;
+    }
+
+    /* ===== MARQUEE STRIP ===== */
+    .skills-strip {
+      overflow: hidden;
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      padding: 1rem 0;
+      background: var(--ink-2);
+    }
+
+    .strip-inner {
+      display: flex;
+      width: max-content;
+      animation: marquee 30s linear infinite;
+    }
+
+    .strip-inner:hover {
+      animation-play-state: paused;
+    }
+
+    .strip-item {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+      padding: 0 1.5rem;
+      white-space: nowrap;
+      font-family: var(--ff-mono);
+      font-size: 0.7rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--slate);
+    }
+
+    .strip-item .dot {
+      width: 4px;
+      height: 4px;
+      background: var(--gold);
+      border-radius: 50%;
+      flex-shrink: 0;
+    }
+
+    @keyframes marquee {
+      from {
+        transform: translateX(0);
+      }
+
+      to {
+        transform: translateX(-50%);
+      }
+    }
+
+    /* ===== GLASS CARD ===== */
+    .glass {
+      background: rgba(255, 255, 255, 0.03);
+      backdrop-filter: blur(10px);
+      border: 1px solid var(--border-2);
+      border-radius: 4px;
+    }
+
+    /* ===== RESPONSIVE HELPERS ===== */
+    @media (max-width: 700px) {
+
+      .nav-links,
+      .nav-cta {
+        display: none;
+      }
+
+      .hamburger {
+        display: flex;
+      }
+
+      .hero-actions {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .hero-metrics {
+        gap: 1.5rem;
+      }
+
+      .metric-value {
+        font-size: 1.8rem;
+      }
+    }
+  </style>
 </head>
 
 <body>
 
-	<!-- ── NAV ── -->
-	<nav class="navbar">
-		<a href="#top" class="logo">Thato Mapheto</a>
-		<div class="nav-links">
-			<a href="#about">About</a>
-			<a href="#experience">Experience</a>
-			<a href="#projects">Projects</a>
-			<a href="#certifications">Credentials</a>
-			<a href="#contact">Contact</a>
-		</div>
-		<a href="./ThatoMaphetoCV.pdf" class="btn-pill btn-outline-pill" download>
-			<i class="fas fa-download"></i> CV
-		</a>
-	</nav>
+  <!-- ===== NAV ===== -->
+  <nav id="main-nav">
+    <div class="nav-inner">
+      <a href="#hero" class="nav-logo">
+        <span class="logo-dot"></span>
+        Portfolio
+      </a>
+      <ul class="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#work">Work</a></li>
+        <li><a href="#nimbusx">NimbusX</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#insights">Insights</a></li>
+      </ul>
+      <a href="#contact" class="nav-cta">Let's Talk</a>
+      <button class="hamburger" id="hamburger" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
 
-	<!-- ── HERO ── -->
-	<section class="hero" id="top">
-		<div class="hero-bg-circle"></div>
-		<div class="container hero-grid">
-			<div class="fade-in">
-				<div class="hero-badge">
-					<i class="fas fa-solar-panel"></i>
-					Finance & Accounting · Data Analytics · Renewable Energy
-				</div>
-				<h1>Thato Mapheto</h1>
-				<p class="hero-role">Finance · Data Analyst · ERP/Finance Systems · Renewable Energy</p>
-				<p class="hero-target"><strong>Target roles:</strong> Financial Analyst · Data Analyst · ERP/Finance
-					Systems Analyst · Renewable Energy Finance</p>
+  <div class="mobile-nav" id="mobile-nav">
+    <button class="mobile-close" id="mobile-close">✕</button>
+    <a href="#about" class="mobile-link">About</a>
+    <a href="#services" class="mobile-link">Services</a>
+    <a href="#work" class="mobile-link">Work</a>
+    <a href="#nimbusx" class="mobile-link">NimbusX</a>
+    <a href="#experience" class="mobile-link">Experience</a>
+    <a href="#contact" class="mobile-link">Contact</a>
+  </div>
 
-				<p class="hero-text">
-					Finance professional with experience in financial reporting, reconciliations, and operational
-					finance in the mining sector, combined with growing expertise in data analytics and business
-					intelligence.
-				</p>
-				<p class="hero-text">
-					Skilled in building end-to-end data solutions using SQL and Power BI, with a proven track record of
-					recovering <strong>R11 million</strong> in SAP commitments and improving financial visibility and
-					cost control.
-				</p>
-				<p class="hero-text">
-					Passionate about bridging finance, data, and renewable energy to support better decision-making and
-					sustainable infrastructure development.
-				</p>
+  <!-- ===== HERO ===== -->
+  <section id="hero">
+    <div class="hero-bg"></div>
+    <div class="hero-grid-lines"></div>
+    <div class="hero-content">
+      <div class="hero-image-block">
+        <img src="./assets/images/Portrait1.jpeg" alt="Portrait" class="hero-portrait">
+        <div class="hero-portrait-label">
+          <span class="portrait-name">Thato Mapheto</span>
+          <span class="portrait-title">Founder, NimbusX</span>
+        </div>
+      </div>
+      <div class="hero-eyebrow">
+        <div class="hero-eyebrow-line"></div>
+        <span class="hero-eyebrow-text">Finance · Analytics · Digital Systems</span>
+      </div>
+      <h1 class="hero-name">Finance meets<br><em>technology.</em></h1>
+      <p class="hero-tagline">Helping businesses modernize through analytics, digital systems, and operational
+        intelligence.</p>
+      <p class="hero-desc">I sit at the intersection of finance, ERP systems, and data analytics — translating
+        operational complexity into clear decisions and building the digital infrastructure that growing businesses
+        need.</p>
+      <div class="hero-actions">
+        <a href="#work" class="btn-primary">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+            <path d="M5 12h14M12 5l7 7-7 7" />
+          </svg>
+          View My Work
+        </a>
+        <a href="#contact" class="btn-ghost">Start a Conversation</a>
+      </div>
+      <div class="hero-metrics">
+        <div class="metric">
+          <div class="metric-value">R<span>11</span>M</div>
+          <div class="metric-label">SAP Commitments Recovered</div>
+        </div>
+        <div class="metric">
+          <div class="metric-value"><span>5</span>+</div>
+          <div class="metric-label">Client Projects Delivered</div>
+        </div>
+        <div class="metric">
+          <div class="metric-value"><span>3</span></div>
+          <div class="metric-label">Industries Served</div>
+        </div>
+        <div class="metric">
+          <div class="metric-value"><span>1</span></div>
+          <div class="metric-label">Consultancy Founded</div>
+        </div>
+      </div>
+    </div>
+    <!-- <div class="hero-image-block">
+      <img src="./assets/images/Portrait1.jpeg" alt="Portrait" class="hero-portrait">
+      <div class="hero-portrait-label">
+        <span class="portrait-name">Thato Mapheto</span>
+        <span class="portrait-title">Founder, NimbusX</span>
+      </div>
+    </div> -->
+    <div class="hero-scroll-hint">
+      <div class="scroll-line"></div>
+      <span class="scroll-text">Scroll</span>
+    </div>
+  </section>
 
-				<div class="hero-social">
-					<a href="https://www.linkedin.com/in/thatomapheto/" target="_blank" class="social-icon"><i
-							class="fab fa-linkedin-in"></i> LinkedIn</a>
-					<a href="https://github.com/thatomapheto" target="_blank" class="social-icon"><i
-							class="fab fa-github"></i> GitHub</a>
-					<a href="./ThatoMaphetoCV.pdf" download class="social-icon"><i class="fas fa-file-alt"></i> CV</a>
-				</div>
+  <!-- ===== SKILLS STRIP ===== -->
+  <div class="skills-strip">
+    <div class="strip-inner" id="strip">
+      <!-- doubled for seamless loop -->
+      <span class="strip-item"><span class="dot"></span>SAP ERP</span>
+      <span class="strip-item"><span class="dot"></span>Power BI</span>
+      <span class="strip-item"><span class="dot"></span>SQL</span>
+      <span class="strip-item"><span class="dot"></span>Financial Modelling</span>
+      <span class="strip-item"><span class="dot"></span>Dynamics 365</span>
+      <span class="strip-item"><span class="dot"></span>Business Analytics</span>
+      <span class="strip-item"><span class="dot"></span>SME Modernization</span>
+      <span class="strip-item"><span class="dot"></span>Digital Transformation</span>
+      <span class="strip-item"><span class="dot"></span>Procurement Analytics</span>
+      <span class="strip-item"><span class="dot"></span>ERP Systems</span>
+      <span class="strip-item"><span class="dot"></span>Python</span>
+      <span class="strip-item"><span class="dot"></span>Data Dashboards</span>
+      <span class="strip-item"><span class="dot"></span>SAP ERP</span>
+      <span class="strip-item"><span class="dot"></span>Power BI</span>
+      <span class="strip-item"><span class="dot"></span>SQL</span>
+      <span class="strip-item"><span class="dot"></span>Financial Modelling</span>
+      <span class="strip-item"><span class="dot"></span>Dynamics 365</span>
+      <span class="strip-item"><span class="dot"></span>Business Analytics</span>
+      <span class="strip-item"><span class="dot"></span>SME Modernization</span>
+      <span class="strip-item"><span class="dot"></span>Digital Transformation</span>
+      <span class="strip-item"><span class="dot"></span>Procurement Analytics</span>
+      <span class="strip-item"><span class="dot"></span>ERP Systems</span>
+      <span class="strip-item"><span class="dot"></span>Python</span>
+      <span class="strip-item"><span class="dot"></span>Data Dashboards</span>
+    </div>
+  </div>
 
-				<div class="hero-cta">
-					<a href="#contact" class="btn-pill btn-filled"><i class="fas fa-paper-plane"></i> Get in touch</a>
-					<a href="#projects" class="btn-pill btn-outline-pill"><i class="fas fa-arrow-down"></i> Flagship
-						project</a>
-				</div>
-				<div class="hero-stats">
-					<div>
-						<div class="stat-num">3+</div>
-						<div class="stat-lbl">Years experience</div>
-					</div>
-					<div>
-						<div class="stat-num">4</div>
-						<div class="stat-lbl">Certifications</div>
-					</div>
-					<div>
-						<div class="stat-num">R11M</div>
-						<div class="stat-lbl">Recovered value</div>
-					</div>
-				</div>
-			</div>
+  <!-- ===== ABOUT ===== -->
+  <section id="about">
+    <div class="container">
+      <div class="about-grid">
+        <div class="about-left">
+          <div class="section-label reveal">About</div>
+          <h2 class="section-title reveal reveal-delay-1">Not just a<br><em>finance professional.</em><br>Not just a
+            developer.</h2>
+          <p class="about-statement reveal reveal-delay-2">
+            I think about <em>how businesses work</em>, where money flows, where systems break, where <em>data
+              could create clarity</em> but doesn't yet. That intersection is where I operate.
+          </p>
+          <p class="about-statement reveal reveal-delay-3"
+            style="font-size: 1rem; font-family: var(--ff-sans); color: var(--slate); line-height: 1.8; margin-top: 1.5rem;">
+            With a background in financial accounting, SAP ERP operations, and data analytics, I bring systems thinking
+            to businesses that need to move faster, decide smarter, and operate with more clarity. I'm not interested in
+            building things for the sake of it, I'm interested in building things that change how an organisation
+            understands and controls its operations.
+          </p>
+          <div class="nimbusx-callout reveal reveal-delay-4" style="margin-top: 2.5rem;">
+            <div class="nx-label">NimbusX</div>
+            <p>The consulting and digital solutions brand I founded to bring this approach to growing South African
+              businesses. <a href="#nimbusx">Learn more about NimbusX →</a></p>
+          </div>
+        </div>
+        <div class="about-right">
+          <div class="about-pillars reveal">
+            <div class="pillar">
+              <div class="pillar-num">01</div>
+              <div class="pillar-content">
+                <h4>Finance & Operational Depth</h4>
+                <p>Hands-on experience in financial accounting, procurement processes, and SAP ERP operations. I
+                  understand money flows, not just data flows.</p>
+              </div>
+            </div>
+            <div class="pillar">
+              <div class="pillar-num">02</div>
+              <div class="pillar-content">
+                <h4>Analytics & Systems Thinking</h4>
+                <p>Power BI dashboards, SQL analytics, and Python-driven data pipelines built to surface what matters
+                  and eliminate the noise from operational reporting.</p>
+              </div>
+            </div>
+            <div class="pillar">
+              <div class="pillar-num">03</div>
+              <div class="pillar-content">
+                <h4>Digital Modernization</h4>
+                <p>Helping SMEs bridge the gap between where they are and where modern business systems can take them —
+                  through pragmatic, outcome-focused digital infrastructure.</p>
+              </div>
+            </div>
+            <div class="pillar">
+              <div class="pillar-num">04</div>
+              <div class="pillar-content">
+                <h4>Business-First Mindset</h4>
+                <p>Every system, dashboard, or website I build has a business question behind it. Technology in service
+                  of outcomes — not technology for its own sake.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-			<div class="portrait-wrap fade-in">
-				<div class="portrait-shape">
-					<img src="./images/image.jpg" alt="Thato Mapheto"
-						style="width:100%; height:100%; object-fit:cover; border-radius:inherit;">
-				</div>
-				<div class="portrait-tag portrait-tag-1">
-					SAP ERP
-					<span>Systems & Finance</span>
-				</div>
-				<div class="portrait-tag portrait-tag-2">
-					Power BI
-					<span>Data Dashboards</span>
-				</div>
-				<div class="portrait-tag portrait-tag-3">
-					Solar Finance
-					<span>IRR · DSCR</span>
-				</div>
-			</div>
-		</div>
-	</section>
+  <!-- ===== SERVICES ===== -->
+  <section id="services">
+    <div class="container">
+      <div class="services-header">
+        <div>
+          <div class="section-label reveal">What I Do</div>
+          <h2 class="section-title reveal reveal-delay-1">Services built around<br><em>outcomes.</em></h2>
+        </div>
+        <p class="services-intro reveal reveal-delay-2">"What problem does your business actually need solved?" — That's
+          always the first question. The service follows from the answer.</p>
+      </div>
+      <div class="services-grid">
+        <div class="service-card reveal">
+          <svg class="service-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+            <rect x="3" y="3" width="7" height="7" />
+            <rect x="14" y="3" width="7" height="7" />
+            <rect x="14" y="14" width="7" height="7" />
+            <rect x="3" y="14" width="7" height="7" />
+          </svg>
+          <h3>Business Analytics & Dashboards</h3>
+          <p class="service-problem">"We have data everywhere but no clarity on what's actually happening."</p>
+          <p>Custom Power BI dashboards and SQL-driven reporting pipelines that give leadership a real-time view of what
+            matters — procurement, finance, operations, or sales.</p>
+          <div class="service-tags">
+            <span class="tag">Power BI</span><span class="tag">SQL</span><span class="tag">Python</span>
+          </div>
+        </div>
+        <div class="service-card reveal reveal-delay-1">
+          <svg class="service-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+            <polyline points="22 7 13.5 15.5 8.5 10.5 2 17" />
+            <polyline points="16 7 22 7 22 13" />
+          </svg>
+          <h3>Financial Visibility & Reporting</h3>
+          <p class="service-problem">"Our numbers live in spreadsheets and no one trusts them."</p>
+          <p>Structured financial reporting, cash flow visibility, and variance analysis frameworks. Bringing discipline
+            to financial data so decisions can be made with confidence.</p>
+          <div class="service-tags">
+            <span class="tag">Excel</span><span class="tag">SAP</span><span class="tag">Reporting</span>
+          </div>
+        </div>
+        <div class="service-card reveal reveal-delay-2">
+          <svg class="service-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+            <circle cx="12" cy="12" r="10" />
+            <path d="M12 2a14.5 14.5 0 0 1 0 20 14.5 14.5 0 0 1 0-20" />
+            <path d="M2 12h20" />
+          </svg>
+          <h3>SME Digital Modernization</h3>
+          <p class="service-problem">"We're growing but our systems haven't kept up."</p>
+          <p>End-to-end digital modernization for growing businesses — from ERP assessment and implementation guidance
+            to workflow automation and operational systems design.</p>
+          <div class="service-tags">
+            <span class="tag">Dynamics 365</span><span class="tag">ERP</span><span class="tag">Automation</span>
+          </div>
+        </div>
+        <div class="service-card reveal reveal-delay-3">
+          <svg class="service-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+            <rect x="2" y="3" width="20" height="14" rx="2" />
+            <path d="M8 21h8M12 17v4" />
+          </svg>
+          <h3>Website & Digital Presence</h3>
+          <p class="service-problem">"Our website doesn't reflect who we actually are."</p>
+          <p>Premium website design and development for businesses that need a digital presence that matches their
+            calibre — built for trust, conversion, and brand credibility.</p>
+          <div class="service-tags">
+            <span class="tag">HTML/CSS</span><span class="tag">JavaScript</span><span class="tag">Design</span>
+          </div>
+        </div>
+        <div class="service-card reveal reveal-delay-4">
+          <svg class="service-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+            <path
+              d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z" />
+          </svg>
+          <h3>Business Systems & Operations</h3>
+          <p class="service-problem">"Our processes are held together by email chains and manual work."</p>
+          <p>Operational systems design and process mapping to identify where automation, better tooling, or clearer
+            workflows can eliminate friction and reduce cost.</p>
+          <div class="service-tags">
+            <span class="tag">Process Design</span><span class="tag">ERP</span><span class="tag">Integration</span>
+          </div>
+        </div>
+        <div class="service-card reveal reveal-delay-5">
+          <svg class="service-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+            <path d="M12 20h9" />
+            <path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z" />
+          </svg>
+          <h3>Data-Driven Decision Support</h3>
+          <p class="service-problem">"We make decisions by gut feel because the data isn't usable."</p>
+          <p>Building the analytical layer between your raw operational data and leadership decision-making — scenario
+            models, KPI frameworks, and executive reporting structures.</p>
+          <div class="service-tags">
+            <span class="tag">Analytics</span><span class="tag">Modelling</span><span class="tag">Strategy</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-	<!-- ── ABOUT ── -->
-	<section id="about">
-		<div class="container">
-			<div class="section-header fade-in">
-				<div class="section-label">Profile</div>
-				<h2 class="section-title">About me </h2>
-			</div>
-			<div class="about-grid">
-				<div class="about-text fade-in">
-					<p>
-						I am a finance and data professional with a strong foundation in accounting, financial
-						governance, and
-						operational finance, with experience supporting large-scale industrial and capital-intensive
-						environments.
-						My work focuses on improving financial transparency, strengthening internal controls, and
-						turning complex
-						operational data into actionable insights for better decision-making.
-					</p>
+  <!-- ===== WORK ===== -->
+  <section id="work">
+    <div class="container">
+      <div class="work-header">
+        <div class="section-label reveal">Featured Work</div>
+        <h2 class="section-title reveal reveal-delay-1">Projects that moved<br><em>the needle.</em></h2>
+        <p class="section-body reveal reveal-delay-2">Each engagement starts with a business problem and ends with a
+          measurable outcome. These are not portfolio pieces — they are operational results.</p>
+      </div>
+      <div class="case-studies">
 
-					<p>
-						During my time at Sibanye Stillwater, I identified and recovered approximately <strong>R11
-							million</strong> in
-						incorrectly parked and aged SAP commitments, improving budget availability, cost centre
-						accuracy, and financial
-						governance. I performed cost and variance analysis against approved business plans, supported
-						CAPEX tracking, and
-						strengthened compliance through financial reconciliations and operational coordination across
-						finance, procurement,
-						and operations teams.
-					</p>
+        <div class="case-study reveal">
+          <div class="cs-num">01</div>
+          <div class="cs-body">
+            <div class="cs-category">ERP Operations · Financial Recovery</div>
+            <h3 class="cs-title">SAP Commitment Recovery & Procurement Analytics</h3>
+            <p class="cs-desc">A major manufacturing organisation had R11 million in outstanding SAP purchase
+              commitments that were never tracked, followed up on, or reconciled. Working within their SAP environment,
+              I mapped procurement processes, built a structured review framework, and drove systematic recovery of
+              committed funds.</p>
+            <div class="cs-impact">
+              <div class="cs-stat">
+                <div class="cs-stat-value">R11M</div>
+                <div class="cs-stat-label">Funds Recovered</div>
+              </div>
+              <div class="cs-stat">
+                <div class="cs-stat-value">100%</div>
+                <div class="cs-stat-label">Commitment Visibility Achieved</div>
+              </div>
+            </div>
+            <div class="cs-tags">
+              <span class="tag">SAP ERP</span><span class="tag">Procurement</span><span class="tag">Financial
+                Controls</span><span class="tag">Analytics</span>
+            </div>
+          </div>
+          <div class="cs-arrow">↗</div>
+        </div>
 
-					<p>
-						I am particularly interested in the intersection of <strong>finance, data analytics, and
-							renewable energy</strong>,
-						and I am building expertise in SQL, Power BI, and data engineering to create end-to-end
-						financial and analytics solutions.
-						My goal is to contribute to organizations that value strong governance, data-driven
-						decision-making, and sustainable infrastructure
-						development.
-					</p>
+        <div class="case-study reveal">
+          <div class="cs-num">02</div>
+          <div class="cs-body">
+            <div class="cs-category">Data Analytics · Business Intelligence</div>
+            <h3 class="cs-title">Procurement & Financial Analytics Dashboard</h3>
+            <p class="cs-desc">End-to-end analytics dashboard connecting procurement data, financial spend, and supplier
+              performance into a single operational view. Built with Power BI and SQL, designed to give management
+              visibility across the full procure-to-pay cycle.</p>
+            <div class="cs-impact">
+              <div class="cs-stat">
+                <div class="cs-stat-value">360°</div>
+                <div class="cs-stat-label">Spend Visibility</div>
+              </div>
+              <div class="cs-stat">
+                <div class="cs-stat-value">3</div>
+                <div class="cs-stat-label">Data Sources Integrated</div>
+              </div>
+            </div>
+            <div class="cs-tags">
+              <span class="tag">Power BI</span><span class="tag">SQL</span><span class="tag">Procurement</span><span
+                class="tag">Finance</span>
+            </div>
+          </div>
+          <div class="cs-arrow">↗</div>
+        </div>
 
-					<p>
-						<strong>Open to graduate, junior, and early-career roles</strong> in financial analysis, data
-						analytics, ERP/finance systems, and renewable energy finance.
-					</p>
-					<div style="margin-top: 1.5rem;">
-						<a href="#contact" class="btn-pill btn-filled">Let's connect</a>
-					</div>
-				</div>
-				<div class="skills-grid fade-in">
-					<div class="skill-block">
-						<div class="skill-icon"><i class="fas fa-chart-line"></i></div>
-						<h4>Finance & Accounting</h4>
-						<div class="tags">
-							<span class="tag">Management Accounting</span>
-							<span class="tag">Budgeting & Forecasting</span>
-							<span class="tag">Financial Reconciliations</span>
-							<span class="tag">Cost & Variance Analysis</span>
-							<span class="tag">CAPEX Tracking</span>
-						</div>
-					</div>
-					<div class="skill-block">
-						<div class="skill-icon"><i class="fas fa-database"></i></div>
-						<h4>Data Analytics & BI</h4>
-						<div class="tags">
-							<span class="tag">SQL</span>
-							<span class="tag">Power BI</span>
-							<span class="tag">DAX</span>
-							<span class="tag">ETL</span>
-							<span class="tag">Data Modelling</span>
-							<span class="tag">Data Visualization</span>
-						</div>
-					</div>
-					<div class="skill-block">
-						<div class="skill-icon"><i class="fas fa-server"></i></div>
-						<h4>ERP & Systems</h4>
-						<div class="tags">
-							<span class="tag">SAP ERP</span>
-							<span class="tag">Cost Tracking</span>
-							<span class="tag">Excel (PivotTables)</span>
-							<span class="tag">Lookups</span>
-							<span class="tag">Budget Uploads</span>
-						</div>
-					</div>
-					<div class="skill-block">
-						<div class="skill-icon"><i class="fas fa-solar-panel"></i></div>
-						<h4>Renewable Energy</h4>
-						<div class="tags">
-							<span class="tag">C&I Solar</span>
-							<span class="tag">Project Finance</span>
-							<span class="tag">IRR / DSCR</span>
-							<span class="tag">Feasibility</span>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</section>
+        <div class="case-study reveal">
+          <div class="cs-num">03</div>
+          <div class="cs-body">
+            <div class="cs-category">Digital Presence · SME</div>
+            <h3 class="cs-title">MPS Tissues: Premium Brand Website</h3>
+            <p class="cs-desc">MPS Tissues needed a digital presence that reflected the quality of their product and
+              positioned them credibly in the B2B market. Designed and built a full brand website with clean aesthetic,
+              clear positioning, and conversion-focused structure.</p>
+            <div class="cs-impact">
+              <div class="cs-stat">
+                <div class="cs-stat-value">↑</div>
+                <div class="cs-stat-label">Brand Credibility</div>
+              </div>
+              <div class="cs-stat">
+                <div class="cs-stat-value">B2B</div>
+                <div class="cs-stat-label">Market Positioning</div>
+              </div>
+            </div>
+            <div class="cs-tags">
+              <span class="tag">Web Design</span><span class="tag">HTML/CSS</span><span class="tag">Brand
+                Strategy</span>
+            </div>
+          </div>
+          <div class="cs-arrow">↗</div>
+        </div>
 
-	<!-- ── EXPERIENCE ── -->
-	<section id="experience">
-		<div class="container">
-			<div class="section-header fade-in">
-				<div class="section-label">Career path</div>
-				<h2 class="section-title">Experience & education</h2>
-				<p class="section-sub">
-					Experience across finance, data analytics, and industrial operations, with growing focus on systems
-					and renewable energy finance.
-				</p>
-			</div>
+        <!-- <div class="case-study reveal">
+          <div class="cs-num">04</div>
+          <div class="cs-body">
+            <div class="cs-category">Digital Presence · Service Business</div>
+            <h3 class="cs-title">Zano Cleaning Solutions: Operational Website</h3>
+            <p class="cs-desc">A growing cleaning company needed a professional digital footprint to support sales
+              conversations and build trust with commercial clients. Built a clean, professional website with service
+              pages, contact system, and brand identity guidance.</p>
+            <div class="cs-impact">
+              <div class="cs-stat">
+                <div class="cs-stat-value">✓</div>
+                <div class="cs-stat-label">Client Trust Established</div>
+              </div>
+            </div>
+            <div class="cs-tags">
+              <span class="tag">Web Design</span><span class="tag">SME</span><span class="tag">Brand</span>
+            </div>
+          </div>
+          <div class="cs-arrow">↗</div>
+        </div> -->
 
-			<div class="timeline">
-				<div class="tl-item fade-in">
-					<div class="tl-date">2025 – present</div>
-					<div class="tl-dot"></div>
-					<div class="tl-body">
-						<h3>Data Analytics & Data Science</h3>
-						<div class="tl-org">ALX Africa · Professional courses</div>
-						<ul class="tl-list">
-							<li>Completed Data Analytics certification with practical experience in data modelling, ETL
-								processes, and dashboard development</li>
-							<li>Currently expanding into data science and back-end data systems to strengthen analytical
-								and technical capabilities</li>
-							<li>Building advanced skills in SQL, Python, machine learning, and end-to-end data solutions
-							</li>
-						</ul>
-					</div>
-				</div>
-				<div class="tl-item fade-in">
-					<div class="tl-date">2022 – 2024</div>
-					<div class="tl-dot"></div>
-					<div class="tl-body">
-						<h3>Finance Graduate & Acting Finance Supervisor</h3>
-						<div class="tl-org">Sibanye Stillwater · Rustenburg, South Africa</div>
-						<ul class="tl-list">
-							<li><strong>Recovered R11 million</strong> in incorrectly parked and aged SAP commitments,
-								improving budget accuracy and cost centre management</li>
-							<li>Performed detailed cost and variance analysis against approved business plans to support
-								operational decision-making</li>
-							<li>Monitored CAPEX, inventory, and materials costs through reconciliations, cycle counts,
-								and financial reviews</li>
-							<li>Strengthened financial compliance by validating invoices for VAT accuracy, contractual
-								alignment, and labour costing</li>
-							<li>Supported month-end close through accruals, provisions, cost transfers, and trial
-								balance clean-up</li>
-							<li>Coordinated finance operations as Acting Finance Supervisor, liaising between finance,
-								procurement, payroll, and operations teams</li>
-						</ul>
-					</div>
-				</div>
-				<div class="tl-item fade-in">
-					<div class="tl-date">2019 – 2021</div>
-					<div class="tl-dot"></div>
-					<div class="tl-body">
-						<h3>BCom (Accounting)</h3>
-						<div class="tl-org">University of Johannesburg</div>
-						<p>Completed degree with focus on financial accounting, management accounting, and taxation.
-							Foundation for analytical and quantitative roles in finance and data analytics.</p>
-					</div>
-				</div>
-			</div>
-		</div>
-	</section>
+      </div>
+    </div>
+  </section>
 
-	<!-- ══════════════════════════════════════════
-       FLAGSHIP PROJECT — FULL STRUCTURED OUTLINE
-  ═══════════════════════════════════════════════ -->
-	<section id="projects">
-		<div class="container">
-			<div class="section-header fade-in">
-				<div class="section-label">Flagship project</div>
-				<p class="section-sub">An end-to-end data solution for actionable spend and cost insights.</p>
-			</div>
+  <!-- ===== NIMBUSX ===== -->
+  <section id="nimbusx">
+    <div class="nx-bg-mark">NimbusX</div>
+    <div class="container">
+      <div class="nx-grid">
+        <div>
+          <div class="section-label reveal">The Venture</div>
+          <div class="nx-brand-mark reveal reveal-delay-1">
+            <div class="nx-wordmark">Nimbus<span>X</span></div>
+            <div class="nx-descriptor">Digital · Analytics · Systems</div>
+          </div>
+          <p class="nx-statement reveal reveal-delay-2">
+            <strong>A consulting and digital solutions firm</strong> built to help South African SMEs modernize the way
+            they operate, report, and present themselves.
+          </p>
+          <p class="section-body reveal reveal-delay-3" style="font-size: 0.9rem;">
+            NimbusX is the vehicle through which I take everything I've learned across finance, ERP systems, analytics,
+            and digital design — and apply it to growing businesses that deserve infrastructure, systems, and digital
+            presence that actually matches their ambitions.
+          </p>
+          <div class="nx-cta-row reveal reveal-delay-4" style="margin-top: 2.5rem;">
+            <a href="https://nimbusx.co.za" target="_blank" class="btn-primary" style="font-size: 0.78rem;">
+              Visit NimbusX →
+            </a>
+            <a href="#contact" class="btn-ghost" style="font-size: 0.78rem;">Work Together</a>
+          </div>
+        </div>
+        <div class="nx-right">
+          <div class="nx-focus-areas reveal">
+            <div class="nx-focus">
+              <div class="nx-focus-icon">📊</div>
+              <h4>Analytics & Dashboards</h4>
+              <p>Power BI, SQL, and custom data infrastructure for operational clarity.</p>
+            </div>
+            <div class="nx-focus">
+              <div class="nx-focus-icon">🔧</div>
+              <h4>ERP & Systems</h4>
+              <p>SAP, Dynamics 365, and business systems advisory for growing organisations.</p>
+            </div>
+            <div class="nx-focus">
+              <div class="nx-focus-icon">🌐</div>
+              <h4>Digital Presence</h4>
+              <p>Premium website design and digital brand infrastructure for SMEs.</p>
+            </div>
+            <div class="nx-focus">
+              <div class="nx-focus-icon">💡</div>
+              <h4>Financial Intelligence</h4>
+              <p>Reporting structures, financial models, and visibility frameworks.</p>
+            </div>
+          </div>
+          <div class="glass reveal reveal-delay-1" style="padding: 1.75rem;">
+            <div class="section-label" style="margin-bottom: 1rem;">Industries</div>
+            <div style="display: flex; flex-wrap: wrap; gap: 0.5rem;">
+              <span class="tag">Manufacturing</span>
+              <span class="tag">Retail & FMCG</span>
+              <span class="tag">Professional Services</span>
+              <span class="tag">Hospitality</span>
+              <span class="tag">Renewable Energy</span>
+              <span class="tag">Healthcare</span>
+              <span class="tag">Construction</span>
+              <span class="tag">Logistics</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-			<div class="project-wrapper fade-in">
+  <!-- ===== STACK ===== -->
+  <section id="stack" style="padding-top: 6rem; padding-bottom: 6rem;">
+    <div class="container">
+      <div class="section-label reveal">Capabilities</div>
+      <h2 class="section-title reveal reveal-delay-1">Skills & <em>Stack</em></h2>
+      <div class="stack-groups">
+        <div class="stack-group reveal">
+          <h4>Finance & ERP</h4>
+          <div class="stack-items">
+            <span class="stack-item">SAP ERP (MM/FI)</span>
+            <span class="stack-item">Microsoft Dynamics 365</span>
+            <span class="stack-item">Financial Accounting</span>
+            <span class="stack-item">Procurement Management</span>
+            <span class="stack-item">Budget & Variance Analysis</span>
+            <span class="stack-item">Commitment Accounting</span>
+          </div>
+        </div>
+        <div class="stack-group reveal reveal-delay-1">
+          <h4>Data & Analytics</h4>
+          <div class="stack-items">
+            <span class="stack-item">Power BI</span>
+            <span class="stack-item">SQL (PostgreSQL)</span>
+            <span class="stack-item">Python (Pandas)</span>
+            <span class="stack-item">Excel (Advanced)</span>
+            <span class="stack-item">Data Modelling</span>
+            <span class="stack-item">KPI Frameworks</span>
+          </div>
+        </div>
+        <div class="stack-group reveal reveal-delay-2">
+          <h4>Digital & Dev</h4>
+          <div class="stack-items">
+            <span class="stack-item">HTML / CSS</span>
+            <span class="stack-item">JavaScript</span>
+            <span class="stack-item">Responsive Design</span>
+            <span class="stack-item">Web Performance</span>
+            <span class="stack-item">SEO Fundamentals</span>
+            <span class="stack-item">Git / GitHub</span>
+          </div>
+        </div>
+        <div class="stack-group reveal reveal-delay-3">
+          <h4>Business Systems</h4>
+          <div class="stack-items">
+            <span class="stack-item">Process Mapping</span>
+            <span class="stack-item">Systems Analysis</span>
+            <span class="stack-item">Workflow Design</span>
+            <span class="stack-item">ERP Implementation</span>
+            <span class="stack-item">Change Management</span>
+            <span class="stack-item">Operational Auditing</span>
+          </div>
+        </div>
+        <div class="stack-group reveal reveal-delay-4">
+          <h4>Professional</h4>
+          <div class="stack-items">
+            <span class="stack-item">ALX Data Analytics</span>
+            <span class="stack-item">Financial Reporting</span>
+            <span class="stack-item">Stakeholder Management</span>
+            <span class="stack-item">Executive Reporting</span>
+            <span class="stack-item">Strategic Advisory</span>
+            <span class="stack-item">Client Presentations</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-				<!-- ① TITLE + SUBTITLE -->
-				<div class="proj-hero">
-					<h2>Procurement & Financial Analytics Dashboard</h2>
-					<p>Designed an end-to-end procurement and financial dashboard using SQL and Power BI to deliver
-						actionable spend and cost insights. Built a relational database structure to analyze spend
-						patterns, supplier performance, and cost drivers.</p>
-					<div class="tech-badges">
-						<span class="tech-badge"><i class="fas fa-database" style="margin-right:5px"></i>SQL</span>
-						<span class="tech-badge"><i class="fas fa-chart-pie" style="margin-right:5px"></i>Power
-							BI</span>
-						<span class="tech-badge">Data Modelling</span>
-						<span class="tech-badge">ETL</span>
-						<span class="tech-badge">Financial Analytics</span>
-					</div>
-					<div class="project-links">
-						<a href="#" class="project-link"><i class="fab fa-github"></i> View Repository</a>
-						<a href="#" class="project-link"><i class="fas fa-chart-line"></i> View Dashboard (Demo)</a>
-						<a href="#" class="project-link"><i class="fas fa-database"></i> SQL Schema</a>
-					</div>
-				</div>
+  <!-- ===== EXPERIENCE ===== -->
+  <section id="experience">
+    <div class="container">
+      <div class="section-label reveal">Experience</div>
+      <h2 class="section-title reveal reveal-delay-1">Built from<br><em>real operations.</em></h2>
+      <div class="exp-layout">
+        <div class="exp-sidebar reveal">
+          <p>My career sits at an unusual intersection, operational finance in large organisations and digital
+            solutions for growing ones. Both have made me a better analyst, advisor, and builder.</p>
+          <a href="#contact" class="btn-ghost" style="font-size: 0.75rem; padding: 0.75rem 1.5rem;">Download CV</a>
+        </div>
+        <div class="exp-timeline">
+          <div class="exp-item reveal">
+            <div class="exp-meta">
+              <div class="exp-period">2025 — Present</div>
+              <div class="exp-company">NimbusX Digital</div>
+            </div>
+            <div class="exp-details">
+              <h3 class="exp-role">Founder & Digital Consultant</h3>
+              <p class="exp-desc">Founded NimbusX Digital to bring finance-informed digital consulting to South African
+                SMEs. Leading client engagements across website development, analytics, and operational systems
+                advisory.</p>
+              <div class="exp-highlights">
+                <div class="exp-highlight">Built and launched the NimbusX brand, service offering, and client delivery
+                  framework from the ground up</div>
+                <div class="exp-highlight">Delivered digital presence, analytics, and financial modelling projects for
+                  SME clients across multiple industries</div>
+                <div class="exp-highlight">Developed consulting methodology combining ERP systems thinking with
+                  practical business modernization</div>
+              </div>
+            </div>
+          </div>
+          <div class="exp-item reveal">
+            <div class="exp-meta">
+              <div class="exp-period">2022 — 2024</div>
+              <div class="exp-company">Manufacturing Organisation, South Africa</div>
+            </div>
+            <div class="exp-details">
+              <h3 class="exp-role">Finance & SAP ERP Operations</h3>
+              <p class="exp-desc">Financial operations role with direct involvement in SAP ERP processes across
+                procurement, accounts payable, commitment accounting, and financial reporting. Instrumental in
+                identifying and resolving systemic issues in purchase order management.</p>
+              <div class="exp-highlights">
+                <div class="exp-highlight">Recovered R11 million in SAP purchase commitments through systematic process
+                  review and structured follow-up</div>
+                <div class="exp-highlight">Built procurement analytics framework providing real-time visibility into
+                  purchase order lifecycle and supplier performance</div>
+                <div class="exp-highlight">Identified and documented process gaps that were causing commitment
+                  overstatement in financial reporting</div>
+                <div class="exp-highlight">Collaborated with SAP consultants and supply chain teams to implement
+                  improved controls</div>
+              </div>
+            </div>
+          </div>
+          <div class="exp-item reveal">
+            <div class="exp-meta">
+              <div class="exp-period">2023</div>
+              <div class="exp-company">ALX Africa</div>
+            </div>
+            <div class="exp-details">
+              <h3 class="exp-role">Data Analytics Programme — ALX Africa</h3>
+              <p class="exp-desc">Intensive data analytics programme with focus on SQL, Python, Power BI, and real-world
+                business analytics applications. Completed alongside active work in financial operations.</p>
+              <div class="exp-highlights">
+                <div class="exp-highlight">Completed ALX Data Analytics certification with hands-on project work in SQL
+                  and Python</div>
+                <div class="exp-highlight">ALX Professional Foundations — leadership, communication, and business
+                  strategy frameworks</div>
+                <div class="exp-highlight">Applied learnings directly to live procurement analytics work in parallel
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-				<!-- ② THE PROBLEM -->
-				<div class="proj-block">
-					<div class="proj-block-label">01 — The Problem</div>
-					<h3>Fragmented spend data, limited visibility</h3>
-					<div class="proj-2col">
-						<div>
-							<p>Organizations often struggle with fragmented procurement and financial data scattered
-								across systems. Without integrated analytics, decision-makers lack visibility into spend
-								patterns, supplier performance, and cost drivers.</p>
-						</div>
-						<ul>
-							<li>Limited visibility into spend patterns across categories</li>
-							<li>Difficulty tracking supplier performance and compliance</li>
-							<li>Manual reconciliation processes prone to errors</li>
-							<li>Slow, reactive decision-making based on outdated information</li>
-							<li>No single source of truth for procurement data</li>
-						</ul>
-					</div>
-				</div>
+  <!-- ===== INSIGHTS ===== -->
+  <section id="insights">
+    <div class="container">
+      <div class="section-label reveal">Thinking</div>
+      <h2 class="section-title reveal reveal-delay-1">Perspectives on finance,<br><em>systems & modernization.</em></h2>
+      <div class="insights-grid">
+        <div class="insight-card reveal">
+          <div class="insight-cat">ERP Systems</div>
+          <h3>Why Most SAP Implementations Fail Finance Teams</h3>
+          <p>The system works. The configuration works. But finance teams still run shadow spreadsheets. The problem
+            isn't technical — it's that no one translated the business process before they built the system.</p>
+          <div class="insight-footer">
+            <span class="insight-date">Coming Soon</span>
+            <span class="insight-read">Read →</span>
+          </div>
+        </div>
+        <div class="insight-card reveal reveal-delay-1">
+          <div class="insight-cat">SME Modernization</div>
+          <h3>The Digital Gap in South African SMEs</h3>
+          <p>Most growing businesses in SA are running on WhatsApp, Excel, and email chains. Not because they can't
+            modernize — because no one has shown them what a pragmatic, affordable path looks like.</p>
+          <div class="insight-footer">
+            <span class="insight-date">Coming Soon</span>
+            <span class="insight-read">Read →</span>
+          </div>
+        </div>
+        <div class="insight-card reveal reveal-delay-2">
+          <div class="insight-cat">Data Analytics</div>
+          <h3>Building Dashboards That Actually Get Used</h3>
+          <p>Most Power BI dashboards are built for the analyst who made them. Dashboards that drive decisions are built
+            for the person who needs to make a call in 30 seconds with incomplete information.</p>
+          <div class="insight-footer">
+            <span class="insight-date">Coming Soon</span>
+            <span class="insight-read">Read →</span>
+          </div>
+        </div>
+        <div class="insight-card reveal reveal-delay-3">
+          <div class="insight-cat">Finance Technology</div>
+          <h3>Dynamics 365 vs SAP: Choosing for the Right Stage</h3>
+          <p>The question isn't which system is better. It's which system is right for where your business is now — and
+            which one won't crush your team trying to run it with 15 people.</p>
+          <div class="insight-footer">
+            <span class="insight-date">Coming Soon</span>
+            <span class="insight-read">Read →</span>
+          </div>
+        </div>
+        <div class="insight-card reveal reveal-delay-4">
+          <div class="insight-cat">Renewable Energy Finance</div>
+          <h3>Financial Modelling for South African Solar Projects</h3>
+          <p>Renewable energy projects in SA live and die on their financial models. IRR, LCOE, and DSCR — and why most
+            project models underestimate the operational cost complexity.</p>
+          <div class="insight-footer">
+            <span class="insight-date">Coming Soon</span>
+            <span class="insight-read">Read →</span>
+          </div>
+        </div>
+        <div class="insight-card reveal reveal-delay-5">
+          <div class="insight-cat">Digital Transformation</div>
+          <h3>Why "Going Digital" Fails Without an Operational Foundation</h3>
+          <p>Digital transformation isn't a tech upgrade — it's a business redesign. The companies that fail at it start
+            with the software. The ones that succeed start with the process.</p>
+          <div class="insight-footer">
+            <span class="insight-date">Coming Soon</span>
+            <span class="insight-read">Read →</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-				<!-- ③ THE SOLUTION -->
-				<div class="proj-block">
-					<div class="proj-block-label">02 — The Solution</div>
-					<h3>Integrated analytics dashboard for procurement insights</h3>
-					<div class="proj-2col">
-						<div>
-							<p>The result is a centralized analytics platform that empowers procurement and finance
-								teams with data-driven insights, enabling better supplier management, cost optimization,
-								and strategic decision-making.</p>
-						</div>
-						<ul>
-							<li>End-to-end data pipeline from raw data to interactive dashboards</li>
-							<li>Relational database design for analyzing spend patterns and cost drivers</li>
-							<li>Supplier performance tracking and compliance monitoring</li>
-							<li>Real-time visibility into procurement KPIs and trends</li>
-							<li>Actionable insights to support management decision-making</li>
-						</ul>
+  <!-- ===== CONTACT ===== -->
+  <section id="contact">
+    <div class="container">
+      <div class="contact-grid">
+        <div class="contact-left">
+          <div class="section-label reveal">Contact</div>
+          <h2 class="section-title reveal reveal-delay-1">Let's build<br><em>something useful.</em></h2>
+          <p class="section-body reveal reveal-delay-2">Whether you have a specific project in mind or you're trying to
+            figure out what your business actually needs — I'm open to a conversation.</p>
+          <div class="contact-channels reveal reveal-delay-3">
+            <a href="mailto:info@nimbusx.co.za" class="channel">
+              <div class="channel-icon">✉</div>
+              <div>
+                <span class="channel-label">Email</span>
+                <span class="channel-value">info@nimbusx.co.za</span>
+              </div>
+            </a>
+            <a href="https://www.linkedin.com/in/thatomapheto" target="_blank" class="channel">
+              <div class="channel-icon">in</div>
+              <div>
+                <span class="channel-label">LinkedIn</span>
+                <span class="channel-value">Connect on LinkedIn</span>
+              </div>
+            </a>
+            <a href="https://github.com/ThatoMapheto" target="_blank" class="channel">
+              <div class="channel-icon">gh</div>
+              <div>
+                <span class="channel-label">GitHub</span>
+                <span class="channel-value">View my repositories</span>
+              </div>
+            </a>
+            <a href="./ThatoMaphetoCV.pdf" class="channel">
+              <div class="channel-icon">↓</div>
+              <div>
+                <span class="channel-label">CV / Résumé</span>
+                <span class="channel-value">Download latest CV</span>
+              </div>
+            </a>
+          </div>
+        </div>
+        <div class="contact-right reveal reveal-delay-2">
+          <form class="contact-form" id="contact-form">
+            <div class="form-row">
+              <div class="form-group">
+                <label for="c-name">Your Name</label>
+                <input type="text" id="c-name" placeholder="Full name" required>
+              </div>
+              <div class="form-group">
+                <label for="c-email">Email</label>
+                <input type="email" id="c-email" placeholder="you@company.com" required>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="c-company">Company / Organisation</label>
+              <input type="text" id="c-company" placeholder="Optional">
+            </div>
+            <div class="form-group">
+              <label for="c-interest">Area of Interest</label>
+              <select id="c-interest" required>
+                <option value="">Select a service area</option>
+                <option>Business Analytics & Dashboards</option>
+                <option>Financial Visibility & Reporting</option>
+                <option>SME Digital Modernization</option>
+                <option>Website & Digital Presence</option>
+                <option>Business Systems & Operations</option>
+                <option>ERP Advisory (SAP / Dynamics)</option>
+                <option>General Enquiry</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="c-message">Tell me about what you're trying to solve</label>
+              <textarea id="c-message"
+                placeholder="The more context the better — business size, current tools, specific challenges..."
+                required></textarea>
+            </div>
+            <button type="submit" class="btn-primary" style="width: 100%; justify-content: center; font-size: 0.82rem;">
+              Send Message
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                <path d="M5 12h14M12 5l7 7-7 7" />
+              </svg>
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
 
-					</div>
-				</div>
+  <!-- ===== FOOTER ===== -->
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-logo-text">Portfolio <span style="color: var(--gold);">×</span> NimbusX</div>
+      <div class="footer-links">
+        <a href="#about">About</a>
+        <a href="#services">Services</a>
+        <a href="#work">Work</a>
+        <a href="#nimbusx">NimbusX</a>
+        <a href="#contact">Contact</a>
+      </div>
+      <div class="footer-copy">© 2025 · Built with intention.</div>
+    </div>
+  </footer>
 
-				<!-- ④ ARCHITECTURE -->
-				<div class="proj-block">
-					<div class="proj-block-label">03 — Architecture</div>
-					<h3>Layered data pipeline</h3>
-					<p style="margin-bottom: 2rem;">Built using a four-layer architecture to ensure scalability,
-						traceability, and data integrity from raw input to executive dashboard.</p>
-					<div class="arch-steps">
-						<div class="arch-step">
-							<div class="arch-step-box">
-								<div class="arch-step-num">①</div>
-								<div class="arch-step-name">Source Layer</div>
-								<div class="arch-step-tech">Excel / CSV</div>
-							</div>
-							<div class="arch-step-desc">Raw procurement data: invoices, purchase orders, supplier
-								records, payment transactions</div>
-						</div>
-						<div class="arch-step">
-							<div class="arch-step-box">
-								<div class="arch-step-num">②</div>
-								<div class="arch-step-name">Staging Layer</div>
-								<div class="arch-step-tech">SQL</div>
-							</div>
-							<div class="arch-step-desc">Data extraction, cleaning, and transformation with quality
-								checks</div>
-						</div>
-						<div class="arch-step">
-							<div class="arch-step-box">
-								<div class="arch-step-num">③</div>
-								<div class="arch-step-name">Warehouse Layer</div>
-								<div class="arch-step-tech">SQL</div>
-							</div>
-							<div class="arch-step-desc">Normalized fact & dimension tables with defined relationships
-								(star schema)</div>
-						</div>
-						<div class="arch-step">
-							<div class="arch-step-box">
-								<div class="arch-step-num">④</div>
-								<div class="arch-step-name">Analytics Layer</div>
-								<div class="arch-step-tech">Power BI</div>
-							</div>
-							<div class="arch-step-desc">Interactive dashboards with DAX measures, KPIs, and
-								drill-through capabilities</div>
-						</div>
-					</div>
-				</div>
+  <script>
+    // ===== NAV SCROLL =====
+    const nav = document.getElementById('main-nav');
+    window.addEventListener('scroll', () => {
+      nav.classList.toggle('scrolled', window.scrollY > 30);
+    });
 
-				<!-- ⑤ DASHBOARD IMAGES -->
-				<div class="proj-block">
-					<div class="proj-block-label">04 — Dashboard Views</div>
-					<h3>Interactive analytics for spend visibility</h3>
-					<p style="margin-bottom: 1.8rem;">Multiple dashboard pages designed for different stakeholder needs
-						— from executive overview to detailed spend analysis.</p>
-					<div class="dash-grid">
-						<div class="dash-card">
-							<div class="dash-card-icon"><i class="fas fa-tachometer-alt"></i></div>
-							<h4>Executive Overview</h4>
-							<p>High-level KPIs: total spend, supplier count, payment metrics, and spend by category.
-								Quick pulse-check for leadership.</p>
-						</div>
-						<div class="dash-card">
-							<div class="dash-card-icon"><i class="fas fa-chart-line"></i></div>
-							<h4>Spend Analysis</h4>
-							<p>Spend trends over time, category breakdown, and supplier spend concentration. Identify
-								top spend categories and suppliers.</p>
-						</div>
-						<div class="dash-card">
-							<div class="dash-card-icon"><i class="fas fa-truck"></i></div>
-							<h4>Supplier Performance</h4>
-							<p>Supplier scorecards, compliance tracking, and performance metrics. Evaluate supplier
-								reliability and risk.</p>
-						</div>
-						<div class="dash-card">
-							<div class="dash-card-icon"><i class="fas fa-water"></i></div>
-							<h4>Payment & Cash Flow</h4>
-							<p>Payment trends, aging analysis, and outstanding balances. Identify bottlenecks in payment
-								cycles.</p>
-						</div>
-					</div>
-					<!-- Dashboard image placeholder -->
-					<div style="margin-top: 1.5rem; display: grid; grid-template-columns: repeat(2, 1fr); gap: 1rem;"
-						class="dashboard-images">
-						<img src="./images/dashboard_images/1_excecutive_overview.png" alt="Executive Overview"
-							style="width:100%; border-radius:16px; display:block;">
-						<img src="./images/dashboard_images/2_cashflow_analysis.png" alt="Cash Flow Analysis"
-							style="width:100%; border-radius:16px; display:block;">
-						<img src="./images/dashboard_images/3_reconciliation_analysis.png" alt="Reconciliation Analysis"
-							style="width:100%; border-radius:16px; display:block;">
-						<img src="./images/dashboard_images/5_supplier_compliance.png" alt="Supplier Compliance"
-							style="width:100%; border-radius:16px; display:block;">
-						<img src="./images/dashboard_images/4_audit_investigation.png" alt="Audit Investigation"
-							style="width:100%; border-radius:16px; display:block;">
+    // ===== MOBILE MENU =====
+    const hamburger = document.getElementById('hamburger');
+    const mobileNav = document.getElementById('mobile-nav');
+    const mobileClose = document.getElementById('mobile-close');
+    const mobileLinks = document.querySelectorAll('.mobile-link');
 
-					</div>
-				</div>
+    hamburger.addEventListener('click', () => {
+      mobileNav.classList.add('open');
+      document.body.style.overflow = 'hidden';
+    });
+    function closeMob() {
+      mobileNav.classList.remove('open');
+      document.body.style.overflow = '';
+    }
+    mobileClose.addEventListener('click', closeMob);
+    mobileLinks.forEach(l => l.addEventListener('click', closeMob));
 
-				<!-- ⑥ INSIGHTS -->
-				<div class="proj-block">
-					<div class="proj-block-label">05 — Key Insights</div>
-					<h3>What the dashboard reveals</h3>
-					<div class="insights-grid" style="margin-top: 1rem;">
-						<div class="insight-card">
-							<div class="insight-icon"><i class="fas fa-chart-line"></i></div>
-							<p><strong style="color:#c0dcea">Spend patterns</strong> — Category-level spend analysis
-								reveals cost drivers and optimization opportunities.</p>
-						</div>
-						<div class="insight-card">
-							<div class="insight-icon"><i class="fas fa-user-tie"></i></div>
-							<p><strong style="color:#c0dcea">Supplier concentration</strong> — Identify over-reliance on
-								key suppliers and diversify risk.</p>
-						</div>
-						<div class="insight-card">
-							<div class="insight-icon"><i class="fas fa-clock"></i></div>
-							<p><strong style="color:#c0dcea">Payment efficiency</strong> — Payment cycle analysis
-								reveals cash flow bottlenecks and opportunities for working capital improvement.</p>
-						</div>
-						<div class="insight-card">
-							<div class="insight-icon"><i class="fas fa-chart-bar"></i></div>
-							<p><strong style="color:#c0dcea">Cost drivers</strong> — Identify the factors driving cost
-								increases across categories and time periods.</p>
-						</div>
-						<div class="insight-card">
-							<div class="insight-icon"><i class="fas fa-flag-checkered"></i></div>
-							<p><strong style="color:#c0dcea">Performance outliers</strong> — Flag suppliers with unusual
-								spend patterns or performance issues.</p>
-						</div>
-						<div class="insight-card">
-							<div class="insight-icon"><i class="fas fa-chart-line"></i></div>
-							<p><strong style="color:#c0dcea">Trend forecasting</strong> — Historical spend trends inform
-								budget planning and cost forecasting.</p>
-						</div>
-					</div>
-				</div>
+    // ===== SCROLL REVEAL =====
+    const revealObs = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          e.target.classList.add('in');
+          revealObs.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.08, rootMargin: '0px 0px -60px 0px' });
 
-				<!-- ⑦ TOOLS & SKILLS -->
-				<div class="proj-block">
-					<div class="proj-block-label">06 — Tools & Skills Demonstrated</div>
-					<h3>Built with modern data stack</h3>
-					<div class="tools-list" style="margin-top: 1rem;">
-						<div class="tool-pill"><i class="fas fa-database"></i> SQL — ETL, data warehousing, relational
-							design</div>
-						<div class="tool-pill"><i class="fas fa-chart-pie"></i> Power BI — DAX, interactive dashboards,
-							drill-through</div>
-						<div class="tool-pill"><i class="fas fa-file-excel"></i> Excel — data preparation, source
-							management</div>
-						<div class="tool-pill"><i class="fas fa-project-diagram"></i> Relational data modelling (star
-							schema)</div>
-						<div class="tool-pill"><i class="fas fa-chart-line"></i> Financial analytics & KPI development
-						</div>
-						<div class="tool-pill"><i class="fas fa-chart-bar"></i> Data storytelling & visualization best
-							practices</div>
-						<div class="tool-pill"><i class="fas fa-chart-simple"></i> Spend analysis & cost optimization
-						</div>
-					</div>
-				</div>
+    document.querySelectorAll('.reveal').forEach(el => revealObs.observe(el));
 
-				<!-- ⑧ REUSABILITY -->
-				<div class="proj-block">
-					<div class="proj-block-label">07 — Reusability</div>
-					<h3>A scalable framework for any organization</h3>
-					<p style="margin-bottom: 1.8rem;">With a new dataset, this system can be fully adapted by replacing
-						source data in the staging layer, re-running transformation logic, and refreshing the Power BI
-						model. Applicable across:</p>
-					<div class="reuse-grid">
-						<div class="reuse-card">
-							<i class="fas fa-industry"></i>
-							<p>Mining & heavy industry</p>
-						</div>
-						<div class="reuse-card">
-							<i class="fas fa-solar-panel"></i>
-							<p>Renewable energy projects</p>
-						</div>
-						<div class="reuse-card">
-							<i class="fas fa-hard-hat"></i>
-							<p>Construction & infrastructure</p>
-						</div>
-						<div class="reuse-card">
-							<i class="fas fa-store"></i>
-							<p>SMEs & growing businesses</p>
-						</div>
-					</div>
-				</div>
+    // ===== SMOOTH SCROLL =====
+    document.querySelectorAll('a[href^="#"]').forEach(a => {
+      a.addEventListener('click', e => {
+        const target = document.querySelector(a.getAttribute('href'));
+        if (target) {
+          e.preventDefault();
+          target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      });
+    });
 
-				<!-- CONFIDENTIALITY NOTE -->
-				<div class="proj-block" style="padding-top: 1rem; padding-bottom: 1rem;">
-					<div class="conf-note">
-						<i class="fas fa-lock"></i>
-						<span>This project demonstrates capability using structured data while maintaining
-							confidentiality of real business information.</span>
-					</div>
-				</div>
+    // ===== CONTACT FORM =====
+    document.getElementById('contact-form').addEventListener('submit', e => {
+      e.preventDefault();
+      const btn = e.target.querySelector('button[type="submit"]');
+      btn.textContent = '✓ Message Sent — I\'ll be in touch.';
+      btn.style.background = 'rgba(201,168,76,0.3)';
+      btn.style.color = 'var(--gold-light)';
+      btn.disabled = true;
+      setTimeout(() => {
+        btn.innerHTML = 'Send Message <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>';
+        btn.style.background = '';
+        btn.style.color = '';
+        btn.disabled = false;
+        e.target.reset();
+      }, 4000);
+    });
 
-				<!-- ⑨ CTA -->
-				<div class="proj-cta">
-					<h3>Ready to improve your financial visibility?</h3>
-					<p>Looking to strengthen internal controls, supplier management, or data infrastructure?<br>Let's
-						explore what's possible for your business or project.</p>
-					<a href="#contact" class="btn-pill btn-gold" style="font-size: 1rem; padding: .9rem 2.5rem;">
-						<i class="fas fa-paper-plane"></i> Let's connect
-					</a>
-				</div>
-
-			</div><!-- /project-wrapper -->
-		</div>
-	</section>
-
-	<!-- ── CERTIFICATIONS ── -->
-	<section id="certifications">
-		<div class="container">
-			<div class="section-header fade-in">
-				<div class="section-label">Credentials</div>
-				<h2 class="section-title">Certifications & accreditations</h2>
-			</div>
-			<div class="cert-grid">
-				<div class="cert-card fade-in">
-					<div class="cert-icon"><i class="fas fa-graduation-cap"></i></div>
-					<h4>BCom Accounting</h4>
-					<p>University of Johannesburg</p>
-					<span class="cert-status status-done">Graduated · April 2022</span>
-				</div>
-				<div class="cert-card fade-in">
-					<div class="cert-icon"><i class="fas fa-chart-bar"></i></div>
-					<h4>Data Analytics</h4>
-					<p>ALX Africa</p>
-					<span class="cert-status status-done">Completed · December 2025</span>
-				</div>
-				<div class="cert-card fade-in">
-					<div class="cert-icon"><i class="fas fa-sun"></i></div>
-					<h4>Project Financial Modelling</h4>
-					<p>DLO Energy & EWSETA</p>
-					<span class="cert-status status-done">Completed · January 2026</span>
-				</div>
-				<div class="cert-card fade-in">
-					<div class="cert-icon"><i class="fas fa-briefcase"></i></div>
-					<h4>Professional Foundations</h4>
-					<p>ALX Africa</p>
-					<span class="cert-status status-done">Completed · August 2025</span>
-				</div>
-				<div class="cert-card fade-in">
-					<div class="cert-icon"><i class="fas fa-brain"></i></div>
-					<h4>Data Science</h4>
-					<p>ALX Africa</p>
-					<span class="cert-status status-prog">In progress</span>
-				</div>
-			</div>
-			<div class="cert-note fade-in">
-				<p><i class="fas fa-chart-line"></i> Currently building: Power BI Professional Certification & Advanced
-					SQL</p>
-			</div>
-		</div>
-	</section>
-
-	<!-- ── CONTACT ── -->
-	<section id="contact">
-		<div class="container">
-			<div class="section-header fade-in">
-				<div class="section-label">Get in touch</div>
-				<h2 class="section-title">Let's connect</h2>
-				<p class="section-sub">Open to graduate, junior, and early-career roles in finance, data, and renewable
-					energy.</p>
-			</div>
-			<div class="contact-grid">
-				<div class="contact-form-card fade-in">
-					<h3>Send a message</h3>
-					<form id="simple-contact">
-						<div class="form-field">
-							<input type="text" placeholder="Your name" required>
-						</div>
-						<div class="form-field">
-							<input type="email" placeholder="Email address" required>
-						</div>
-						<div class="form-field">
-							<textarea rows="4" placeholder="Tell me about an opportunity or question..."></textarea>
-						</div>
-						<button type="submit" class="btn-pill btn-filled"
-							style="border: none; font-size: .95rem; padding: .75rem 2rem;">
-							<i class="fas fa-paper-plane"></i> Send message
-						</button>
-					</form>
-				</div>
-
-				<div class="contact-info-card fade-in">
-					<div class="avail-badge">
-						<div class="avail-dot"></div>
-						Available for new opportunities
-					</div>
-					<h3>Availability & info</h3>
-					<p>Based in Johannesburg — open to remote, hybrid, and on-site roles across South Africa and
-						internationally.</p>
-
-					<div class="info-row">
-						<div class="info-icon"><i class="fas fa-envelope"></i></div>
-						<div>
-							<h4>Email</h4>
-							<p>thatomapheto6@gmail.com</p>
-						</div>
-					</div>
-					<div class="info-row">
-						<div class="info-icon"><i class="fas fa-map-marker-alt"></i></div>
-						<div>
-							<h4>Location</h4>
-							<p>Johannesburg, South Africa</p>
-						</div>
-					</div>
-					<div class="info-row">
-						<div class="info-icon"><i class="fas fa-briefcase"></i></div>
-						<div>
-							<h4>Open to</h4>
-							<p>Financial Analyst · Data Analyst · ERP/Finance Systems Analyst · Renewable Energy Finance
-							</p>
-							<p style="font-size: 0.85rem; margin-top: 0.3rem;">Graduate · Junior · Early-career roles
-							</p>
-						</div>
-					</div>
-					<div class="info-row">
-						<div class="info-icon"><i class="fas fa-clock"></i></div>
-						<div>
-							<h4>Response time</h4>
-							<p>Within 24 hours</p>
-						</div>
-					</div>
-
-					<div class="social-row">
-						<a href="https://www.linkedin.com/in/thatomapheto/" target="_blank"
-							class="btn-pill btn-outline-pill"><i class="fab fa-linkedin-in"></i> LinkedIn</a>
-						<a href="https://github.com/thatomapheto" target="_blank" class="btn-pill btn-outline-pill"><i
-								class="fab fa-github"></i> GitHub</a>
-						<a href="./ThatoMaphetoCV.pdf" download class="btn-pill btn-filled"><i
-								class="fas fa-download"></i> Download CV</a>
-					</div>
-					<p style="margin-top: 1.5rem; font-size: .82rem; color: #8aa5b8;">Professional references available
-						upon request.</p>
-				</div>
-			</div>
-		</div>
-	</section>
-
-	<!-- ── FOOTER ── -->
-	<footer>
-		<p>© <strong>Thato Mapheto</strong> · 2025 · Finance, Data & Renewable Energy</p>
-		<p style="margin-top: .5rem; font-size: .8rem;">Designed for clarity, built for opportunity.</p>
-	</footer>
-
-	<script src="./assets/script/script.js"></script>
+    // ===== STRIP DUPLICATION (ensure seamless) =====
+    const strip = document.getElementById('strip');
+    // Already doubled in HTML for seamless loop
+  </script>
 </body>
 
 </html>
