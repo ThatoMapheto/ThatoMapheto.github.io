@@ -28,23 +28,33 @@
     }
 
     :root {
-      --ink: #0a0a0b;
-      --ink-2: #111114;
-      --ink-3: #181820;
-      --surface: #1a1a24;
-      --surface-2: #22222e;
-      --border: rgba(255, 255, 255, 0.06);
-      --border-2: rgba(255, 255, 255, 0.1);
-      --gold: #c9a84c;
-      --gold-light: #e8c97a;
-      --gold-dim: rgba(201, 168, 76, 0.15);
-      --slate: #8a8fa8;
-      --slate-light: #b0b5cc;
-      --white: #f0f0f4;
-      --white-dim: rgba(240, 240, 244, 0.7);
-      --accent: #4a7fd4;
-      --accent-dim: rgba(74, 127, 212, 0.12);
-      --glow: rgba(201, 168, 76, 0.08);
+      --ink: #1C2B40;
+      /* changed from #0a0a0b */
+      --ink-2: #1C2B40;
+      /* changed from #111114 */
+      --ink-3: #1C2B40;
+      /* changed from #181820 */
+      --surface: #23364F;
+      /* slightly lighter navy */
+      --surface-2: #2A3F5C;
+      /* slightly lighter navy */
+      --border: rgba(126, 200, 227, 0.15);
+      --border-2: rgba(126, 200, 227, 0.25);
+      --gold: #7EC8E3;
+      /* changed from #c9a84c to sky blue */
+      --gold-light: #A8D9EE;
+      /* lighter sky blue */
+      --gold-dim: rgba(126, 200, 227, 0.15);
+      --slate: #B0B8C8;
+      /* lighter gray */
+      --slate-light: #D0D8E8;
+      /* lighter gray */
+      --white: #F5F7FA;
+      --white-dim: rgba(245, 247, 250, 0.7);
+      --accent: #7EC8E3;
+      /* changed from #4a7fd4 */
+      --accent-dim: rgba(126, 200, 227, 0.12);
+      --glow: rgba(126, 200, 227, 0.08);
       --nav-h: 72px;
       --ff-display: 'Cormorant Garamond', Georgia, serif;
       --ff-sans: 'Syne', sans-serif;
@@ -157,18 +167,18 @@
       font-weight: 600;
       letter-spacing: 0.1em;
       text-transform: uppercase;
-      color: var(--gold);
+      color: #7EC8E3;
       text-decoration: none;
-      border: 1px solid rgba(201, 168, 76, 0.35);
+      border: 1px solid rgba(126, 200, 227, 0.35);
       padding: 0.55rem 1.3rem;
       border-radius: 2px;
       transition: all 0.25s;
     }
 
     .nav-cta:hover {
-      background: var(--gold-dim);
-      border-color: var(--gold);
-      color: var(--gold-light);
+      background: rgba(126, 200, 227, 0.12);
+      border-color: #7EC8E3;
+      color: #A8D9EE;
     }
 
     .hamburger {
@@ -339,9 +349,9 @@
       position: absolute;
       inset: 0;
       background:
-        radial-gradient(ellipse 80% 60% at 60% 40%, rgba(201, 168, 76, 0.04) 0%, transparent 70%),
-        radial-gradient(ellipse 50% 40% at 10% 80%, rgba(74, 127, 212, 0.05) 0%, transparent 60%),
-        linear-gradient(160deg, var(--ink) 0%, var(--ink-2) 50%, var(--ink-3) 100%);
+        radial-gradient(ellipse 80% 60% at 60% 40%, rgba(126, 200, 227, 0.06) 0%, transparent 70%),
+        radial-gradient(ellipse 50% 40% at 10% 80%, rgba(168, 156, 200, 0.08) 0%, transparent 60%),
+        linear-gradient(160deg, #1C2B40 0%, #1C2B40 50%, #23364F 100%);
     }
 
     .hero-grid-lines {
@@ -816,7 +826,7 @@
       left: 0;
       right: 0;
       height: 2px;
-      background: linear-gradient(90deg, var(--gold) 0%, transparent 100%);
+      background: linear-gradient(90deg, #7EC8E3 0%, transparent 100%);
       transform: scaleX(0);
       transform-origin: left;
       transition: transform 0.4s var(--ease-out);
@@ -1442,6 +1452,25 @@
       }
     }
 
+    .nav-logo {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      text-decoration: none;
+    }
+
+    .nav-logo-img {
+      height: 32px;
+      width: auto;
+      display: block;
+    }
+
+    @media (max-width: 700px) {
+      .nav-logo-img {
+        height: 26px;
+      }
+    }
+
     /* ===== CONTACT ===== */
     #contact {
       background: linear-gradient(160deg, var(--ink-3) 0%, var(--surface) 100%);
@@ -1563,7 +1592,7 @@
     .form-group input:focus,
     .form-group select:focus,
     .form-group textarea:focus {
-      border-color: rgba(201, 168, 76, 0.4);
+      border-color: rgba(126, 200, 227, 0.4);
     }
 
     .form-group textarea {
@@ -1636,7 +1665,7 @@
     }
 
     .footer-links a:hover {
-      color: var(--gold);
+      color: #7EC8E3;
     }
 
     /* ===== ANIMATIONS ===== */
@@ -1816,8 +1845,8 @@
   <nav id="main-nav">
     <div class="nav-inner">
       <a href="#hero" class="nav-logo">
-        <span class="logo-dot"></span>
-        Portfolio
+        <img src="./assets/images/logo2.jpeg" alt="NimbusX" class="nav-logo-img">
+        <span>Portfolio</span>
       </a>
       <ul class="nav-links">
         <li><a href="#about">About</a></li>
