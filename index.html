@@ -2704,16 +2704,17 @@
     // ===== CONTACT FORM (EmailJS) =====
     // 1. Sign up free at emailjs.com
     // 2. Create an Email Service (e.g. connect your Gmail) — gives you a SERVICE_ID
-    // 3. Create an Email Template with variables: {{from_name}} {{reply_to}} {{company}} {{interest}} {{message}}
-    //    — gives you a TEMPLATE_ID. Set the template's "To email" to your own address.
+    // 3. Notification template (to you): {{from_name}} {{reply_to}} {{company}} {{interest}} {{message}}
+    //    Auto-reply template (to them): "To email" set to {{reply_to}}
     // 4. Copy your Public Key from Account > General
-    // 5. Replace the three placeholders below.
+    // 5. Replace the placeholders below.
     (function () {
       emailjs.init({ publicKey: 'pUhgIs1xVI_LJCCaB' });
     })();
 
     const EMAILJS_SERVICE_ID = 'service_05b2f4p';
-    const EMAILJS_TEMPLATE_ID = 'template_xeyjocp';
+    const EMAILJS_NOTIFY_TEMPLATE_ID = 'template_xeyjocp';   // sends the enquiry to you
+    const EMAILJS_AUTOREPLY_TEMPLATE_ID = 'template_b417vu9'; // sends the confirmation to them
 
     const contactForm = document.getElementById('contact-form');
     const formStatus = document.getElementById('form-status');
@@ -2727,24 +2728,32 @@
       btn.textContent = 'Sending...';
       formStatus.style.display = 'none';
 
-      emailjs.sendForm(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, contactForm)
-        .then(() => {
+      // Send the notification (to you) and the auto-reply (to them) in parallel.
+      // Success is judged on the notification — that's the one that actually reaches you.
+      // If only the auto-reply fails, the enquiry still came through, so we don't scare the visitor.
+      Promise.allSettled([
+        emailjs.sendForm(EMAILJS_SERVICE_ID, EMAILJS_NOTIFY_TEMPLATE_ID, contactForm),
+        emailjs.sendForm(EMAILJS_SERVICE_ID, EMAILJS_AUTOREPLY_TEMPLATE_ID, contactForm)
+      ]).then(([notifyResult, autoReplyResult]) => {
+        if (notifyResult.status === 'fulfilled') {
           formStatus.style.display = 'block';
           formStatus.style.color = 'var(--gold-light)';
           formStatus.textContent = '✓ Message sent — I\'ll be in touch soon.';
           contactForm.reset();
-        })
-        .catch((err) => {
-          console.error('EmailJS error:', err);
+          if (autoReplyResult.status === 'rejected') {
+            console.warn('Auto-reply failed to send:', autoReplyResult.reason);
+          }
+        } else {
+          console.error('Notification email failed:', notifyResult.reason);
           formStatus.style.display = 'block';
           formStatus.style.color = '#E37E7E';
           formStatus.textContent = 'Something went wrong sending that — please email me directly at thatomapheto6@gmail.com instead.';
-        })
-        .finally(() => {
-          btn.disabled = false;
-          btn.innerHTML = originalHTML;
-          setTimeout(() => { formStatus.style.display = 'none'; }, 6000);
-        });
+        }
+      }).finally(() => {
+        btn.disabled = false;
+        btn.innerHTML = originalHTML;
+        setTimeout(() => { formStatus.style.display = 'none'; }, 6000);
+      });
     });
 
     // ===== STRIP DUPLICATION (ensure seamless) =====
