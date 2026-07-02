@@ -12,6 +12,7 @@
   <link
     href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Syne:wght@400;500;600;700;800&family=JetBrains+Mono:wght@300;400&display=swap"
     rel="stylesheet">
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
   <style>
     /* ===== RESET & BASE ===== */
     *,
@@ -2240,7 +2241,8 @@
           <div class="cs-arrow">↗</div>
         </div> -->
 
-        <a href="./solar-roi-calculator.html" class="case-study reveal" style="text-decoration: none; color: inherit; display: flex;">
+        <a href="./solar-roi-calculator.html" class="case-study reveal"
+          style="text-decoration: none; color: inherit; display: flex;">
           <div class="cs-num">04</div>
           <div class="cs-body">
             <div class="cs-category">Interactive Tool · Independent Project</div>
@@ -2259,8 +2261,8 @@
               </div>
             </div>
             <div class="cs-tags">
-              <span class="tag">JavaScript</span><span class="tag">Financial Modelling</span><span
-                class="tag">Renewable Energy</span>
+              <span class="tag">JavaScript</span><span class="tag">Financial Modelling</span><span class="tag">Renewable
+                Energy</span>
             </div>
           </div>
           <div class="cs-arrow">↗</div>
@@ -2594,20 +2596,20 @@
             <div class="form-row">
               <div class="form-group">
                 <label for="c-name">Your Name</label>
-                <input type="text" id="c-name" placeholder="Full name" required>
+                <input type="text" id="c-name" name="from_name" placeholder="Full name" required>
               </div>
               <div class="form-group">
                 <label for="c-email">Email</label>
-                <input type="email" id="c-email" placeholder="you@company.com" required>
+                <input type="email" id="c-email" name="reply_to" placeholder="you@company.com" required>
               </div>
             </div>
             <div class="form-group">
               <label for="c-company">Company / Organisation</label>
-              <input type="text" id="c-company" placeholder="Optional">
+              <input type="text" id="c-company" name="company" placeholder="Optional">
             </div>
             <div class="form-group">
               <label for="c-interest">Area of Interest</label>
-              <select id="c-interest" required>
+              <select id="c-interest" name="interest" required>
                 <option value="">Select a service area</option>
                 <option>Business Analytics & Dashboards</option>
                 <option>Financial Visibility & Reporting</option>
@@ -2620,10 +2622,11 @@
             </div>
             <div class="form-group">
               <label for="c-message">Tell me about what you're trying to solve</label>
-              <textarea id="c-message"
+              <textarea id="c-message" name="message"
                 placeholder="The more context the better — business size, current tools, specific challenges..."
                 required></textarea>
             </div>
+            <div id="form-status" style="font-size: 0.8rem; margin-bottom: 0.75rem; display: none;"></div>
             <button type="submit" class="btn-primary" style="width: 100%; justify-content: center; font-size: 0.82rem;">
               Send Message
               <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
@@ -2698,21 +2701,50 @@
       });
     });
 
-    // ===== CONTACT FORM =====
-    document.getElementById('contact-form').addEventListener('submit', e => {
+    // ===== CONTACT FORM (EmailJS) =====
+    // 1. Sign up free at emailjs.com
+    // 2. Create an Email Service (e.g. connect your Gmail) — gives you a SERVICE_ID
+    // 3. Create an Email Template with variables: {{from_name}} {{reply_to}} {{company}} {{interest}} {{message}}
+    //    — gives you a TEMPLATE_ID. Set the template's "To email" to your own address.
+    // 4. Copy your Public Key from Account > General
+    // 5. Replace the three placeholders below.
+    (function () {
+      emailjs.init({ publicKey: 'pUhgIs1xVI_LJCCaB' });
+    })();
+
+    const EMAILJS_SERVICE_ID = 'service_05b2f4p';
+    const EMAILJS_TEMPLATE_ID = 'template_xeyjocp';
+
+    const contactForm = document.getElementById('contact-form');
+    const formStatus = document.getElementById('form-status');
+
+    contactForm.addEventListener('submit', e => {
       e.preventDefault();
       const btn = e.target.querySelector('button[type="submit"]');
-      btn.textContent = '✓ Message Sent — I\'ll be in touch.';
-      btn.style.background = 'rgba(201,168,76,0.3)';
-      btn.style.color = 'var(--gold-light)';
+      const originalHTML = btn.innerHTML;
+
       btn.disabled = true;
-      setTimeout(() => {
-        btn.innerHTML = 'Send Message <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>';
-        btn.style.background = '';
-        btn.style.color = '';
-        btn.disabled = false;
-        e.target.reset();
-      }, 4000);
+      btn.textContent = 'Sending...';
+      formStatus.style.display = 'none';
+
+      emailjs.sendForm(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, contactForm)
+        .then(() => {
+          formStatus.style.display = 'block';
+          formStatus.style.color = 'var(--gold-light)';
+          formStatus.textContent = '✓ Message sent — I\'ll be in touch soon.';
+          contactForm.reset();
+        })
+        .catch((err) => {
+          console.error('EmailJS error:', err);
+          formStatus.style.display = 'block';
+          formStatus.style.color = '#E37E7E';
+          formStatus.textContent = 'Something went wrong sending that — please email me directly at thatomapheto6@gmail.com instead.';
+        })
+        .finally(() => {
+          btn.disabled = false;
+          btn.innerHTML = originalHTML;
+          setTimeout(() => { formStatus.style.display = 'none'; }, 6000);
+        });
     });
 
     // ===== STRIP DUPLICATION (ensure seamless) =====
