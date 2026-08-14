@@ -46,6 +46,7 @@
       --accent: #7C5CFF;
       --accent-dim: rgba(124, 92, 255, 0.14);
       --glow: rgba(45, 226, 230, 0.10);
+      --green: #4CE6A6;
       --nav-h: 72px;
       --ff-display: 'Cormorant Garamond', Georgia, serif;
       --ff-sans: 'Syne', sans-serif;
@@ -1078,6 +1079,356 @@
       }
     }
 
+    /* ===== CALCULATOR (embedded Solar ROI tool) ===== */
+    #calculator {
+      background: var(--ink-2);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .sc-live-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-family: var(--ff-mono);
+      font-size: 0.65rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--gold);
+      border: 1px solid var(--border-2);
+      padding: 0.4rem 0.8rem;
+      border-radius: 2px;
+      margin-top: 0.5rem;
+    }
+
+    .sc-live-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--green);
+      box-shadow: 0 0 8px var(--green);
+      animation: sc-pulse 1.8s ease-in-out infinite;
+    }
+
+    @keyframes sc-pulse {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.4; transform: scale(0.75); }
+    }
+
+    .sc-layout {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2.5rem;
+      margin-top: 3.5rem;
+      align-items: start;
+    }
+
+    @media (max-width: 900px) {
+      .sc-layout {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .sc-panel {
+      background: rgba(255, 255, 255, 0.025);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      padding: clamp(1.5rem, 3vw, 2.25rem);
+    }
+
+    .sc-panel + .sc-panel {
+      margin-top: 1.5rem;
+    }
+
+    .sc-panel-label {
+      font-family: var(--ff-mono);
+      font-size: 0.68rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 1.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .sc-field {
+      margin-bottom: 1.6rem;
+    }
+
+    .sc-field:last-child {
+      margin-bottom: 0;
+    }
+
+    .sc-field-head {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      margin-bottom: 0.6rem;
+      gap: 1rem;
+    }
+
+    .sc-field-label {
+      font-size: 0.85rem;
+      color: var(--slate-light);
+      font-weight: 600;
+    }
+
+    .sc-field-value {
+      font-family: var(--ff-mono);
+      font-size: 0.9rem;
+      color: var(--white);
+      white-space: nowrap;
+    }
+
+    .sc-field-hint {
+      font-size: 0.72rem;
+      color: var(--slate);
+      margin-top: 0.4rem;
+      line-height: 1.5;
+    }
+
+    #calculator input[type="range"] {
+      -webkit-appearance: none;
+      appearance: none;
+      width: 100%;
+      height: 3px;
+      border-radius: 2px;
+      background: var(--surface-2);
+      outline: none;
+      cursor: pointer;
+    }
+
+    #calculator input[type="range"]::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      appearance: none;
+      width: 16px;
+      height: 16px;
+      border-radius: 50%;
+      background: var(--gold);
+      border: 3px solid var(--ink);
+      box-shadow: 0 0 0 1px var(--gold), 0 0 12px rgba(45, 226, 230, 0.4);
+      cursor: pointer;
+      transition: transform 0.15s;
+    }
+
+    #calculator input[type="range"]::-webkit-slider-thumb:hover {
+      transform: scale(1.15);
+    }
+
+    #calculator input[type="range"]::-moz-range-thumb {
+      width: 16px;
+      height: 16px;
+      border-radius: 50%;
+      background: var(--gold);
+      border: 3px solid var(--ink);
+      box-shadow: 0 0 0 1px var(--gold);
+      cursor: pointer;
+    }
+
+    .sc-toggle-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      cursor: pointer;
+    }
+
+    .sc-toggle {
+      width: 42px;
+      height: 24px;
+      border-radius: 12px;
+      background: var(--surface-2);
+      border: 1px solid var(--border-2);
+      position: relative;
+      flex-shrink: 0;
+      transition: background 0.2s;
+    }
+
+    .sc-toggle::after {
+      content: '';
+      position: absolute;
+      top: 2px;
+      left: 2px;
+      width: 18px;
+      height: 18px;
+      border-radius: 50%;
+      background: var(--slate);
+      transition: all 0.2s;
+    }
+
+    .sc-toggle.on {
+      background: var(--gold-dim);
+      border-color: var(--gold);
+    }
+
+    .sc-toggle.on::after {
+      left: 20px;
+      background: var(--gold);
+      box-shadow: 0 0 8px var(--gold);
+    }
+
+    .sc-num-input {
+      background: var(--surface-2);
+      border: 1px solid var(--border-2);
+      color: var(--white);
+      font-family: var(--ff-mono);
+      font-size: 0.9rem;
+      padding: 0.5rem 0.7rem;
+      border-radius: 3px;
+      width: 100%;
+      text-align: left;
+    }
+
+    .sc-num-input:focus {
+      outline: none;
+      border-color: var(--gold);
+    }
+
+    details.sc-assumptions {
+      border-top: 1px solid var(--border);
+      margin-top: 1.75rem;
+      padding-top: 1.5rem;
+    }
+
+    details.sc-assumptions summary {
+      cursor: pointer;
+      list-style: none;
+      font-family: var(--ff-mono);
+      font-size: 0.68rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--slate-light);
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      margin-bottom: 1.25rem;
+    }
+
+    details.sc-assumptions summary::-webkit-details-marker {
+      display: none;
+    }
+
+    details.sc-assumptions summary::before {
+      content: '▸';
+      color: var(--gold);
+      transition: transform 0.2s;
+    }
+
+    details.sc-assumptions[open] summary::before {
+      transform: rotate(90deg);
+    }
+
+    .sc-headline-result {
+      text-align: left;
+      margin-bottom: 1.75rem;
+    }
+
+    .sc-headline-label {
+      font-family: var(--ff-mono);
+      font-size: 0.7rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--slate);
+      margin-bottom: 0.5rem;
+    }
+
+    .sc-headline-value {
+      font-family: var(--ff-display);
+      font-size: clamp(2.6rem, 6vw, 3.8rem);
+      font-weight: 500;
+      color: var(--gold-light);
+      line-height: 1;
+      text-shadow: 0 0 30px rgba(45, 226, 230, 0.25);
+    }
+
+    .sc-headline-value span {
+      font-size: 0.4em;
+      color: var(--slate-light);
+      font-weight: 400;
+      text-shadow: none;
+    }
+
+    .sc-stat-row {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1px;
+      background: var(--border);
+      border-radius: 4px;
+      overflow: hidden;
+      margin-bottom: 1rem;
+    }
+
+    .sc-stat-row.sc-stat-row-2 {
+      grid-template-columns: repeat(2, 1fr);
+      margin-bottom: 2rem;
+    }
+
+    .sc-stat-cell {
+      background: var(--surface);
+      padding: 1rem;
+    }
+
+    .sc-stat-cell-label {
+      font-family: var(--ff-mono);
+      font-size: 0.62rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--slate);
+      margin-bottom: 0.4rem;
+    }
+
+    .sc-stat-cell-value {
+      font-family: var(--ff-mono);
+      font-size: 1.15rem;
+      color: var(--white);
+      font-weight: 500;
+    }
+
+    .sc-chart-wrap {
+      margin-bottom: 0.5rem;
+    }
+
+    #sc-chart {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .sc-chart-legend {
+      display: flex;
+      gap: 1.5rem;
+      margin-top: 0.75rem;
+      flex-wrap: wrap;
+    }
+
+    .sc-legend-item {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-family: var(--ff-mono);
+      font-size: 0.68rem;
+      color: var(--slate);
+    }
+
+    .sc-legend-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+    }
+
+    .sc-method-note {
+      font-size: 0.78rem;
+      color: var(--slate);
+      line-height: 1.7;
+      border-top: 1px solid var(--border);
+      padding-top: 1.25rem;
+      margin-top: 1.75rem;
+    }
+
+    .sc-method-note strong {
+      color: var(--slate-light);
+    }
+
     /* ===== NIMBUSX ===== */
     #nimbusx {
       background: linear-gradient(160deg, var(--ink-3) 0%, var(--surface) 100%);
@@ -1898,6 +2249,7 @@
         <li><a href="#about">About</a></li>
         <li><a href="#services">Services</a></li>
         <li><a href="#work">Work</a></li>
+        <li><a href="#calculator">Calculator</a></li>
         <li><a href="#nimbusx">NimbusX</a></li>
         <li><a href="#experience">Experience</a></li>
         <li><a href="#insights">Insights</a></li>
@@ -1914,6 +2266,7 @@
     <a href="#about" class="mobile-link">About</a>
     <a href="#services" class="mobile-link">Services</a>
     <a href="#work" class="mobile-link">Work</a>
+    <a href="#calculator" class="mobile-link">Calculator</a>
     <a href="#nimbusx" class="mobile-link">NimbusX</a>
     <a href="#experience" class="mobile-link">Experience</a>
     <a href="#contact" class="mobile-link">Contact</a>
@@ -2181,15 +2534,15 @@
           <div class="cs-arrow">↗</div>
         </div>
 
-        <a href="./solar-roi-calculator.html" class="case-study reveal"
+        <a href="#calculator" class="case-study reveal"
           style="text-decoration: none; color: inherit; display: flex;">
           <div class="cs-num">02</div>
           <div class="cs-body">
             <div class="cs-category">Interactive Tool · Independent Project</div>
-            <h3 class="cs-title">Solar ROI Calculator (Live Demo)</h3>
+            <h3 class="cs-title">Solar ROI Calculator (Live, Below)</h3>
             <p class="cs-desc">A live, interactive financial model for South African residential solar — payback
               period, IRR, NPV, and LCOE, calculated in the browser as you adjust the assumptions. Built to apply
-              renewable energy finance training directly.</p>
+              renewable energy finance training directly. Scroll down to try it right here on the page.</p>
             <div class="cs-impact">
               <div class="cs-stat">
                 <div class="cs-stat-value">Live</div>
@@ -2205,7 +2558,7 @@
                 Energy</span>
             </div>
           </div>
-          <div class="cs-arrow">↗</div>
+          <div class="cs-arrow">↓</div>
         </a>
 
         <div class="case-study reveal">
@@ -2234,6 +2587,189 @@
           <div class="cs-arrow">↗</div>
         </div>
 
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CALCULATOR (Solar ROI, embedded) ===== -->
+  <section id="calculator">
+    <div class="container">
+      <div class="section-label reveal">Try It Yourself</div>
+      <h2 class="section-title reveal reveal-delay-1">Solar ROI<br><em>Calculator.</em></h2>
+      <p class="section-body reveal reveal-delay-2">A live financial model for residential solar in South Africa —
+        payback period, IRR, NPV, and LCOE, calculated right here as you adjust the assumptions. Nothing is sent
+        anywhere; it all runs in your browser.</p>
+      <div class="sc-live-tag reveal reveal-delay-3"><span class="sc-live-dot"></span>Live calculation</div>
+
+      <div class="sc-layout">
+        <!-- ===== INPUTS ===== -->
+        <div class="reveal reveal-delay-1">
+          <div class="sc-panel">
+            <div class="sc-panel-label">Your System</div>
+
+            <div class="sc-field">
+              <div class="sc-field-head">
+                <span class="sc-field-label">System size</span>
+                <span class="sc-field-value" id="sc-v-size">5.0 kWp</span>
+              </div>
+              <input type="range" id="sc-size" min="1" max="15" step="0.5" value="5">
+            </div>
+
+            <div class="sc-field">
+              <div class="sc-field-head">
+                <span class="sc-field-label">Estimated system cost</span>
+                <span></span>
+              </div>
+              <input type="number" class="sc-num-input" id="sc-cost" value="80000">
+              <div class="sc-field-hint">Auto-estimated at R16,000/kWp (installed, no battery). Edit to match a real
+                quote — it won't be overwritten once you do.</div>
+            </div>
+
+            <div class="sc-field">
+              <div class="sc-toggle-row" id="sc-battery-row">
+                <span class="sc-field-label">Include battery backup</span>
+                <div class="sc-toggle" id="sc-battery-toggle"></div>
+              </div>
+            </div>
+
+            <div class="sc-field" id="sc-battery-field" style="display:none;">
+              <div class="sc-field-head">
+                <span class="sc-field-label">Battery capacity</span>
+                <span class="sc-field-value" id="sc-v-battery">5.0 kWh</span>
+              </div>
+              <input type="range" id="sc-battery" min="2.5" max="15" step="0.5" value="5">
+              <div class="sc-field-hint">Adds ~R7,000/kWh to system cost and raises self-consumption.</div>
+            </div>
+
+            <div class="sc-field">
+              <div class="sc-field-head">
+                <span class="sc-field-label">Monthly electricity usage</span>
+                <span class="sc-field-value" id="sc-v-usage">900 kWh</span>
+              </div>
+              <input type="range" id="sc-usage" min="200" max="3000" step="50" value="900">
+            </div>
+
+            <div class="sc-field">
+              <div class="sc-field-head">
+                <span class="sc-field-label">Current tariff</span>
+                <span class="sc-field-value" id="sc-v-tariff">R3.80 / kWh</span>
+              </div>
+              <input type="range" id="sc-tariff" min="1.50" max="6.00" step="0.05" value="3.80">
+              <div class="sc-field-hint">R3.80/kWh is a rough SA residential average — check your municipal or Eskom
+                bill for your actual rate.</div>
+            </div>
+
+            <div class="sc-field">
+              <div class="sc-field-head">
+                <span class="sc-field-label">Self-consumption rate</span>
+                <span class="sc-field-value" id="sc-v-selfcons">55%</span>
+              </div>
+              <input type="range" id="sc-selfcons" min="20" max="95" step="5" value="55">
+              <div class="sc-field-hint">Share of solar generation actually used on-site rather than
+                exported/lost. Rises with a battery.</div>
+            </div>
+
+            <details class="sc-assumptions">
+              <summary>Financial assumptions</summary>
+
+              <div class="sc-field">
+                <div class="sc-field-head">
+                  <span class="sc-field-label">Annual tariff escalation</span>
+                  <span class="sc-field-value" id="sc-v-escalation">12%</span>
+                </div>
+                <input type="range" id="sc-escalation" min="0" max="20" step="0.5" value="12">
+              </div>
+
+              <div class="sc-field">
+                <div class="sc-field-head">
+                  <span class="sc-field-label">Panel degradation / year</span>
+                  <span class="sc-field-value" id="sc-v-degradation">0.5%</span>
+                </div>
+                <input type="range" id="sc-degradation" min="0" max="1.5" step="0.1" value="0.5">
+              </div>
+
+              <div class="sc-field">
+                <div class="sc-field-head">
+                  <span class="sc-field-label">Discount rate (for NPV/LCOE)</span>
+                  <span class="sc-field-value" id="sc-v-discount">10%</span>
+                </div>
+                <input type="range" id="sc-discount" min="4" max="15" step="0.5" value="10">
+              </div>
+
+              <div class="sc-field">
+                <div class="sc-field-head">
+                  <span class="sc-field-label">Annual O&amp;M cost</span>
+                  <span class="sc-field-value" id="sc-v-om">1.0% of system cost</span>
+                </div>
+                <input type="range" id="sc-om" min="0" max="3" step="0.25" value="1">
+              </div>
+
+              <div class="sc-field">
+                <div class="sc-field-head">
+                  <span class="sc-field-label">System lifetime</span>
+                  <span class="sc-field-value" id="sc-v-life">25 years</span>
+                </div>
+                <input type="range" id="sc-life" min="15" max="30" step="1" value="25">
+              </div>
+            </details>
+          </div>
+        </div>
+
+        <!-- ===== RESULTS ===== -->
+        <div class="reveal reveal-delay-2">
+          <div class="sc-panel">
+            <div class="sc-panel-label">Results</div>
+
+            <div class="sc-headline-result">
+              <div class="sc-headline-label">Simple Payback Period</div>
+              <div class="sc-headline-value" id="sc-r-payback">—<span> years</span></div>
+            </div>
+
+            <div class="sc-stat-row">
+              <div class="sc-stat-cell">
+                <div class="sc-stat-cell-label">Discounted Payback</div>
+                <div class="sc-stat-cell-value" id="sc-r-dpayback">—</div>
+              </div>
+              <div class="sc-stat-cell">
+                <div class="sc-stat-cell-label">IRR</div>
+                <div class="sc-stat-cell-value" id="sc-r-irr">—</div>
+              </div>
+              <div class="sc-stat-cell">
+                <div class="sc-stat-cell-label">NPV</div>
+                <div class="sc-stat-cell-value" id="sc-r-npv">—</div>
+              </div>
+            </div>
+
+            <div class="sc-stat-row sc-stat-row-2">
+              <div class="sc-stat-cell">
+                <div class="sc-stat-cell-label">LCOE (cost of solar energy)</div>
+                <div class="sc-stat-cell-value" id="sc-r-lcoe">—</div>
+              </div>
+              <div class="sc-stat-cell">
+                <div class="sc-stat-cell-label">Year 1 Savings</div>
+                <div class="sc-stat-cell-value" id="sc-r-y1">—</div>
+              </div>
+            </div>
+
+            <div class="sc-chart-wrap">
+              <svg id="sc-chart" viewBox="0 0 560 260" preserveAspectRatio="xMidYMid meet"></svg>
+              <div class="sc-chart-legend">
+                <div class="sc-legend-item"><span class="sc-legend-dot" style="background:var(--gold);"></span>Cumulative cash flow</div>
+                <div class="sc-legend-item"><span class="sc-legend-dot" style="background:var(--slate);"></span>Breakeven line</div>
+                <div class="sc-legend-item"><span class="sc-legend-dot" style="background:var(--green);"></span>Payback point</div>
+              </div>
+            </div>
+
+            <div class="sc-method-note">
+              <strong>Methodology:</strong> nominal annual savings are modelled as offset energy (generation ×
+              self-consumption, capped at usage) × the escalating tariff, with generation reduced yearly by panel
+              degradation. IRR and NPV are computed on the resulting cash flow starting with the upfront system
+              cost. LCOE divides discounted lifetime cost (system cost + O&amp;M) by discounted lifetime
+              generation. This is a planning estimate, not a quote — actual results depend on installer pricing,
+              roof orientation, shading, and future tariff decisions.
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </section>
@@ -2561,6 +3097,7 @@
         <a href="#about">About</a>
         <a href="#services">Services</a>
         <a href="#work">Work</a>
+        <a href="#calculator">Calculator</a>
         <a href="#nimbusx">NimbusX</a>
         <a href="#contact">Contact</a>
       </div>
@@ -2694,6 +3231,221 @@
     // ===== STRIP DUPLICATION (ensure seamless) =====
     const strip = document.getElementById('strip');
     // Already doubled in HTML for seamless loop
+  </script>
+
+  <!-- ===== SOLAR ROI CALCULATOR LOGIC (scoped) ===== -->
+  <script>
+    (function () {
+      const el = id => document.getElementById(id);
+      const size = el('sc-size'), cost = el('sc-cost'), battery = el('sc-battery'), usage = el('sc-usage'),
+        tariff = el('sc-tariff'), selfcons = el('sc-selfcons'), escalation = el('sc-escalation'),
+        degradation = el('sc-degradation'), discount = el('sc-discount'), om = el('sc-om'), life = el('sc-life');
+      const batteryToggleEl = el('sc-battery-toggle'), batteryField = el('sc-battery-field');
+
+      if (!size) return; // calculator not present on this page
+
+      let batteryOn = false;
+      let costManuallySet = false;
+      let selfconsAuto = true;
+
+      const SPECIFIC_YIELD = 1650;
+      const COST_PER_KWP = 16000;
+      const BATTERY_COST_PER_KWH = 7000;
+
+      function fmtR(n) {
+        return 'R' + Math.round(n).toLocaleString('en-ZA');
+      }
+
+      batteryToggleEl.addEventListener('click', () => {
+        batteryOn = !batteryOn;
+        batteryToggleEl.classList.toggle('on', batteryOn);
+        batteryField.style.display = batteryOn ? 'block' : 'none';
+        if (selfconsAuto) {
+          selfcons.value = batteryOn ? 85 : 55;
+        }
+        recalcCost();
+        update();
+      });
+
+      function baseCost() {
+        return parseFloat(size.value) * COST_PER_KWP;
+      }
+      function batteryCost() {
+        return batteryOn ? parseFloat(battery.value) * BATTERY_COST_PER_KWH : 0;
+      }
+
+      function recalcCost() {
+        if (!costManuallySet) {
+          cost.value = Math.round(baseCost() + batteryCost());
+        }
+      }
+
+      cost.addEventListener('input', () => { costManuallySet = true; });
+      selfcons.addEventListener('input', () => { selfconsAuto = false; });
+
+      [size, battery].forEach(input => input.addEventListener('input', () => { recalcCost(); update(); }));
+      [usage, tariff, selfcons, escalation, degradation, discount, om, life, cost].forEach(input =>
+        input.addEventListener('input', update)
+      );
+
+      function npv(rate, flows) {
+        return flows.reduce((acc, cf, i) => acc + cf / Math.pow(1 + rate, i), 0);
+      }
+
+      function irr(flows) {
+        let low = -0.99, high = 3, mid = 0;
+        for (let i = 0; i < 200; i++) {
+          mid = (low + high) / 2;
+          const v = npv(mid, flows);
+          if (Math.abs(v) < 1) break;
+          if (v > 0) low = mid; else high = mid;
+        }
+        return mid;
+      }
+
+      function model() {
+        const sizeK = parseFloat(size.value);
+        const totalCost = parseFloat(cost.value) || (baseCost() + batteryCost());
+        const usageAnnual = parseFloat(usage.value) * 12;
+        const tariffR = parseFloat(tariff.value);
+        const selfconsRate = parseFloat(selfcons.value) / 100;
+        const escRate = parseFloat(escalation.value) / 100;
+        const degRate = parseFloat(degradation.value) / 100;
+        const discRate = parseFloat(discount.value) / 100;
+        const omRate = parseFloat(om.value) / 100;
+        const years = parseInt(life.value);
+
+        const genYear1 = sizeK * SPECIFIC_YIELD;
+        const flows = [-totalCost];
+        let cumulative = -totalCost;
+        let cumulativeDiscounted = -totalCost;
+        let paybackYear = null, paybackFraction = 0;
+        let dPaybackYear = null, dPaybackFraction = 0;
+        let discGenSum = 0, discCostSum = totalCost;
+
+        for (let y = 1; y <= years; y++) {
+          const gen = genYear1 * Math.pow(1 - degRate, y - 1);
+          const offset = Math.min(gen * selfconsRate, usageAnnual);
+          const tariffY = tariffR * Math.pow(1 + escRate, y - 1);
+          const savings = offset * tariffY;
+          const omCost = totalCost * omRate;
+          const netCF = savings - omCost;
+          flows.push(netCF);
+
+          const prevCum = cumulative;
+          cumulative += netCF;
+          if (paybackYear === null && cumulative >= 0) {
+            paybackYear = y;
+            paybackFraction = netCF !== 0 ? (-prevCum) / netCF : 0;
+          }
+
+          const discountedCF = netCF / Math.pow(1 + discRate, y);
+          const prevDCum = cumulativeDiscounted;
+          cumulativeDiscounted += discountedCF;
+          if (dPaybackYear === null && cumulativeDiscounted >= 0) {
+            dPaybackYear = y;
+            dPaybackFraction = discountedCF !== 0 ? (-prevDCum) / discountedCF : 0;
+          }
+
+          discGenSum += gen / Math.pow(1 + discRate, y);
+          discCostSum += omCost / Math.pow(1 + discRate, y);
+        }
+
+        const npvVal = npv(discRate, flows);
+        const irrVal = irr(flows);
+        const lcoe = discGenSum > 0 ? discCostSum / discGenSum : 0;
+        const year1Savings = flows[1] + (totalCost * omRate);
+
+        let running = -totalCost;
+        const series = [running];
+        for (let y = 1; y <= years; y++) { running += flows[y]; series.push(running); }
+
+        return {
+          totalCost, paybackYear, paybackFraction, dPaybackYear, dPaybackFraction,
+          npvVal, irrVal, lcoe, year1Savings, series, years
+        };
+      }
+
+      function drawChart(r) {
+        const svg = el('sc-chart');
+        const W = 560, H = 260, padL = 46, padR = 16, padT = 16, padB = 30;
+        const plotW = W - padL - padR, plotH = H - padT - padB;
+
+        const maxVal = Math.max(...r.series, 0);
+        const minVal = Math.min(...r.series, 0);
+        const range = (maxVal - minVal) || 1;
+
+        const xFor = i => padL + (i / r.years) * plotW;
+        const yFor = v => padT + plotH - ((v - minVal) / range) * plotH;
+        const zeroY = yFor(0);
+
+        let path = '';
+        r.series.forEach((v, i) => {
+          const x = xFor(i), y = yFor(v);
+          path += (i === 0 ? 'M' : 'L') + x.toFixed(1) + ',' + y.toFixed(1) + ' ';
+        });
+
+        const areaPath = path + `L${xFor(r.series.length - 1).toFixed(1)},${zeroY} L${xFor(0).toFixed(1)},${zeroY} Z`;
+
+        let markerX = null, markerY = null;
+        if (r.paybackYear !== null) {
+          const idx = r.paybackYear - 1 + r.paybackFraction;
+          markerX = xFor(idx);
+          markerY = zeroY;
+        }
+
+        svg.innerHTML = `
+          <defs>
+            <linearGradient id="scAreaGrad" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0%" stop-color="#2DE2E6" stop-opacity="0.28"/>
+              <stop offset="100%" stop-color="#2DE2E6" stop-opacity="0"/>
+            </linearGradient>
+          </defs>
+          <line x1="${padL}" y1="${zeroY}" x2="${W - padR}" y2="${zeroY}" stroke="#93A4C8" stroke-width="1" stroke-dasharray="3,4" opacity="0.6"/>
+          <path d="${areaPath}" fill="url(#scAreaGrad)" stroke="none"/>
+          <path d="${path.trim()}" fill="none" stroke="#2DE2E6" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round"/>
+          ${markerX !== null ? `
+            <line x1="${markerX.toFixed(1)}" y1="${padT}" x2="${markerX.toFixed(1)}" y2="${H - padB}" stroke="#4CE6A6" stroke-width="1" stroke-dasharray="2,3" opacity="0.7"/>
+            <circle cx="${markerX.toFixed(1)}" cy="${markerY.toFixed(1)}" r="5" fill="#4CE6A6" stroke="#070D18" stroke-width="2"/>
+          ` : ''}
+          <text x="${padL}" y="${H - 8}" font-family="JetBrains Mono" font-size="9" fill="#93A4C8">Year 0</text>
+          <text x="${W - padR}" y="${H - 8}" font-family="JetBrains Mono" font-size="9" fill="#93A4C8" text-anchor="end">Year ${r.years}</text>
+          <text x="${padL - 6}" y="${padT + 8}" font-family="JetBrains Mono" font-size="9" fill="#93A4C8" text-anchor="end">${fmtR(maxVal)}</text>
+          <text x="${padL - 6}" y="${H - padB}" font-family="JetBrains Mono" font-size="9" fill="#93A4C8" text-anchor="end">${fmtR(minVal)}</text>
+        `;
+      }
+
+      function update() {
+        el('sc-v-size').textContent = parseFloat(size.value).toFixed(1) + ' kWp';
+        el('sc-v-battery').textContent = parseFloat(battery.value).toFixed(1) + ' kWh';
+        el('sc-v-usage').textContent = usage.value + ' kWh';
+        el('sc-v-tariff').textContent = 'R' + parseFloat(tariff.value).toFixed(2) + ' / kWh';
+        el('sc-v-selfcons').textContent = selfcons.value + '%';
+        el('sc-v-escalation').textContent = escalation.value + '%';
+        el('sc-v-degradation').textContent = degradation.value + '%';
+        el('sc-v-discount').textContent = discount.value + '%';
+        el('sc-v-om').textContent = om.value + '% of system cost';
+        el('sc-v-life').textContent = life.value + ' years';
+
+        const r = model();
+
+        el('sc-r-payback').innerHTML = r.paybackYear !== null
+          ? (r.paybackYear - 1 + r.paybackFraction).toFixed(1) + '<span> years</span>'
+          : (life.value) + '+<span> years</span>';
+        el('sc-r-dpayback').textContent = r.dPaybackYear !== null
+          ? (r.dPaybackYear - 1 + r.dPaybackFraction).toFixed(1) + ' yrs'
+          : life.value + '+ yrs';
+        el('sc-r-irr').textContent = isFinite(r.irrVal) ? (r.irrVal * 100).toFixed(1) + '%' : '—';
+        el('sc-r-npv').textContent = fmtR(r.npvVal);
+        el('sc-r-lcoe').textContent = 'R' + r.lcoe.toFixed(2) + ' / kWh';
+        el('sc-r-y1').textContent = fmtR(r.year1Savings);
+
+        drawChart(r);
+      }
+
+      recalcCost();
+      update();
+    })();
   </script>
 </body>
 
