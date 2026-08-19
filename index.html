@@ -568,29 +568,27 @@
       writing-mode: vertical-rl;
     }
 
-    /* Floating badge */
-    .hero-badge {
+    /* Floating video-logo badge (overlaps portrait corner) */
+    .hero-video-badge {
       position: absolute;
-      top: 35%;
-      right: clamp(2rem, 8vw, 10rem);
-      width: 130px;
-      height: 130px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
+      top: -22px;
+      left: -22px;
+      width: 92px;
+      height: 92px;
+      z-index: 3;
       opacity: 0;
-      animation: fadeIn 1s ease 1.2s forwards;
+      animation: fadeIn 1s ease 1.3s forwards;
     }
 
-    .badge-ring {
+    .hero-video-ring {
       position: absolute;
-      inset: 0;
-      border: 1px solid rgba(45, 226, 230, 0.25);
+      inset: -7px;
+      border: 1px solid rgba(45, 226, 230, 0.3);
       border-radius: 50%;
-      animation: spin 20s linear infinite;
+      animation: spin 16s linear infinite;
     }
 
-    .badge-ring::before {
+    .hero-video-ring::before {
       content: '';
       position: absolute;
       top: -2px;
@@ -603,30 +601,39 @@
       transform: translateX(-50%);
     }
 
-    .badge-inner {
-      text-align: center;
+    .hero-video-mark {
+      position: absolute;
+      inset: 0;
+      border-radius: 50%;
+      overflow: hidden;
+      background: var(--ink);
+      border: 2px solid var(--ink);
+      box-shadow:
+        0 0 0 1px rgba(45, 226, 230, 0.35),
+        0 10px 30px rgba(0, 0, 0, 0.5);
     }
 
-    .badge-inner .badge-title {
-      font-family: var(--ff-display);
-      font-size: 0.95rem;
-      font-weight: 500;
-      color: var(--gold-light);
-      line-height: 1.2;
+    .hero-video-mark video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
     }
 
-    .badge-inner .badge-sub {
-      font-family: var(--ff-mono);
-      font-size: 0.6rem;
-      letter-spacing: 0.15em;
-      text-transform: uppercase;
-      color: var(--slate);
-      margin-top: 0.3rem;
-    }
+    @media (max-width: 1100px) {
+      .hero-video-badge {
+        position: relative;
+        top: auto;
+        left: auto;
+        width: 44px;
+        height: 44px;
+        opacity: 1;
+        animation: none;
+        flex-shrink: 0;
+      }
 
-    @media (max-width: 900px) {
-      .hero-badge {
-        display: none;
+      .hero-video-ring {
+        inset: -4px;
       }
     }
 
@@ -1111,8 +1118,17 @@
     }
 
     @keyframes sc-pulse {
-      0%, 100% { opacity: 1; transform: scale(1); }
-      50% { opacity: 0.4; transform: scale(0.75); }
+
+      0%,
+      100% {
+        opacity: 1;
+        transform: scale(1);
+      }
+
+      50% {
+        opacity: 0.4;
+        transform: scale(0.75);
+      }
     }
 
     .sc-layout {
@@ -1136,7 +1152,7 @@
       padding: clamp(1.5rem, 3vw, 2.25rem);
     }
 
-    .sc-panel + .sc-panel {
+    .sc-panel+.sc-panel {
       margin-top: 1.5rem;
     }
 
@@ -2089,12 +2105,21 @@
     }
 
     @keyframes drift {
-      0%, 100% { transform: translate(0, 0) scale(1); }
-      50% { transform: translate(-3%, 3%) scale(1.06); }
+
+      0%,
+      100% {
+        transform: translate(0, 0) scale(1);
+      }
+
+      50% {
+        transform: translate(-3%, 3%) scale(1.06);
+      }
     }
 
     @keyframes dashmove {
-      to { stroke-dashoffset: -400; }
+      to {
+        stroke-dashoffset: -400;
+      }
     }
 
     .reveal {
@@ -2249,7 +2274,7 @@
         <li><a href="#about">About</a></li>
         <li><a href="#services">Services</a></li>
         <li><a href="#work">Work</a></li>
-        <li><a href="#calculator">Calculator</a></li>
+        <!-- <li><a href="#calculator">Calculator</a></li> -->
         <li><a href="#nimbusx">NimbusX</a></li>
         <li><a href="#experience">Experience</a></li>
         <li><a href="#insights">Insights</a></li>
@@ -2266,7 +2291,7 @@
     <a href="#about" class="mobile-link">About</a>
     <a href="#services" class="mobile-link">Services</a>
     <a href="#work" class="mobile-link">Work</a>
-    <a href="#calculator" class="mobile-link">Calculator</a>
+    <!-- <a href="#calculator" class="mobile-link">Calculator</a> -->
     <a href="#nimbusx" class="mobile-link">NimbusX</a>
     <a href="#experience" class="mobile-link">Experience</a>
     <a href="#contact" class="mobile-link">Contact</a>
@@ -2295,14 +2320,22 @@
       </defs>
       <circle cx="1050" cy="260" r="360" fill="url(#orbA)" style="animation: drift 14s ease-in-out infinite;" />
       <circle cx="220" cy="700" r="320" fill="url(#orbB)" style="animation: drift 18s ease-in-out infinite reverse;" />
-      <polyline points="120,560 300,560 360,460 460,610 560,380 660,500 760,320 900,420 1020,260 1180,300"
-        fill="none" stroke="url(#lineGrad)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-        stroke-dasharray="10 6" opacity="0.5" style="animation: dashmove 16s linear infinite;" />
+      <polyline points="120,560 300,560 360,460 460,610 560,380 660,500 760,320 900,420 1020,260 1180,300" fill="none"
+        stroke="url(#lineGrad)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="10 6"
+        opacity="0.5" style="animation: dashmove 16s linear infinite;" />
     </svg>
     <div class="hero-grid-lines"></div>
     <div class="hero-content">
       <div class="hero-image-block">
-        <img src="./assets/images/image.jpg" alt="Portrait" class="hero-portrait">
+        <div class="hero-video-badge">
+          <div class="hero-video-ring"></div>
+          <div class="hero-video-mark">
+            <video autoplay muted loop playsinline aria-label="NimbusX logo animation">
+              <source src="./assets/images/NimbusX.mp4" type="video/mp4">
+            </video>
+          </div>
+        </div>
+        <img src="./assets/images/portrait.jpg" alt="Portrait" class="hero-portrait">
         <div class="hero-portrait-label">
           <span class="portrait-name">Thato Mapheto</span>
           <span class="portrait-title">Finance & Analytics Professional</span>
@@ -2553,13 +2586,14 @@
               </div>
             </div>
             <div class="cs-tags">
-              <span class="tag">Audit</span><span class="tag">Reconciliation</span><span class="tag">Multi-ERP</span><span class="tag">Compliance</span>
+              <span class="tag">Audit</span><span class="tag">Reconciliation</span><span
+                class="tag">Multi-ERP</span><span class="tag">Compliance</span>
             </div>
           </div>
           <div class="cs-arrow">↗</div>
         </div>
 
-        <a href="#calculator" class="case-study reveal"
+        <!-- <a href="#calculator" class="case-study reveal"
           style="text-decoration: none; color: inherit; display: flex;">
           <div class="cs-num">03</div>
           <div class="cs-body">
@@ -2584,7 +2618,7 @@
             </div>
           </div>
           <div class="cs-arrow">↓</div>
-        </a>
+        </a> -->
 
         <div class="case-study reveal">
           <div class="cs-num">04</div>
@@ -2617,7 +2651,7 @@
   </section>
 
   <!-- ===== CALCULATOR (Solar ROI, embedded) ===== -->
-  <section id="calculator">
+  <!-- <section id="calculator">
     <div class="container">
       <div class="section-label reveal">Try It Yourself</div>
       <h2 class="section-title reveal reveal-delay-1">Solar ROI<br><em>Calculator.</em></h2>
@@ -2626,9 +2660,9 @@
         anywhere; it all runs in your browser.</p>
       <div class="sc-live-tag reveal reveal-delay-3"><span class="sc-live-dot"></span>Live calculation</div>
 
-      <div class="sc-layout">
-        <!-- ===== INPUTS ===== -->
-        <div class="reveal reveal-delay-1">
+      <div class="sc-layout"> -->
+  <!-- ===== INPUTS ===== -->
+  <!-- <div class="reveal reveal-delay-1">
           <div class="sc-panel">
             <div class="sc-panel-label">Your System</div>
 
@@ -2738,10 +2772,10 @@
               </div>
             </details>
           </div>
-        </div>
+        </div> -->
 
-        <!-- ===== RESULTS ===== -->
-        <div class="reveal reveal-delay-2">
+  <!-- ===== RESULTS ===== -->
+  <!-- <div class="reveal reveal-delay-2">
           <div class="sc-panel">
             <div class="sc-panel-label">Results</div>
 
@@ -2797,7 +2831,7 @@
         </div>
       </div>
     </div>
-  </section>
+  </section> -->
 
   <!-- ===== NIMBUSX ===== -->
   <section id="nimbusx">
@@ -3277,6 +3311,17 @@
         setTimeout(() => { formStatus.style.display = 'none'; }, 6000);
       });
     });
+
+    // ===== HERO VIDEO BADGE (ensure reliable autoplay) =====
+    const heroLogoVideo = document.querySelector('.hero-video-mark video');
+    if (heroLogoVideo) {
+      heroLogoVideo.muted = true;
+      heroLogoVideo.play().catch(() => {
+        // Autoplay blocked (rare, muted+playsinline usually passes) — retry on first interaction
+        const retry = () => { heroLogoVideo.play(); document.removeEventListener('click', retry); };
+        document.addEventListener('click', retry, { once: true });
+      });
+    }
 
     // ===== STRIP DUPLICATION (ensure seamless) =====
     const strip = document.getElementById('strip');
