@@ -5,8 +5,11 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description"
-    content="Thato Mapheto — Freelance Financial Modelling, FP&A & Business Analytics for manufacturing, industrial, and renewable energy SMEs. Power BI, financial models, decision-ready insights.">
-  <title>Thato Mapheto — Financial Modelling, FP&A & Business Analytics</title>
+    content="Thato Mapheto: accounting and SAP ERP background, data analytics (SQL, Power BI) and developing software and data engineering skills. Founder of NimbusX Digital, focused on financial visibility for SMEs.">
+  <title>Thato Mapheto — Finance, Data & Software Engineering</title>
+  <meta property="og:title" content="Thato Mapheto — Finance meets Engineering">
+  <meta property="og:description" content="Finance + Data + Engineering = Better Business Decisions.">
+  <meta property="og:type" content="website">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
@@ -2258,10 +2261,280 @@
         font-size: 1.8rem;
       }
     }
+
+    /* ===== UPGRADE ADDITIONS ===== */
+    :focus-visible {
+      outline: 2px solid var(--gold);
+      outline-offset: 3px
+    }
+
+    .skip {
+      position: absolute;
+      left: -999px;
+      top: 0;
+      background: var(--gold);
+      color: var(--ink);
+      padding: .6rem 1rem;
+      z-index: 200
+    }
+
+    .skip:focus {
+      left: 0
+    }
+
+    @media (prefers-reduced-motion:reduce) {
+
+      *,
+      *::before,
+      *::after {
+        animation-duration: .01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: .01ms !important;
+        scroll-behavior: auto !important
+      }
+
+      .reveal {
+        opacity: 1;
+        transform: none
+      }
+
+      .hero-eyebrow,
+      .hero-name,
+      .hero-tagline,
+      .hero-desc,
+      .hero-actions,
+      .hero-metrics,
+      .hero-image-block,
+      .hero-video-badge,
+      .hero-scroll-hint {
+        opacity: 1
+      }
+    }
+
+    .chip {
+      font-family: var(--ff-mono);
+      font-size: .6rem;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      padding: .2rem .55rem;
+      border-radius: 2px;
+      border: 1px solid var(--border-2);
+      color: var(--gold);
+      white-space: nowrap;
+      display: inline-block
+    }
+
+    .chip.dev {
+      color: #C9B8FF;
+      border-color: rgba(124, 92, 255, .55)
+    }
+
+    .chip.int {
+      color: var(--slate);
+      border-style: dashed
+    }
+
+    .s-dev {
+      color: #C9B8FF
+    }
+
+    .s-int {
+      color: var(--slate);
+      font-style: italic
+    }
+
+    .legend {
+      display: flex;
+      gap: .6rem;
+      flex-wrap: wrap;
+      margin-top: 1.5rem
+    }
+
+    .cat-head {
+      font-family: var(--ff-mono);
+      font-size: .72rem;
+      letter-spacing: .2em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin: 4rem 0 1.5rem
+    }
+
+    .case-study {
+      cursor: default;
+      grid-template-columns: 80px 1fr
+    }
+
+    .case-study:last-child {
+      border-bottom: 1px solid var(--border)
+    }
+
+    .cs-fields {
+      display: grid;
+      grid-template-columns: 150px 1fr;
+      gap: .6rem 1.5rem;
+      margin-top: 1.25rem;
+      font-size: .86rem;
+      line-height: 1.65;
+      max-width: 780px
+    }
+
+    .cs-fields dt {
+      font-family: var(--ff-mono);
+      font-size: .62rem;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      color: var(--slate);
+      padding-top: .25rem
+    }
+
+    .cs-fields dd {
+      color: var(--slate-light)
+    }
+
+    .cs-links {
+      display: flex;
+      gap: 1.25rem;
+      flex-wrap: wrap;
+      margin-top: 1.25rem;
+      align-items: center
+    }
+
+    .cs-links a {
+      color: var(--gold);
+      font-size: .8rem;
+      text-decoration: none;
+      font-weight: 600
+    }
+
+    .cs-links span {
+      color: var(--slate);
+      font-size: .78rem;
+      font-style: italic
+    }
+
+    .eng-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1px;
+      background: var(--border);
+      border: 1px solid var(--border);
+      margin-top: 3rem
+    }
+
+    .eng-card {
+      background: var(--ink);
+      padding: 2.25rem
+    }
+
+    .eng-card h3 {
+      font-family: var(--ff-display);
+      font-size: 1.4rem;
+      font-weight: 500;
+      margin: .9rem 0
+    }
+
+    .eng-card p {
+      font-size: .88rem;
+      color: var(--slate);
+      line-height: 1.7
+    }
+
+    .eng-card .service-tags {
+      margin-top: 1.25rem
+    }
+
+    .flow {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: .6rem;
+      margin-top: 2.5rem;
+      font-family: var(--ff-mono);
+      font-size: .7rem;
+      color: var(--slate-light)
+    }
+
+    .flow b {
+      font-weight: 400;
+      border: 1px solid var(--border-2);
+      padding: .35rem .7rem;
+      border-radius: 2px
+    }
+
+    .nx-status {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1px;
+      background: var(--border);
+      border: 1px solid var(--border)
+    }
+
+    .nx-status>div {
+      background: var(--ink-3);
+      padding: 1.4rem
+    }
+
+    .nx-status h4 {
+      font-size: .85rem;
+      color: var(--white);
+      margin: .6rem 0 .4rem
+    }
+
+    .nx-status p {
+      font-size: .8rem;
+      color: var(--slate);
+      line-height: 1.6
+    }
+
+    .edu-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.5rem;
+      margin-top: 3rem
+    }
+
+    .edu-card {
+      border: 1px solid var(--border);
+      padding: 2rem;
+      background: var(--ink-2);
+      border-radius: 2px
+    }
+
+    .edu-card h3 {
+      font-family: var(--ff-display);
+      font-size: 1.3rem;
+      font-weight: 500;
+      margin: .8rem 0 .5rem
+    }
+
+    .edu-card p {
+      font-size: .86rem;
+      color: var(--slate);
+      line-height: 1.7
+    }
+
+    @media (max-width:900px) {
+
+      .eng-grid,
+      .edu-grid,
+      .nx-status {
+        grid-template-columns: 1fr
+      }
+
+      .cs-fields {
+        grid-template-columns: 1fr;
+        gap: .2rem
+      }
+
+      .cs-fields dd {
+        margin-bottom: .6rem
+      }
+    }
   </style>
 </head>
 
 <body>
+  <a class="skip" href="#about">Skip to content</a>
 
   <!-- ===== NAV ===== -->
   <nav id="main-nav">
@@ -2272,26 +2545,25 @@
       </a>
       <ul class="nav-links">
         <li><a href="#about">About</a></li>
-        <li><a href="#services">Services</a></li>
-        <li><a href="#work">Work</a></li>
-        <!-- <li><a href="#calculator">Calculator</a></li> -->
+        <li><a href="#work">Projects</a></li>
+        <li><a href="#calculator">Calculator</a></li>
+        <li><a href="#engineering">Engineering</a></li>
         <li><a href="#nimbusx">NimbusX</a></li>
         <li><a href="#experience">Experience</a></li>
-        <!-- <li><a href="#insights">Insights</a></li> -->
       </ul>
       <a href="#contact" class="nav-cta">Let's Talk</a>
-      <button class="hamburger" id="hamburger" aria-label="Menu">
+      <button class="hamburger" id="hamburger" aria-label="Open menu">
         <span></span><span></span><span></span>
       </button>
     </div>
   </nav>
 
   <div class="mobile-nav" id="mobile-nav">
-    <button class="mobile-close" id="mobile-close">✕</button>
+    <button class="mobile-close" id="mobile-close" aria-label="Close menu">✕</button>
     <a href="#about" class="mobile-link">About</a>
-    <a href="#services" class="mobile-link">Services</a>
-    <a href="#work" class="mobile-link">Work</a>
-    <!-- <a href="#calculator" class="mobile-link">Calculator</a> -->
+    <a href="#work" class="mobile-link">Projects</a>
+    <a href="#calculator" class="mobile-link">Calculator</a>
+    <a href="#engineering" class="mobile-link">Engineering</a>
     <a href="#nimbusx" class="mobile-link">NimbusX</a>
     <a href="#experience" class="mobile-link">Experience</a>
     <a href="#contact" class="mobile-link">Contact</a>
@@ -2335,42 +2607,38 @@
             </video>
           </div>
         </div>
-        <img src="./assets/images/portrait.jpg" alt="Portrait" class="hero-portrait">
+        <img src="./assets/images/portrait.jpg" alt="Portrait of Thato Mapheto" class="hero-portrait">
         <div class="hero-portrait-label">
           <span class="portrait-name">Thato Mapheto</span>
-          <span class="portrait-title">Finance & Analytics Professional</span>
+          <span class="portrait-title">Finance, Data &amp; Technology</span>
         </div>
       </div>
       <div class="hero-eyebrow">
         <div class="hero-eyebrow-line"></div>
-        <span class="hero-eyebrow-text">Financial Modelling · FP&A · Business Analytics</span>
+        <span class="hero-eyebrow-text">Finance · Data · Software Engineering</span>
       </div>
-      <h1 class="hero-name">Finance meets<br><em>technology.</em></h1>
-      <p class="hero-tagline">Helping procurement-intensive manufacturing, industrial, and renewable energy SMEs
-        turn financial data into confident decisions.</p>
-      <p class="hero-desc">Through financial modelling, FP&A, and Power BI dashboards, I help these businesses see
-        exactly where they're making or losing money — so decisions are based on evidence, not guesswork.</p>
+      <h1 class="hero-name">Finance meets<br><em>Engineering.</em></h1>
+      <p class="hero-tagline">Turning business problems into data-driven insights and practical technology solutions.
+      </p>
+      <p class="hero-desc">My background spans accounting, mining finance, SAP ERP and data analytics. I am now
+        developing my software engineering and data engineering skills at WeThinkCode_, with a focus on building useful
+        systems, improving financial visibility and supporting better business decisions.</p>
       <div class="hero-actions">
-        <a href="#work" class="btn-primary">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-            <path d="M5 12h14M12 5l7 7-7 7" />
-          </svg>
-          View My Work
-        </a>
-        <a href="#contact" class="btn-ghost">Start a Conversation</a>
+        <a href="#work" class="btn-primary">Explore My Projects</a>
+        <a href="#contact" class="btn-ghost">Connect With Me</a>
       </div>
       <div class="hero-metrics">
         <div class="metric">
           <div class="metric-value"><span class="count-up" data-target="2">0</span>+</div>
-          <div class="metric-label">Years Finance & SAP Experience</div>
+          <div class="metric-label">Years Finance &amp; SAP Experience</div>
         </div>
+        <!-- <div class="metric">
+          <div class="metric-value"><span>~R11M</span></div>
+          <div class="metric-label">Aged SAP Commitments Released (Team Effort)</div>
+        </div> -->
         <div class="metric">
-          <div class="metric-value"><span class="count-up" data-target="10">0</span></div>
-          <div class="metric-label">Certifications Since 2025</div>
-        </div>
-        <div class="metric">
-          <div class="metric-value"><span class="count-up" data-target="4">0</span></div>
-          <div class="metric-label">Independent Projects Built</div>
+          <div class="metric-value"><span class="count-up" data-target="7">0</span></div>
+          <div class="metric-label">Certifications Completed</div>
         </div>
       </div>
     </div>
@@ -2382,28 +2650,23 @@
 
   <!-- ===== SKILLS STRIP ===== -->
   <div class="skills-strip">
-    <div class="strip-inner" id="strip">
-      <!-- doubled for seamless loop -->
+    <div class="strip-inner" id="strip" aria-hidden="true">
       <span class="strip-item"><span class="dot"></span>SAP ERP</span>
       <span class="strip-item"><span class="dot"></span>Power BI</span>
       <span class="strip-item"><span class="dot"></span>SQL</span>
       <span class="strip-item"><span class="dot"></span>Financial Modelling</span>
-      <span class="strip-item"><span class="dot"></span>Dynamics 365</span>
       <span class="strip-item"><span class="dot"></span>Business Analytics</span>
       <span class="strip-item"><span class="dot"></span>Procurement Analytics</span>
-      <span class="strip-item"><span class="dot"></span>ERP Systems</span>
-      <span class="strip-item"><span class="dot"></span>Python</span>
-      <span class="strip-item"><span class="dot"></span>Data Dashboards</span>
+      <span class="strip-item"><span class="dot"></span>Python (Learning)</span>
+      <span class="strip-item"><span class="dot"></span>Data Engineering (Learning)</span>
       <span class="strip-item"><span class="dot"></span>SAP ERP</span>
       <span class="strip-item"><span class="dot"></span>Power BI</span>
       <span class="strip-item"><span class="dot"></span>SQL</span>
       <span class="strip-item"><span class="dot"></span>Financial Modelling</span>
-      <span class="strip-item"><span class="dot"></span>Dynamics 365</span>
       <span class="strip-item"><span class="dot"></span>Business Analytics</span>
       <span class="strip-item"><span class="dot"></span>Procurement Analytics</span>
-      <span class="strip-item"><span class="dot"></span>ERP Systems</span>
-      <span class="strip-item"><span class="dot"></span>Python</span>
-      <span class="strip-item"><span class="dot"></span>Data Dashboards</span>
+      <span class="strip-item"><span class="dot"></span>Python (Learning)</span>
+      <span class="strip-item"><span class="dot"></span>Data Engineering (Learning)</span>
     </div>
   </div>
 
@@ -2413,23 +2676,19 @@
       <div class="about-grid">
         <div class="about-left">
           <div class="section-label reveal">About</div>
-          <h2 class="section-title reveal reveal-delay-1">Not just a<br><em>finance professional.</em><br>Not just a
-            developer.</h2>
-          <p class="about-statement reveal reveal-delay-2">
-            I think about <em>how businesses work</em>, where money flows, where systems break, where <em>data
-              could create clarity</em> but doesn't yet. That intersection is where I operate.
-          </p>
-          <p class="about-statement reveal reveal-delay-3"
-            style="font-size: 1rem; font-family: var(--ff-sans); color: var(--slate); line-height: 1.8; margin-top: 1.5rem;">
-            With a background in financial accounting, SAP ERP operations, and data analytics, I bring systems thinking
-            to businesses that need to move faster, decide smarter, and operate with more clarity. I'm not interested in
-            building things for the sake of it, I'm interested in building things that change how an organisation
-            understands and controls its operations.
-          </p>
-          <div class="nimbusx-callout reveal reveal-delay-4" style="margin-top: 2.5rem;">
-            <div class="nx-label">NimbusX</div>
-            <p>The personal brand I'm building this approach under — finance-informed analytics and digital work for
-              South African SMEs. <a href="#nimbusx">Learn more about NimbusX →</a></p>
+          <h2 class="section-title reveal reveal-delay-1">Finance + Data +<br><em>Engineering.</em></h2>
+          <p class="about-statement reveal reveal-delay-2">I understand <em>business and financial problems</em>, work
+            with data to uncover insights, and am developing the <em>engineering skills</em> to build better systems and
+            solutions.</p>
+          <p class="reveal reveal-delay-3" style="font-size:1rem;color:var(--slate);line-height:1.8;margin-top:1.5rem">
+            Accounting and SAP ERP taught me where money and process meet. SQL and Power BI let me make that visible.
+            Software and data engineering are the next layer: building reliable workflows instead of rebuilding the same
+            spreadsheet each month. Each discipline makes the others more useful.</p>
+          <div class="legend reveal"><span class="chip">Established</span><span class="chip dev">Developing</span></div>
+          <div class="nimbusx-callout reveal reveal-delay-4" style="margin-top:2.5rem">
+            <div class="nx-label">NimbusX Digital</div>
+            <p>My own business, registered November 2025, focused on financial visibility and analytics for SMEs. <a
+                href="#nimbusx">Learn more about NimbusX →</a></p>
           </div>
         </div>
         <div class="about-right">
@@ -2437,33 +2696,33 @@
             <div class="pillar">
               <div class="pillar-num">01</div>
               <div class="pillar-content">
-                <h4>Finance & Operational Depth</h4>
-                <p>Hands-on experience in financial accounting, procurement processes, SAP ERP operations, and
-                  multi-billion-rand audit and reconciliation work. I understand money flows, not just data flows.</p>
+                <h4>Finance &amp; Business Operations <span class="chip ">Established</span></h4>
+                <p>BCom Accounting (UJ); financial reporting, budgeting, reconciliations and controls, SAP ERP and
+                  procurement-related processes at Sibanye-Stillwater, working alongside engineering, production, safety
+                  and suppliers.</p>
               </div>
             </div>
             <div class="pillar">
               <div class="pillar-num">02</div>
               <div class="pillar-content">
-                <h4>Analytics & Systems Thinking</h4>
-                <p>Power BI dashboards, SQL analytics, and Python-driven data pipelines built to surface what matters
-                  and eliminate the noise from operational reporting.</p>
+                <h4>Data Analytics &amp; BI <span class="chip ">Established</span></h4>
+                <p>SQL, Power BI, dashboards and reporting; ALX Data Analytics certificate completed December 2025.</p>
               </div>
             </div>
             <div class="pillar">
               <div class="pillar-num">03</div>
               <div class="pillar-content">
-                <h4>Financial Modelling & Scenario Analysis</h4>
-                <p>Building forecasting models, scenario toggles, and investment decision tools — the same discipline
-                  that underpins a proper FP&A function, applied to real business decisions.</p>
+                <h4>Software Engineering <span class="chip dev">Developing</span></h4>
+                <p>Studying at WeThinkCode_: programming fundamentals, problem-solving, version control, testing and
+                  databases as the programme covers them.</p>
               </div>
             </div>
             <div class="pillar">
               <div class="pillar-num">04</div>
               <div class="pillar-content">
-                <h4>Business-First Mindset</h4>
-                <p>Every system, dashboard, or website I build has a business question behind it. Technology in service
-                  of outcomes — not technology for its own sake.</p>
+                <h4>Data Engineering <span class="chip dev">Developing</span></h4>
+                <p>My selected elective: data processing, pipelines, storage, data quality and reliable data workflows.
+                </p>
               </div>
             </div>
           </div>
@@ -2496,7 +2755,7 @@
           <p>Custom Power BI dashboards and SQL-driven reporting pipelines that give leadership a real-time view of what
             matters — procurement, finance, operations, or sales.</p>
           <div class="service-tags">
-            <span class="tag">Power BI</span><span class="tag">SQL</span><span class="tag">Python</span>
+            <span class="tag">Power BI</span><span class="tag">SQL</span><span class="tag">Excel</span>
           </div>
         </div>
         <div class="service-card reveal reveal-delay-1">
@@ -2533,136 +2792,168 @@
   <section id="work">
     <div class="container">
       <div class="work-header">
-        <div class="section-label reveal">Featured Work</div>
-        <h2 class="section-title reveal reveal-delay-1">Projects that moved<br><em>the needle.</em></h2>
-        <p class="section-body reveal reveal-delay-2">A mix of real operational results from my finance career and
-          independent projects I've built to develop and demonstrate capability.</p>
+        <div class="section-label reveal">Projects</div>
+        <h2 class="section-title reveal reveal-delay-1">From business problems<br><em>to working analysis.</em></h2>
+        <p class="section-body reveal reveal-delay-2">Work-based projects and independent learning projects, labelled by
+          status so it is clear what is what.</p>
       </div>
+      <div class="cat-head">Finance &amp; Business Operations</div>
       <div class="case-studies">
-
-        <div class="case-study reveal">
+        <article class="case-study reveal">
           <div class="cs-num">01</div>
           <div class="cs-body">
-            <div class="cs-category">ERP Operations · Financial Recovery · Sibanye Stillwater (Employment)</div>
-            <h3 class="cs-title">SAP Commitment Recovery & Procurement Analytics</h3>
-            <p class="cs-desc">A major manufacturing organisation had R11 million in outstanding SAP purchase
-              commitments that were never tracked, followed up on, or reconciled. Working within their SAP environment,
-              I mapped procurement processes, built a structured review framework, and drove systematic recovery of
-              committed funds.</p>
-            <div class="cs-impact">
-              <div class="cs-stat">
-                <div class="cs-stat-value">R11M</div>
-                <div class="cs-stat-label">Funds Recovered</div>
-              </div>
-              <div class="cs-stat">
-                <div class="cs-stat-value">100%</div>
-                <div class="cs-stat-label">Commitment Visibility Achieved</div>
-              </div>
-            </div>
-            <div class="cs-tags">
-              <span class="tag">SAP ERP</span><span class="tag">Procurement</span><span class="tag">Financial
-                Controls</span><span class="tag">Analytics</span>
-            </div>
+            <div class="cs-category">Sibanye-Stillwater · Employment · <span class="chip ">Work project</span></div>
+            <h4 class="cs-title">SAP Commitment Review &amp; Procurement Analysis</h4>
+            <dl class="cs-fields">
+              <dt>Problem</dt>
+              <dd>Aged open purchase orders and requisitions were overstating commitments in budget reporting.</dd>
+              <dt>My contribution</dt>
+              <dd>As part of the finance team, I helped identify, review and resolve aged SAP commitments, working with
+                procurement and engineering stakeholders.</dd>
+              <dt>Approach</dt>
+              <dd>Reviewed open commitments in SAP, followed up with owners, and closed or released items no longer
+                needed.</dd>
+              <dt>Outcome</dt>
+              <dd>Approximately R11 million in aged commitments released. This is committed budget freed, not cash
+                recovered.</dd>
+            </dl>
+            <div class="cs-tags"><span class="tag">SAP ERP</span><span class="tag">Procurement</span><span
+                class="tag">Financial Controls</span></div>
+            <div class="cs-links"><span>Employer data confidential; no public link</span></div>
           </div>
-          <div class="cs-arrow">↗</div>
-        </div>
-
-        <div class="case-study reveal">
+        </article>
+        <article class="case-study reveal">
           <div class="cs-num">02</div>
           <div class="cs-body">
-            <div class="cs-category">Audit & Reconciliation · Contract Consulting · Mieke Projects (Pty) Ltd</div>
-            <h3 class="cs-title">Multi-Billion-Rand Project Audit & Reconciliation</h3>
-            <p class="cs-desc">An ongoing independent contract engagement reconciling project and supplier
-              expenditure and auditing compliance documentation across large-scale infrastructure projects —
-              tracing discrepancies back to source and producing auditable correction trails for management.</p>
-            <div class="cs-impact">
-              <div class="cs-stat">
-                <div class="cs-stat-value">R1B+</div>
-                <div class="cs-stat-label">Expenditure Reconciled</div>
-              </div>
-              <div class="cs-stat">
-                <div class="cs-stat-value">600+</div>
-                <div class="cs-stat-label">Employee Records Audited</div>
-              </div>
-            </div>
-            <div class="cs-tags">
-              <span class="tag">Audit</span><span class="tag">Reconciliation</span><span
-                class="tag">Multi-ERP</span><span class="tag">Compliance</span>
-            </div>
+            <div class="cs-category">Mieke Projects (Pty) Ltd · Independent contract · <span class="chip ">Contract
+                work</span></div>
+            <h4 class="cs-title">Project Audit &amp; Financial Reconciliation</h4>
+            <dl class="cs-fields">
+              <dt>Problem</dt>
+              <dd>Project and supplier spend on large infrastructure projects did not agree between project records and
+                ERP systems.</dd>
+              <dt>My contribution</dt>
+              <dd>Performed the reconciliations, invoice validation and an employee-records compliance audit, and
+                prepared schedules and reports for management.</dd>
+              <dt>Scale</dt>
+              <dd>Over R1 billion of expenditure reconciled; 600+ employee records audited. Client details withheld.
+              </dd>
+              <dt>Outcome</dt>
+              <dd>Variances traced to source with auditable correction trails.</dd>
+            </dl>
+            <div class="cs-tags"><span class="tag">Audit</span><span class="tag">Reconciliation</span><span
+                class="tag">Excel</span><span class="tag">Compliance</span></div>
+            <div class="cs-links"><span>Client confidential; no public link</span></div>
           </div>
-          <div class="cs-arrow">↗</div>
-        </div>
-
-        <!-- <a href="#calculator" class="case-study reveal"
-          style="text-decoration: none; color: inherit; display: flex;">
+        </article>
+      </div>
+      <div class="cat-head">Financial Modelling &amp; Renewable Energy</div>
+      <div class="case-studies">
+        <article class="case-study reveal">
           <div class="cs-num">03</div>
           <div class="cs-body">
-            <div class="cs-category">Interactive Tool · Independent Project</div>
-            <h3 class="cs-title">Solar ROI Calculator (Live, Below)</h3>
-            <p class="cs-desc">A live, interactive financial model for South African residential solar — payback
-              period, IRR, NPV, and LCOE, calculated in the browser as you adjust the assumptions. Built to apply
-              renewable energy finance training directly. Scroll down to try it right here on the page.</p>
-            <div class="cs-impact">
-              <div class="cs-stat">
-                <div class="cs-stat-value">Live</div>
-                <div class="cs-stat-label">Try It Yourself</div>
-              </div>
-              <div class="cs-stat">
-                <div class="cs-stat-value">4</div>
-                <div class="cs-stat-label">Metrics Modelled</div>
-              </div>
-            </div>
-            <div class="cs-tags">
-              <span class="tag">JavaScript</span><span class="tag">Financial Modelling</span><span class="tag">Renewable
-                Energy</span>
-            </div>
+            <div class="cs-category">Independent project · <span class="chip ">Working tool</span></div>
+            <h4 class="cs-title">Solar ROI Calculator</h4>
+            <dl class="cs-fields">
+              <dt>Objective</dt>
+              <dd>Let a household test whether rooftop solar pays back under its own assumptions.</dd>
+              <dt>Approach</dt>
+              <dd>In-browser model of payback, discounted payback, IRR, NPV and LCOE with tariff escalation, degradation
+                and optional battery.</dd>
+              <dt>Status</dt>
+              <dd>Works on this page; assumptions are generic and illustrative, not a quote.</dd>
+              <dt>Learned</dt>
+              <dd>Cash-flow modelling and the sensitivity of returns to tariff escalation.</dd>
+            </dl>
+            <div class="cs-tags"><span class="tag">JavaScript</span><span class="tag">Financial Modelling</span><span
+                class="tag">Renewable Energy</span></div>
+            <div class="cs-links"><a href="#calculator">Try it on this page ↓</a></div>
           </div>
-          <div class="cs-arrow">↓</div>
-        </a> -->
-
-        <div class="case-study reveal">
+        </article>
+        <article class="case-study reveal">
           <div class="cs-num">04</div>
           <div class="cs-body">
-            <div class="cs-category">Financial Modelling · Capital Budgeting · Independent Project</div>
-            <h3 class="cs-title">Small Commercial Solar: Cash or Finance?</h3>
-            <p class="cs-desc">A five-tab financial model helping a small business decide whether rooftop solar pays
-              for itself — and whether to pay cash or finance it. Built with South African Section 12B tax treatment,
-              three-scenario sensitivity, and full formula transparency, not a black-box calculator.</p>
-            <div class="cs-impact">
-              <div class="cs-stat">
-                <div class="cs-stat-value">2.3–3.6</div>
-                <div class="cs-stat-label">Years Payback (All Scenarios)</div>
-              </div>
-              <div class="cs-stat">
-                <div class="cs-stat-value">3</div>
-                <div class="cs-stat-label">Scenarios Modelled</div>
-              </div>
-            </div>
-            <div class="cs-tags">
-              <span class="tag">Financial Modelling</span><span class="tag">Excel</span><span class="tag">Capital
-                Budgeting</span><span class="tag">Renewable Energy</span>
-            </div>
+            <div class="cs-category">Independent project · <span class="chip ">Learning model</span></div>
+            <h4 class="cs-title">Small Commercial Solar: Cash or Finance?</h4>
+            <dl class="cs-fields">
+              <dt>Objective</dt>
+              <dd>Compare buying rooftop solar with cash versus financing for a small business.</dd>
+              <dt>Approach</dt>
+              <dd>Five-tab Excel model with South African Section 12B tax treatment, three scenarios and visible
+                formulas.</dd>
+              <dt>Outcome</dt>
+              <dd>Modelled payback of 2.3 to 3.6 years across the three scenarios. A learning model, not a live
+                investment.</dd>
+              <dt>Learned</dt>
+              <dd>Capex/opex structuring, scenario analysis and tax-adjusted cash flows.</dd>
+            </dl>
+            <div class="cs-tags"><span class="tag">Excel</span><span class="tag">Capital Budgeting</span><span
+                class="tag">Renewable Energy</span></div>
+            <div class="cs-links"></div>
           </div>
-          <div class="cs-arrow">↗</div>
-        </div>
-
+        </article>
+        <article class="case-study reveal">
+          <div class="cs-num">05</div>
+          <div class="cs-body">
+            <div class="cs-category">Independent project · <span class="chip ">Portfolio models</span></div>
+            <h4 class="cs-title">NimbusX FP&amp;A Framework</h4>
+            <dl class="cs-fields">
+              <dt>Objective</dt>
+              <dd>Show what a full FP&amp;A model set looks like for two different organisations.</dd>
+              <dt>Approach</dt>
+              <dd>Python-based models for a renewable energy business and an NPO childcare operator: revenue, working
+                capital, CAPEX, funding, Monte Carlo simulation, sensitivity/tornado analysis, DCF valuation and
+                automated reporting.</dd>
+              <dt>Status</dt>
+              <dd>Case-study organisations built as portfolio pieces, not client engagements.</dd>
+              <dt>Learned</dt>
+              <dd>Structuring an end-to-end model set in Python.</dd>
+            </dl>
+            <div class="cs-tags"><span class="tag">Python</span><span class="tag">FP&amp;A</span><span
+                class="tag">DCF</span><span class="tag">Monte Carlo</span></div>
+            <div class="cs-links"></div>
+          </div>
+        </article>
+      </div>
+      <div class="cat-head">Data Analytics &amp; Business Intelligence</div>
+      <div class="case-studies">
+        <article class="case-study reveal">
+          <div class="cs-num">06</div>
+          <div class="cs-body">
+            <div class="cs-category">Independent project · <span class="chip ">In progress</span></div>
+            <h4 class="cs-title">Procurement &amp; Financial Dashboard</h4>
+            <dl class="cs-fields">
+              <dt>Objective</dt>
+              <dd>Analyse spend, supplier performance and cost drivers in one view.</dd>
+              <dt>Approach</dt>
+              <dd>Relational SQL database feeding an interactive Power BI dashboard.</dd>
+              <dt>Status</dt>
+              <dd>In progress since Dec 2025; not yet published.</dd>
+              <dt>Learned</dt>
+              <dd>Relational design for reporting.</dd>
+            </dl>
+            <div class="cs-tags"><span class="tag">SQL</span><span class="tag">Power BI</span><span class="tag">Data
+                Modelling</span></div>
+            <div class="cs-links"></div>
+          </div>
+        </article>
       </div>
     </div>
   </section>
 
   <!-- ===== CALCULATOR (Solar ROI, embedded) ===== -->
-  <!-- <section id="calculator">
+  <section id="calculator">
     <div class="container">
       <div class="section-label reveal">Try It Yourself</div>
       <h2 class="section-title reveal reveal-delay-1">Solar ROI<br><em>Calculator.</em></h2>
       <p class="section-body reveal reveal-delay-2">A live financial model for residential solar in South Africa —
-        payback period, IRR, NPV, and LCOE, calculated right here as you adjust the assumptions. Nothing is sent
-        anywhere; it all runs in your browser.</p>
+        payback period, IRR, NPV, and LCOE, calculated right here as you adjust the assumptions. Illustrative planning
+        tool with generic assumptions, not a quote. Nothing is sent anywhere; it all runs in your browser.</p>
       <div class="sc-live-tag reveal reveal-delay-3"><span class="sc-live-dot"></span>Live calculation</div>
 
-      <div class="sc-layout"> -->
-  <!-- ===== INPUTS ===== -->
-  <!-- <div class="reveal reveal-delay-1">
+      <div class="sc-layout">
+        <!-- ===== INPUTS ===== -->
+        <div class="reveal reveal-delay-1">
           <div class="sc-panel">
             <div class="sc-panel-label">Your System</div>
 
@@ -2772,10 +3063,10 @@
               </div>
             </details>
           </div>
-        </div> -->
+        </div>
 
-  <!-- ===== RESULTS ===== -->
-  <!-- <div class="reveal reveal-delay-2">
+        <!-- ===== RESULTS ===== -->
+        <div class="reveal reveal-delay-2">
           <div class="sc-panel">
             <div class="sc-panel-label">Results</div>
 
@@ -2813,9 +3104,12 @@
             <div class="sc-chart-wrap">
               <svg id="sc-chart" viewBox="0 0 560 260" preserveAspectRatio="xMidYMid meet"></svg>
               <div class="sc-chart-legend">
-                <div class="sc-legend-item"><span class="sc-legend-dot" style="background:var(--gold);"></span>Cumulative cash flow</div>
-                <div class="sc-legend-item"><span class="sc-legend-dot" style="background:var(--slate);"></span>Breakeven line</div>
-                <div class="sc-legend-item"><span class="sc-legend-dot" style="background:var(--green);"></span>Payback point</div>
+                <div class="sc-legend-item"><span class="sc-legend-dot"
+                    style="background:var(--gold);"></span>Cumulative cash flow</div>
+                <div class="sc-legend-item"><span class="sc-legend-dot"
+                    style="background:var(--slate);"></span>Breakeven line</div>
+                <div class="sc-legend-item"><span class="sc-legend-dot" style="background:var(--green);"></span>Payback
+                  point</div>
               </div>
             </div>
 
@@ -2831,59 +3125,82 @@
         </div>
       </div>
     </div>
-  </section> -->
+  </section>
+
+  <!-- ===== ENGINEERING ===== -->
+  <section id="engineering">
+    <div class="container">
+      <div class="section-label reveal">Engineering Journey</div>
+      <h2 class="section-title reveal reveal-delay-1">Engineering the<br><em>next layer.</em></h2>
+      <p class="section-body reveal reveal-delay-2">My journey into software engineering builds on a foundation in
+        accounting, finance and data analytics. I am developing the technical skills to move beyond analysing business
+        problems and towards building the systems and workflows that help solve them.</p>
+      <div class="eng-grid reveal">
+        <div class="eng-card"><span class="chip dev">Studying</span>
+          <h3>Software Engineering</h3>
+          <p>WeThinkCode_ programme: programming, problem-solving, software design, testing, version control, databases
+            and APIs, as the programme covers them.</p>
+          <div class="service-tags"><span class="tag">Python</span><span class="tag">Git</span><span
+              class="tag">Testing</span><span class="tag">SQL</span></div>
+        </div>
+        <div class="eng-card"><span class="chip dev">Elective</span>
+          <h3>Data Engineering</h3>
+          <p>My selected elective: data processing, pipelines, storage, data quality and workflow orchestration.</p>
+          <div class="service-tags"><span class="tag">Pipelines</span><span class="tag">Data quality</span><span
+              class="tag">Orchestration</span></div>
+        </div>
+        <div class="eng-card"><span class="chip">Direction</span>
+          <h3>Applied Learning</h3>
+          <p>I intend to apply this to financial data, business reporting, operational processes and renewable energy
+            analysis, starting from projects such as the <a href="#calculator" style="color:var(--gold)">Solar ROI
+              Calculator</a>.</p>
+          <div class="service-tags"><span class="tag">Financial data</span><span class="tag">Reporting</span><span
+              class="tag">Solar analysis</span></div>
+        </div>
+      </div>
+      <div class="flow reveal" aria-label="Learning direction"><b>Business problem</b>→<b>Data</b>→<b>Reliable
+          workflow</b>→<b>Decision-ready insight</b></div>
+    </div>
+  </section>
 
   <!-- ===== NIMBUSX ===== -->
   <section id="nimbusx">
-    <div class="nx-bg-mark">NimbusX</div>
+    <div class="nx-bg-mark" aria-hidden="true">NimbusX</div>
     <div class="container">
       <div class="nx-grid">
         <div>
-          <div class="section-label reveal">The Venture</div>
+          <div class="section-label reveal">My Business</div>
           <div class="nx-brand-mark reveal reveal-delay-1">
             <div class="nx-wordmark">Nimbus<span>X</span></div>
             <div class="nx-descriptor">Digital · Analytics · Systems</div>
           </div>
-          <p class="nx-statement reveal reveal-delay-2">
-            <strong>The freelance brand I'm building</strong> around financial modelling, FP&A, and business analytics
-            for South African SMEs.
-          </p>
-          <p class="section-body reveal reveal-delay-3" style="font-size: 0.9rem;">
-            NimbusX is where I apply everything I've learned across finance, ERP systems, and analytics to independent
-            projects — building toward the kind of client work I want to do next.
-          </p>
-          <div class="nx-cta-row reveal reveal-delay-4" style="margin-top: 2.5rem;">
-            <a href="#work" class="btn-primary" style="font-size: 0.78rem;">
-              See My Work →
-            </a>
-            <a href="#contact" class="btn-ghost" style="font-size: 0.78rem;">Get In Touch</a>
-          </div>
+          <p class="nx-statement reveal reveal-delay-2"><strong>Founded November 2025</strong> to help small and
+            medium-sized businesses improve financial visibility and use their data more effectively.</p>
+          <p class="section-body reveal reveal-delay-3" style="font-size:.9rem">The long-term concept is a financial
+            operating system for SMEs: accounting data → MySQL → Power BI → Excel models → actionable insight. It is a
+            direction and architecture idea, not a platform that exists today. Focus industries: manufacturing,
+            industrial and renewable energy.</p>
+          <div class="nx-cta-row reveal reveal-delay-4" style="margin-top:2.5rem"><a href="#contact" class="btn-primary"
+              style="font-size:.78rem">Discuss Your Reporting Needs</a><a href="#work" class="btn-ghost"
+              style="font-size:.78rem">See Projects</a></div>
         </div>
         <div class="nx-right">
-          <div class="nx-focus-areas reveal">
-            <div class="nx-focus">
-              <div class="nx-focus-icon">📊</div>
-              <h4>Analytics & Dashboards</h4>
-              <p>Power BI, SQL, and custom data infrastructure for operational clarity.</p>
+          <div class="nx-status reveal">
+            <div><span class="chip">Can deliver now</span>
+              <h4>Analytics &amp; reporting</h4>
+              <p>Power BI dashboards, Excel financial models and FP&amp;A, reconciliations and financial reporting.</p>
             </div>
-            <div class="nx-focus">
-              <div class="nx-focus-icon">🔧</div>
-              <h4>ERP & Financial Systems</h4>
-              <p>SAP background and Dynamics 365 in progress — grounding analytics work in how the underlying
-                systems actually behave.</p>
+            <div><span class="chip dev">Prototyped</span>
+              <h4>Solar models</h4>
+              <p>Solar ROI calculator, rooftop solar cash-vs-finance model, two FP&amp;A case-study models.</p>
             </div>
-            <div class="nx-focus">
-              <div class="nx-focus-icon">💡</div>
-              <h4>Financial Intelligence</h4>
-              <p>Reporting structures, financial models, and visibility frameworks.</p>
+            <div><span class="chip dev">In development</span>
+              <h4>SQL-based workflows</h4>
+              <p>MySQL-backed reporting and Python/data-engineering workflows, as my studies progress.</p>
             </div>
-          </div>
-          <div class="glass reveal reveal-delay-1" style="padding: 1.75rem;">
-            <div class="section-label" style="margin-bottom: 1rem;">Industries I'm Focused On</div>
-            <div style="display: flex; flex-wrap: wrap; gap: 0.5rem;">
-              <span class="tag">Manufacturing</span>
-              <span class="tag">Industrial</span>
-              <span class="tag">Renewable Energy</span>
+            <div><span class="chip int">Longer-term</span>
+              <h4>SME financial OS</h4>
+              <p>Integrated data-to-insight pipeline for SMEs. Concept only.</p>
             </div>
           </div>
         </div>
@@ -2892,56 +3209,44 @@
   </section>
 
   <!-- ===== STACK ===== -->
-  <section id="stack" style="padding-top: 6rem; padding-bottom: 6rem;">
+  <section id="stack" style="padding-top:6rem;padding-bottom:6rem">
     <div class="container">
       <div class="section-label reveal">Capabilities</div>
-      <h2 class="section-title reveal reveal-delay-1">Skills & <em>Stack</em></h2>
+      <h2 class="section-title reveal reveal-delay-1">Skills &amp; <em>Stack</em></h2>
+      <div class="legend reveal"><span class="chip">Demonstrated</span><span class="chip dev">Learning /
+          developing</span><span class="chip int">Area of interest</span></div>
       <div class="stack-groups">
         <div class="stack-group reveal">
-          <h4>Finance & ERP</h4>
-          <div class="stack-items">
-            <span class="stack-item">SAP ERP (MM/FI)</span>
-            <span class="stack-item">Microsoft Dynamics 365</span>
-            <span class="stack-item">Financial Accounting</span>
-            <span class="stack-item">Procurement Management</span>
-            <span class="stack-item">Budget & Variance Analysis</span>
-            <span class="stack-item">Commitment Accounting</span>
-          </div>
+          <h4>Finance &amp; ERP</h4>
+          <div class="stack-items"><span class="stack-item ">SAP ERP (MM/FI)</span><span class="stack-item ">Financial
+              Accounting</span><span class="stack-item ">Financial Reporting</span><span class="stack-item ">Budget
+              &amp; Variance Analysis</span><span class="stack-item ">Commitment Accounting</span><span
+              class="stack-item s-int">Microsoft Dynamics 365</span></div>
         </div>
-        <div class="stack-group reveal reveal-delay-1">
-          <h4>Data & Analytics</h4>
-          <div class="stack-items">
-            <span class="stack-item">Power BI</span>
-            <span class="stack-item">SQL (MySQL)</span>
-            <span class="stack-item">Python (Pandas)</span>
-            <span class="stack-item">Excel (Advanced)</span>
-            <span class="stack-item">Data Modelling</span>
-            <span class="stack-item">KPI Frameworks</span>
-          </div>
+        <div class="stack-group reveal">
+          <h4>Data &amp; Analytics</h4>
+          <div class="stack-items"><span class="stack-item ">Power BI</span><span class="stack-item ">SQL</span><span
+              class="stack-item ">Excel (Financial Analysis)</span><span class="stack-item ">Dashboard
+              Development</span><span class="stack-item ">Python (FP&amp;A modelling)</span></div>
         </div>
-        <div class="stack-group reveal reveal-delay-3">
-          <h4>Business Systems</h4>
-          <div class="stack-items">
-            <span class="stack-item">Process Mapping</span>
-            <span class="stack-item">Systems Analysis</span>
-            <span class="stack-item">Workflow Design</span>
-            <span class="stack-item">ERP Implementation</span>
-            <span class="stack-item">Change Management</span>
-            <span class="stack-item">Operational Auditing</span>
-            <span class="stack-item">Multi-ERP Reconciliation</span>
-            <span class="stack-item">Invoice Validation</span>
-          </div>
+        <div class="stack-group reveal">
+          <h4>Software Engineering</h4>
+          <div class="stack-items"><span class="stack-item s-dev">Python</span><span class="stack-item s-dev">Git &amp;
+              Version Control</span><span class="stack-item s-dev">Testing &amp; Debugging</span><span
+              class="stack-item s-dev">OOP, APIs, Databases</span></div>
         </div>
-        <div class="stack-group reveal reveal-delay-4">
-          <h4>Professional</h4>
-          <div class="stack-items">
-            <span class="stack-item">ALX Data Analytics</span>
-            <span class="stack-item">Financial Reporting</span>
-            <span class="stack-item">Stakeholder Management</span>
-            <span class="stack-item">Executive Reporting</span>
-            <span class="stack-item">Strategic Advisory</span>
-            <span class="stack-item">Client Presentations</span>
-          </div>
+        <div class="stack-group reveal">
+          <h4>Data Engineering</h4>
+          <div class="stack-items"><span class="stack-item s-dev">Pipelines &amp; Processing</span><span
+              class="stack-item s-dev">Data Formats &amp; Storage</span><span class="stack-item s-dev">Data
+              Quality</span><span class="stack-item s-dev">Workflow Orchestration</span></div>
+        </div>
+        <div class="stack-group reveal">
+          <h4>Business &amp; Industry</h4>
+          <div class="stack-items"><span class="stack-item ">Mining Finance</span><span class="stack-item ">Operational
+              Reporting</span><span class="stack-item ">Audit &amp; Reconciliation</span><span
+              class="stack-item s-dev">Renewable Energy Modelling</span><span class="stack-item s-int">SME Financial
+              Visibility</span></div>
         </div>
       </div>
     </div>
@@ -2954,92 +3259,82 @@
       <h2 class="section-title reveal reveal-delay-1">Built from<br><em>real operations.</em></h2>
       <div class="exp-layout">
         <div class="exp-sidebar reveal">
-          <p>My career sits at an unusual intersection, operational finance in large organisations, independent
-            audit and reconciliation consulting, and digital solutions for growing ones. Together they've made me
-            a better analyst, advisor, and builder.</p>
-          <a href="#contact" class="btn-ghost" style="font-size: 0.75rem; padding: 0.75rem 1.5rem;">Download CV</a>
+          <p>Operational finance in a large mining organisation, independent audit and reconciliation work, and now my
+            own analytics business. Studies are listed separately below.</p>
+          <a href="./Thato_Mapheto_CV_updated.pdf" class="btn-ghost" download
+            style="font-size:.75rem;padding:.75rem 1.5rem">Download CV</a>
         </div>
         <div class="exp-timeline">
           <div class="exp-item reveal">
             <div class="exp-meta">
-              <div class="exp-period">2025 — Present</div>
-              <div class="exp-company">NimbusX (Independent)</div>
+              <div class="exp-period">Nov 2025 — Present</div>
+              <div class="exp-company">NimbusX Digital (own business)</div>
             </div>
             <div class="exp-details">
-              <h3 class="exp-role">Founder: Freelance Financial Modelling & Analytics</h3>
-              <p class="exp-desc">Building the NimbusX brand and a portfolio of independent financial modelling and
-                analytics projects, while developing a client base among manufacturing, industrial, and renewable
-                energy SMEs.</p>
+              <h3 class="exp-role">Founder</h3>
+              <p class="exp-desc">Building a freelance practice in financial modelling, FP&amp;A and business analytics
+                for SMEs.</p>
               <div class="exp-highlights">
-                <div class="exp-highlight">Built full FP&A and financial models for two case-study organisations
+                <div class="exp-highlight">Built Python-based FP&amp;A models for two case-study organisations
                   (renewable energy, NPO childcare) as portfolio pieces</div>
-                <div class="exp-highlight">Built a rooftop solar investment model comparing cash vs. financing, with
-                  scenario analysis and South African Section 12B tax treatment</div>
-                <div class="exp-highlight">Developing specialist positioning around FP&A, financial modelling, and
-                  business analytics for procurement-intensive SMEs</div>
+                <div class="exp-highlight">Built a rooftop solar investment model comparing cash and financing, with
+                  scenario analysis and Section 12B tax treatment</div>
               </div>
             </div>
           </div>
           <div class="exp-item reveal">
             <div class="exp-meta">
-              <div class="exp-period">Apr 2025 — Present</div>
+              <div class="exp-period">Apr 2025 — Sep 2026</div>
               <div class="exp-company">Mieke Projects (Pty) Ltd</div>
             </div>
             <div class="exp-details">
-              <h3 class="exp-role">Audit & Financial Reconciliation Consultant (Contract)</h3>
-              <p class="exp-desc">Independent contract engagement performing compliance audits and financial
-                reconciliation across large-scale, multi-billion-rand infrastructure projects — tracing
-                discrepancies back to source and producing auditable correction trails for management.</p>
+              <h3 class="exp-role">Audit &amp; Financial Reconciliation Consultant (Independent Contract)</h3>
+              <p class="exp-desc">Contract audit and reconciliation work on large infrastructure projects.</p>
               <div class="exp-highlights">
-                <div class="exp-highlight">Reconciled project and supplier expenditure exceeding R1 billion between
-                  internal project records and ERP systems, investigating and resolving material variances</div>
-                <div class="exp-highlight">Conducted a full compliance audit of 600+ employee records, verifying
-                  contracts, identification documents, qualifications, and proof of residence</div>
-                <div class="exp-highlight">Performed invoice validation across large supplier populations —
-                  duplicate invoices, missing invoices, incorrect values, VAT and local content discrepancies</div>
-                <div class="exp-highlight">Prepared Excel reconciliation schedules and management reports across
-                  multiple concurrent client engagements</div>
+                <div class="exp-highlight">Reconciled large scale project and supplier expenditure between project
+                  records and ERP systems</div>
+                <div class="exp-highlight">Audited multiple employee records </div>
+                <div class="exp-highlight">Validated supplier invoices: duplicates, missing invoices, incorrect values,
+                  VAT and local-content discrepancies</div>
+                <div class="exp-highlight">Prepared Excel reconciliation schedules and management reports</div>
               </div>
             </div>
           </div>
           <div class="exp-item reveal">
             <div class="exp-meta">
-              <div class="exp-period">2022 — 2024</div>
-              <div class="exp-company">Mining Organisation, South Africa</div>
+              <div class="exp-period">Dec 2023 — Jan 2024</div>
+              <div class="exp-company">Sibanye-Stillwater</div>
             </div>
             <div class="exp-details">
-              <h3 class="exp-role">Finance Graduate - Sibanye Stillwater</h3>
-              <p class="exp-desc">Financial operations role with direct involvement in SAP ERP processes across
-                procurement, accounts payable, commitment accounting, and financial reporting. Instrumental in
-                identifying and resolving systemic issues in purchase order management.</p>
+              <h3 class="exp-role">Acting Finance Supervisor</h3>
+              <p class="exp-desc">Stepped up from Finance Graduate to cover supervisory responsibilities.</p>
               <div class="exp-highlights">
-                <div class="exp-highlight">Recovered R11 million in SAP purchase commitments through systematic process
-                  review and structured follow-up</div>
-                <div class="exp-highlight">Built procurement analytics framework providing real-time visibility into
-                  purchase order lifecycle and supplier performance</div>
-                <div class="exp-highlight">Identified and documented process gaps that were causing commitment
-                  overstatement in financial reporting</div>
-                <div class="exp-highlight">Collaborated with SAP consultants and supply chain teams to implement
-                  improved controls</div>
-              </div>
-            </div>
-          </div>
-          <div class="exp-item reveal">
-            <div class="exp-meta">
-              <div class="exp-period">2023</div>
-              <div class="exp-company">ALX Africa</div>
-            </div>
-            <div class="exp-details">
-              <h3 class="exp-role">Data Analytics Programme — ALX Africa</h3>
-              <p class="exp-desc">Intensive data analytics programme with focus on SQL, Python, Power BI, and real-world
-                business analytics applications. Completed alongside active work in financial operations.</p>
-              <div class="exp-highlights">
-                <div class="exp-highlight">Completed ALX Data Analytics certification with hands-on project work in SQL
-                  and Python</div>
-                <div class="exp-highlight">ALX Professional Foundations — leadership, communication, and business
-                  strategy frameworks</div>
-                <div class="exp-highlight">Applied learnings directly to live procurement analytics work in parallel
+                <div class="exp-highlight">Led day-to-day finance operations across multiple cost centres</div>
+                <div class="exp-highlight">Liaised between finance, procurement, payroll and operations to resolve
+                  queries and keep cost reporting on schedule</div>
+                <div class="exp-highlight">Upheld governance frameworks, company policy and accurate SAP processing
                 </div>
+                <div class="exp-highlight">Guided stakeholders on budgeting, invoice validation and cost reporting</div>
+              </div>
+            </div>
+          </div>
+          <div class="exp-item reveal">
+            <div class="exp-meta">
+              <div class="exp-period">2022 — Jul 2024</div>
+              <div class="exp-company">Sibanye-Stillwater</div>
+            </div>
+            <div class="exp-details">
+              <h3 class="exp-role">Finance Graduate</h3>
+              <p class="exp-desc">Graduate programme in mining finance covering financial reporting, shaft accounting,
+                materials management, procurement-related processes and SAP ERP.</p>
+              <div class="exp-highlights">
+                <div class="exp-highlight">Helped identify, review and resolve aged SAP commitments, contributing to
+                  approx. R11 million in commitments released</div>
+                <div class="exp-highlight">Supported budget monitoring and reporting, with approx. 95% budget compliance
+                  in the relevant area</div>
+                <div class="exp-highlight">Worked with finance, engineering, production, safety, hygiene, procurement
+                  and suppliers</div>
+                <div class="exp-highlight">Handled reconciliations, accruals, provisions and financial controls</div>
               </div>
             </div>
           </div>
@@ -3048,45 +3343,34 @@
     </div>
   </section>
 
-  <!-- ===== INSIGHTS ===== -->
-  <!-- <section id="insights">
+  <section id="education">
     <div class="container">
-      <div class="section-label reveal">Thinking</div>
-      <h2 class="section-title reveal reveal-delay-1">Perspectives on finance,<br><em>modelling & analytics.</em></h2>
-      <div class="insights-grid">
-        <div class="insight-card reveal">
-          <div class="insight-cat">Manufacturing & Procurement</div>
-          <h3>Why Manufacturers Can't See Their Own Margins</h3>
-          <p>Procurement data, cost data, and financial reporting usually live in three different places. The margin
-            problem isn't a manufacturing problem — it's a visibility problem, and it's fixable without new systems.</p>
-          <div class="insight-footer">
-            <span class="insight-date">Coming Soon</span>
-            <span class="insight-read">Read →</span>
-          </div>
+      <div class="section-label reveal">Education &amp; Professional Development</div>
+      <h2 class="section-title reveal reveal-delay-1">Learning, <em>in progress.</em></h2>
+      <div class="edu-grid">
+        <div class="edu-card reveal"><span class="chip ">Completed</span>
+          <h3>University of Johannesburg</h3>
+          <p>Bachelor of Commerce in Accounting, Feb 2019 to Nov 2021.</p>
         </div>
-        <div class="insight-card reveal reveal-delay-2">
-          <div class="insight-cat">Data Analytics</div>
-          <h3>Building Dashboards That Actually Get Used</h3>
-          <p>Most Power BI dashboards are built for the analyst who made them. Dashboards that drive decisions are built
-            for the person who needs to make a call in 30 seconds with incomplete information.</p>
-          <div class="insight-footer">
-            <span class="insight-date">Coming Soon</span>
-            <span class="insight-read">Read →</span>
-          </div>
+        <div class="edu-card reveal"><span class="chip dev">Current programme</span>
+          <h3>WeThinkCode_</h3>
+          <p>Software Engineering programme, 5 October 2026 to 31 December 2027, with Data Engineering as selected
+            elective.</p>
         </div>
-        <div class="insight-card reveal reveal-delay-3">
-          <div class="insight-cat">Renewable Energy Finance</div>
-          <h3>Financial Modelling for South African Solar Projects</h3>
-          <p>Renewable energy projects in SA live and die on their financial models. IRR, LCOE, and DSCR — and why most
-            project models underestimate the operational cost complexity.</p>
-          <div class="insight-footer">
-            <span class="insight-date">Coming Soon</span>
-            <span class="insight-read">Read →</span>
-          </div>
+        <div class="edu-card reveal"><span class="chip ">Aug 2025 – Jun 2026</span>
+          <h3>Professional development</h3>
+          <p>ALX Data Science (Jun 2026); Coursera Financial Analyst Professional Certificate (May 2026); ALX Python
+            Programming (Feb 2026); CU Boulder Renewable Energy Specialization (Feb 2026); DLO Academy / EWSETA Project
+            Finance and Renewable Energy Financial Modelling (Jan 2026); ALX Data Analytics (Dec 2025); ALX Professional
+            Foundations (Aug 2025).</p>
+        </div>
+        <div class="edu-card reveal"><span class="chip ">Completed Dec 2025</span>
+          <h3>ALX Data Analytics</h3>
+          <p>Data analytics programme covering SQL, Power BI, dashboards and communicating insights.</p>
         </div>
       </div>
     </div>
-  </section> -->
+  </section>
 
   <!-- ===== CONTACT ===== -->
   <section id="contact">
@@ -3105,21 +3389,22 @@
                 <span class="channel-value">thatomapheto6@gmail.com</span>
               </div>
             </a>
-            <a href="https://www.linkedin.com/in/thatomapheto" target="_blank" class="channel">
+            <a href="https://www.linkedin.com/in/thatomapheto" target="_blank" rel="noopener noreferrer"
+              class="channel">
               <div class="channel-icon">in</div>
               <div>
                 <span class="channel-label">LinkedIn</span>
                 <span class="channel-value">Connect on LinkedIn</span>
               </div>
             </a>
-            <a href="https://github.com/ThatoMapheto" target="_blank" class="channel">
+            <a href="https://github.com/ThatoMapheto" target="_blank" rel="noopener noreferrer" class="channel">
               <div class="channel-icon">gh</div>
               <div>
                 <span class="channel-label">GitHub</span>
-                <span class="channel-value">View my repositories</span>
+                <span class="channel-value">GitHub profile</span>
               </div>
             </a>
-            <a href="./Thato_Mapheto_CV_updated.pdf" class="channel">
+            <a href="./Thato_Mapheto_CV_updated.pdf" class="channel" download>
               <div class="channel-icon">↓</div>
               <div>
                 <span class="channel-label">CV / Résumé</span>
@@ -3180,7 +3465,8 @@
       <div class="footer-links">
         <a href="#about">About</a>
         <a href="#services">Services</a>
-        <a href="#work">Work</a>
+        <a href="#work">Projects</a>
+        <a href="#engineering">Engineering</a>
         <a href="#calculator">Calculator</a>
         <a href="#nimbusx">NimbusX</a>
         <a href="#contact">Contact</a>
@@ -3323,6 +3609,7 @@
       });
     }
 
+    document.addEventListener("keydown", e => { if (e.key === "Escape") closeMob(); });
     // ===== STRIP DUPLICATION (ensure seamless) =====
     const strip = document.getElementById('strip');
     // Already doubled in HTML for seamless loop
