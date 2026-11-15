@@ -5,3417 +5,1540 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description"
-    content="Thato Mapheto: accounting and SAP ERP background, data analytics (SQL, Power BI) and developing software and data engineering skills. Founder of NimbusX Digital, focused on financial visibility for SMEs.">
-  <title>Thato Mapheto — Finance, Data & Software Engineering</title>
+    content="Thato Mapheto: finance, SAP ERP and data analytics background, developing software and data engineering skills. Founder of NimbusX Digital.">
+  <title>Thato Mapheto — Finance, Data &amp; Software Engineering</title>
   <meta property="og:title" content="Thato Mapheto — Finance meets Engineering">
   <meta property="og:description" content="Finance + Data + Engineering = Better Business Decisions.">
   <meta property="og:type" content="website">
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
-    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Syne:wght@400;500;600;700;800&family=JetBrains+Mono:wght@300;400&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500;1,600&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@300;400;500&display=swap"
     rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/lucide@0.577.0/dist/umd/lucide.min.js" defer></script>
   <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+
   <style>
-    /* ===== RESET & BASE ===== */
-    *,
-    *::before,
-    *::after {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
-    html {
-      scroll-behavior: smooth;
-      font-size: 16px;
-    }
-
+    /* ===== TOKENS ===== */
     :root {
-      --ink: #070D18;
-      --ink-2: #0B1526;
-      --ink-3: #0E1B30;
-      --surface: #14263F;
-      --surface-2: #1B324F;
-      --border: rgba(45, 226, 230, 0.14);
-      --border-2: rgba(45, 226, 230, 0.30);
-      --gold: #2DE2E6;
-      --gold-light: #7DF9FA;
-      --gold-dim: rgba(45, 226, 230, 0.14);
-      --slate: #93A4C8;
-      --slate-light: #C7D4EC;
-      --white: #F5F8FC;
-      --white-dim: rgba(245, 248, 252, 0.7);
-      --accent: #7C5CFF;
-      --accent-dim: rgba(124, 92, 255, 0.14);
-      --glow: rgba(45, 226, 230, 0.10);
-      --green: #4CE6A6;
-      --nav-h: 72px;
-      --ff-display: 'Cormorant Garamond', Georgia, serif;
-      --ff-sans: 'Syne', sans-serif;
-      --ff-mono: 'JetBrains Mono', monospace;
-      --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
-      --ease-in-out: cubic-bezier(0.45, 0, 0.55, 1);
+      --navy: #0a1628;
+      --navy-2: #0d1c33;
+      --blue: #2e5c8f;
+      --blue-hi: #3b74b3;
+      --pale: #b9c7dc;
+      --pale-2: #d6deea;
+      --white: #ffffff;
+      --paper: #f5f7fa;
+      --paper-2: #eaf0f5;
+      --slate: #4a5568;
+      --plum: #8585b7;
+      --line: rgba(185, 199, 220, 0.27);
+      --line-dark: #d8e0e9;
+      --line-mid: #cbd7e4;
+
+      --ff-serif: "Playfair Display", Georgia, serif;
+      --ff-sans: "Inter", system-ui, -apple-system, Segoe UI, Arial, sans-serif;
+      --ff-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, Consolas, monospace;
+
+      --nav-h: 70px;
+      --ease: cubic-bezier(0.16, 1, 0.3, 1);
     }
 
+    /* ===== RESET / BASE ===== */
+    *, *::before, *::after { box-sizing: border-box; }
+    html { scroll-behavior: smooth; scroll-padding-top: var(--nav-h); }
     body {
-      background: var(--ink);
-      color: var(--white);
+      margin: 0;
+      background: var(--paper);
+      color: var(--navy);
       font-family: var(--ff-sans);
-      overflow-x: hidden;
-      line-height: 1.6;
+      line-height: 1.65;
+      -webkit-font-smoothing: antialiased;
     }
+    ::selection { background: var(--pale); color: var(--navy); }
+    :focus-visible { outline: 2px solid var(--plum); outline-offset: 4px; }
+    img { max-width: 100%; display: block; }
+    svg { max-width: 100%; }
+    h1, h2, h3, h4, p { margin-top: 0; }
+    h1, h2, h3, h4 { line-height: 1.12; font-weight: 400; }
+    h1, h2, .cs-title, .exp-role { font-family: var(--ff-serif); }
+    h2 { font-size: clamp(2.4rem, 5vw, 4.6rem); letter-spacing: -0.035em; margin-bottom: 1rem; }
+    h3 { font-family: var(--ff-serif); font-size: 1.55rem; }
+    p { max-width: 65ch; }
+    a { color: inherit; }
+    button, input, select, textarea { font-family: var(--ff-sans); }
+    button, a { cursor: pointer; }
+    section { scroll-margin-top: var(--nav-h); }
 
-    ::selection {
-      background: var(--gold-dim);
-      color: var(--gold-light);
+    .wrap { width: min(1240px, calc(100% - 64px)); margin: auto; }
+    .section { padding: 110px 0; }
+
+    /* ===== TYPOGRAPHIC UTILITIES ===== */
+    .mono, .eyebrow, .chip, .tag, .metric-label, .cs-category, .cs-num,
+    .exp-period, .insight-cat, .footer-copy, .footer-links, .scroll-hint,
+    .sc-panel-label, .sc-field-label, .sc-headline-label, .sc-stat-cell-label,
+    .sc-live-tag, .services-header .services-intro {
+      font-family: var(--ff-mono);
     }
-
-    /* ===== SCROLLBAR ===== */
-    ::-webkit-scrollbar {
-      width: 3px;
+    .eyebrow {
+      font-size: 0.69rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--blue);
+      font-weight: 700;
+      margin-bottom: 22px;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
     }
-
-    ::-webkit-scrollbar-track {
-      background: var(--ink);
+    .eyebrow::before {
+      content: ""; display: block; width: 22px; height: 1px;
+      background: var(--blue);
     }
+    .muted { color: var(--slate); }
+    .dark { background: var(--navy); color: var(--white); }
+    .dark .eyebrow { color: var(--pale); }
+    .dark .eyebrow::before { background: var(--pale); }
+    .dark .muted, .dark p.muted { color: var(--pale); }
+    .accent { color: var(--blue); }
+    .dark .accent { color: var(--pale); }
+    .italic { font-style: italic; }
+    .serif { font-family: var(--ff-serif); }
 
-    ::-webkit-scrollbar-thumb {
-      background: linear-gradient(var(--gold), var(--accent));
+    /* ===== BUTTONS ===== */
+    .btn-primary, .btn-ghost {
+      display: inline-flex; align-items: center; justify-content: center; gap: 10px;
+      padding: 14px 22px; border-radius: 2px; text-decoration: none;
+      font-size: 0.83rem; font-weight: 600; line-height: 1.3;
+      transition: background .2s, border-color .2s, transform .2s, color .2s;
+      border: 1px solid var(--blue);
+    }
+    .btn-primary { background: var(--blue); color: var(--white); }
+    .btn-primary:hover { background: var(--blue-hi); border-color: var(--blue-hi); transform: translateY(-2px); }
+    .btn-ghost { background: transparent; color: inherit; border-color: var(--pale); }
+    .btn-ghost:hover { background: rgba(185, 199, 220, 0.10); }
+
+    /* ===== CHIPS & TAGS ===== */
+    .chip, .tag {
+      display: inline-block;
+      font-size: 0.66rem;
+      letter-spacing: 0.07em;
+      text-transform: uppercase;
+      border: 1px solid var(--line-mid);
+      padding: 5px 8px;
       border-radius: 2px;
+      color: var(--blue);
+      white-space: nowrap;
     }
+    .chip.dev { color: var(--plum); border-color: var(--plum); border-style: dashed; }
+    .chip.int { color: var(--slate); border-style: dashed; }
+    .dark .chip, .dark .tag { color: var(--pale); border-color: var(--line); }
+    .dark .chip.dev { color: var(--plum); }
 
     /* ===== NAV ===== */
-    nav {
-      position: fixed;
-      top: 0;
-      left: 0;
-      right: 0;
-      height: var(--nav-h);
-      z-index: 100;
-      display: flex;
-      align-items: center;
-      padding: 0 clamp(1.5rem, 5vw, 4rem);
-      transition: background 0.4s ease, border-bottom 0.4s ease;
+    .site-header {
+      position: sticky; top: 0; z-index: 50;
+      background: rgba(10, 22, 40, 0.97);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--line);
+      color: var(--white);
     }
-
-    nav.scrolled {
-      background: rgba(5, 10, 20, 0.92);
-      backdrop-filter: blur(20px);
-      border-bottom: 1px solid var(--border);
-    }
-
     .nav-inner {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      width: 100%;
-      max-width: 1320px;
-      margin: 0 auto;
+      min-height: var(--nav-h);
+      display: flex; align-items: center; justify-content: space-between; gap: 20px;
     }
-
-    .nav-logo {
-      font-family: var(--ff-display);
-      font-size: 1.35rem;
-      font-weight: 500;
+    .brand-link {
+      display: inline-flex; align-items: center; gap: 12px;
+      text-decoration: none;
+      font-family: var(--ff-serif);
+      font-size: 1.05rem; font-weight: 500;
       letter-spacing: 0.02em;
-      color: var(--white);
-      text-decoration: none;
-      display: flex;
-      align-items: center;
-      gap: 0.6rem;
     }
-
-    .nav-logo .logo-dot {
-      width: 6px;
-      height: 6px;
-      background: var(--gold);
-      border-radius: 50%;
-      flex-shrink: 0;
-      box-shadow: 0 0 10px var(--gold);
-    }
-
-    .nav-links {
-      display: flex;
-      align-items: center;
-      gap: 2.5rem;
-      list-style: none;
-    }
-
+    .brand-link img { width: 36px; height: 36px; object-fit: contain; border-radius: 50%; background: rgba(255,255,255,.06); }
+    .nav-links { display: flex; align-items: center; gap: 22px; list-style: none; padding: 0; margin: 0; }
     .nav-links a {
-      font-family: var(--ff-sans);
-      font-size: 0.78rem;
-      font-weight: 500;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: var(--slate);
       text-decoration: none;
-      transition: color 0.25s;
-    }
-
-    .nav-links a:hover {
-      color: var(--white);
-    }
-
-    .nav-cta {
-      font-family: var(--ff-sans);
-      font-size: 0.78rem;
-      font-weight: 600;
+      font-family: var(--ff-mono);
+      font-size: 0.68rem;
       letter-spacing: 0.1em;
       text-transform: uppercase;
-      color: var(--gold);
-      text-decoration: none;
-      border: 1px solid rgba(45, 226, 230, 0.35);
-      padding: 0.55rem 1.3rem;
-      border-radius: 2px;
-      transition: all 0.25s;
+      color: var(--pale);
+      transition: color .2s;
     }
-
-    .nav-cta:hover {
-      background: rgba(45, 226, 230, 0.12);
-      border-color: var(--gold);
-      color: var(--gold-light);
-      box-shadow: 0 0 20px rgba(45, 226, 230, 0.25);
-    }
-
-    .hamburger {
+    .nav-links a:hover { color: var(--white); }
+    .menu-toggle {
       display: none;
-      flex-direction: column;
-      gap: 5px;
-      cursor: pointer;
-      padding: 4px;
-      background: none;
-      border: none;
+      background: none; border: 1px solid var(--line); color: var(--white);
+      padding: 8px; border-radius: 2px;
     }
-
-    .hamburger span {
-      display: block;
-      width: 24px;
-      height: 1.5px;
-      background: var(--white);
-      transition: all 0.3s;
-    }
+    .menu-toggle svg { width: 22px; height: 22px; }
 
     .mobile-nav {
       display: none;
-      position: fixed;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      background: rgba(5, 10, 20, 0.97);
-      backdrop-filter: blur(20px);
-      z-index: 99;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      gap: 2rem;
+      position: fixed; inset: 0; z-index: 49;
+      background: rgba(10, 22, 40, 0.98);
+      backdrop-filter: blur(14px);
+      flex-direction: column; align-items: center; justify-content: center; gap: 1.6rem;
     }
-
-    .mobile-nav.open {
-      display: flex;
-    }
-
+    .mobile-nav.open { display: flex; }
     .mobile-nav a {
-      font-family: var(--ff-display);
-      font-size: 2.2rem;
-      font-weight: 400;
-      color: var(--white);
-      text-decoration: none;
-      letter-spacing: 0.02em;
-      transition: color 0.2s;
+      font-family: var(--ff-serif);
+      font-size: 1.9rem;
+      text-decoration: none; color: var(--white);
     }
-
-    .mobile-nav a:hover {
-      color: var(--gold);
-    }
-
+    .mobile-nav a:hover { color: var(--pale); }
     .mobile-close {
-      position: absolute;
-      top: 1.5rem;
-      right: 1.5rem;
-      background: none;
-      border: none;
-      color: var(--slate);
-      font-size: 1.5rem;
-      cursor: pointer;
-    }
-
-    /* ===== HERO PORTRAIT ===== */
-    .hero-image-block {
-      position: absolute;
-      top: 50%;
-      right: clamp(3rem, 8vw, 8rem);
-      transform: translateY(-40%);
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 1rem;
-      opacity: 0;
-      animation: fadeIn 1s ease 1.2s forwards;
-      z-index: 2;
-    }
-
-    .hero-portrait {
-      width: clamp(220px, 22vw, 320px);
-      aspect-ratio: 3 / 4;
-      object-fit: cover;
-      object-position: center top;
-      border-radius: 2px;
-      filter: grayscale(10%) contrast(1.08) saturate(1.1);
-      border: 1px solid var(--border-2);
-      box-shadow:
-        0 0 0 1px rgba(45, 226, 230, 0.18),
-        0 0 60px rgba(45, 226, 230, 0.08),
-        0 40px 80px rgba(0, 0, 0, 0.6);
-      transition: filter 0.4s ease, box-shadow 0.4s ease;
-    }
-
-    .hero-portrait:hover {
-      filter: grayscale(0%) contrast(1.08) saturate(1.15);
-      box-shadow:
-        0 0 0 1px rgba(45, 226, 230, 0.3),
-        0 0 80px rgba(45, 226, 230, 0.16),
-        0 40px 80px rgba(0, 0, 0, 0.6);
-    }
-
-    .hero-portrait-label {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 0.2rem;
-      padding: 0.75rem 1.25rem;
-      background: rgba(255, 255, 255, 0.03);
-      border: 1px solid var(--border);
-      border-radius: 2px;
-      backdrop-filter: blur(10px);
-    }
-
-    .portrait-name {
-      font-family: var(--ff-display);
-      font-size: 1rem;
-      font-weight: 500;
-      color: var(--white);
-      letter-spacing: 0.02em;
-    }
-
-    .portrait-title {
-      font-family: var(--ff-mono);
-      font-size: 0.62rem;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-      color: var(--gold);
-    }
-
-    @media (max-width: 1100px) {
-      .hero-image-block {
-        position: static;
-        transform: none;
-        flex-direction: row;
-        align-items: center;
-        gap: 1.25rem;
-        margin-bottom: 2rem;
-        opacity: 1;
-        animation: none;
-      }
-
-      .hero-portrait {
-        width: 64px;
-        height: 64px;
-        aspect-ratio: 1 / 1;
-        border-radius: 50%;
-        object-position: center top;
-        flex-shrink: 0;
-      }
-
-      .hero-portrait-label {
-        align-items: flex-start;
-        padding: 0;
-        background: none;
-        border: none;
-        backdrop-filter: none;
-      }
+      position: absolute; top: 1.25rem; right: 1.25rem;
+      background: none; border: none; color: var(--pale); font-size: 1.5rem; cursor: pointer;
     }
 
     /* ===== HERO ===== */
-    #hero {
+    .hero {
       position: relative;
-      min-height: 100vh;
-      display: flex;
-      align-items: center;
       overflow: hidden;
-      padding: 0 clamp(1.5rem, 5vw, 4rem);
-    }
-
-    .hero-bg {
-      position: absolute;
-      inset: 0;
-      background:
-        radial-gradient(ellipse 70% 55% at 68% 30%, rgba(45, 226, 230, 0.14) 0%, transparent 70%),
-        radial-gradient(ellipse 55% 45% at 8% 85%, rgba(124, 92, 255, 0.14) 0%, transparent 65%),
-        linear-gradient(160deg, #070D18 0%, #0B1526 55%, #14263F 100%);
-    }
-
-    .hero-orb {
-      position: absolute;
-      inset: 0;
-      pointer-events: none;
-      z-index: 1;
-      opacity: 0.55;
-      mix-blend-mode: screen;
-    }
-
-    .hero-grid-lines {
-      position: absolute;
-      inset: 0;
+      background: var(--navy);
+      color: var(--white);
       background-image:
-        linear-gradient(rgba(45, 226, 230, 0.035) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(45, 226, 230, 0.035) 1px, transparent 1px);
-      background-size: 60px 60px;
-      mask-image: radial-gradient(ellipse 80% 70% at 50% 50%, black 0%, transparent 80%);
+        radial-gradient(circle at 78% 38%, rgba(46, 92, 143, 0.35), transparent 35%),
+        linear-gradient(rgba(185, 199, 220, 0.05) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(185, 199, 220, 0.05) 1px, transparent 1px);
+      background-size: auto, 48px 48px, 48px 48px;
     }
-
-    .hero-content {
-      position: relative;
-      z-index: 2;
-      width: 100%;
-      max-width: 1320px;
-      margin: 0 auto;
-      padding-top: var(--nav-h);
-    }
-
-    .hero-eyebrow {
-      display: inline-flex;
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.14fr 0.86fr;
+      gap: 7%;
       align-items: center;
-      gap: 0.75rem;
-      margin-bottom: 2rem;
-      opacity: 0;
-      animation: fadeUp 0.8s var(--ease-out) 0.2s forwards;
+      padding-top: 90px;
+      padding-bottom: 55px;
     }
-
-    .hero-eyebrow-line {
-      width: 32px;
-      height: 1px;
-      background: linear-gradient(90deg, var(--gold), var(--accent));
+    .hero h1 {
+      font-size: clamp(3.2rem, 7vw, 6.8rem);
+      letter-spacing: -0.045em;
+      margin-bottom: 18px;
     }
-
-    .hero-eyebrow-text {
-      font-family: var(--ff-mono);
-      font-size: 0.72rem;
-      font-weight: 400;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-      color: var(--gold);
-    }
-
-    .hero-name {
-      font-family: var(--ff-display);
-      font-size: clamp(3.2rem, 8vw, 7.5rem);
-      font-weight: 300;
-      line-height: 1.0;
-      letter-spacing: -0.01em;
+    .hero h1 em { font-style: italic; color: var(--pale); }
+    .hero-lead {
+      font-family: var(--ff-serif);
+      font-style: italic;
+      font-size: 1.35rem;
       color: var(--white);
-      margin-bottom: 1rem;
-      opacity: 0;
-      animation: fadeUp 0.9s var(--ease-out) 0.35s forwards;
+      margin-bottom: 18px;
+      max-width: 560px;
     }
-
-    .hero-name em {
-      font-style: italic;
-      background: linear-gradient(100deg, var(--gold-light) 0%, var(--gold) 40%, var(--accent) 100%);
-      -webkit-background-clip: text;
-      background-clip: text;
-      -webkit-text-fill-color: transparent;
-    }
-
-    .hero-tagline {
-      font-family: var(--ff-display);
-      font-size: clamp(1.3rem, 3vw, 2.2rem);
-      font-weight: 300;
-      font-style: italic;
-      color: var(--slate-light);
-      max-width: 680px;
-      line-height: 1.4;
-      margin-bottom: 2.5rem;
-      opacity: 0;
-      animation: fadeUp 0.9s var(--ease-out) 0.5s forwards;
-    }
-
-    .hero-desc {
+    .hero-copy {
+      color: var(--pale);
+      max-width: 560px;
       font-size: 1rem;
-      color: var(--slate);
-      max-width: 520px;
-      line-height: 1.75;
-      margin-bottom: 3rem;
-      opacity: 0;
-      animation: fadeUp 0.9s var(--ease-out) 0.65s forwards;
+      margin-bottom: 28px;
     }
+    .hero-actions { display: flex; gap: 12px; flex-wrap: wrap; }
 
-    .hero-actions {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 1rem;
-      margin-bottom: 4rem;
-      opacity: 0;
-      animation: fadeUp 0.9s var(--ease-out) 0.8s forwards;
+    .portrait-frame {
+      position: relative;
+      min-height: 470px;
+      border: 1px solid var(--blue);
+      box-shadow: 0 0 28px rgba(46, 92, 143, 0.25);
+      background:
+        linear-gradient(140deg, rgba(46, 92, 143, 0.20), transparent 55%),
+        var(--navy-2);
+      display: flex; align-items: flex-end; padding: 32px;
     }
-
-    .btn-primary {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.6rem;
-      background: linear-gradient(100deg, var(--gold) 0%, var(--accent) 130%);
-      color: var(--ink);
-      font-family: var(--ff-sans);
-      font-size: 0.82rem;
-      font-weight: 700;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      text-decoration: none;
-      padding: 0.9rem 2rem;
-      border-radius: 2px;
-      transition: all 0.25s;
-      box-shadow: 0 0 0 rgba(45, 226, 230, 0);
+    .portrait-frame::before, .portrait-frame::after {
+      content: ""; position: absolute; border: 1px solid rgba(185, 199, 220, 0.17);
     }
-
-    .btn-primary:hover {
-      transform: translateY(-1px);
-      box-shadow: 0 8px 30px rgba(45, 226, 230, 0.35);
-      filter: brightness(1.08);
+    .portrait-frame::before { inset: 22px; }
+    .portrait-frame::after { inset: 45px; border-style: dashed; opacity: 0.55; }
+    .portrait-photo {
+      position: absolute; inset: 22px;
+      object-fit: cover; object-position: center top;
+      filter: grayscale(10%) contrast(1.05);
+      z-index: 0;
     }
-
-    .btn-ghost {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.6rem;
-      background: transparent;
-      color: var(--white);
-      font-family: var(--ff-sans);
-      font-size: 0.82rem;
-      font-weight: 600;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      text-decoration: none;
-      padding: 0.9rem 2rem;
-      border: 1px solid var(--border-2);
-      border-radius: 2px;
-      transition: all 0.25s;
-    }
-
-    .btn-ghost:hover {
-      border-color: var(--gold);
-      background: rgba(45, 226, 230, 0.06);
-      color: var(--gold-light);
-    }
-
-    .hero-metrics {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 2.5rem;
-      padding-top: 3rem;
-      border-top: 1px solid var(--border);
-      opacity: 0;
-      animation: fadeUp 0.9s var(--ease-out) 1s forwards;
-    }
-
-    .metric {
-      display: flex;
-      flex-direction: column;
-      gap: 0.25rem;
-    }
-
-    .metric-value {
-      font-family: var(--ff-display);
-      font-size: clamp(1.8rem, 4vw, 2.8rem);
-      font-weight: 500;
-      color: var(--white);
-      line-height: 1;
-    }
-
-    .metric-value span {
-      color: var(--gold);
-      text-shadow: 0 0 24px rgba(45, 226, 230, 0.35);
-    }
-
-    .metric-label {
-      font-family: var(--ff-mono);
-      font-size: 0.68rem;
-      letter-spacing: 0.15em;
-      text-transform: uppercase;
-      color: var(--slate);
-    }
-
-    .hero-scroll-hint {
-      position: absolute;
-      bottom: 2.5rem;
-      right: clamp(1.5rem, 5vw, 4rem);
-      display: flex;
-      align-items: center;
-      gap: 0.75rem;
-      opacity: 0;
-      animation: fadeIn 1s ease 1.5s forwards;
-    }
-
-    .scroll-line {
-      width: 40px;
-      height: 1px;
-      background: var(--border-2);
-    }
-
-    .scroll-text {
-      font-family: var(--ff-mono);
-      font-size: 0.65rem;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-      color: var(--slate);
-      writing-mode: vertical-rl;
-    }
-
-    /* Floating video-logo badge (overlaps portrait corner) */
-    .hero-video-badge {
-      position: absolute;
-      top: -22px;
-      left: -22px;
-      width: 92px;
-      height: 92px;
-      z-index: 3;
-      opacity: 0;
-      animation: fadeIn 1s ease 1.3s forwards;
-    }
-
-    .hero-video-ring {
-      position: absolute;
-      inset: -7px;
-      border: 1px solid rgba(45, 226, 230, 0.3);
-      border-radius: 50%;
-      animation: spin 16s linear infinite;
-    }
-
-    .hero-video-ring::before {
-      content: '';
-      position: absolute;
-      top: -2px;
-      left: 50%;
-      width: 4px;
-      height: 4px;
-      background: var(--gold);
-      box-shadow: 0 0 10px var(--gold);
-      border-radius: 50%;
-      transform: translateX(-50%);
-    }
-
-    .hero-video-mark {
-      position: absolute;
-      inset: 0;
-      border-radius: 50%;
-      overflow: hidden;
-      background: var(--ink);
-      border: 2px solid var(--ink);
-      box-shadow:
-        0 0 0 1px rgba(45, 226, 230, 0.35),
-        0 10px 30px rgba(0, 0, 0, 0.5);
-    }
-
-    .hero-video-mark video {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
+    .portrait-frame > .portrait-content { position: relative; z-index: 1; }
+    .portrait-content strong {
       display: block;
-    }
-
-    @media (max-width: 1100px) {
-      .hero-video-badge {
-        position: relative;
-        top: auto;
-        left: auto;
-        width: 44px;
-        height: 44px;
-        opacity: 1;
-        animation: none;
-        flex-shrink: 0;
-      }
-
-      .hero-video-ring {
-        inset: -4px;
-      }
-    }
-
-    /* ===== SECTION COMMONS ===== */
-    section {
-      padding: clamp(5rem, 10vw, 9rem) clamp(1.5rem, 5vw, 4rem);
-    }
-
-    .container {
-      max-width: 1320px;
-      margin: 0 auto;
-    }
-
-    .section-label {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.6rem;
-      font-family: var(--ff-mono);
-      font-size: 0.68rem;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-      color: var(--gold);
-      margin-bottom: 1.5rem;
-    }
-
-    .section-label::before {
-      content: '';
-      display: block;
-      width: 24px;
-      height: 1px;
-      background: linear-gradient(90deg, var(--gold), var(--accent));
-    }
-
-    .section-title {
-      font-family: var(--ff-display);
-      font-size: clamp(2.2rem, 5vw, 4.2rem);
+      font-family: var(--ff-serif);
+      font-size: clamp(2.2rem, 4vw, 4.2rem);
       font-weight: 400;
-      line-height: 1.1;
+      line-height: 1.02;
       color: var(--white);
-      margin-bottom: 1.5rem;
+      text-shadow: 0 2px 22px rgba(10, 22, 40, 0.7);
+    }
+    .portrait-content span {
+      display: block;
+      margin-top: 14px;
+      color: var(--pale);
+      font-family: var(--ff-mono);
+      font-size: 0.68rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+    }
+    .logo-badge {
+      position: absolute;
+      z-index: 2;
+      top: -28px; left: -28px;
+      width: 74px; height: 74px;
+      border: 1px solid var(--pale);
+      border-radius: 50%;
+      background: var(--navy);
+      display: grid; place-items: center;
+      box-shadow: 0 0 0 6px var(--navy), 0 0 40px rgba(185, 199, 220, 0.18);
+    }
+    .logo-badge img { width: 52px; height: 52px; object-fit: contain; }
+
+    .metric-strip {
+      display: flex;
+      padding: 24px 0 28px;
+      border-top: 1px solid var(--line);
+    }
+    .metric { flex: 1; padding: 0 24px; border-left: 1px solid var(--line); }
+    .metric:first-child { padding-left: 0; border-left: 0; }
+    .metric strong { display: block; font: 400 1.9rem var(--ff-serif); color: var(--white); }
+    .metric-label {
+      font-size: 0.62rem; letter-spacing: 0.13em; text-transform: uppercase; color: var(--pale);
+    }
+    .scroll-hint {
+      position: absolute; bottom: 28px; right: 4%;
+      font-size: 0.62rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--pale);
     }
 
-    .section-title em {
-      font-style: italic;
-      color: var(--gold-light);
+    /* ===== SKILLS STRIP ===== */
+    .skills-strip {
+      overflow: hidden;
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+      background: var(--navy-2);
+      padding: 14px 0;
+      color: var(--pale);
     }
-
-    .section-body {
-      font-size: 1.05rem;
-      color: var(--slate);
-      line-height: 1.8;
-      max-width: 600px;
+    .strip-inner { display: flex; width: max-content; animation: marquee 32s linear infinite; }
+    .strip-inner:hover { animation-play-state: paused; }
+    .strip-item {
+      display: flex; align-items: center; gap: 1.2rem;
+      padding: 0 1.4rem; white-space: nowrap;
+      font-family: var(--ff-mono);
+      font-size: 0.68rem; letter-spacing: 0.15em; text-transform: uppercase;
     }
+    .strip-item .dot { width: 4px; height: 4px; background: var(--pale); border-radius: 50%; }
+    @keyframes marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
 
     /* ===== ABOUT ===== */
-    #about {
-      background: var(--ink-2);
-    }
-
-    .about-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 6rem;
-      align-items: start;
-    }
-
-    .about-left {}
-
-    .about-right {
-      display: flex;
-      flex-direction: column;
-      gap: 3rem;
-    }
-
+    .split { display: grid; grid-template-columns: 1fr 1fr; gap: 8%; }
     .about-statement {
-      font-family: var(--ff-display);
-      font-size: clamp(1.4rem, 2.5vw, 2rem);
-      font-weight: 400;
-      line-height: 1.45;
-      color: var(--white-dim);
-      margin-top: 2rem;
+      font-family: var(--ff-serif); font-style: italic;
+      font-size: clamp(1.2rem, 2vw, 1.65rem);
+      line-height: 1.5; color: var(--slate);
+      margin: 18px 0 26px;
     }
-
-    .about-statement strong {
-      color: var(--white);
-      font-weight: 500;
+    .about-statement strong { color: var(--navy); font-style: normal; font-weight: 500; }
+    .legend { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 24px; }
+    .callout {
+      margin-top: 24px;
+      padding: 22px 25px;
+      border-left: 2px solid var(--blue);
+      background: var(--white);
+      border: 1px solid var(--line-dark);
+      border-left: 2px solid var(--blue);
     }
-
-    .about-statement em {
-      color: var(--gold-light);
-      font-style: italic;
-    }
-
-    .about-pillars {
-      display: flex;
-      flex-direction: column;
-      gap: 0;
-    }
+    .callout strong { display: block; margin-bottom: 6px; font-weight: 600; }
+    .callout p { margin: 0; color: var(--slate); font-size: 0.92rem; }
+    .callout a { color: var(--blue); font-weight: 600; text-decoration: none; }
 
     .pillar {
-      padding: 1.75rem 0;
-      border-bottom: 1px solid var(--border);
-      display: flex;
-      gap: 1.5rem;
-      align-items: flex-start;
-      transition: padding-left 0.3s var(--ease-out);
+      display: grid; grid-template-columns: 42px 1fr; gap: 15px;
+      padding: 22px 0;
+      border-bottom: 1px solid var(--line-dark);
     }
-
-    .pillar:hover {
-      padding-left: 0.5rem;
-    }
-
-    .pillar:first-child {
-      border-top: 1px solid var(--border);
-    }
-
-    .pillar-num {
-      font-family: var(--ff-mono);
-      font-size: 0.65rem;
-      letter-spacing: 0.1em;
-      color: var(--gold);
-      padding-top: 0.3rem;
-      flex-shrink: 0;
-    }
-
-    .pillar-content h4 {
-      font-family: var(--ff-sans);
-      font-size: 0.9rem;
-      font-weight: 600;
-      color: var(--white);
-      margin-bottom: 0.4rem;
-    }
-
-    .pillar-content p {
-      font-size: 0.88rem;
-      color: var(--slate);
-      line-height: 1.65;
-    }
-
-    .nimbusx-callout {
-      background: linear-gradient(135deg, rgba(45, 226, 230, 0.10) 0%, rgba(124, 92, 255, 0.08) 100%);
-      border: 1px solid rgba(45, 226, 230, 0.22);
-      border-radius: 4px;
-      padding: 2rem;
-    }
-
-    .nimbusx-callout .nx-label {
-      font-family: var(--ff-mono);
-      font-size: 0.65rem;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-      color: var(--gold);
-      margin-bottom: 0.75rem;
-    }
-
-    .nimbusx-callout p {
-      font-size: 0.9rem;
-      color: var(--slate-light);
-      line-height: 1.7;
-    }
-
-    .nimbusx-callout a {
-      color: var(--gold);
-      text-decoration: none;
-      font-weight: 600;
-    }
-
-    @media (max-width: 900px) {
-      .about-grid {
-        grid-template-columns: 1fr;
-        gap: 3rem;
-      }
-    }
+    .pillar:first-child { padding-top: 0; }
+    .pillar .num { color: var(--blue); font-family: var(--ff-mono); font-size: 0.7rem; letter-spacing: 0.1em; padding-top: 6px; }
+    .pillar-head { display: flex; align-items: center; justify-content: space-between; gap: 12px; flex-wrap: wrap; }
+    .pillar h3 { margin: 0; font-size: 1.35rem; }
+    .pillar p { margin: 8px 0 0; color: var(--slate); font-size: 0.9rem; }
 
     /* ===== SERVICES ===== */
-    #services {
-      background: var(--ink);
-    }
-
+    .services { background: var(--white); }
     .services-header {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 4rem;
-      align-items: end;
-      margin-bottom: 5rem;
+      display: flex; align-items: flex-end; justify-content: space-between;
+      gap: 35px; margin-bottom: 42px; flex-wrap: wrap;
     }
-
-    .services-intro {
-      font-family: var(--ff-display);
-      font-size: clamp(1rem, 1.8vw, 1.35rem);
-      font-weight: 400;
-      color: var(--slate-light);
-      line-height: 1.7;
+    .services-header .services-intro {
+      font-family: var(--ff-serif);
       font-style: italic;
-    }
-
-    .services-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 1px;
-      background: var(--border);
-      border: 1px solid var(--border);
-    }
-
-    .service-card {
-      background: var(--ink);
-      padding: 2.5rem;
-      position: relative;
-      overflow: hidden;
-      transition: background 0.3s, transform 0.3s var(--ease-out), box-shadow 0.3s;
-      cursor: default;
-    }
-
-    .service-card::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      height: 2px;
-      background: linear-gradient(90deg, var(--gold) 0%, var(--accent) 100%);
-      transform: scaleX(0);
-      transform-origin: left;
-      transition: transform 0.4s var(--ease-out);
-    }
-
-    .service-card:hover {
-      background: var(--ink-2);
-      transform: translateY(-4px);
-      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.35);
-      z-index: 3;
-    }
-
-    .service-card:hover::before {
-      transform: scaleX(1);
-    }
-
-    .service-icon {
-      width: 44px;
-      height: 44px;
-      margin-bottom: 2rem;
-      color: var(--gold);
-      opacity: 0.9;
-      filter: drop-shadow(0 0 8px rgba(45, 226, 230, 0.25));
-    }
-
-    .service-card h3 {
-      font-family: var(--ff-display);
-      font-size: 1.4rem;
-      font-weight: 500;
-      color: var(--white);
-      margin-bottom: 1rem;
-      line-height: 1.2;
-    }
-
-    .service-card .service-problem {
-      font-size: 0.82rem;
-      font-style: italic;
+      font-size: 1.15rem;
       color: var(--slate);
-      margin-bottom: 1rem;
-      padding-left: 0.75rem;
-      border-left: 2px solid var(--gold-dim);
-    }
-
-    .service-card p {
-      font-size: 0.88rem;
-      color: var(--slate);
-      line-height: 1.7;
-    }
-
-    .service-tags {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.4rem;
-      margin-top: 1.5rem;
-    }
-
-    .tag {
-      font-family: var(--ff-mono);
-      font-size: 0.65rem;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: var(--slate);
-      border: 1px solid var(--border-2);
-      padding: 0.25rem 0.65rem;
-      border-radius: 2px;
-      transition: border-color 0.25s, color 0.25s;
-    }
-
-    .tag:hover {
-      border-color: var(--gold);
-      color: var(--gold-light);
-    }
-
-    @media (max-width: 1100px) {
-      .services-grid {
-        grid-template-columns: repeat(2, 1fr);
-      }
-    }
-
-    @media (max-width: 700px) {
-      .services-header {
-        grid-template-columns: 1fr;
-        gap: 2rem;
-        margin-bottom: 3rem;
-      }
-
-      .services-grid {
-        grid-template-columns: 1fr;
-      }
-    }
-
-    /* ===== WORK / CASE STUDIES ===== */
-    #work {
-      background: var(--ink-2);
-      overflow: hidden;
-    }
-
-    .work-header {
-      margin-bottom: 5rem;
-    }
-
-    .case-studies {
-      display: flex;
-      flex-direction: column;
-      gap: 0;
-    }
-
-    .case-study {
-      border-top: 1px solid var(--border);
-      padding: 3.5rem 0;
-      display: grid;
-      grid-template-columns: 80px 1fr auto;
-      gap: 3rem;
-      align-items: start;
-      cursor: pointer;
-      transition: background 0.3s, padding-left 0.3s var(--ease-out);
-      position: relative;
-    }
-
-    .case-study:last-child {
-      border-bottom: 1px solid var(--border);
-    }
-
-    .case-study:hover {
-      background: rgba(45, 226, 230, 0.03);
-      padding-left: 1rem;
-    }
-
-    .case-study:hover .cs-arrow {
-      transform: translate(4px, -4px);
-    }
-
-    .cs-num {
-      font-family: var(--ff-mono);
-      font-size: 0.7rem;
-      letter-spacing: 0.1em;
-      color: var(--gold);
-      padding-top: 0.5rem;
-    }
-
-    .cs-body {
-      flex: 1;
-    }
-
-    .cs-category {
-      font-family: var(--ff-mono);
-      font-size: 0.65rem;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-      color: var(--slate);
-      margin-bottom: 0.6rem;
-    }
-
-    .cs-title {
-      font-family: var(--ff-display);
-      font-size: clamp(1.5rem, 3vw, 2.5rem);
-      font-weight: 400;
-      color: var(--white);
-      line-height: 1.2;
-      margin-bottom: 1rem;
-    }
-
-    .cs-desc {
-      font-size: 0.9rem;
-      color: var(--slate);
-      line-height: 1.7;
-      max-width: 600px;
-    }
-
-    .cs-impact {
-      margin-top: 1.5rem;
-      display: flex;
-      gap: 2rem;
-      flex-wrap: wrap;
-    }
-
-    .cs-stat {
-      display: flex;
-      flex-direction: column;
-      gap: 0.2rem;
-    }
-
-    .cs-stat-value {
-      font-family: var(--ff-display);
-      font-size: 1.6rem;
-      font-weight: 500;
-      color: var(--gold-light);
-    }
-
-    .cs-stat-label {
-      font-family: var(--ff-mono);
-      font-size: 0.62rem;
-      letter-spacing: 0.1em;
-      color: var(--slate);
-      text-transform: uppercase;
-    }
-
-    .cs-tags {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.4rem;
-      margin-top: 1.25rem;
-    }
-
-    .cs-arrow {
-      font-size: 1.2rem;
-      color: var(--slate);
-      margin-top: 0.5rem;
-      transition: transform 0.3s var(--ease-out), color 0.3s;
-      flex-shrink: 0;
-    }
-
-    .case-study:hover .cs-arrow {
-      color: var(--gold);
-    }
-
-    @media (max-width: 700px) {
-      .case-study {
-        grid-template-columns: 1fr;
-        gap: 1rem;
-      }
-
-      .cs-num {
-        padding-top: 0;
-      }
-
-      .cs-arrow {
-        display: none;
-      }
-    }
-
-    /* ===== CALCULATOR (embedded Solar ROI tool) ===== */
-    #calculator {
-      background: var(--ink-2);
-      border-top: 1px solid var(--border);
-      border-bottom: 1px solid var(--border);
-    }
-
-    .sc-live-tag {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.5rem;
-      font-family: var(--ff-mono);
-      font-size: 0.65rem;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-      color: var(--gold);
-      border: 1px solid var(--border-2);
-      padding: 0.4rem 0.8rem;
-      border-radius: 2px;
-      margin-top: 0.5rem;
-    }
-
-    .sc-live-dot {
-      width: 6px;
-      height: 6px;
-      border-radius: 50%;
-      background: var(--green);
-      box-shadow: 0 0 8px var(--green);
-      animation: sc-pulse 1.8s ease-in-out infinite;
-    }
-
-    @keyframes sc-pulse {
-
-      0%,
-      100% {
-        opacity: 1;
-        transform: scale(1);
-      }
-
-      50% {
-        opacity: 0.4;
-        transform: scale(0.75);
-      }
-    }
-
-    .sc-layout {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 2.5rem;
-      margin-top: 3.5rem;
-      align-items: start;
-    }
-
-    @media (max-width: 900px) {
-      .sc-layout {
-        grid-template-columns: 1fr;
-      }
-    }
-
-    .sc-panel {
-      background: rgba(255, 255, 255, 0.025);
-      border: 1px solid var(--border);
-      border-radius: 6px;
-      padding: clamp(1.5rem, 3vw, 2.25rem);
-    }
-
-    .sc-panel+.sc-panel {
-      margin-top: 1.5rem;
-    }
-
-    .sc-panel-label {
-      font-family: var(--ff-mono);
-      font-size: 0.68rem;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-      color: var(--gold);
-      margin-bottom: 1.5rem;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-    }
-
-    .sc-field {
-      margin-bottom: 1.6rem;
-    }
-
-    .sc-field:last-child {
-      margin-bottom: 0;
-    }
-
-    .sc-field-head {
-      display: flex;
-      align-items: baseline;
-      justify-content: space-between;
-      margin-bottom: 0.6rem;
-      gap: 1rem;
-    }
-
-    .sc-field-label {
-      font-size: 0.85rem;
-      color: var(--slate-light);
-      font-weight: 600;
-    }
-
-    .sc-field-value {
-      font-family: var(--ff-mono);
-      font-size: 0.9rem;
-      color: var(--white);
-      white-space: nowrap;
-    }
-
-    .sc-field-hint {
-      font-size: 0.72rem;
-      color: var(--slate);
-      margin-top: 0.4rem;
+      max-width: 340px;
       line-height: 1.5;
     }
-
-    #calculator input[type="range"] {
-      -webkit-appearance: none;
-      appearance: none;
-      width: 100%;
-      height: 3px;
-      border-radius: 2px;
-      background: var(--surface-2);
-      outline: none;
-      cursor: pointer;
+    .services-grid {
+      display: grid; grid-template-columns: repeat(3, 1fr);
+      border-top: 1px solid var(--line-dark);
+      border-bottom: 1px solid var(--line-dark);
     }
-
-    #calculator input[type="range"]::-webkit-slider-thumb {
-      -webkit-appearance: none;
-      appearance: none;
-      width: 16px;
-      height: 16px;
-      border-radius: 50%;
-      background: var(--gold);
-      border: 3px solid var(--ink);
-      box-shadow: 0 0 0 1px var(--gold), 0 0 12px rgba(45, 226, 230, 0.4);
-      cursor: pointer;
-      transition: transform 0.15s;
-    }
-
-    #calculator input[type="range"]::-webkit-slider-thumb:hover {
-      transform: scale(1.15);
-    }
-
-    #calculator input[type="range"]::-moz-range-thumb {
-      width: 16px;
-      height: 16px;
-      border-radius: 50%;
-      background: var(--gold);
-      border: 3px solid var(--ink);
-      box-shadow: 0 0 0 1px var(--gold);
-      cursor: pointer;
-    }
-
-    .sc-toggle-row {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      cursor: pointer;
-    }
-
-    .sc-toggle {
-      width: 42px;
-      height: 24px;
-      border-radius: 12px;
-      background: var(--surface-2);
-      border: 1px solid var(--border-2);
+    .service-card {
       position: relative;
-      flex-shrink: 0;
-      transition: background 0.2s;
+      padding: 34px 30px 36px;
+      border-right: 1px solid var(--line-dark);
     }
-
-    .sc-toggle::after {
-      content: '';
-      position: absolute;
-      top: 2px;
-      left: 2px;
-      width: 18px;
-      height: 18px;
-      border-radius: 50%;
-      background: var(--slate);
-      transition: all 0.2s;
+    .service-card:first-child { padding-left: 0; }
+    .service-card:last-child { border-right: 0; }
+    .service-card::before {
+      content: ""; position: absolute; top: -1px; left: 0; right: 100%;
+      height: 2px; background: var(--blue);
+      transition: right .35s var(--ease);
     }
-
-    .sc-toggle.on {
-      background: var(--gold-dim);
-      border-color: var(--gold);
+    .service-card:hover::before { right: 0; }
+    .service-icon { width: 28px; height: 28px; margin-bottom: 22px; color: var(--blue); }
+    .service-card h3 { font-size: 1.4rem; margin-bottom: 12px; }
+    .service-problem {
+      border-left: 2px solid var(--blue);
+      padding-left: 12px;
+      margin: 0 0 16px;
+      font-family: var(--ff-serif);
+      font-style: italic;
+      font-size: 0.98rem;
+      color: var(--slate);
+      line-height: 1.5;
     }
+    .service-card p { font-size: 0.9rem; color: var(--slate); }
+    .service-tags { display: flex; flex-wrap: wrap; gap: 7px; margin-top: 18px; }
 
-    .sc-toggle.on::after {
-      left: 20px;
-      background: var(--gold);
-      box-shadow: 0 0 8px var(--gold);
-    }
-
-    .sc-num-input {
-      background: var(--surface-2);
-      border: 1px solid var(--border-2);
-      color: var(--white);
-      font-family: var(--ff-mono);
-      font-size: 0.9rem;
-      padding: 0.5rem 0.7rem;
-      border-radius: 3px;
-      width: 100%;
-      text-align: left;
-    }
-
-    .sc-num-input:focus {
-      outline: none;
-      border-color: var(--gold);
-    }
-
-    details.sc-assumptions {
-      border-top: 1px solid var(--border);
-      margin-top: 1.75rem;
-      padding-top: 1.5rem;
-    }
-
-    details.sc-assumptions summary {
-      cursor: pointer;
-      list-style: none;
-      font-family: var(--ff-mono);
-      font-size: 0.68rem;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: var(--slate-light);
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
-      margin-bottom: 1.25rem;
-    }
-
-    details.sc-assumptions summary::-webkit-details-marker {
-      display: none;
-    }
-
-    details.sc-assumptions summary::before {
-      content: '▸';
-      color: var(--gold);
-      transition: transform 0.2s;
-    }
-
-    details.sc-assumptions[open] summary::before {
-      transform: rotate(90deg);
-    }
-
-    .sc-headline-result {
-      text-align: left;
-      margin-bottom: 1.75rem;
-    }
-
-    .sc-headline-label {
+    /* ===== WORK / CASE STUDIES ===== */
+    .work { background: var(--paper); }
+    .cat-head {
       font-family: var(--ff-mono);
       font-size: 0.7rem;
-      letter-spacing: 0.14em;
+      letter-spacing: 0.2em;
       text-transform: uppercase;
+      color: var(--blue);
+      padding: 12px 0;
+      border-bottom: 1px solid var(--line-mid);
+      margin: 42px 0 0;
+    }
+    .case-studies { margin: 0; padding: 0; }
+    .case-study {
+      display: grid; grid-template-columns: 55px 1fr; gap: 22px;
+      padding: 32px 0;
+      border-bottom: 1px solid var(--line-dark);
+    }
+    .cs-num { color: var(--blue); font-size: 0.72rem; letter-spacing: 0.1em; padding-top: 6px; }
+    .cs-category {
       color: var(--slate);
-      margin-bottom: 0.5rem;
-    }
-
-    .sc-headline-value {
-      font-family: var(--ff-display);
-      font-size: clamp(2.6rem, 6vw, 3.8rem);
-      font-weight: 500;
-      color: var(--gold-light);
-      line-height: 1;
-      text-shadow: 0 0 30px rgba(45, 226, 230, 0.25);
-    }
-
-    .sc-headline-value span {
-      font-size: 0.4em;
-      color: var(--slate-light);
-      font-weight: 400;
-      text-shadow: none;
-    }
-
-    .sc-stat-row {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 1px;
-      background: var(--border);
-      border-radius: 4px;
-      overflow: hidden;
-      margin-bottom: 1rem;
-    }
-
-    .sc-stat-row.sc-stat-row-2 {
-      grid-template-columns: repeat(2, 1fr);
-      margin-bottom: 2rem;
-    }
-
-    .sc-stat-cell {
-      background: var(--surface);
-      padding: 1rem;
-    }
-
-    .sc-stat-cell-label {
-      font-family: var(--ff-mono);
-      font-size: 0.62rem;
-      letter-spacing: 0.1em;
+      font-size: 0.65rem;
+      letter-spacing: 0.15em;
       text-transform: uppercase;
-      color: var(--slate);
-      margin-bottom: 0.4rem;
-    }
-
-    .sc-stat-cell-value {
-      font-family: var(--ff-mono);
-      font-size: 1.15rem;
-      color: var(--white);
-      font-weight: 500;
-    }
-
-    .sc-chart-wrap {
-      margin-bottom: 0.5rem;
-    }
-
-    #sc-chart {
-      width: 100%;
-      height: auto;
-      display: block;
-    }
-
-    .sc-chart-legend {
       display: flex;
-      gap: 1.5rem;
-      margin-top: 0.75rem;
-      flex-wrap: wrap;
-    }
-
-    .sc-legend-item {
-      display: flex;
+      gap: 10px;
       align-items: center;
-      gap: 0.5rem;
+      flex-wrap: wrap;
+      margin-bottom: 10px;
+    }
+    .cs-title { font-size: clamp(1.6rem, 3vw, 2.4rem); margin: 0 0 20px; letter-spacing: -0.02em; }
+    .cs-fields {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 14px 32px;
+      margin: 0 0 20px;
+    }
+    .cs-fields > div { border-top: 1px solid var(--line-dark); padding-top: 10px; }
+    .cs-fields dt {
       font-family: var(--ff-mono);
-      font-size: 0.68rem;
-      color: var(--slate);
+      font-size: 0.63rem; letter-spacing: 0.12em; text-transform: uppercase;
+      color: var(--blue);
     }
-
-    .sc-legend-dot {
-      width: 8px;
-      height: 8px;
-      border-radius: 50%;
+    .cs-fields dd { margin: 5px 0 0; color: var(--slate); font-size: 0.88rem; }
+    .cs-tags { display: flex; flex-wrap: wrap; gap: 7px; }
+    .cs-links { margin-top: 14px; display: flex; gap: 18px; flex-wrap: wrap; align-items: center; }
+    .cs-links a {
+      color: var(--blue);
+      font-size: 0.84rem;
+      font-weight: 600;
+      text-decoration: underline;
+      text-underline-offset: 4px;
     }
+    .cs-links span { color: var(--slate); font-size: 0.8rem; font-style: italic; }
 
-    .sc-method-note {
-      font-size: 0.78rem;
-      color: var(--slate);
-      line-height: 1.7;
-      border-top: 1px solid var(--border);
-      padding-top: 1.25rem;
-      margin-top: 1.75rem;
+    /* ===== CALCULATOR ===== */
+    .calculator { background: var(--paper-2); border-top: 1px solid var(--line-mid); border-bottom: 1px solid var(--line-mid); }
+    .calc-head { margin-bottom: 30px; }
+    .calc-head p { color: var(--slate); max-width: 640px; }
+    .calc-shell {
+      display: grid; grid-template-columns: 1fr 1.08fr; gap: 0;
+      background: var(--white); border: 1px solid var(--line-mid);
     }
+    .calc-panel { padding: 32px; }
+    .calc-panel + .calc-panel { border-left: 1px solid var(--line-dark); }
+    .calc-panel h3 {
+      font-family: var(--ff-mono);
+      font-size: 0.7rem; letter-spacing: 0.15em; text-transform: uppercase;
+      color: var(--blue); margin-bottom: 24px;
+    }
+    .calc-field { margin-bottom: 22px; }
+    .calc-field-head {
+      display: flex; justify-content: space-between; gap: 10px;
+      font-size: 0.86rem; font-weight: 600; margin-bottom: 10px;
+    }
+    .calc-field-head .val { color: var(--blue); font-family: var(--ff-mono); font-size: 0.86rem; }
+    .calc-field input[type="range"] {
+      -webkit-appearance: none; appearance: none; width: 100%;
+      height: 4px; border-radius: 2px; background: var(--line-mid); outline: none; cursor: pointer;
+    }
+    .calc-field input[type="range"]::-webkit-slider-thumb {
+      -webkit-appearance: none; appearance: none;
+      width: 16px; height: 16px; border-radius: 50%;
+      background: var(--white); border: 2px solid var(--blue);
+      cursor: pointer;
+    }
+    .calc-field input[type="range"]::-moz-range-thumb {
+      width: 16px; height: 16px; border-radius: 50%;
+      background: var(--white); border: 2px solid var(--blue); cursor: pointer;
+    }
+    .calc-hint { font-size: 0.72rem; color: var(--slate); margin-top: 8px; line-height: 1.5; }
+    .calc-num {
+      width: 100%; background: var(--white); border: 1px solid var(--line-mid);
+      color: var(--navy); font-family: var(--ff-mono); font-size: 0.9rem;
+      padding: 10px 12px; border-radius: 2px; margin-top: 6px;
+    }
+    .calc-num:focus { outline: 2px solid var(--blue); outline-offset: 1px; }
+    .calc-toggle-row {
+      display: flex; align-items: center; justify-content: space-between;
+      cursor: pointer;
+    }
+    .calc-toggle {
+      width: 34px; height: 18px; border-radius: 12px;
+      background: var(--line-mid); border: 1px solid var(--line-mid);
+      position: relative; flex-shrink: 0; transition: background .2s, border-color .2s;
+    }
+    .calc-toggle::after {
+      content: ""; position: absolute; top: 2px; left: 2px;
+      width: 12px; height: 12px; border-radius: 50%; background: var(--white);
+      transition: left .2s;
+    }
+    .calc-toggle.on { background: var(--blue); border-color: var(--blue); }
+    .calc-toggle.on::after { left: 18px; }
+    .calc-assumptions {
+      border-top: 1px solid var(--line-dark);
+      margin-top: 18px; padding-top: 16px;
+    }
+    .calc-assumptions summary {
+      cursor: pointer; list-style: none;
+      font-family: var(--ff-mono); font-size: 0.68rem; letter-spacing: 0.12em;
+      text-transform: uppercase; color: var(--slate);
+      display: flex; align-items: center; gap: 8px;
+    }
+    .calc-assumptions summary::-webkit-details-marker { display: none; }
+    .calc-assumptions summary::before {
+      content: "▸"; color: var(--blue); transition: transform .2s;
+    }
+    .calc-assumptions[open] summary::before { transform: rotate(90deg); }
+    .calc-assumptions > div { margin-top: 14px; }
 
-    .sc-method-note strong {
-      color: var(--slate-light);
+    .result-headline { margin-bottom: 20px; }
+    .result-label {
+      font-family: var(--ff-mono); font-size: 0.68rem; letter-spacing: 0.15em;
+      text-transform: uppercase; color: var(--slate); margin-bottom: 4px;
+    }
+    .result-value {
+      font-family: var(--ff-serif); font-size: clamp(2.6rem, 6vw, 4.4rem);
+      line-height: 1; color: var(--blue); font-weight: 500;
+    }
+    .result-value small { font-family: var(--ff-sans); font-size: 0.9rem; color: var(--slate); margin-left: 6px; font-weight: 400; }
+    .result-stats {
+      display: grid; grid-template-columns: repeat(3, 1fr);
+      border-top: 1px solid var(--line-dark);
+      border-bottom: 1px solid var(--line-dark);
+      margin: 22px 0 0;
+    }
+    .result-stats.two { grid-template-columns: repeat(2, 1fr); border-top: 0; }
+    .result-stat { padding: 14px 12px; border-right: 1px solid var(--line-dark); }
+    .result-stat:first-child { padding-left: 0; }
+    .result-stat:last-child { border-right: 0; }
+    .result-stat b { display: block; font: 500 1.3rem var(--ff-serif); color: var(--navy); }
+    .result-stat span { font-family: var(--ff-mono); font-size: 0.6rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--slate); }
+    .chart-wrap { margin: 22px 0 8px; }
+    #sc-chart { width: 100%; height: auto; display: block; }
+    .chart-legend { display: flex; gap: 16px; flex-wrap: wrap; margin-top: 8px; }
+    .chart-legend span {
+      font-family: var(--ff-mono); font-size: 0.65rem; color: var(--slate);
+      display: inline-flex; align-items: center; gap: 6px;
+    }
+    .chart-legend i { width: 14px; height: 2px; display: inline-block; }
+    .method-note {
+      font-size: 0.74rem; color: var(--slate); line-height: 1.65;
+      border-top: 1px solid var(--line-dark); padding-top: 14px; margin-top: 16px;
+    }
+    .method-note strong { color: var(--navy); }
+    .live-tag {
+      display: inline-flex; align-items: center; gap: 6px;
+      font-family: var(--ff-mono); font-size: 0.62rem; letter-spacing: 0.12em;
+      text-transform: uppercase; color: var(--blue);
+      border: 1px solid var(--line-mid); padding: 5px 8px; border-radius: 2px;
+    }
+    .live-tag::before {
+      content: ""; width: 6px; height: 6px; border-radius: 50%;
+      background: #4caf7d; box-shadow: 0 0 6px #4caf7d;
     }
 
     /* ===== NIMBUSX ===== */
-    #nimbusx {
-      background: linear-gradient(160deg, var(--ink-3) 0%, var(--surface) 100%);
-      border-top: 1px solid var(--border);
-      border-bottom: 1px solid var(--border);
+    .nimbusx {
+      background:
+        linear-gradient(160deg, var(--navy-2) 0%, var(--navy) 60%, #0d2544 100%);
+      color: var(--white);
+      position: relative;
       overflow: hidden;
-      position: relative;
     }
-
     .nx-bg-mark {
-      position: absolute;
-      top: 50%;
-      right: -100px;
-      transform: translateY(-50%);
-      font-family: var(--ff-display);
-      font-size: 20rem;
-      font-weight: 300;
-      color: rgba(45, 226, 230, 0.04);
-      pointer-events: none;
-      user-select: none;
-      line-height: 1;
-      white-space: nowrap;
+      position: absolute; right: -3%; top: 6%;
+      font-family: var(--ff-serif);
+      font-size: clamp(8rem, 22vw, 22rem);
+      color: rgba(185, 199, 220, 0.05);
+      pointer-events: none; user-select: none; line-height: 1;
     }
-
     .nx-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 6rem;
-      align-items: center;
-      position: relative;
-      z-index: 2;
-    }
-
-    .nx-brand-mark {
-      display: flex;
-      flex-direction: column;
-      gap: 0.5rem;
-      margin-bottom: 2rem;
-    }
-
-    .nx-wordmark {
-      font-family: var(--ff-display);
-      font-size: 3.5rem;
-      font-weight: 400;
-      color: var(--white);
-      letter-spacing: -0.02em;
-      line-height: 1;
-    }
-
-    .nx-wordmark span {
-      color: var(--gold);
-      text-shadow: 0 0 30px rgba(45, 226, 230, 0.4);
-    }
-
-    .nx-descriptor {
-      font-family: var(--ff-mono);
-      font-size: 0.7rem;
-      letter-spacing: 0.25em;
-      text-transform: uppercase;
-      color: var(--slate);
-    }
-
-    .nx-statement {
-      font-family: var(--ff-display);
-      font-size: clamp(1.2rem, 2.5vw, 1.75rem);
-      font-weight: 400;
-      font-style: italic;
-      color: var(--slate-light);
-      line-height: 1.5;
-      margin-bottom: 2rem;
-    }
-
-    .nx-statement strong {
-      color: var(--white);
-      font-style: normal;
-      font-weight: 500;
-    }
-
-    .nx-right {
-      display: flex;
-      flex-direction: column;
-      gap: 1.5rem;
-    }
-
-    .nx-focus-areas {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 1px;
-      background: var(--border);
-      border: 1px solid var(--border);
-    }
-
-    .nx-focus {
-      background: var(--ink-3);
-      padding: 1.5rem;
-      transition: background 0.3s;
-    }
-
-    .nx-focus:hover {
-      background: var(--surface);
-    }
-
-    .nx-focus-icon {
-      font-size: 1.25rem;
-      margin-bottom: 0.75rem;
-    }
-
-    .nx-focus h4 {
-      font-family: var(--ff-sans);
-      font-size: 0.85rem;
-      font-weight: 600;
-      color: var(--white);
-      margin-bottom: 0.35rem;
-    }
-
-    .nx-focus p {
-      font-size: 0.8rem;
-      color: var(--slate);
-      line-height: 1.6;
-    }
-
-    .nx-cta-row {
-      display: flex;
-      gap: 1rem;
-      flex-wrap: wrap;
-    }
-
-    @media (max-width: 900px) {
-      .nx-grid {
-        grid-template-columns: 1fr;
-        gap: 3rem;
-      }
-
-      .nx-bg-mark {
-        display: none;
-      }
-    }
-
-    /* ===== STACK ===== */
-    #stack {
-      background: var(--ink);
-    }
-
-    .stack-groups {
-      display: grid;
-      grid-template-columns: repeat(5, 1fr);
-      gap: 2.5rem;
-      margin-top: 4rem;
-    }
-
-    .stack-group h4 {
-      font-family: var(--ff-mono);
-      font-size: 0.65rem;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-      color: var(--gold);
-      margin-bottom: 1.25rem;
-      padding-bottom: 0.75rem;
-      border-bottom: 1px solid var(--border);
-    }
-
-    .stack-items {
-      display: flex;
-      flex-direction: column;
-      gap: 0.65rem;
-    }
-
-    .stack-item {
-      font-size: 0.88rem;
-      color: var(--slate-light);
-      display: flex;
-      align-items: center;
-      gap: 0.6rem;
-    }
-
-    .stack-item::before {
-      content: '';
-      width: 4px;
-      height: 4px;
-      background: var(--border-2);
-      border-radius: 50%;
-      flex-shrink: 0;
-      transition: background 0.2s, box-shadow 0.2s;
-    }
-
-    .stack-item:hover::before {
-      background: var(--gold);
-      box-shadow: 0 0 8px var(--gold);
-    }
-
-    .stack-item:hover {
-      color: var(--white);
-    }
-
-    @media (max-width: 1100px) {
-      .stack-groups {
-        grid-template-columns: repeat(3, 1fr);
-      }
-    }
-
-    @media (max-width: 700px) {
-      .stack-groups {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 2rem;
-      }
-    }
-
-    /* ===== EXPERIENCE ===== */
-    #experience {
-      background: var(--ink-2);
-    }
-
-    .exp-layout {
-      display: grid;
-      grid-template-columns: 280px 1fr;
-      gap: 6rem;
-      margin-top: 4rem;
-    }
-
-    .exp-sidebar {
-      position: sticky;
-      top: calc(var(--nav-h) + 2rem);
-      height: fit-content;
-    }
-
-    .exp-sidebar p {
-      font-size: 0.9rem;
-      color: var(--slate);
-      line-height: 1.75;
-      margin-bottom: 2rem;
-    }
-
-    .exp-timeline {
-      display: flex;
-      flex-direction: column;
-      gap: 0;
-    }
-
-    .exp-item {
-      padding: 2.5rem 0;
-      border-bottom: 1px solid var(--border);
-      display: grid;
-      grid-template-columns: 1fr 3fr;
-      gap: 3rem;
-    }
-
-    .exp-item:first-child {
-      padding-top: 0;
-    }
-
-    .exp-meta {}
-
-    .exp-period {
-      font-family: var(--ff-mono);
-      font-size: 0.68rem;
-      letter-spacing: 0.1em;
-      color: var(--gold);
-      margin-bottom: 0.35rem;
-      text-transform: uppercase;
-    }
-
-    .exp-company {
-      font-size: 0.8rem;
-      color: var(--slate);
-      font-style: italic;
-    }
-
-    .exp-details {}
-
-    .exp-role {
-      font-family: var(--ff-display);
-      font-size: 1.35rem;
-      font-weight: 500;
-      color: var(--white);
-      margin-bottom: 0.75rem;
-    }
-
-    .exp-desc {
-      font-size: 0.88rem;
-      color: var(--slate);
-      line-height: 1.75;
-      margin-bottom: 1.25rem;
-    }
-
-    .exp-highlights {
-      display: flex;
-      flex-direction: column;
-      gap: 0.5rem;
-    }
-
-    .exp-highlight {
-      font-size: 0.84rem;
-      color: var(--slate-light);
-      display: flex;
-      align-items: flex-start;
-      gap: 0.75rem;
-      line-height: 1.6;
-    }
-
-    .exp-highlight::before {
-      content: '→';
-      color: var(--gold);
-      flex-shrink: 0;
-      margin-top: 0.05em;
-      font-size: 0.8rem;
-    }
-
-    @media (max-width: 900px) {
-      .exp-layout {
-        grid-template-columns: 1fr;
-        gap: 2rem;
-      }
-
-      .exp-sidebar {
-        position: static;
-      }
-
-      .exp-item {
-        grid-template-columns: 1fr;
-        gap: 0.75rem;
-      }
-    }
-
-    /* ===== THOUGHT LEADERSHIP ===== */
-    #insights {
-      background: var(--ink);
-    }
-
-    .insights-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 1.5rem;
-      margin-top: 4rem;
-    }
-
-    .insight-card {
-      border: 1px solid var(--border);
-      padding: 2rem;
-      background: var(--ink-2);
-      border-radius: 2px;
-      transition: border-color 0.3s, background 0.3s, transform 0.3s var(--ease-out);
-      cursor: pointer;
-    }
-
-    .insight-card:hover {
-      border-color: rgba(45, 226, 230, 0.32);
-      background: var(--ink-3);
-      transform: translateY(-4px);
-    }
-
-    .insight-cat {
-      font-family: var(--ff-mono);
-      font-size: 0.62rem;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-      color: var(--gold);
-      margin-bottom: 1rem;
-    }
-
-    .insight-card h3 {
-      font-family: var(--ff-display);
-      font-size: 1.2rem;
-      font-weight: 500;
-      color: var(--white);
-      line-height: 1.35;
-      margin-bottom: 0.75rem;
-    }
-
-    .insight-card p {
-      font-size: 0.84rem;
-      color: var(--slate);
-      line-height: 1.7;
-    }
-
-    .insight-footer {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-top: 1.5rem;
-      padding-top: 1.25rem;
-      border-top: 1px solid var(--border);
-    }
-
-    .insight-date {
-      font-family: var(--ff-mono);
-      font-size: 0.62rem;
-      letter-spacing: 0.1em;
-      color: var(--slate);
-    }
-
-    .insight-read {
-      font-size: 0.75rem;
-      color: var(--gold);
-      letter-spacing: 0.05em;
-    }
-
-    @media (max-width: 1100px) {
-      .insights-grid {
-        grid-template-columns: repeat(2, 1fr);
-      }
-    }
-
-    @media (max-width: 700px) {
-      .insights-grid {
-        grid-template-columns: 1fr;
-      }
-    }
-
-    .nav-logo {
-      display: flex;
-      align-items: center;
-      gap: 0.75rem;
-      text-decoration: none;
-    }
-
-    .nav-logo-img {
-      height: 32px;
-      width: auto;
-      display: block;
-    }
-
-    @media (max-width: 700px) {
-      .nav-logo-img {
-        height: 26px;
-      }
-    }
-
-    /* ===== CONTACT ===== */
-    #contact {
-      background: linear-gradient(160deg, var(--ink-3) 0%, var(--surface) 100%);
-      border-top: 1px solid var(--border);
-    }
-
-    .contact-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 8rem;
+      position: relative; display: grid; grid-template-columns: 1fr 1fr; gap: 8%;
       align-items: start;
     }
-
-    .contact-left {}
-
-    .contact-channels {
-      display: flex;
-      flex-direction: column;
-      gap: 0;
-      margin-top: 3rem;
+    .nx-wordmark {
+      font-family: var(--ff-serif); font-size: clamp(2.6rem, 5vw, 4.6rem);
+      letter-spacing: -0.04em; line-height: 1; margin: 0 0 8px;
     }
+    .nx-wordmark span { color: var(--pale); }
+    .nx-descriptor {
+      font-family: var(--ff-mono); font-size: 0.68rem; letter-spacing: 0.25em;
+      text-transform: uppercase; color: var(--pale);
+      margin-bottom: 22px;
+    }
+    .nx-statement {
+      font-family: var(--ff-serif); font-style: italic;
+      font-size: 1.3rem; line-height: 1.5;
+      margin: 0 0 16px;
+    }
+    .nx-statement strong { color: var(--white); font-style: normal; font-weight: 500; }
+    .nx-grid p { color: var(--pale); }
+    .nx-status {
+      display: grid; grid-template-columns: 1fr 1fr;
+      border: 1px solid var(--line);
+      margin-top: 26px;
+    }
+    .nx-status > div { padding: 20px; border-top: 1px solid var(--line); border-left: 1px solid var(--line); }
+    .nx-status > div:nth-child(1), .nx-status > div:nth-child(2) { border-top: 0; }
+    .nx-status > div:nth-child(odd) { border-left: 0; }
+    .nx-status h4 {
+      font-family: var(--ff-serif); font-weight: 500;
+      font-size: 1.05rem; margin: 12px 0 6px;
+    }
+    .nx-status p { font-size: 0.83rem; margin: 0; }
+    .nx-cta { margin-top: 24px; display: flex; gap: 10px; flex-wrap: wrap; }
 
+    /* ===== STACK ===== */
+    .stack { background: var(--paper); }
+    .stack-groups {
+      display: grid; grid-template-columns: repeat(5, 1fr); gap: 22px;
+      margin-top: 32px;
+    }
+    .stack-group h4 {
+      font-family: var(--ff-mono); font-size: 0.68rem;
+      letter-spacing: 0.1em; text-transform: uppercase; color: var(--blue);
+      padding-bottom: 12px; margin-bottom: 14px; min-height: 46px;
+      border-bottom: 1px solid var(--line-mid);
+    }
+    .stack-item {
+      display: flex; align-items: center; gap: 8px;
+      font-size: 0.85rem; color: var(--slate); margin: 10px 0;
+    }
+    .stack-item::before {
+      content: ""; width: 4px; height: 4px; flex: none;
+      border-radius: 50%; background: #aebac9;
+      transition: background .2s;
+    }
+    .stack-item:hover::before { background: var(--blue); }
+    .stack-item.dev { color: var(--slate); }
+    .stack-item.int { font-style: italic; }
+
+    /* ===== EXPERIENCE ===== */
+    .experience { background: var(--white); }
+    .exp-layout { display: grid; grid-template-columns: 0.38fr 0.62fr; gap: 9%; margin-top: 40px; }
+    .exp-sticky { position: sticky; top: calc(var(--nav-h) + 30px); align-self: start; }
+    .exp-sticky p { color: var(--slate); font-size: 0.9rem; line-height: 1.7; margin-bottom: 20px; }
+    .timeline { border-left: 1px solid var(--line-mid); padding-left: 28px; }
+    .exp-item {
+      position: relative; padding-bottom: 32px; margin-bottom: 32px;
+      border-bottom: 1px solid var(--line-dark);
+    }
+    .exp-item:last-child { margin-bottom: 0; }
+    .exp-item::before {
+      content: ""; position: absolute; left: -33px; top: 6px;
+      width: 9px; height: 9px; border: 1px solid var(--blue);
+      background: var(--white); border-radius: 50%;
+    }
+    .exp-period {
+      font-family: var(--ff-mono); font-size: 0.66rem;
+      letter-spacing: 0.1em; text-transform: uppercase; color: var(--blue);
+      margin-bottom: 4px;
+    }
+    .exp-company { font-family: var(--ff-serif); font-style: italic; color: var(--slate); font-size: 1rem; margin-bottom: 6px; }
+    .exp-role { font-family: var(--ff-serif); font-size: clamp(1.5rem, 2.4vw, 2.1rem); margin: 0 0 4px; }
+    .exp-desc { color: var(--slate); font-size: 0.9rem; margin: 12px 0 10px; }
+    .exp-highlights { list-style: none; padding: 0; margin: 0; color: var(--slate); font-size: 0.87rem; }
+    .exp-highlights li { margin: 6px 0; }
+    .exp-highlights li::before { content: "→"; color: var(--blue); margin-right: 9px; }
+
+    /* ===== EDUCATION ===== */
+    .education { background: var(--paper); }
+    .edu-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin-top: 32px; }
+    .edu-card {
+      background: var(--white); border: 1px solid var(--line-dark);
+      padding: 28px;
+    }
+    .edu-card h3 { margin: 16px 0 10px; font-size: 1.3rem; }
+    .edu-card p { color: var(--slate); font-size: 0.9rem; margin: 0; }
+
+    /* ===== CONTACT ===== */
+    .contact { background: var(--navy); color: var(--white); }
+    .contact-grid { display: grid; grid-template-columns: 0.9fr 1.1fr; gap: 9%; align-items: start; }
+    .contact h2 { max-width: 520px; }
+    .contact-intro { color: var(--pale); margin-bottom: 8px; }
+    .contact-channels { margin-top: 26px; }
     .channel {
-      display: flex;
-      align-items: center;
-      gap: 1.25rem;
-      padding: 1.25rem 0;
-      border-bottom: 1px solid var(--border);
-      text-decoration: none;
-      transition: padding-left 0.3s var(--ease-out);
+      display: flex; align-items: center; gap: 14px;
+      text-decoration: none; padding: 12px 0;
+      border-bottom: 1px solid var(--line);
+      color: var(--pale); font-size: 0.9rem; overflow-wrap: anywhere;
     }
-
-    .channel:first-child {
-      border-top: 1px solid var(--border);
+    .channel:first-child { border-top: 1px solid var(--line); }
+    .channel:hover { color: var(--white); }
+    .icon-box {
+      width: 38px; height: 38px; flex: none;
+      border: 1px solid var(--line); display: grid; place-items: center;
+      font-family: var(--ff-mono); font-size: 0.72rem; color: var(--pale);
+      transition: border-color .2s, box-shadow .2s, color .2s;
     }
-
-    .channel:hover {
-      padding-left: 0.5rem;
-    }
-
-    .channel-icon {
-      width: 40px;
-      height: 40px;
-      border: 1px solid var(--border-2);
-      border-radius: 2px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: var(--gold);
-      font-size: 1rem;
-      flex-shrink: 0;
-      transition: border-color 0.3s, background 0.3s, box-shadow 0.3s;
-    }
-
-    .channel:hover .channel-icon {
-      border-color: var(--gold);
-      background: var(--gold-dim);
-      box-shadow: 0 0 16px rgba(45, 226, 230, 0.25);
-    }
-
+    .channel:hover .icon-box { border-color: var(--pale); color: var(--white); box-shadow: 0 0 12px rgba(185, 199, 220, 0.25); }
     .channel-label {
-      font-family: var(--ff-mono);
-      font-size: 0.65rem;
-      letter-spacing: 0.15em;
-      text-transform: uppercase;
-      color: var(--slate);
-      display: block;
-      margin-bottom: 0.15rem;
+      display: block; font-family: var(--ff-mono); font-size: 0.62rem;
+      letter-spacing: 0.15em; text-transform: uppercase; color: var(--slate);
+      margin-bottom: 2px;
     }
-
-    .channel-value {
-      font-size: 0.9rem;
-      color: var(--white);
-    }
-
-    .contact-right {}
+    .dark .channel-label { color: var(--pale); opacity: 0.75; }
 
     .contact-form {
-      display: flex;
-      flex-direction: column;
-      gap: 1.25rem;
+      border: 1px solid var(--line); padding: 28px;
+      background: rgba(255, 255, 255, 0.02);
     }
-
-    .form-row {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 1rem;
-    }
-
-    .form-group {
-      display: flex;
-      flex-direction: column;
-      gap: 0.5rem;
-    }
-
+    .form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    .form-group { margin-bottom: 16px; }
     .form-group label {
-      font-family: var(--ff-mono);
-      font-size: 0.65rem;
-      letter-spacing: 0.15em;
-      text-transform: uppercase;
-      color: var(--slate);
+      display: block; margin-bottom: 8px;
+      color: var(--pale); font-family: var(--ff-mono);
+      font-size: 0.63rem; letter-spacing: 0.14em; text-transform: uppercase;
     }
-
-    .form-group input,
-    .form-group select,
-    .form-group textarea {
-      background: rgba(255, 255, 255, 0.03);
-      border: 1px solid var(--border-2);
-      color: var(--white);
-      font-family: var(--ff-sans);
-      font-size: 0.9rem;
-      padding: 0.85rem 1rem;
-      border-radius: 2px;
-      outline: none;
-      transition: border-color 0.25s, box-shadow 0.25s;
-      width: 100%;
-      appearance: none;
+    .form-group input, .form-group select, .form-group textarea {
+      width: 100%; background: transparent; color: var(--white);
+      border: 1px solid #53667e; border-radius: 2px;
+      padding: 12px 13px; font-size: 0.9rem;
     }
-
-    .form-group input:focus,
-    .form-group select:focus,
-    .form-group textarea:focus {
-      border-color: rgba(45, 226, 230, 0.5);
-      box-shadow: 0 0 0 3px rgba(45, 226, 230, 0.1);
+    .form-group select { background: var(--navy); }
+    .form-group textarea { min-height: 120px; resize: vertical; }
+    .form-group input:focus, .form-group select:focus, .form-group textarea:focus {
+      outline: 2px solid var(--pale); outline-offset: 1px;
     }
-
-    .form-group textarea {
-      resize: vertical;
-      min-height: 120px;
-    }
-
-    .form-group select {
-      cursor: pointer;
-    }
-
-    .form-group select option {
-      background: var(--ink-2);
-    }
-
-    @media (max-width: 900px) {
-      .contact-grid {
-        grid-template-columns: 1fr;
-        gap: 4rem;
-      }
-
-      .form-row {
-        grid-template-columns: 1fr;
-      }
-    }
+    .form-status { min-height: 22px; margin: 4px 0 12px; color: var(--pale); font-size: 0.82rem; display: none; }
+    .contact-form .btn-primary { width: 100%; }
 
     /* ===== FOOTER ===== */
     footer {
-      background: var(--ink);
-      border-top: 1px solid var(--border);
-      padding: 3rem clamp(1.5rem, 5vw, 4rem);
+      background: var(--navy); color: var(--pale);
+      border-top: 1px solid var(--line);
+      padding: 26px 0;
     }
-
     .footer-inner {
-      max-width: 1320px;
-      margin: 0 auto;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      flex-wrap: wrap;
-      gap: 1.5rem;
+      display: flex; align-items: center; justify-content: space-between;
+      gap: 20px; flex-wrap: wrap;
+      font-family: var(--ff-mono); font-size: 0.64rem;
+      letter-spacing: 0.08em; text-transform: uppercase;
     }
+    .footer-inner strong { color: var(--white); font-weight: 500; }
+    .footer-links { display: flex; flex-wrap: wrap; gap: 14px; }
+    .footer-links a { text-decoration: none; color: var(--pale); }
+    .footer-links a:hover { color: var(--white); }
 
-    .footer-logo-text {
-      font-family: var(--ff-display);
-      font-size: 1.1rem;
-      color: var(--white);
+    /* ===== REVEAL ===== */
+    .reveal { opacity: 0; transform: translateY(22px); transition: opacity .8s var(--ease), transform .8s var(--ease); }
+    .reveal.in { opacity: 1; transform: translateY(0); }
+    .reveal-delay-1 { transition-delay: .08s; }
+    .reveal-delay-2 { transition-delay: .16s; }
+    .reveal-delay-3 { transition-delay: .24s; }
+    .reveal-delay-4 { transition-delay: .32s; }
+
+    /* ===== RESPONSIVE ===== */
+    @media (max-width: 1100px) {
+      .stack-groups { grid-template-columns: repeat(3, 1fr); }
+      .hero-grid { gap: 4%; }
     }
-
-    .footer-copy {
-      font-family: var(--ff-mono);
-      font-size: 0.65rem;
-      letter-spacing: 0.1em;
-      color: var(--slate);
+    @media (max-width: 950px) {
+      .nav-links { gap: 12px; }
+      .nav-links a { font-size: 0.62rem; }
     }
-
-    .footer-links {
-      display: flex;
-      gap: 2rem;
-    }
-
-    .footer-links a {
-      font-family: var(--ff-mono);
-      font-size: 0.65rem;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: var(--slate);
-      text-decoration: none;
-      transition: color 0.2s;
-    }
-
-    .footer-links a:hover {
-      color: var(--gold);
-    }
-
-    /* ===== ANIMATIONS ===== */
-    @keyframes fadeUp {
-      from {
-        opacity: 0;
-        transform: translateY(24px);
+    @media (max-width: 900px) {
+      .split, .about-grid, .nimbusx .nx-grid, .contact-grid,
+      .calc-shell, .exp-layout { grid-template-columns: 1fr; gap: 32px; }
+      .hero-grid { grid-template-columns: 1fr; gap: 36px; padding-top: 70px; padding-bottom: 40px; }
+      .portrait-frame { min-height: 340px; }
+      .services-grid { grid-template-columns: 1fr; }
+      .service-card, .service-card:first-child {
+        padding: 26px 0; border-right: 0; border-bottom: 1px solid var(--line-dark);
       }
-
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
+      .service-card:last-child { border-bottom: 0; }
+      .calc-panel + .calc-panel { border-left: 0; border-top: 1px solid var(--line-dark); }
+      .edu-grid { grid-template-columns: 1fr; }
+      .exp-sticky { position: static; }
+      .cs-fields { grid-template-columns: 1fr; }
+      .scroll-hint { display: none; }
     }
-
-    @keyframes fadeIn {
-      from {
-        opacity: 0;
-      }
-
-      to {
-        opacity: 1;
-      }
-    }
-
-    @keyframes spin {
-      from {
-        transform: rotate(0deg);
-      }
-
-      to {
-        transform: rotate(360deg);
-      }
-    }
-
-    @keyframes drift {
-
-      0%,
-      100% {
-        transform: translate(0, 0) scale(1);
-      }
-
-      50% {
-        transform: translate(-3%, 3%) scale(1.06);
-      }
-    }
-
-    @keyframes dashmove {
-      to {
-        stroke-dashoffset: -400;
-      }
-    }
-
-    .reveal {
-      opacity: 0;
-      transform: translateY(30px);
-      transition: opacity 0.8s var(--ease-out), transform 0.8s var(--ease-out);
-    }
-
-    .reveal.in {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-    .reveal-delay-1 {
-      transition-delay: 0.1s;
-    }
-
-    .reveal-delay-2 {
-      transition-delay: 0.2s;
-    }
-
-    .reveal-delay-3 {
-      transition-delay: 0.3s;
-    }
-
-    .reveal-delay-4 {
-      transition-delay: 0.4s;
-    }
-
-    .reveal-delay-5 {
-      transition-delay: 0.5s;
-    }
-
-    /* ===== DIVIDER ===== */
-    .section-divider {
-      display: flex;
-      align-items: center;
-      gap: 1.5rem;
-      margin-bottom: 4rem;
-    }
-
-    .divider-line {
-      flex: 1;
-      height: 1px;
-      background: var(--border);
-    }
-
-    .divider-mark {
-      width: 6px;
-      height: 6px;
-      background: var(--gold);
-      border-radius: 50%;
-    }
-
-    /* ===== MARQUEE STRIP ===== */
-    .skills-strip {
-      overflow: hidden;
-      border-top: 1px solid var(--border);
-      border-bottom: 1px solid var(--border);
-      padding: 1rem 0;
-      background: var(--ink-2);
-    }
-
-    .strip-inner {
-      display: flex;
-      width: max-content;
-      animation: marquee 30s linear infinite;
-    }
-
-    .strip-inner:hover {
-      animation-play-state: paused;
-    }
-
-    .strip-item {
-      display: flex;
-      align-items: center;
-      gap: 1.5rem;
-      padding: 0 1.5rem;
-      white-space: nowrap;
-      font-family: var(--ff-mono);
-      font-size: 0.7rem;
-      letter-spacing: 0.15em;
-      text-transform: uppercase;
-      color: var(--slate);
-    }
-
-    .strip-item .dot {
-      width: 4px;
-      height: 4px;
-      background: var(--gold);
-      border-radius: 50%;
-      flex-shrink: 0;
-      box-shadow: 0 0 6px rgba(45, 226, 230, 0.6);
-    }
-
-    @keyframes marquee {
-      from {
-        transform: translateX(0);
-      }
-
-      to {
-        transform: translateX(-50%);
-      }
-    }
-
-    /* ===== GLASS CARD ===== */
-    .glass {
-      background: rgba(255, 255, 255, 0.03);
-      backdrop-filter: blur(10px);
-      border: 1px solid var(--border-2);
-      border-radius: 4px;
-    }
-
-    /* ===== RESPONSIVE HELPERS ===== */
     @media (max-width: 700px) {
-
-      .nav-links,
-      .nav-cta {
-        display: none;
-      }
-
-      .hamburger {
-        display: flex;
-      }
-
-      .hero-actions {
-        flex-direction: column;
-        align-items: flex-start;
-      }
-
-      .hero-metrics {
-        gap: 1.5rem;
-      }
-
-      .metric-value {
-        font-size: 1.8rem;
-      }
+      .wrap { width: min(100% - 36px, 1240px); }
+      .section { padding: 70px 0; }
+      .nav-links { display: none; }
+      .menu-toggle { display: inline-flex; align-items: center; justify-content: center; }
+      .brand-link span { font-size: 0.92rem; }
+      .hero h1 { font-size: clamp(2.6rem, 11vw, 4.4rem); }
+      .metric-strip { flex-wrap: wrap; gap: 0; }
+      .metric { flex: 1 1 33%; padding: 10px 12px; border-left: 1px solid var(--line); }
+      .metric:first-child { padding-left: 12px; border-left: 1px solid var(--line); }
+      .metric strong { font-size: 1.35rem; }
+      .metric-label { font-size: 0.55rem; letter-spacing: 0.05em; }
+      .form-grid { grid-template-columns: 1fr; }
+      .stack-groups { grid-template-columns: repeat(2, 1fr); }
+      .footer-inner { flex-direction: column; align-items: flex-start; }
     }
-
-    /* ===== UPGRADE ADDITIONS ===== */
-    :focus-visible {
-      outline: 2px solid var(--gold);
-      outline-offset: 3px
+    @media (max-width: 450px) {
+      .result-stats { grid-template-columns: 1fr; }
+      .result-stat { border-right: 0; border-bottom: 1px solid var(--line-dark); }
+      .result-stat:last-child { border-bottom: 0; }
+      .result-stats.two { grid-template-columns: 1fr; }
+      .nx-status { grid-template-columns: 1fr; }
+      .nx-status > div { border-left: 0; }
+      .nx-status > div:nth-child(3) { border-top: 1px solid var(--line); }
+      .case-study { grid-template-columns: 34px 1fr; gap: 12px; }
+      .hero-actions .btn-primary, .hero-actions .btn-ghost { width: 100%; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation-duration: .01ms !important;
+        transition-duration: .01ms !important;
+        scroll-behavior: auto !important;
+      }
+      .reveal { opacity: 1; transform: none; }
     }
 
     .skip {
-      position: absolute;
-      left: -999px;
-      top: 0;
-      background: var(--gold);
-      color: var(--ink);
-      padding: .6rem 1rem;
-      z-index: 200
+      position: absolute; left: -999px; top: 0;
+      background: var(--blue); color: var(--white);
+      padding: 8px 14px; z-index: 100;
     }
-
-    .skip:focus {
-      left: 0
-    }
-
-    @media (prefers-reduced-motion:reduce) {
-
-      *,
-      *::before,
-      *::after {
-        animation-duration: .01ms !important;
-        animation-iteration-count: 1 !important;
-        transition-duration: .01ms !important;
-        scroll-behavior: auto !important
-      }
-
-      .reveal {
-        opacity: 1;
-        transform: none
-      }
-
-      .hero-eyebrow,
-      .hero-name,
-      .hero-tagline,
-      .hero-desc,
-      .hero-actions,
-      .hero-metrics,
-      .hero-image-block,
-      .hero-video-badge,
-      .hero-scroll-hint {
-        opacity: 1
-      }
-    }
-
-    .chip {
-      font-family: var(--ff-mono);
-      font-size: .6rem;
-      letter-spacing: .12em;
-      text-transform: uppercase;
-      padding: .2rem .55rem;
-      border-radius: 2px;
-      border: 1px solid var(--border-2);
-      color: var(--gold);
-      white-space: nowrap;
-      display: inline-block
-    }
-
-    .chip.dev {
-      color: #C9B8FF;
-      border-color: rgba(124, 92, 255, .55)
-    }
-
-    .chip.int {
-      color: var(--slate);
-      border-style: dashed
-    }
-
-    .s-dev {
-      color: #C9B8FF
-    }
-
-    .s-int {
-      color: var(--slate);
-      font-style: italic
-    }
-
-    .legend {
-      display: flex;
-      gap: .6rem;
-      flex-wrap: wrap;
-      margin-top: 1.5rem
-    }
-
-    .cat-head {
-      font-family: var(--ff-mono);
-      font-size: .72rem;
-      letter-spacing: .2em;
-      text-transform: uppercase;
-      color: var(--gold);
-      margin: 4rem 0 1.5rem
-    }
-
-    .case-study {
-      cursor: default;
-      grid-template-columns: 80px 1fr
-    }
-
-    .case-study:last-child {
-      border-bottom: 1px solid var(--border)
-    }
-
-    .cs-fields {
-      display: grid;
-      grid-template-columns: 150px 1fr;
-      gap: .6rem 1.5rem;
-      margin-top: 1.25rem;
-      font-size: .86rem;
-      line-height: 1.65;
-      max-width: 780px
-    }
-
-    .cs-fields dt {
-      font-family: var(--ff-mono);
-      font-size: .62rem;
-      letter-spacing: .14em;
-      text-transform: uppercase;
-      color: var(--slate);
-      padding-top: .25rem
-    }
-
-    .cs-fields dd {
-      color: var(--slate-light)
-    }
-
-    .cs-links {
-      display: flex;
-      gap: 1.25rem;
-      flex-wrap: wrap;
-      margin-top: 1.25rem;
-      align-items: center
-    }
-
-    .cs-links a {
-      color: var(--gold);
-      font-size: .8rem;
-      text-decoration: none;
-      font-weight: 600
-    }
-
-    .cs-links span {
-      color: var(--slate);
-      font-size: .78rem;
-      font-style: italic
-    }
-
-    .eng-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 1px;
-      background: var(--border);
-      border: 1px solid var(--border);
-      margin-top: 3rem
-    }
-
-    .eng-card {
-      background: var(--ink);
-      padding: 2.25rem
-    }
-
-    .eng-card h3 {
-      font-family: var(--ff-display);
-      font-size: 1.4rem;
-      font-weight: 500;
-      margin: .9rem 0
-    }
-
-    .eng-card p {
-      font-size: .88rem;
-      color: var(--slate);
-      line-height: 1.7
-    }
-
-    .eng-card .service-tags {
-      margin-top: 1.25rem
-    }
-
-    .flow {
-      display: flex;
-      flex-wrap: wrap;
-      align-items: center;
-      gap: .6rem;
-      margin-top: 2.5rem;
-      font-family: var(--ff-mono);
-      font-size: .7rem;
-      color: var(--slate-light)
-    }
-
-    .flow b {
-      font-weight: 400;
-      border: 1px solid var(--border-2);
-      padding: .35rem .7rem;
-      border-radius: 2px
-    }
-
-    .nx-status {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 1px;
-      background: var(--border);
-      border: 1px solid var(--border)
-    }
-
-    .nx-status>div {
-      background: var(--ink-3);
-      padding: 1.4rem
-    }
-
-    .nx-status h4 {
-      font-size: .85rem;
-      color: var(--white);
-      margin: .6rem 0 .4rem
-    }
-
-    .nx-status p {
-      font-size: .8rem;
-      color: var(--slate);
-      line-height: 1.6
-    }
-
-    .edu-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 1.5rem;
-      margin-top: 3rem
-    }
-
-    .edu-card {
-      border: 1px solid var(--border);
-      padding: 2rem;
-      background: var(--ink-2);
-      border-radius: 2px
-    }
-
-    .edu-card h3 {
-      font-family: var(--ff-display);
-      font-size: 1.3rem;
-      font-weight: 500;
-      margin: .8rem 0 .5rem
-    }
-
-    .edu-card p {
-      font-size: .86rem;
-      color: var(--slate);
-      line-height: 1.7
-    }
-
-    @media (max-width:900px) {
-
-      .eng-grid,
-      .edu-grid,
-      .nx-status {
-        grid-template-columns: 1fr
-      }
-
-      .cs-fields {
-        grid-template-columns: 1fr;
-        gap: .2rem
-      }
-
-      .cs-fields dd {
-        margin-bottom: .6rem
-      }
-    }
+    .skip:focus { left: 0; }
   </style>
 </head>
 
 <body>
   <a class="skip" href="#about">Skip to content</a>
 
-  <!-- ===== NAV ===== -->
-  <nav id="main-nav">
-    <div class="nav-inner">
-      <a href="#hero" class="nav-logo">
-        <!-- <img src="./assets/images/logo2.jpeg" alt="Thato Mapheto" class="nav-logo-img"> -->
+  <!-- ===== HEADER ===== -->
+  <header class="site-header" id="main-nav">
+    <nav class="wrap nav-inner" aria-label="Primary navigation">
+      <a href="#home" class="brand-link">
+        <img src="assets/images/logo.jpeg" alt="NimbusX Digital logo"
+          onerror="this.style.display='none'">
         <span>Thato Mapheto</span>
       </a>
       <ul class="nav-links">
         <li><a href="#about">About</a></li>
+        <li><a href="#services">Services</a></li>
         <li><a href="#work">Projects</a></li>
-        <li><a href="#calculator">Calculator</a></li>
         <li><a href="#engineering">Engineering</a></li>
+        <li><a href="#calculator">Calculator</a></li>
         <li><a href="#nimbusx">NimbusX</a></li>
         <li><a href="#experience">Experience</a></li>
+        <li><a href="#contact">Contact</a></li>
       </ul>
-      <a href="#contact" class="nav-cta">Let's Talk</a>
-      <button class="hamburger" id="hamburger" aria-label="Open menu">
-        <span></span><span></span><span></span>
+      <button class="menu-toggle" id="hamburger" aria-label="Open menu" aria-expanded="false">
+        <i data-lucide="menu"></i>
       </button>
-    </div>
-  </nav>
+    </nav>
+  </header>
 
-  <div class="mobile-nav" id="mobile-nav">
+  <!-- ===== MOBILE NAV ===== -->
+  <div class="mobile-nav" id="mobile-nav" aria-hidden="true">
     <button class="mobile-close" id="mobile-close" aria-label="Close menu">✕</button>
     <a href="#about" class="mobile-link">About</a>
+    <a href="#services" class="mobile-link">Services</a>
     <a href="#work" class="mobile-link">Projects</a>
-    <a href="#calculator" class="mobile-link">Calculator</a>
     <a href="#engineering" class="mobile-link">Engineering</a>
+    <a href="#calculator" class="mobile-link">Calculator</a>
     <a href="#nimbusx" class="mobile-link">NimbusX</a>
     <a href="#experience" class="mobile-link">Experience</a>
     <a href="#contact" class="mobile-link">Contact</a>
   </div>
 
-  <!-- ===== HERO ===== -->
-  <section id="hero">
-    <div class="hero-bg"></div>
-    <svg class="hero-orb" viewBox="0 0 1400 900" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
-      <defs>
-        <radialGradient id="orbA" cx="50%" cy="50%" r="50%">
-          <stop offset="0%" stop-color="#2DE2E6" stop-opacity="0.5" />
-          <stop offset="100%" stop-color="#2DE2E6" stop-opacity="0" />
-        </radialGradient>
-        <radialGradient id="orbB" cx="50%" cy="50%" r="50%">
-          <stop offset="0%" stop-color="#7C5CFF" stop-opacity="0.45" />
-          <stop offset="100%" stop-color="#7C5CFF" stop-opacity="0" />
-        </radialGradient>
-        <linearGradient id="lineGrad" x1="0%" y1="0%" x2="100%" y2="0%">
-          <stop offset="0%" stop-color="#2DE2E6" stop-opacity="0" />
-          <stop offset="15%" stop-color="#2DE2E6" stop-opacity="0.9" />
-          <stop offset="55%" stop-color="#7DF9FA" stop-opacity="1" />
-          <stop offset="85%" stop-color="#7C5CFF" stop-opacity="0.9" />
-          <stop offset="100%" stop-color="#7C5CFF" stop-opacity="0" />
-        </linearGradient>
-      </defs>
-      <circle cx="1050" cy="260" r="360" fill="url(#orbA)" style="animation: drift 14s ease-in-out infinite;" />
-      <circle cx="220" cy="700" r="320" fill="url(#orbB)" style="animation: drift 18s ease-in-out infinite reverse;" />
-      <polyline points="120,560 300,560 360,460 460,610 560,380 660,500 760,320 900,420 1020,260 1180,300" fill="none"
-        stroke="url(#lineGrad)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="10 6"
-        opacity="0.5" style="animation: dashmove 16s linear infinite;" />
-    </svg>
-    <div class="hero-grid-lines"></div>
-    <div class="hero-content">
-      <div class="hero-image-block">
-        <div class="hero-video-badge">
-          <div class="hero-video-ring"></div>
-          <div class="hero-video-mark">
-            <video autoplay muted loop playsinline aria-label="NimbusX logo animation">
-              <source src="./assets/images/NimbusX.mp4" type="video/mp4">
-            </video>
-          </div>
-        </div>
-        <img src="./assets/images/portrait.jpg" alt="Portrait of Thato Mapheto" class="hero-portrait">
-        <div class="hero-portrait-label">
-          <span class="portrait-name">Thato Mapheto</span>
-          <span class="portrait-title">Finance, Data &amp; Technology</span>
-        </div>
-      </div>
-      <div class="hero-eyebrow">
-        <div class="hero-eyebrow-line"></div>
-        <span class="hero-eyebrow-text">Finance · Data · Software Engineering</span>
-      </div>
-      <h1 class="hero-name">Finance meets<br><em>Engineering.</em></h1>
-      <p class="hero-tagline">Turning business problems into data-driven insights and practical technology solutions.
-      </p>
-      <p class="hero-desc">My background spans accounting, mining finance, SAP ERP and data analytics. I am now
-        developing my software engineering and data engineering skills at WeThinkCode_, with a focus on building useful
-        systems, improving financial visibility and supporting better business decisions.</p>
-      <div class="hero-actions">
-        <a href="#work" class="btn-primary">Explore My Projects</a>
-        <a href="#contact" class="btn-ghost">Connect With Me</a>
-      </div>
-      <div class="hero-metrics">
-        <div class="metric">
-          <div class="metric-value"><span class="count-up" data-target="2">0</span>+</div>
-          <div class="metric-label">Years Finance &amp; SAP Experience</div>
-        </div>
-        <!-- <div class="metric">
-          <div class="metric-value"><span>~R11M</span></div>
-          <div class="metric-label">Aged SAP Commitments Released (Team Effort)</div>
-        </div> -->
-        <div class="metric">
-          <div class="metric-value"><span class="count-up" data-target="7">0</span></div>
-          <div class="metric-label">Certifications Completed</div>
-        </div>
-      </div>
-    </div>
-    <div class="hero-scroll-hint">
-      <div class="scroll-line"></div>
-      <span class="scroll-text">Scroll</span>
-    </div>
-  </section>
-
-  <!-- ===== SKILLS STRIP ===== -->
-  <div class="skills-strip">
-    <div class="strip-inner" id="strip" aria-hidden="true">
-      <span class="strip-item"><span class="dot"></span>SAP ERP</span>
-      <span class="strip-item"><span class="dot"></span>Power BI</span>
-      <span class="strip-item"><span class="dot"></span>SQL</span>
-      <span class="strip-item"><span class="dot"></span>Financial Modelling</span>
-      <span class="strip-item"><span class="dot"></span>Business Analytics</span>
-      <span class="strip-item"><span class="dot"></span>Procurement Analytics</span>
-      <span class="strip-item"><span class="dot"></span>Python (Learning)</span>
-      <span class="strip-item"><span class="dot"></span>Data Engineering (Learning)</span>
-      <span class="strip-item"><span class="dot"></span>SAP ERP</span>
-      <span class="strip-item"><span class="dot"></span>Power BI</span>
-      <span class="strip-item"><span class="dot"></span>SQL</span>
-      <span class="strip-item"><span class="dot"></span>Financial Modelling</span>
-      <span class="strip-item"><span class="dot"></span>Business Analytics</span>
-      <span class="strip-item"><span class="dot"></span>Procurement Analytics</span>
-      <span class="strip-item"><span class="dot"></span>Python (Learning)</span>
-      <span class="strip-item"><span class="dot"></span>Data Engineering (Learning)</span>
-    </div>
-  </div>
-
-  <!-- ===== ABOUT ===== -->
-  <section id="about">
-    <div class="container">
-      <div class="about-grid">
-        <div class="about-left">
-          <div class="section-label reveal">About</div>
-          <h2 class="section-title reveal reveal-delay-1">Finance + Data +<br><em>Engineering.</em></h2>
-          <p class="about-statement reveal reveal-delay-2">I understand <em>business and financial problems</em>, work
-            with data to uncover insights, and am developing the <em>engineering skills</em> to build better systems and
-            solutions.</p>
-          <p class="reveal reveal-delay-3" style="font-size:1rem;color:var(--slate);line-height:1.8;margin-top:1.5rem">
-            Accounting and SAP ERP taught me where money and process meet. SQL and Power BI let me make that visible.
-            Software and data engineering are the next layer: building reliable workflows instead of rebuilding the same
-            spreadsheet each month. Each discipline makes the others more useful.</p>
-          <div class="legend reveal"><span class="chip">Established</span><span class="chip dev">Developing</span></div>
-          <div class="nimbusx-callout reveal reveal-delay-4" style="margin-top:2.5rem">
-            <div class="nx-label">NimbusX Digital</div>
-            <p>My own business, registered November 2025, focused on financial visibility and analytics for SMEs. <a
-                href="#nimbusx">Learn more about NimbusX →</a></p>
-          </div>
-        </div>
-        <div class="about-right">
-          <div class="about-pillars reveal">
-            <div class="pillar">
-              <div class="pillar-num">01</div>
-              <div class="pillar-content">
-                <h4>Finance &amp; Business Operations <span class="chip ">Established</span></h4>
-                <p>BCom Accounting (UJ); financial reporting, budgeting, reconciliations and controls, SAP ERP and
-                  procurement-related processes at Sibanye-Stillwater, working alongside engineering, production, safety
-                  and suppliers.</p>
-              </div>
-            </div>
-            <div class="pillar">
-              <div class="pillar-num">02</div>
-              <div class="pillar-content">
-                <h4>Data Analytics &amp; BI <span class="chip ">Established</span></h4>
-                <p>SQL, Power BI, dashboards and reporting; ALX Data Analytics certificate completed December 2025.</p>
-              </div>
-            </div>
-            <div class="pillar">
-              <div class="pillar-num">03</div>
-              <div class="pillar-content">
-                <h4>Software Engineering <span class="chip dev">Developing</span></h4>
-                <p>Studying at WeThinkCode_: programming fundamentals, problem-solving, version control, testing and
-                  databases as the programme covers them.</p>
-              </div>
-            </div>
-            <div class="pillar">
-              <div class="pillar-num">04</div>
-              <div class="pillar-content">
-                <h4>Data Engineering <span class="chip dev">Developing</span></h4>
-                <p>My selected elective: data processing, pipelines, storage, data quality and reliable data workflows.
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ===== SERVICES ===== -->
-  <section id="services">
-    <div class="container">
-      <div class="services-header">
+  <main>
+    <!-- ===== HERO ===== -->
+    <section id="home" class="hero" aria-labelledby="hero-title">
+      <div class="wrap hero-grid">
         <div>
-          <div class="section-label reveal">What I Do</div>
-          <h2 class="section-title reveal reveal-delay-1">Services built around<br><em>outcomes.</em></h2>
+          <p class="eyebrow">Finance · Data · Software Engineering</p>
+          <h1 id="hero-title">Finance meets <em>Engineering.</em></h1>
+          <p class="hero-lead">Turning business problems into data-driven insights and practical technology solutions.</p>
+          <p class="hero-copy">I'm Thato Mapheto. My background spans accounting, mining finance, SAP ERP and data
+            analytics. I'm now developing software engineering and data engineering skills at WeThinkCode_, with a focus
+            on building useful systems, improving financial visibility and supporting better business decisions.</p>
+          <div class="hero-actions">
+            <a href="#work" class="btn-primary">Explore My Projects</a>
+            <a href="#contact" class="btn-ghost">Connect With Me</a>
+          </div>
         </div>
-        <p class="services-intro reveal reveal-delay-2">"What problem does your business actually need solved?" — That's
-          always the first question. The service follows from the answer.</p>
+        <div class="portrait-frame" role="img" aria-label="Portrait frame for Thato Mapheto">
+          <div class="logo-badge">
+            <img src="assets/images/logo.jpeg" alt="NimbusX Digital logo"
+              onerror="this.style.display='none'">
+          </div>
+          <img class="portrait-photo" src="assets/images/portrait.jpg" alt="Thato Mapheto"
+            onerror="this.style.display='none'">
+          <div class="portrait-content">
+            <strong>Thato<br>Mapheto.</strong>
+            <span>Finance × Data × Engineering</span>
+          </div>
+        </div>
       </div>
-      <div class="services-grid">
-        <div class="service-card reveal">
-          <svg class="service-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-            <rect x="3" y="3" width="7" height="7" />
-            <rect x="14" y="3" width="7" height="7" />
-            <rect x="14" y="14" width="7" height="7" />
-            <rect x="3" y="14" width="7" height="7" />
-          </svg>
-          <h3>Business Analytics & Dashboards</h3>
-          <p class="service-problem">"We have data everywhere but no clarity on what's actually happening."</p>
-          <p>Custom Power BI dashboards and SQL-driven reporting pipelines that give leadership a real-time view of what
-            matters — procurement, finance, operations, or sales.</p>
-          <div class="service-tags">
-            <span class="tag">Power BI</span><span class="tag">SQL</span><span class="tag">Excel</span>
-          </div>
+      <div class="wrap metric-strip">
+        <div class="metric">
+          <strong class="count-up" data-target="2">0</strong>
+          <span class="metric-label">Years Finance &amp; SAP</span>
         </div>
-        <div class="service-card reveal reveal-delay-1">
-          <svg class="service-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-            <polyline points="22 7 13.5 15.5 8.5 10.5 2 17" />
-            <polyline points="16 7 22 7 22 13" />
-          </svg>
-          <h3>Financial Visibility & Reporting</h3>
-          <p class="service-problem">"Our numbers live in spreadsheets and no one trusts them."</p>
-          <p>Structured financial reporting, cash flow visibility, and variance analysis frameworks. Bringing discipline
-            to financial data so decisions can be made with confidence.</p>
-          <div class="service-tags">
-            <span class="tag">Excel</span><span class="tag">SAP</span><span class="tag">Reporting</span>
-          </div>
+        <div class="metric">
+          <strong class="count-up" data-target="7">0</strong>
+          <span class="metric-label">Certifications / programmes</span>
         </div>
-        <div class="service-card reveal reveal-delay-2">
-          <svg class="service-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-            <path d="M12 20h9" />
-            <path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z" />
-          </svg>
-          <h3>Data-Driven Decision Support</h3>
-          <p class="service-problem">"We make decisions by gut feel because the data isn't usable."</p>
-          <p>Building the analytical layer between your raw operational data and leadership decision-making — scenario
-            models, KPI frameworks, and executive reporting structures.</p>
-          <div class="service-tags">
-            <span class="tag">Analytics</span><span class="tag">Modelling</span><span class="tag">Strategy</span>
-          </div>
+        <div class="metric">
+          <strong class="count-up" data-target="6">0</strong>
+          <span class="metric-label">Projects featured</span>
         </div>
+      </div>
+      <span class="scroll-hint">Scroll ↓</span>
+    </section>
+
+    <!-- ===== SKILLS STRIP ===== -->
+    <div class="skills-strip" aria-hidden="true">
+      <div class="strip-inner" id="strip">
+        <span class="strip-item"><span class="dot"></span>SAP ERP</span>
+        <span class="strip-item"><span class="dot"></span>Power BI</span>
+        <span class="strip-item"><span class="dot"></span>SQL</span>
+        <span class="strip-item"><span class="dot"></span>Financial Modelling</span>
+        <span class="strip-item"><span class="dot"></span>Business Analytics</span>
+        <span class="strip-item"><span class="dot"></span>Procurement Analytics</span>
+        <span class="strip-item"><span class="dot"></span>Python (Learning)</span>
+        <span class="strip-item"><span class="dot"></span>Data Engineering (Learning)</span>
+        <span class="strip-item"><span class="dot"></span>SAP ERP</span>
+        <span class="strip-item"><span class="dot"></span>Power BI</span>
+        <span class="strip-item"><span class="dot"></span>SQL</span>
+        <span class="strip-item"><span class="dot"></span>Financial Modelling</span>
+        <span class="strip-item"><span class="dot"></span>Business Analytics</span>
+        <span class="strip-item"><span class="dot"></span>Procurement Analytics</span>
+        <span class="strip-item"><span class="dot"></span>Python (Learning)</span>
+        <span class="strip-item"><span class="dot"></span>Data Engineering (Learning)</span>
       </div>
     </div>
-  </section>
 
-  <!-- ===== WORK ===== -->
-  <section id="work">
-    <div class="container">
-      <div class="work-header">
-        <div class="section-label reveal">Projects</div>
-        <h2 class="section-title reveal reveal-delay-1">From business problems<br><em>to working analysis.</em></h2>
-        <p class="section-body reveal reveal-delay-2">Work-based projects and independent learning projects, labelled by
-          status so it is clear what is what.</p>
-      </div>
-      <div class="cat-head">Finance &amp; Business Operations</div>
-      <div class="case-studies">
-        <article class="case-study reveal">
-          <div class="cs-num">01</div>
-          <div class="cs-body">
-            <div class="cs-category">Sibanye-Stillwater · Employment · <span class="chip ">Work project</span></div>
-            <h4 class="cs-title">SAP Commitment Review &amp; Procurement Analysis</h4>
-            <dl class="cs-fields">
-              <dt>Problem</dt>
-              <dd>Aged open purchase orders and requisitions were overstating commitments in budget reporting.</dd>
-              <dt>My contribution</dt>
-              <dd>As part of the finance team, I helped identify, review and resolve aged SAP commitments, working with
-                procurement and engineering stakeholders.</dd>
-              <dt>Approach</dt>
-              <dd>Reviewed open commitments in SAP, followed up with owners, and closed or released items no longer
-                needed.</dd>
-              <dt>Outcome</dt>
-              <dd>Approximately R11 million in aged commitments released. This is committed budget freed, not cash
-                recovered.</dd>
-            </dl>
-            <div class="cs-tags"><span class="tag">SAP ERP</span><span class="tag">Procurement</span><span
-                class="tag">Financial Controls</span></div>
-            <div class="cs-links"><span>Employer data confidential; no public link</span></div>
+    <!-- ===== ABOUT ===== -->
+    <section id="about" class="section" aria-labelledby="about-title">
+      <div class="wrap split">
+        <div>
+          <p class="eyebrow">About</p>
+          <h2 id="about-title">Finance + Data + <em class="accent" style="font-style:italic">Engineering.</em></h2>
+          <p class="about-statement">I understand <strong>business and financial problems</strong>, work with data to
+            uncover insights, and am developing the <strong>engineering skills</strong> to build better systems and
+            solutions.</p>
+          <p class="muted" style="font-size:.95rem">Accounting and SAP ERP taught me where money and process meet. SQL and
+            Power BI let me make that visible. Software and data engineering are the next layer: building reliable
+            workflows instead of rebuilding the same spreadsheet each month.</p>
+          <div class="legend">
+            <span class="chip">Established</span>
+            <span class="chip dev">Developing</span>
           </div>
-        </article>
-        <article class="case-study reveal">
-          <div class="cs-num">02</div>
-          <div class="cs-body">
-            <div class="cs-category">Mieke Projects (Pty) Ltd · Independent contract · <span class="chip ">Contract
-                work</span></div>
-            <h4 class="cs-title">Project Audit &amp; Financial Reconciliation</h4>
-            <dl class="cs-fields">
-              <dt>Problem</dt>
-              <dd>Project and supplier spend on large infrastructure projects did not agree between project records and
-                ERP systems.</dd>
-              <dt>My contribution</dt>
-              <dd>Performed the reconciliations, invoice validation and an employee-records compliance audit, and
-                prepared schedules and reports for management.</dd>
-              <dt>Scale</dt>
-              <dd>Over R1 billion of expenditure reconciled; 600+ employee records audited. Client details withheld.
-              </dd>
-              <dt>Outcome</dt>
-              <dd>Variances traced to source with auditable correction trails.</dd>
-            </dl>
-            <div class="cs-tags"><span class="tag">Audit</span><span class="tag">Reconciliation</span><span
-                class="tag">Excel</span><span class="tag">Compliance</span></div>
-            <div class="cs-links"><span>Client confidential; no public link</span></div>
+          <div class="callout">
+            <strong>NimbusX Digital</strong>
+            <p>My own business, registered November 2025, focused on financial visibility and analytics for SMEs.
+              <a href="#nimbusx">Learn more about NimbusX →</a>
+            </p>
           </div>
-        </article>
-      </div>
-      <div class="cat-head">Financial Modelling &amp; Renewable Energy</div>
-      <div class="case-studies">
-        <article class="case-study reveal">
-          <div class="cs-num">03</div>
-          <div class="cs-body">
-            <div class="cs-category">Independent project · <span class="chip ">Working tool</span></div>
-            <h4 class="cs-title">Solar ROI Calculator</h4>
-            <dl class="cs-fields">
-              <dt>Objective</dt>
-              <dd>Let a household test whether rooftop solar pays back under its own assumptions.</dd>
-              <dt>Approach</dt>
-              <dd>In-browser model of payback, discounted payback, IRR, NPV and LCOE with tariff escalation, degradation
-                and optional battery.</dd>
-              <dt>Status</dt>
-              <dd>Works on this page; assumptions are generic and illustrative, not a quote.</dd>
-              <dt>Learned</dt>
-              <dd>Cash-flow modelling and the sensitivity of returns to tariff escalation.</dd>
-            </dl>
-            <div class="cs-tags"><span class="tag">JavaScript</span><span class="tag">Financial Modelling</span><span
-                class="tag">Renewable Energy</span></div>
-            <div class="cs-links"><a href="#calculator">Try it on this page ↓</a></div>
-          </div>
-        </article>
-        <article class="case-study reveal">
-          <div class="cs-num">04</div>
-          <div class="cs-body">
-            <div class="cs-category">Independent project · <span class="chip ">Learning model</span></div>
-            <h4 class="cs-title">Small Commercial Solar: Cash or Finance?</h4>
-            <dl class="cs-fields">
-              <dt>Objective</dt>
-              <dd>Compare buying rooftop solar with cash versus financing for a small business.</dd>
-              <dt>Approach</dt>
-              <dd>Five-tab Excel model with South African Section 12B tax treatment, three scenarios and visible
-                formulas.</dd>
-              <dt>Outcome</dt>
-              <dd>Modelled payback of 2.3 to 3.6 years across the three scenarios. A learning model, not a live
-                investment.</dd>
-              <dt>Learned</dt>
-              <dd>Capex/opex structuring, scenario analysis and tax-adjusted cash flows.</dd>
-            </dl>
-            <div class="cs-tags"><span class="tag">Excel</span><span class="tag">Capital Budgeting</span><span
-                class="tag">Renewable Energy</span></div>
-            <div class="cs-links"></div>
-          </div>
-        </article>
-        <article class="case-study reveal">
-          <div class="cs-num">05</div>
-          <div class="cs-body">
-            <div class="cs-category">Independent project · <span class="chip ">Portfolio models</span></div>
-            <h4 class="cs-title">NimbusX FP&amp;A Framework</h4>
-            <dl class="cs-fields">
-              <dt>Objective</dt>
-              <dd>Show what a full FP&amp;A model set looks like for two different organisations.</dd>
-              <dt>Approach</dt>
-              <dd>Python-based models for a renewable energy business and an NPO childcare operator: revenue, working
-                capital, CAPEX, funding, Monte Carlo simulation, sensitivity/tornado analysis, DCF valuation and
-                automated reporting.</dd>
-              <dt>Status</dt>
-              <dd>Case-study organisations built as portfolio pieces, not client engagements.</dd>
-              <dt>Learned</dt>
-              <dd>Structuring an end-to-end model set in Python.</dd>
-            </dl>
-            <div class="cs-tags"><span class="tag">Python</span><span class="tag">FP&amp;A</span><span
-                class="tag">DCF</span><span class="tag">Monte Carlo</span></div>
-            <div class="cs-links"></div>
-          </div>
-        </article>
-      </div>
-      <div class="cat-head">Data Analytics &amp; Business Intelligence</div>
-      <div class="case-studies">
-        <article class="case-study reveal">
-          <div class="cs-num">06</div>
-          <div class="cs-body">
-            <div class="cs-category">Independent project · <span class="chip ">In progress</span></div>
-            <h4 class="cs-title">Procurement &amp; Financial Dashboard</h4>
-            <dl class="cs-fields">
-              <dt>Objective</dt>
-              <dd>Analyse spend, supplier performance and cost drivers in one view.</dd>
-              <dt>Approach</dt>
-              <dd>Relational SQL database feeding an interactive Power BI dashboard.</dd>
-              <dt>Status</dt>
-              <dd>In progress since Dec 2025; not yet published.</dd>
-              <dt>Learned</dt>
-              <dd>Relational design for reporting.</dd>
-            </dl>
-            <div class="cs-tags"><span class="tag">SQL</span><span class="tag">Power BI</span><span class="tag">Data
-                Modelling</span></div>
-            <div class="cs-links"></div>
-          </div>
-        </article>
-      </div>
-    </div>
-  </section>
-
-  <!-- ===== CALCULATOR (Solar ROI, embedded) ===== -->
-  <section id="calculator">
-    <div class="container">
-      <div class="section-label reveal">Try It Yourself</div>
-      <h2 class="section-title reveal reveal-delay-1">Solar ROI<br><em>Calculator.</em></h2>
-      <p class="section-body reveal reveal-delay-2">A live financial model for residential solar in South Africa —
-        payback period, IRR, NPV, and LCOE, calculated right here as you adjust the assumptions. Illustrative planning
-        tool with generic assumptions, not a quote. Nothing is sent anywhere; it all runs in your browser.</p>
-      <div class="sc-live-tag reveal reveal-delay-3"><span class="sc-live-dot"></span>Live calculation</div>
-
-      <div class="sc-layout">
-        <!-- ===== INPUTS ===== -->
-        <div class="reveal reveal-delay-1">
-          <div class="sc-panel">
-            <div class="sc-panel-label">Your System</div>
-
-            <div class="sc-field">
-              <div class="sc-field-head">
-                <span class="sc-field-label">System size</span>
-                <span class="sc-field-value" id="sc-v-size">5.0 kWp</span>
+        </div>
+        <div>
+          <div class="pillar">
+            <span class="num">01</span>
+            <div>
+              <div class="pillar-head">
+                <h3>Finance &amp; ERP</h3>
+                <span class="chip">Established</span>
               </div>
+              <p>BCom Accounting (UJ); financial reporting, budgeting, reconciliations and controls, SAP ERP and
+                procurement processes at Sibanye-Stillwater.</p>
+            </div>
+          </div>
+          <div class="pillar">
+            <span class="num">02</span>
+            <div>
+              <div class="pillar-head">
+                <h3>Data Analytics &amp; BI</h3>
+                <span class="chip">Demonstrated</span>
+              </div>
+              <p>SQL, Power BI, dashboards and reporting; ALX Data Analytics certificate completed December 2025.</p>
+            </div>
+          </div>
+          <div class="pillar">
+            <span class="num">03</span>
+            <div>
+              <div class="pillar-head">
+                <h3>Software Engineering</h3>
+                <span class="chip dev">Developing</span>
+              </div>
+              <p>Studying at WeThinkCode_: programming fundamentals, problem-solving, version control, testing and
+                databases.</p>
+            </div>
+          </div>
+          <div class="pillar">
+            <span class="num">04</span>
+            <div>
+              <div class="pillar-head">
+                <h3>Data Engineering</h3>
+                <span class="chip dev">Developing</span>
+              </div>
+              <p>Selected elective: data processing, pipelines, storage, data quality and reliable data workflows.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== SERVICES ===== -->
+    <section id="services" class="section services" aria-labelledby="services-title">
+      <div class="wrap">
+        <div class="services-header">
+          <div>
+            <p class="eyebrow">What I Do</p>
+            <h2 id="services-title">Services built<br>around <em class="accent" style="font-style:italic">outcomes.</em></h2>
+          </div>
+          <p class="services-intro">"What problem does your business actually need solved?" That's always the first
+            question. The service follows from the answer.</p>
+        </div>
+        <div class="services-grid">
+          <article class="service-card">
+            <i data-lucide="chart-no-axes-combined" class="service-icon"></i>
+            <h3>Business Analytics &amp; Dashboards</h3>
+            <p class="service-problem">"We have data everywhere but no clarity on what's actually happening."</p>
+            <p>Custom Power BI dashboards and SQL-driven reporting pipelines that give leadership a real-time view of
+              what matters — procurement, finance, operations, or sales.</p>
+            <div class="service-tags">
+              <span class="tag">Power BI</span><span class="tag">SQL</span><span class="tag">Excel</span>
+            </div>
+          </article>
+          <article class="service-card">
+            <i data-lucide="scan-line" class="service-icon"></i>
+            <h3>Financial Visibility &amp; Reporting</h3>
+            <p class="service-problem">"Our numbers live in spreadsheets and no one trusts them."</p>
+            <p>Structured financial reporting, cash flow visibility, and variance analysis frameworks. Bringing
+              discipline to financial data so decisions can be made with confidence.</p>
+            <div class="service-tags">
+              <span class="tag">Excel</span><span class="tag">SAP</span><span class="tag">Reporting</span>
+            </div>
+          </article>
+          <article class="service-card">
+            <i data-lucide="workflow" class="service-icon"></i>
+            <h3>Data-Driven Decision Support</h3>
+            <p class="service-problem">"We make decisions by gut feel because the data isn't usable."</p>
+            <p>Building the analytical layer between your raw operational data and leadership decision-making — scenario
+              models, KPI frameworks, and executive reporting structures.</p>
+            <div class="service-tags">
+              <span class="tag">Analytics</span><span class="tag">Modelling</span><span class="tag">Strategy</span>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== WORK ===== -->
+    <section id="work" class="section work" aria-labelledby="work-title">
+      <div class="wrap">
+        <p class="eyebrow">Projects</p>
+        <h2 id="work-title">From business problems<br>to working <em class="accent" style="font-style:italic">analysis.</em></h2>
+        <p class="muted">Work-based projects and independent learning projects, labelled by status so it is clear what is
+          what.</p>
+
+        <div class="cat-head">Finance &amp; Business Operations</div>
+        <div class="case-studies">
+          <article class="case-study">
+            <div class="cs-num">01</div>
+            <div>
+              <div class="cs-category">Sibanye-Stillwater · Employment <span class="chip">Work project</span></div>
+              <h3 class="cs-title">SAP Commitment Review &amp; Procurement Analysis</h3>
+              <dl class="cs-fields">
+                <div><dt>Problem</dt><dd>Aged open purchase orders and requisitions were overstating commitments in budget reporting.</dd></div>
+                <div><dt>My contribution</dt><dd>As part of the finance team, I helped identify, review and resolve aged SAP commitments, working with procurement and engineering stakeholders.</dd></div>
+                <div><dt>Approach</dt><dd>Reviewed open commitments in SAP, followed up with owners, and closed or released items no longer needed.</dd></div>
+                <div><dt>Outcome</dt><dd>Approximately R11 million in aged commitments released. This is committed budget freed, not cash recovered.</dd></div>
+              </dl>
+              <div class="cs-tags"><span class="tag">SAP ERP</span><span class="tag">Procurement</span><span class="tag">Financial Controls</span></div>
+              <div class="cs-links"><span>Employer data confidential; no public link</span></div>
+            </div>
+          </article>
+          <article class="case-study">
+            <div class="cs-num">02</div>
+            <div>
+              <div class="cs-category">Mieke Projects · Independent contract <span class="chip">Contract work</span></div>
+              <h3 class="cs-title">Project Audit &amp; Financial Reconciliation</h3>
+              <dl class="cs-fields">
+                <div><dt>Problem</dt><dd>Project and supplier spend on large infrastructure projects did not agree between project records and ERP systems.</dd></div>
+                <div><dt>My contribution</dt><dd>Performed reconciliations, invoice validation and an employee-records compliance audit, and prepared schedules and reports for management.</dd></div>
+                <div><dt>Scale</dt><dd>Over R1 billion of expenditure reconciled; 600+ employee records audited.</dd></div>
+                <div><dt>Outcome</dt><dd>Variances traced to source with auditable correction trails.</dd></div>
+              </dl>
+              <div class="cs-tags"><span class="tag">Audit</span><span class="tag">Reconciliation</span><span class="tag">Excel</span><span class="tag">Compliance</span></div>
+              <div class="cs-links"><span>Client confidential; no public link</span></div>
+            </div>
+          </article>
+        </div>
+
+        <div class="cat-head">Financial Modelling &amp; Renewable Energy</div>
+        <div class="case-studies">
+          <article class="case-study">
+            <div class="cs-num">03</div>
+            <div>
+              <div class="cs-category">Independent project <span class="chip">Working tool</span></div>
+              <h3 class="cs-title">Solar ROI Calculator</h3>
+              <dl class="cs-fields">
+                <div><dt>Objective</dt><dd>Let a household test whether rooftop solar pays back under its own assumptions.</dd></div>
+                <div><dt>Approach</dt><dd>In-browser model of payback, discounted payback, IRR, NPV and LCOE with tariff escalation, degradation and optional battery.</dd></div>
+                <div><dt>Status</dt><dd>Works on this page; assumptions are generic and illustrative, not a quote.</dd></div>
+                <div><dt>Learned</dt><dd>Cash-flow modelling and the sensitivity of returns to tariff escalation.</dd></div>
+              </dl>
+              <div class="cs-tags"><span class="tag">JavaScript</span><span class="tag">Financial Modelling</span><span class="tag">Renewable Energy</span></div>
+              <div class="cs-links"><a href="#calculator">Try it on this page ↓</a></div>
+            </div>
+          </article>
+          <article class="case-study">
+            <div class="cs-num">04</div>
+            <div>
+              <div class="cs-category">Independent project <span class="chip">Learning model</span></div>
+              <h3 class="cs-title">Small Commercial Solar: Cash or Finance?</h3>
+              <dl class="cs-fields">
+                <div><dt>Objective</dt><dd>Compare buying rooftop solar with cash versus financing for a small business.</dd></div>
+                <div><dt>Approach</dt><dd>Five-tab Excel model with South African Section 12B tax treatment, three scenarios and visible formulas.</dd></div>
+                <div><dt>Outcome</dt><dd>Modelled payback of 2.3 to 3.6 years across the three scenarios. A learning model, not a live investment.</dd></div>
+                <div><dt>Learned</dt><dd>Capex/opex structuring, scenario analysis and tax-adjusted cash flows.</dd></div>
+              </dl>
+              <div class="cs-tags"><span class="tag">Excel</span><span class="tag">Capital Budgeting</span><span class="tag">Renewable Energy</span></div>
+            </div>
+          </article>
+          <article class="case-study">
+            <div class="cs-num">05</div>
+            <div>
+              <div class="cs-category">Independent project <span class="chip">Portfolio models</span></div>
+              <h3 class="cs-title">NimbusX FP&amp;A Framework</h3>
+              <dl class="cs-fields">
+                <div><dt>Objective</dt><dd>Show what a full FP&amp;A model set looks like for two different organisations.</dd></div>
+                <div><dt>Approach</dt><dd>Python-based models for a renewable energy business and an NPO childcare operator: revenue, working capital, CAPEX, funding, Monte Carlo simulation, sensitivity/tornado analysis, DCF valuation and automated reporting.</dd></div>
+                <div><dt>Status</dt><dd>Case-study organisations built as portfolio pieces, not client engagements.</dd></div>
+                <div><dt>Learned</dt><dd>Structuring an end-to-end model set in Python.</dd></div>
+              </dl>
+              <div class="cs-tags"><span class="tag">Python</span><span class="tag">FP&amp;A</span><span class="tag">DCF</span><span class="tag">Monte Carlo</span></div>
+            </div>
+          </article>
+        </div>
+
+        <div class="cat-head">Data Analytics &amp; Business Intelligence</div>
+        <div class="case-studies">
+          <article class="case-study">
+            <div class="cs-num">06</div>
+            <div>
+              <div class="cs-category">Independent project <span class="chip dev">In progress</span></div>
+              <h3 class="cs-title">Procurement &amp; Financial Dashboard</h3>
+              <dl class="cs-fields">
+                <div><dt>Objective</dt><dd>Analyse spend, supplier performance and cost drivers in one view.</dd></div>
+                <div><dt>Approach</dt><dd>Relational SQL database feeding an interactive Power BI dashboard.</dd></div>
+                <div><dt>Status</dt><dd>In progress since Dec 2025; not yet published.</dd></div>
+                <div><dt>Learned</dt><dd>Relational design for reporting.</dd></div>
+              </dl>
+              <div class="cs-tags"><span class="tag">SQL</span><span class="tag">Power BI</span><span class="tag">Data Modelling</span></div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== CALCULATOR ===== -->
+    <!-- <section id="calculator" class="section calculator" aria-labelledby="calculator-title">
+      <div class="wrap">
+        <p class="eyebrow">Try It Yourself</p>
+        <div class="calc-head">
+          <h2 id="calculator-title">Solar ROI <em class="accent" style="font-style:italic">Calculator.</em></h2>
+          <p>A live financial model for residential solar in South Africa — payback, IRR, NPV and LCOE, calculated as
+            you adjust the assumptions. Illustrative planning tool with generic assumptions, not a quote. Runs entirely
+            in your browser.</p>
+          <span class="live-tag">Live calculation</span>
+        </div>
+
+        <div class="calc-shell"> -->
+          <!-- INPUTS -->
+          <!-- <div class="calc-panel">
+            <h3>Your System</h3>
+            <div class="calc-field">
+              <div class="calc-field-head"><span>System size</span><span class="val" id="sc-v-size">5.0 kWp</span></div>
               <input type="range" id="sc-size" min="1" max="15" step="0.5" value="5">
             </div>
-
-            <div class="sc-field">
-              <div class="sc-field-head">
-                <span class="sc-field-label">Estimated system cost</span>
-                <span></span>
-              </div>
-              <input type="number" class="sc-num-input" id="sc-cost" value="80000">
-              <div class="sc-field-hint">Auto-estimated at R16,000/kWp (installed, no battery). Edit to match a real
-                quote — it won't be overwritten once you do.</div>
+            <div class="calc-field">
+              <div class="calc-field-head"><span>Estimated system cost</span><span class="val" id="sc-v-cost">R 80,000</span></div>
+              <input type="number" class="calc-num" id="sc-cost" value="80000">
+              <div class="calc-hint">Auto-estimated at R16,000/kWp (installed, no battery). Edit to match a real quote.</div>
             </div>
-
-            <div class="sc-field">
-              <div class="sc-toggle-row" id="sc-battery-row">
-                <span class="sc-field-label">Include battery backup</span>
-                <div class="sc-toggle" id="sc-battery-toggle"></div>
+            <div class="calc-field">
+              <div class="calc-toggle-row" id="sc-battery-row">
+                <span style="font-size:.86rem;font-weight:600">Include battery backup</span>
+                <div class="calc-toggle" id="sc-battery-toggle"></div>
               </div>
             </div>
-
-            <div class="sc-field" id="sc-battery-field" style="display:none;">
-              <div class="sc-field-head">
-                <span class="sc-field-label">Battery capacity</span>
-                <span class="sc-field-value" id="sc-v-battery">5.0 kWh</span>
-              </div>
+            <div class="calc-field" id="sc-battery-field" style="display:none">
+              <div class="calc-field-head"><span>Battery capacity</span><span class="val" id="sc-v-battery">5.0 kWh</span></div>
               <input type="range" id="sc-battery" min="2.5" max="15" step="0.5" value="5">
-              <div class="sc-field-hint">Adds ~R7,000/kWh to system cost and raises self-consumption.</div>
+              <div class="calc-hint">Adds ~R7,000/kWh to system cost and raises self-consumption.</div>
             </div>
-
-            <div class="sc-field">
-              <div class="sc-field-head">
-                <span class="sc-field-label">Monthly electricity usage</span>
-                <span class="sc-field-value" id="sc-v-usage">900 kWh</span>
-              </div>
+            <div class="calc-field">
+              <div class="calc-field-head"><span>Monthly electricity usage</span><span class="val" id="sc-v-usage">900 kWh</span></div>
               <input type="range" id="sc-usage" min="200" max="3000" step="50" value="900">
             </div>
-
-            <div class="sc-field">
-              <div class="sc-field-head">
-                <span class="sc-field-label">Current tariff</span>
-                <span class="sc-field-value" id="sc-v-tariff">R3.80 / kWh</span>
-              </div>
+            <div class="calc-field">
+              <div class="calc-field-head"><span>Current tariff</span><span class="val" id="sc-v-tariff">R 3.80 / kWh</span></div>
               <input type="range" id="sc-tariff" min="1.50" max="6.00" step="0.05" value="3.80">
-              <div class="sc-field-hint">R3.80/kWh is a rough SA residential average — check your municipal or Eskom
-                bill for your actual rate.</div>
+              <div class="calc-hint">Check your municipal or Eskom bill for your actual rate.</div>
             </div>
-
-            <div class="sc-field">
-              <div class="sc-field-head">
-                <span class="sc-field-label">Self-consumption rate</span>
-                <span class="sc-field-value" id="sc-v-selfcons">55%</span>
-              </div>
+            <div class="calc-field">
+              <div class="calc-field-head"><span>Self-consumption rate</span><span class="val" id="sc-v-selfcons">55%</span></div>
               <input type="range" id="sc-selfcons" min="20" max="95" step="5" value="55">
-              <div class="sc-field-hint">Share of solar generation actually used on-site rather than
-                exported/lost. Rises with a battery.</div>
-            </div>
-
-            <details class="sc-assumptions">
+              <div class="calc-hint">Share of solar generation used on-site. Rises with a battery.</div>
+            </div> -->
+<!-- 
+            <details class="calc-assumptions">
               <summary>Financial assumptions</summary>
-
-              <div class="sc-field">
-                <div class="sc-field-head">
-                  <span class="sc-field-label">Annual tariff escalation</span>
-                  <span class="sc-field-value" id="sc-v-escalation">12%</span>
-                </div>
+              <div class="calc-field">
+                <div class="calc-field-head"><span>Annual tariff escalation</span><span class="val" id="sc-v-escalation">12%</span></div>
                 <input type="range" id="sc-escalation" min="0" max="20" step="0.5" value="12">
               </div>
-
-              <div class="sc-field">
-                <div class="sc-field-head">
-                  <span class="sc-field-label">Panel degradation / year</span>
-                  <span class="sc-field-value" id="sc-v-degradation">0.5%</span>
-                </div>
+              <div class="calc-field">
+                <div class="calc-field-head"><span>Panel degradation / year</span><span class="val" id="sc-v-degradation">0.5%</span></div>
                 <input type="range" id="sc-degradation" min="0" max="1.5" step="0.1" value="0.5">
               </div>
-
-              <div class="sc-field">
-                <div class="sc-field-head">
-                  <span class="sc-field-label">Discount rate (for NPV/LCOE)</span>
-                  <span class="sc-field-value" id="sc-v-discount">10%</span>
-                </div>
+              <div class="calc-field">
+                <div class="calc-field-head"><span>Discount rate (for NPV/LCOE)</span><span class="val" id="sc-v-discount">10%</span></div>
                 <input type="range" id="sc-discount" min="4" max="15" step="0.5" value="10">
               </div>
-
-              <div class="sc-field">
-                <div class="sc-field-head">
-                  <span class="sc-field-label">Annual O&amp;M cost</span>
-                  <span class="sc-field-value" id="sc-v-om">1.0% of system cost</span>
-                </div>
+              <div class="calc-field">
+                <div class="calc-field-head"><span>Annual O&amp;M cost</span><span class="val" id="sc-v-om">1.0% of system cost</span></div>
                 <input type="range" id="sc-om" min="0" max="3" step="0.25" value="1">
               </div>
-
-              <div class="sc-field">
-                <div class="sc-field-head">
-                  <span class="sc-field-label">System lifetime</span>
-                  <span class="sc-field-value" id="sc-v-life">25 years</span>
-                </div>
+              <div class="calc-field">
+                <div class="calc-field-head"><span>System lifetime</span><span class="val" id="sc-v-life">25 years</span></div>
                 <input type="range" id="sc-life" min="15" max="30" step="1" value="25">
               </div>
             </details>
-          </div>
-        </div>
+          </div> -->
 
-        <!-- ===== RESULTS ===== -->
-        <div class="reveal reveal-delay-2">
-          <div class="sc-panel">
-            <div class="sc-panel-label">Results</div>
-
-            <div class="sc-headline-result">
-              <div class="sc-headline-label">Simple Payback Period</div>
-              <div class="sc-headline-value" id="sc-r-payback">—<span> years</span></div>
+          <!-- RESULTS -->
+          <!-- <div class="calc-panel">
+            <h3>Results</h3>
+            <div class="result-headline">
+              <div class="result-label">Simple Payback Period</div>
+              <div class="result-value" id="sc-r-payback">—<small>years</small></div>
             </div>
-
-            <div class="sc-stat-row">
-              <div class="sc-stat-cell">
-                <div class="sc-stat-cell-label">Discounted Payback</div>
-                <div class="sc-stat-cell-value" id="sc-r-dpayback">—</div>
-              </div>
-              <div class="sc-stat-cell">
-                <div class="sc-stat-cell-label">IRR</div>
-                <div class="sc-stat-cell-value" id="sc-r-irr">—</div>
-              </div>
-              <div class="sc-stat-cell">
-                <div class="sc-stat-cell-label">NPV</div>
-                <div class="sc-stat-cell-value" id="sc-r-npv">—</div>
-              </div>
+            <div class="result-stats">
+              <div class="result-stat"><b id="sc-r-dpayback">—</b><span>Discounted Payback</span></div>
+              <div class="result-stat"><b id="sc-r-irr">—</b><span>IRR</span></div>
+              <div class="result-stat"><b id="sc-r-npv">—</b><span>NPV</span></div>
             </div>
-
-            <div class="sc-stat-row sc-stat-row-2">
-              <div class="sc-stat-cell">
-                <div class="sc-stat-cell-label">LCOE (cost of solar energy)</div>
-                <div class="sc-stat-cell-value" id="sc-r-lcoe">—</div>
-              </div>
-              <div class="sc-stat-cell">
-                <div class="sc-stat-cell-label">Year 1 Savings</div>
-                <div class="sc-stat-cell-value" id="sc-r-y1">—</div>
-              </div>
+            <div class="result-stats two">
+              <div class="result-stat"><b id="sc-r-lcoe">—</b><span>LCOE (R/kWh)</span></div>
+              <div class="result-stat"><b id="sc-r-y1">—</b><span>Year 1 Savings</span></div>
             </div>
-
-            <div class="sc-chart-wrap">
+            <div class="chart-wrap">
               <svg id="sc-chart" viewBox="0 0 560 260" preserveAspectRatio="xMidYMid meet"></svg>
-              <div class="sc-chart-legend">
-                <div class="sc-legend-item"><span class="sc-legend-dot"
-                    style="background:var(--gold);"></span>Cumulative cash flow</div>
-                <div class="sc-legend-item"><span class="sc-legend-dot"
-                    style="background:var(--slate);"></span>Breakeven line</div>
-                <div class="sc-legend-item"><span class="sc-legend-dot" style="background:var(--green);"></span>Payback
-                  point</div>
+              <div class="chart-legend">
+                <span><i style="background:var(--blue)"></i>Cumulative cash flow</span>
+                <span><i style="background:var(--slate)"></i>Breakeven line</span>
+                <span><i style="background:#4caf7d"></i>Payback point</span>
               </div>
             </div>
-
-            <div class="sc-method-note">
-              <strong>Methodology:</strong> nominal annual savings are modelled as offset energy (generation ×
-              self-consumption, capped at usage) × the escalating tariff, with generation reduced yearly by panel
-              degradation. IRR and NPV are computed on the resulting cash flow starting with the upfront system
-              cost. LCOE divides discounted lifetime cost (system cost + O&amp;M) by discounted lifetime
-              generation. This is a planning estimate, not a quote — actual results depend on installer pricing,
-              roof orientation, shading, and future tariff decisions.
-            </div>
+            <p class="method-note"><strong>Methodology:</strong> nominal annual savings are modelled as offset energy
+              (generation × self-consumption, capped at usage) × the escalating tariff, with generation reduced yearly by
+              panel degradation. IRR and NPV are computed on the resulting cash flow starting with the upfront system
+              cost. LCOE divides discounted lifetime cost (system cost + O&amp;M) by discounted lifetime generation. A
+              planning estimate, not a quote.</p>
           </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section> -->
 
-  <!-- ===== ENGINEERING ===== -->
-  <section id="engineering">
-    <div class="container">
-      <div class="section-label reveal">Engineering Journey</div>
-      <h2 class="section-title reveal reveal-delay-1">Engineering the<br><em>next layer.</em></h2>
-      <p class="section-body reveal reveal-delay-2">My journey into software engineering builds on a foundation in
-        accounting, finance and data analytics. I am developing the technical skills to move beyond analysing business
-        problems and towards building the systems and workflows that help solve them.</p>
-      <div class="eng-grid reveal">
-        <div class="eng-card"><span class="chip dev">Studying</span>
-          <h3>Software Engineering</h3>
-          <p>WeThinkCode_ programme: programming, problem-solving, software design, testing, version control, databases
-            and APIs, as the programme covers them.</p>
-          <div class="service-tags"><span class="tag">Python</span><span class="tag">Git</span><span
-              class="tag">Testing</span><span class="tag">SQL</span></div>
-        </div>
-        <div class="eng-card"><span class="chip dev">Elective</span>
-          <h3>Data Engineering</h3>
-          <p>My selected elective: data processing, pipelines, storage, data quality and workflow orchestration.</p>
-          <div class="service-tags"><span class="tag">Pipelines</span><span class="tag">Data quality</span><span
-              class="tag">Orchestration</span></div>
-        </div>
-        <div class="eng-card"><span class="chip">Direction</span>
-          <h3>Applied Learning</h3>
-          <p>I intend to apply this to financial data, business reporting, operational processes and renewable energy
-            analysis, starting from projects such as the <a href="#calculator" style="color:var(--gold)">Solar ROI
-              Calculator</a>.</p>
-          <div class="service-tags"><span class="tag">Financial data</span><span class="tag">Reporting</span><span
-              class="tag">Solar analysis</span></div>
+    <!-- ===== ENGINEERING ===== -->
+    <section id="engineering" class="section" aria-labelledby="eng-title">
+      <div class="wrap">
+        <p class="eyebrow">Engineering Journey</p>
+        <h2 id="eng-title">Engineering the<br><em class="accent" style="font-style:italic">next layer.</em></h2>
+        <p class="muted" style="margin-top:14px">My journey into software engineering builds on accounting, finance and
+          data analytics. I am developing the technical skills to move beyond analysing business problems and towards
+          building the systems and workflows that help solve them.</p>
+        <div class="services-grid" style="margin-top:36px">
+          <article class="service-card">
+            <span class="chip dev">Studying</span>
+            <h3 style="margin-top:14px">Software Engineering</h3>
+            <p>WeThinkCode_ programme: programming, problem-solving, software design, testing, version control, databases
+              and APIs, as the programme covers them.</p>
+            <div class="service-tags"><span class="tag">Python</span><span class="tag">Git</span><span class="tag">Testing</span><span class="tag">SQL</span></div>
+          </article>
+          <article class="service-card">
+            <span class="chip dev">Elective</span>
+            <h3 style="margin-top:14px">Data Engineering</h3>
+            <p>My selected elective: data processing, pipelines, storage, data quality and workflow orchestration.</p>
+            <div class="service-tags"><span class="tag">Pipelines</span><span class="tag">Data quality</span><span class="tag">Orchestration</span></div>
+          </article>
+          <article class="service-card">
+            <span class="chip">Direction</span>
+            <h3 style="margin-top:14px">Applied Learning</h3>
+            <p>Applying this to financial data, business reporting, operational processes and renewable energy analysis,
+              starting from projects such as the <a href="#calculator" style="color:var(--blue)">Solar ROI Calculator</a>.</p>
+            <div class="service-tags"><span class="tag">Financial data</span><span class="tag">Reporting</span><span class="tag">Solar analysis</span></div>
+          </article>
         </div>
       </div>
-      <div class="flow reveal" aria-label="Learning direction"><b>Business problem</b>→<b>Data</b>→<b>Reliable
-          workflow</b>→<b>Decision-ready insight</b></div>
-    </div>
-  </section>
+    </section>
 
-  <!-- ===== NIMBUSX ===== -->
-  <section id="nimbusx">
-    <div class="nx-bg-mark" aria-hidden="true">NimbusX</div>
-    <div class="container">
-      <div class="nx-grid">
+    <!-- ===== NIMBUSX ===== -->
+    <section id="nimbusx" class="section nimbusx" aria-labelledby="nx-title">
+      <div class="nx-bg-mark" aria-hidden="true">NimbusX</div>
+      <div class="wrap nx-grid">
         <div>
-          <div class="section-label reveal">My Business</div>
-          <div class="nx-brand-mark reveal reveal-delay-1">
-            <div class="nx-wordmark">Nimbus<span>X</span></div>
-            <div class="nx-descriptor">Digital · Analytics · Systems</div>
+          <p class="eyebrow">My Business</p>
+          <h2 class="nx-wordmark" id="nx-title">Nimbus<span>X</span></h2>
+          <div class="nx-descriptor">Digital · Analytics · Systems</div>
+          <p class="nx-statement"><strong>Founded November 2025</strong> to help small and medium-sized businesses improve
+            financial visibility and use their data more effectively.</p>
+          <p style="font-size:.9rem">The long-term concept is a financial operating system for SMEs: accounting data →
+            MySQL → Power BI → Excel models → actionable insight. It is a direction and architecture idea, not a platform
+            that exists today. Focus industries: manufacturing, industrial and renewable energy.</p>
+          <div class="nx-cta">
+            <a href="#contact" class="btn-primary">Discuss Your Reporting Needs</a>
+            <a href="#work" class="btn-ghost">See Projects</a>
           </div>
-          <p class="nx-statement reveal reveal-delay-2"><strong>Founded November 2025</strong> to help small and
-            medium-sized businesses improve financial visibility and use their data more effectively.</p>
-          <p class="section-body reveal reveal-delay-3" style="font-size:.9rem">The long-term concept is a financial
-            operating system for SMEs: accounting data → MySQL → Power BI → Excel models → actionable insight. It is a
-            direction and architecture idea, not a platform that exists today. Focus industries: manufacturing,
-            industrial and renewable energy.</p>
-          <div class="nx-cta-row reveal reveal-delay-4" style="margin-top:2.5rem"><a href="#contact" class="btn-primary"
-              style="font-size:.78rem">Discuss Your Reporting Needs</a><a href="#work" class="btn-ghost"
-              style="font-size:.78rem">See Projects</a></div>
         </div>
-        <div class="nx-right">
-          <div class="nx-status reveal">
-            <div><span class="chip">Can deliver now</span>
-              <h4>Analytics &amp; reporting</h4>
-              <p>Power BI dashboards, Excel financial models and FP&amp;A, reconciliations and financial reporting.</p>
-            </div>
-            <div><span class="chip dev">Prototyped</span>
-              <h4>Solar models</h4>
-              <p>Solar ROI calculator, rooftop solar cash-vs-finance model, two FP&amp;A case-study models.</p>
-            </div>
-            <div><span class="chip dev">In development</span>
-              <h4>SQL-based workflows</h4>
-              <p>MySQL-backed reporting and Python/data-engineering workflows, as my studies progress.</p>
-            </div>
-            <div><span class="chip int">Longer-term</span>
-              <h4>SME financial OS</h4>
-              <p>Integrated data-to-insight pipeline for SMEs. Concept only.</p>
-            </div>
+        <div>
+          <div class="nx-status">
+            <div><span class="chip">Can deliver now</span><h4>Analytics &amp; reporting</h4><p>Power BI dashboards, Excel financial models and FP&amp;A, reconciliations and financial reporting.</p></div>
+            <div><span class="chip dev">Prototyped</span><h4>Solar models</h4><p>Solar ROI calculator, rooftop solar cash-vs-finance model, two FP&amp;A case-study models.</p></div>
+            <div><span class="chip dev">In development</span><h4>SQL workflows</h4><p>MySQL-backed reporting and Python/data-engineering workflows, as my studies progress.</p></div>
+            <div><span class="chip int">Longer-term</span><h4>SME financial OS</h4><p>Integrated data-to-insight pipeline for SMEs. Concept only.</p></div>
           </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- ===== STACK ===== -->
-  <section id="stack" style="padding-top:6rem;padding-bottom:6rem">
-    <div class="container">
-      <div class="section-label reveal">Capabilities</div>
-      <h2 class="section-title reveal reveal-delay-1">Skills &amp; <em>Stack</em></h2>
-      <div class="legend reveal"><span class="chip">Demonstrated</span><span class="chip dev">Learning /
-          developing</span><span class="chip int">Area of interest</span></div>
-      <div class="stack-groups">
-        <div class="stack-group reveal">
-          <h4>Finance &amp; ERP</h4>
-          <div class="stack-items"><span class="stack-item ">SAP ERP (MM/FI)</span><span class="stack-item ">Financial
-              Accounting</span><span class="stack-item ">Financial Reporting</span><span class="stack-item ">Budget
-              &amp; Variance Analysis</span><span class="stack-item ">Commitment Accounting</span><span
-              class="stack-item s-int">Microsoft Dynamics 365</span></div>
+    <!-- ===== STACK ===== -->
+    <section id="stack" class="section stack" aria-labelledby="stack-title">
+      <div class="wrap">
+        <p class="eyebrow">Capabilities</p>
+        <h2 id="stack-title">Skills &amp; <em class="accent" style="font-style:italic">Stack.</em></h2>
+        <div class="legend">
+          <span class="chip">Demonstrated</span>
+          <span class="chip dev">Learning / developing</span>
+          <span class="chip int">Area of interest</span>
         </div>
-        <div class="stack-group reveal">
-          <h4>Data &amp; Analytics</h4>
-          <div class="stack-items"><span class="stack-item ">Power BI</span><span class="stack-item ">SQL</span><span
-              class="stack-item ">Excel (Financial Analysis)</span><span class="stack-item ">Dashboard
-              Development</span><span class="stack-item ">Python (FP&amp;A modelling)</span></div>
-        </div>
-        <div class="stack-group reveal">
-          <h4>Software Engineering</h4>
-          <div class="stack-items"><span class="stack-item s-dev">Python</span><span class="stack-item s-dev">Git &amp;
-              Version Control</span><span class="stack-item s-dev">Testing &amp; Debugging</span><span
-              class="stack-item s-dev">OOP, APIs, Databases</span></div>
-        </div>
-        <div class="stack-group reveal">
-          <h4>Data Engineering</h4>
-          <div class="stack-items"><span class="stack-item s-dev">Pipelines &amp; Processing</span><span
-              class="stack-item s-dev">Data Formats &amp; Storage</span><span class="stack-item s-dev">Data
-              Quality</span><span class="stack-item s-dev">Workflow Orchestration</span></div>
-        </div>
-        <div class="stack-group reveal">
-          <h4>Business &amp; Industry</h4>
-          <div class="stack-items"><span class="stack-item ">Mining Finance</span><span class="stack-item ">Operational
-              Reporting</span><span class="stack-item ">Audit &amp; Reconciliation</span><span
-              class="stack-item s-dev">Renewable Energy Modelling</span><span class="stack-item s-int">SME Financial
-              Visibility</span></div>
+        <div class="stack-groups">
+          <div class="stack-group">
+            <h4>Finance &amp; ERP</h4>
+            <div class="stack-item">SAP ERP (MM/FI)</div>
+            <div class="stack-item">Financial Accounting</div>
+            <div class="stack-item">Financial Reporting</div>
+            <div class="stack-item">Budget &amp; Variance Analysis</div>
+            <div class="stack-item">Commitment Accounting</div>
+            <div class="stack-item int">Microsoft Dynamics 365</div>
+          </div>
+          <div class="stack-group">
+            <h4>Data &amp; Analytics</h4>
+            <div class="stack-item">Power BI</div>
+            <div class="stack-item">SQL</div>
+            <div class="stack-item">Excel (Financial Analysis)</div>
+            <div class="stack-item">Dashboard Development</div>
+            <div class="stack-item">Python (FP&amp;A modelling)</div>
+          </div>
+          <div class="stack-group">
+            <h4>Software Engineering</h4>
+            <div class="stack-item dev">Python</div>
+            <div class="stack-item dev">Git &amp; Version Control</div>
+            <div class="stack-item dev">Testing &amp; Debugging</div>
+            <div class="stack-item dev">OOP, APIs, Databases</div>
+          </div>
+          <div class="stack-group">
+            <h4>Data Engineering</h4>
+            <div class="stack-item dev">Pipelines &amp; Processing</div>
+            <div class="stack-item dev">Data Formats &amp; Storage</div>
+            <div class="stack-item dev">Data Quality</div>
+            <div class="stack-item dev">Workflow Orchestration</div>
+          </div>
+          <div class="stack-group">
+            <h4>Business &amp; Industry</h4>
+            <div class="stack-item">Mining Finance</div>
+            <div class="stack-item">Operational Reporting</div>
+            <div class="stack-item">Audit &amp; Reconciliation</div>
+            <div class="stack-item dev">Renewable Energy Modelling</div>
+            <div class="stack-item int">SME Financial Visibility</div>
+          </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- ===== EXPERIENCE ===== -->
-  <section id="experience">
-    <div class="container">
-      <div class="section-label reveal">Experience</div>
-      <h2 class="section-title reveal reveal-delay-1">Built from<br><em>real operations.</em></h2>
-      <div class="exp-layout">
-        <div class="exp-sidebar reveal">
-          <p>Operational finance in a large mining organisation, independent audit and reconciliation work, and now my
-            own analytics business. Studies are listed separately below.</p>
-          <a href="./Thato_Mapheto_CV_updated.pdf" class="btn-ghost" download
-            style="font-size:.75rem;padding:.75rem 1.5rem">Download CV</a>
-        </div>
-        <div class="exp-timeline">
-          <div class="exp-item reveal">
-            <div class="exp-meta">
+    <!-- ===== EXPERIENCE ===== -->
+    <section id="experience" class="section experience" aria-labelledby="exp-title">
+      <div class="wrap">
+        <p class="eyebrow">Experience</p>
+        <h2 id="exp-title">Built from<br><em class="accent" style="font-style:italic">real operations.</em></h2>
+        <div class="exp-layout">
+          <div class="exp-sticky">
+            <p>Operational finance in a large mining organisation, independent audit and reconciliation work, and now my
+              own analytics business. Studies are listed separately below.</p>
+            <a href="./Thato_Mapheto_CV_updated.pdf" class="btn-ghost" download>Download CV</a>
+          </div>
+          <div class="timeline">
+            <div class="exp-item">
               <div class="exp-period">Nov 2025 — Present</div>
               <div class="exp-company">NimbusX Digital (own business)</div>
-            </div>
-            <div class="exp-details">
               <h3 class="exp-role">Founder</h3>
               <p class="exp-desc">Building a freelance practice in financial modelling, FP&amp;A and business analytics
                 for SMEs.</p>
-              <div class="exp-highlights">
-                <div class="exp-highlight">Built Python-based FP&amp;A models for two case-study organisations
-                  (renewable energy, NPO childcare) as portfolio pieces</div>
-                <div class="exp-highlight">Built a rooftop solar investment model comparing cash and financing, with
-                  scenario analysis and Section 12B tax treatment</div>
-              </div>
+              <ul class="exp-highlights">
+                <li>Built Python-based FP&amp;A models for two case-study organisations (renewable energy, NPO childcare) as portfolio pieces</li>
+                <li>Built a rooftop solar investment model comparing cash and financing, with scenario analysis and Section 12B tax treatment</li>
+              </ul>
             </div>
-          </div>
-          <div class="exp-item reveal">
-            <div class="exp-meta">
+            <div class="exp-item">
               <div class="exp-period">Apr 2025 — Sep 2026</div>
               <div class="exp-company">Mieke Projects (Pty) Ltd</div>
-            </div>
-            <div class="exp-details">
-              <h3 class="exp-role">Audit &amp; Financial Reconciliation Consultant (Independent Contract)</h3>
+              <h3 class="exp-role">Audit &amp; Financial Reconciliation Consultant</h3>
               <p class="exp-desc">Contract audit and reconciliation work on large infrastructure projects.</p>
-              <div class="exp-highlights">
-                <div class="exp-highlight">Reconciled large scale project and supplier expenditure between project
-                  records and ERP systems</div>
-                <div class="exp-highlight">Audited multiple employee records </div>
-                <div class="exp-highlight">Validated supplier invoices: duplicates, missing invoices, incorrect values,
-                  VAT and local-content discrepancies</div>
-                <div class="exp-highlight">Prepared Excel reconciliation schedules and management reports</div>
-              </div>
+              <ul class="exp-highlights">
+                <li>Reconciled large-scale project and supplier expenditure between project records and ERP systems</li>
+                <li>Audited 600+ employee records</li>
+                <li>Validated supplier invoices: duplicates, missing invoices, incorrect values, VAT and local-content discrepancies</li>
+                <li>Prepared Excel reconciliation schedules and management reports</li>
+              </ul>
             </div>
-          </div>
-          <div class="exp-item reveal">
-            <div class="exp-meta">
+            <div class="exp-item">
               <div class="exp-period">Dec 2023 — Jan 2024</div>
               <div class="exp-company">Sibanye-Stillwater</div>
-            </div>
-            <div class="exp-details">
               <h3 class="exp-role">Acting Finance Supervisor</h3>
               <p class="exp-desc">Stepped up from Finance Graduate to cover supervisory responsibilities.</p>
-              <div class="exp-highlights">
-                <div class="exp-highlight">Led day-to-day finance operations across multiple cost centres</div>
-                <div class="exp-highlight">Liaised between finance, procurement, payroll and operations to resolve
-                  queries and keep cost reporting on schedule</div>
-                <div class="exp-highlight">Upheld governance frameworks, company policy and accurate SAP processing
-                </div>
-                <div class="exp-highlight">Guided stakeholders on budgeting, invoice validation and cost reporting</div>
-              </div>
+              <ul class="exp-highlights">
+                <li>Led day-to-day finance operations across multiple cost centres</li>
+                <li>Liaised between finance, procurement, payroll and operations to resolve queries and keep cost reporting on schedule</li>
+                <li>Upheld governance frameworks, company policy and accurate SAP processing</li>
+                <li>Guided stakeholders on budgeting, invoice validation and cost reporting</li>
+              </ul>
             </div>
-          </div>
-          <div class="exp-item reveal">
-            <div class="exp-meta">
+            <div class="exp-item">
               <div class="exp-period">2022 — Jul 2024</div>
               <div class="exp-company">Sibanye-Stillwater</div>
-            </div>
-            <div class="exp-details">
               <h3 class="exp-role">Finance Graduate</h3>
               <p class="exp-desc">Graduate programme in mining finance covering financial reporting, shaft accounting,
-                materials management, procurement-related processes and SAP ERP.</p>
-              <div class="exp-highlights">
-                <div class="exp-highlight">Helped identify, review and resolve aged SAP commitments, contributing to
-                  approx. R11 million in commitments released</div>
-                <div class="exp-highlight">Supported budget monitoring and reporting, with approx. 95% budget compliance
-                  in the relevant area</div>
-                <div class="exp-highlight">Worked with finance, engineering, production, safety, hygiene, procurement
-                  and suppliers</div>
-                <div class="exp-highlight">Handled reconciliations, accruals, provisions and financial controls</div>
-              </div>
+                materials management, procurement processes and SAP ERP.</p>
+              <ul class="exp-highlights">
+                <li>Helped identify, review and resolve aged SAP commitments, contributing to approx. R11 million in commitments released</li>
+                <li>Supported budget monitoring and reporting, with approx. 95% budget compliance in the relevant area</li>
+                <li>Worked with finance, engineering, production, safety, hygiene, procurement and suppliers</li>
+                <li>Handled reconciliations, accruals, provisions and financial controls</li>
+              </ul>
             </div>
           </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <section id="education">
-    <div class="container">
-      <div class="section-label reveal">Education &amp; Professional Development</div>
-      <h2 class="section-title reveal reveal-delay-1">Learning, <em>in progress.</em></h2>
-      <div class="edu-grid">
-        <div class="edu-card reveal"><span class="chip ">Completed</span>
-          <h3>University of Johannesburg</h3>
-          <p>Bachelor of Commerce in Accounting, Feb 2019 to Nov 2021.</p>
-        </div>
-        <div class="edu-card reveal"><span class="chip dev">Current programme</span>
-          <h3>WeThinkCode_</h3>
-          <p>Software Engineering programme, 5 October 2026 to 31 December 2027, with Data Engineering as selected
-            elective.</p>
-        </div>
-        <div class="edu-card reveal"><span class="chip ">Aug 2025 – Jun 2026</span>
-          <h3>Professional development</h3>
-          <p>ALX Data Science (Jun 2026); Coursera Financial Analyst Professional Certificate (May 2026); ALX Python
-            Programming (Feb 2026); CU Boulder Renewable Energy Specialization (Feb 2026); DLO Academy / EWSETA Project
-            Finance and Renewable Energy Financial Modelling (Jan 2026); ALX Data Analytics (Dec 2025); ALX Professional
-            Foundations (Aug 2025).</p>
-        </div>
-        <div class="edu-card reveal"><span class="chip ">Completed Dec 2025</span>
-          <h3>ALX Data Analytics</h3>
-          <p>Data analytics programme covering SQL, Power BI, dashboards and communicating insights.</p>
+    <!-- ===== EDUCATION ===== -->
+    <section id="education" class="section education" aria-labelledby="edu-title">
+      <div class="wrap">
+        <p class="eyebrow">Education &amp; Professional Development</p>
+        <h2 id="edu-title">Learning, <em class="accent" style="font-style:italic">in progress.</em></h2>
+        <div class="edu-grid">
+          <div class="edu-card">
+            <span class="chip">Completed</span>
+            <h3>University of Johannesburg</h3>
+            <p>Bachelor of Commerce in Accounting, Feb 2019 to Nov 2021.</p>
+          </div>
+          <div class="edu-card">
+            <span class="chip dev">Current programme</span>
+            <h3>WeThinkCode_</h3>
+            <p>Software Engineering programme, 5 October 2026 to 31 December 2027, with Data Engineering as selected
+              elective.</p>
+          </div>
+          <div class="edu-card">
+            <span class="chip">Aug 2025 – Jun 2026</span>
+            <h3>Professional development</h3>
+            <p>ALX Data Science (Jun 2026); Coursera Financial Analyst Professional Certificate (May 2026); ALX Python
+              Programming (Feb 2026); CU Boulder Renewable Energy Specialization (Feb 2026); DLO Academy / EWSETA Project
+              Finance and Renewable Energy Financial Modelling (Jan 2026); ALX Data Analytics (Dec 2025); ALX
+              Professional Foundations (Aug 2025).</p>
+          </div>
+          <div class="edu-card">
+            <span class="chip">Completed Dec 2025</span>
+            <h3>ALX Data Analytics</h3>
+            <p>Data analytics programme covering SQL, Power BI, dashboards and communicating insights.</p>
+          </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- ===== CONTACT ===== -->
-  <section id="contact">
-    <div class="container">
-      <div class="contact-grid">
-        <div class="contact-left">
-          <div class="section-label reveal">Contact</div>
-          <h2 class="section-title reveal reveal-delay-1">Let's build<br><em>something useful.</em></h2>
-          <p class="section-body reveal reveal-delay-2">Whether you have a specific project in mind or you're trying to
-            figure out what your business actually needs — I'm open to a conversation.</p>
-          <div class="contact-channels reveal reveal-delay-3">
+    <!-- ===== CONTACT ===== -->
+    <section id="contact" class="section contact" aria-labelledby="contact-title">
+      <div class="wrap contact-grid">
+        <div>
+          <p class="eyebrow">Contact</p>
+          <h2 id="contact-title">Let's build<br><em class="accent" style="font-style:italic">something useful.</em></h2>
+          <p class="contact-intro">Whether you have a specific project in mind or you're trying to figure out what your
+            business actually needs — I'm open to a conversation.</p>
+          <div class="contact-channels">
             <a href="mailto:thatomapheto6@gmail.com" class="channel">
-              <div class="channel-icon">✉</div>
+              <div class="icon-box">✉</div>
               <div>
                 <span class="channel-label">Email</span>
-                <span class="channel-value">thatomapheto6@gmail.com</span>
+                <span>thatomapheto6@gmail.com</span>
               </div>
             </a>
-            <a href="https://www.linkedin.com/in/thatomapheto" target="_blank" rel="noopener noreferrer"
-              class="channel">
-              <div class="channel-icon">in</div>
+            <a href="https://www.linkedin.com/in/thatomapheto" target="_blank" rel="noopener noreferrer" class="channel">
+              <div class="icon-box">in</div>
               <div>
                 <span class="channel-label">LinkedIn</span>
-                <span class="channel-value">Connect on LinkedIn</span>
+                <span>Connect on LinkedIn</span>
               </div>
             </a>
             <a href="https://github.com/ThatoMapheto" target="_blank" rel="noopener noreferrer" class="channel">
-              <div class="channel-icon">gh</div>
+              <div class="icon-box">gh</div>
               <div>
                 <span class="channel-label">GitHub</span>
-                <span class="channel-value">GitHub profile</span>
+                <span>GitHub profile</span>
               </div>
             </a>
             <a href="./Thato_Mapheto_CV_updated.pdf" class="channel" download>
-              <div class="channel-icon">↓</div>
+              <div class="icon-box">↓</div>
               <div>
                 <span class="channel-label">CV / Résumé</span>
-                <span class="channel-value">Download latest CV</span>
+                <span>Download latest CV</span>
               </div>
             </a>
           </div>
         </div>
-        <div class="contact-right reveal reveal-delay-2">
+        <div>
           <form class="contact-form" id="contact-form">
-            <div class="form-row">
+            <div class="form-grid">
               <div class="form-group">
                 <label for="c-name">Your Name</label>
                 <input type="text" id="c-name" name="from_name" placeholder="Full name" required>
@@ -3433,9 +1556,9 @@
               <label for="c-interest">Area of Interest</label>
               <select id="c-interest" name="interest" required>
                 <option value="">Select a service area</option>
-                <option>Business Analytics & Dashboards</option>
-                <option>Financial Visibility & Reporting</option>
-                <option>Financial Modelling & Decision Support</option>
+                <option>Business Analytics &amp; Dashboards</option>
+                <option>Financial Visibility &amp; Reporting</option>
+                <option>Financial Modelling &amp; Decision Support</option>
                 <option>General Enquiry</option>
               </select>
             </div>
@@ -3445,23 +1568,21 @@
                 placeholder="The more context the better — business size, current tools, specific challenges..."
                 required></textarea>
             </div>
-            <div id="form-status" style="font-size: 0.8rem; margin-bottom: 0.75rem; display: none;"></div>
-            <button type="submit" class="btn-primary" style="width: 100%; justify-content: center; font-size: 0.82rem;">
+            <div id="form-status" class="form-status"></div>
+            <button type="submit" class="btn-primary">
               Send Message
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-                <path d="M5 12h14M12 5l7 7-7 7" />
-              </svg>
+              <i data-lucide="arrow-up-right"></i>
             </button>
           </form>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
+  </main>
 
   <!-- ===== FOOTER ===== -->
   <footer>
-    <div class="footer-inner">
-      <div class="footer-logo-text">Portfolio <span style="color: var(--gold);">×</span> NimbusX</div>
+    <div class="wrap footer-inner">
+      <div><strong>Portfolio × NimbusX</strong></div>
       <div class="footer-links">
         <a href="#about">About</a>
         <a href="#services">Services</a>
@@ -3471,16 +1592,18 @@
         <a href="#nimbusx">NimbusX</a>
         <a href="#contact">Contact</a>
       </div>
-      <div class="footer-copy">© 2026 · Built with intention.</div>
+      <div>© 2026 · Built with intention.</div>
     </div>
   </footer>
 
   <script>
+    // ===== LUCIDE =====
+    if (window.lucide && typeof window.lucide.createIcons === 'function') {
+      try { window.lucide.createIcons(); } catch (e) { /* noop */ }
+    }
+
     // ===== NAV SCROLL =====
     const nav = document.getElementById('main-nav');
-    window.addEventListener('scroll', () => {
-      nav.classList.toggle('scrolled', window.scrollY > 30);
-    });
 
     // ===== MOBILE MENU =====
     const hamburger = document.getElementById('hamburger');
@@ -3488,16 +1611,20 @@
     const mobileClose = document.getElementById('mobile-close');
     const mobileLinks = document.querySelectorAll('.mobile-link');
 
-    hamburger.addEventListener('click', () => {
+    function openMob() {
       mobileNav.classList.add('open');
+      hamburger.setAttribute('aria-expanded', 'true');
       document.body.style.overflow = 'hidden';
-    });
+    }
     function closeMob() {
       mobileNav.classList.remove('open');
+      hamburger.setAttribute('aria-expanded', 'false');
       document.body.style.overflow = '';
     }
-    mobileClose.addEventListener('click', closeMob);
+    if (hamburger) hamburger.addEventListener('click', openMob);
+    if (mobileClose) mobileClose.addEventListener('click', closeMob);
     mobileLinks.forEach(l => l.addEventListener('click', closeMob));
+    document.addEventListener('keydown', e => { if (e.key === 'Escape') closeMob(); });
 
     // ===== SCROLL REVEAL =====
     const revealObs = new IntersectionObserver((entries) => {
@@ -3508,16 +1635,15 @@
         }
       });
     }, { threshold: 0.08, rootMargin: '0px 0px -60px 0px' });
-
     document.querySelectorAll('.reveal').forEach(el => revealObs.observe(el));
 
-    // ===== HERO METRIC COUNT-UP =====
+    // ===== COUNT-UP =====
     const countEls = document.querySelectorAll('.count-up');
     const countObs = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
         if (!entry.isIntersecting) return;
         const el = entry.target;
-        const target = parseInt(el.dataset.target, 10);
+        const target = parseInt(el.dataset.target, 10) || 0;
         const duration = 1100;
         const start = performance.now();
         function tick(now) {
@@ -3532,10 +1658,12 @@
     }, { threshold: 0.6 });
     countEls.forEach(el => countObs.observe(el));
 
-    // ===== SMOOTH SCROLL =====
+    // ===== SMOOTH SCROLL (fallback for older browsers) =====
     document.querySelectorAll('a[href^="#"]').forEach(a => {
       a.addEventListener('click', e => {
-        const target = document.querySelector(a.getAttribute('href'));
+        const href = a.getAttribute('href');
+        if (!href || href === '#') return;
+        const target = document.querySelector(href);
         if (target) {
           e.preventDefault();
           target.scrollIntoView({ behavior: 'smooth', block: 'start' });
@@ -3544,88 +1672,66 @@
     });
 
     // ===== CONTACT FORM (EmailJS) =====
-    // 1. Sign up free at emailjs.com
-    // 2. Create an Email Service (e.g. connect your Gmail) — gives you a SERVICE_ID
-    // 3. Notification template (to you): {{from_name}} {{reply_to}} {{company}} {{interest}} {{message}}
-    //    Auto-reply template (to them): "To email" set to {{reply_to}}
-    // 4. Copy your Public Key from Account > General
-    // 5. Replace the placeholders below.
-    (function () {
-      emailjs.init({ publicKey: 'pUhgIs1xVI_LJCCaB' });
-    })();
+    // Your existing keys — keep working as before.
+    if (window.emailjs) {
+      try { emailjs.init({ publicKey: 'pUhgIs1xVI_LJCCaB' }); } catch (e) { /* noop */ }
+    }
 
     const EMAILJS_SERVICE_ID = 'service_05b2f4p';
-    const EMAILJS_NOTIFY_TEMPLATE_ID = 'template_xeyjocp';   // sends the enquiry to you
-    const EMAILJS_AUTOREPLY_TEMPLATE_ID = 'template_b417vu9'; // sends the confirmation to them
+    const EMAILJS_NOTIFY_TEMPLATE_ID = 'template_xeyjocp';
+    const EMAILJS_AUTOREPLY_TEMPLATE_ID = 'template_b417vu9';
 
     const contactForm = document.getElementById('contact-form');
     const formStatus = document.getElementById('form-status');
 
-    contactForm.addEventListener('submit', e => {
-      e.preventDefault();
-      const btn = e.target.querySelector('button[type="submit"]');
-      const originalHTML = btn.innerHTML;
+    if (contactForm && window.emailjs) {
+      contactForm.addEventListener('submit', e => {
+        e.preventDefault();
+        const btn = contactForm.querySelector('button[type="submit"]');
+        const originalHTML = btn.innerHTML;
+        btn.disabled = true;
+        btn.textContent = 'Sending...';
+        formStatus.style.display = 'none';
 
-      btn.disabled = true;
-      btn.textContent = 'Sending...';
-      formStatus.style.display = 'none';
-
-      // Send the notification (to you) and the auto-reply (to them) in parallel.
-      // Success is judged on the notification — that's the one that actually reaches you.
-      // If only the auto-reply fails, the enquiry still came through, so we don't scare the visitor.
-      Promise.allSettled([
-        emailjs.sendForm(EMAILJS_SERVICE_ID, EMAILJS_NOTIFY_TEMPLATE_ID, contactForm),
-        emailjs.sendForm(EMAILJS_SERVICE_ID, EMAILJS_AUTOREPLY_TEMPLATE_ID, contactForm)
-      ]).then(([notifyResult, autoReplyResult]) => {
-        if (notifyResult.status === 'fulfilled') {
-          formStatus.style.display = 'block';
-          formStatus.style.color = 'var(--gold-light)';
-          formStatus.textContent = '✓ Message sent — I\'ll be in touch soon.';
-          contactForm.reset();
-          if (autoReplyResult.status === 'rejected') {
-            console.warn('Auto-reply failed to send:', autoReplyResult.reason);
+        Promise.allSettled([
+          emailjs.sendForm(EMAILJS_SERVICE_ID, EMAILJS_NOTIFY_TEMPLATE_ID, contactForm),
+          emailjs.sendForm(EMAILJS_SERVICE_ID, EMAILJS_AUTOREPLY_TEMPLATE_ID, contactForm)
+        ]).then(([notify, auto]) => {
+          if (notify.status === 'fulfilled') {
+            formStatus.style.display = 'block';
+            formStatus.style.color = 'var(--pale-2)';
+            formStatus.textContent = '✓ Message sent — I\'ll be in touch soon.';
+            contactForm.reset();
+            if (auto.status === 'rejected') console.warn('Auto-reply failed:', auto.reason);
+          } else {
+            console.error('Notification email failed:', notify.reason);
+            formStatus.style.display = 'block';
+            formStatus.style.color = '#ff9fb0';
+            formStatus.textContent = 'Something went wrong sending that — please email me directly at thatomapheto6@gmail.com instead.';
           }
-        } else {
-          console.error('Notification email failed:', notifyResult.reason);
-          formStatus.style.display = 'block';
-          formStatus.style.color = '#FF7E9C';
-          formStatus.textContent = 'Something went wrong sending that — please email me directly at thatomapheto6@gmail.com instead.';
-        }
-      }).finally(() => {
-        btn.disabled = false;
-        btn.innerHTML = originalHTML;
-        setTimeout(() => { formStatus.style.display = 'none'; }, 6000);
-      });
-    });
-
-    // ===== HERO VIDEO BADGE (ensure reliable autoplay) =====
-    const heroLogoVideo = document.querySelector('.hero-video-mark video');
-    if (heroLogoVideo) {
-      heroLogoVideo.muted = true;
-      heroLogoVideo.play().catch(() => {
-        // Autoplay blocked (rare, muted+playsinline usually passes) — retry on first interaction
-        const retry = () => { heroLogoVideo.play(); document.removeEventListener('click', retry); };
-        document.addEventListener('click', retry, { once: true });
+        }).finally(() => {
+          btn.disabled = false;
+          btn.innerHTML = originalHTML;
+          if (window.lucide) { try { window.lucide.createIcons(); } catch (e) {} }
+          setTimeout(() => { formStatus.style.display = 'none'; }, 6000);
+        });
       });
     }
-
-    document.addEventListener("keydown", e => { if (e.key === "Escape") closeMob(); });
-    // ===== STRIP DUPLICATION (ensure seamless) =====
-    const strip = document.getElementById('strip');
-    // Already doubled in HTML for seamless loop
   </script>
 
-  <!-- ===== SOLAR ROI CALCULATOR LOGIC (scoped) ===== -->
+  <!-- ===== SOLAR ROI CALCULATOR ===== -->
   <script>
     (function () {
-      const el = id => document.getElementById(id);
-      const size = el('sc-size'), cost = el('sc-cost'), battery = el('sc-battery'), usage = el('sc-usage'),
-        tariff = el('sc-tariff'), selfcons = el('sc-selfcons'), escalation = el('sc-escalation'),
-        degradation = el('sc-degradation'), discount = el('sc-discount'), om = el('sc-om'), life = el('sc-life');
-      const batteryToggleEl = el('sc-battery-toggle'), batteryField = el('sc-battery-field');
+      const $ = id => document.getElementById(id);
+      const size = $('sc-size'), cost = $('sc-cost'), battery = $('sc-battery'),
+        usage = $('sc-usage'), tariff = $('sc-tariff'), selfcons = $('sc-selfcons'),
+        escalation = $('sc-escalation'), degradation = $('sc-degradation'),
+        discount = $('sc-discount'), om = $('sc-om'), life = $('sc-life');
 
-      if (!size) return; // calculator not present on this page
+      if (!size) return;
 
+      const batteryToggleEl = $('sc-battery-toggle');
+      const batteryField = $('sc-battery-field');
       let batteryOn = false;
       let costManuallySet = false;
       let selfconsAuto = true;
@@ -3634,46 +1740,50 @@
       const COST_PER_KWP = 16000;
       const BATTERY_COST_PER_KWH = 7000;
 
-      function fmtR(n) {
-        return 'R' + Math.round(n).toLocaleString('en-ZA');
-      }
+      const fmtR = n => 'R ' + Math.round(n).toLocaleString('en-ZA');
+      const fmtYears = n => (Math.round(n * 10) / 10).toFixed(1);
+
+      // label updates
+      const labels = {
+        'sc-v-size': () => parseFloat(size.value).toFixed(1) + ' kWp',
+        'sc-v-cost': () => fmtR(parseFloat(cost.value) || 0),
+        'sc-v-battery': () => parseFloat(battery.value).toFixed(1) + ' kWh',
+        'sc-v-usage': () => parseInt(usage.value, 10).toLocaleString('en-ZA') + ' kWh',
+        'sc-v-tariff': () => 'R ' + parseFloat(tariff.value).toFixed(2) + ' / kWh',
+        'sc-v-selfcons': () => parseInt(selfcons.value, 10) + '%',
+        'sc-v-escalation': () => parseFloat(escalation.value).toFixed(1) + '%',
+        'sc-v-degradation': () => parseFloat(degradation.value).toFixed(1) + '%',
+        'sc-v-discount': () => parseFloat(discount.value).toFixed(1) + '%',
+        'sc-v-om': () => parseFloat(om.value).toFixed(2) + '% of system cost',
+        'sc-v-life': () => parseInt(life.value, 10) + ' years'
+      };
 
       batteryToggleEl.addEventListener('click', () => {
         batteryOn = !batteryOn;
         batteryToggleEl.classList.toggle('on', batteryOn);
         batteryField.style.display = batteryOn ? 'block' : 'none';
-        if (selfconsAuto) {
-          selfcons.value = batteryOn ? 85 : 55;
-        }
+        if (selfconsAuto) selfcons.value = batteryOn ? 85 : 55;
         recalcCost();
         update();
       });
 
-      function baseCost() {
-        return parseFloat(size.value) * COST_PER_KWP;
-      }
-      function batteryCost() {
-        return batteryOn ? parseFloat(battery.value) * BATTERY_COST_PER_KWH : 0;
-      }
+      const baseCost = () => parseFloat(size.value) * COST_PER_KWP;
+      const batteryCost = () => batteryOn ? parseFloat(battery.value) * BATTERY_COST_PER_KWH : 0;
 
       function recalcCost() {
-        if (!costManuallySet) {
-          cost.value = Math.round(baseCost() + batteryCost());
-        }
+        if (!costManuallySet) cost.value = Math.round(baseCost() + batteryCost());
       }
 
       cost.addEventListener('input', () => { costManuallySet = true; });
       selfcons.addEventListener('input', () => { selfconsAuto = false; });
 
-      [size, battery].forEach(input => input.addEventListener('input', () => { recalcCost(); update(); }));
-      [usage, tariff, selfcons, escalation, degradation, discount, om, life, cost].forEach(input =>
-        input.addEventListener('input', update)
-      );
+      [size, battery].forEach(i => i.addEventListener('input', () => { recalcCost(); update(); }));
+      [usage, tariff, selfcons, escalation, degradation, discount, om, life, cost]
+        .forEach(i => i.addEventListener('input', update));
 
       function npv(rate, flows) {
         return flows.reduce((acc, cf, i) => acc + cf / Math.pow(1 + rate, i), 0);
       }
-
       function irr(flows) {
         let low = -0.99, high = 3, mid = 0;
         for (let i = 0; i < 200; i++) {
@@ -3695,7 +1805,7 @@
         const degRate = parseFloat(degradation.value) / 100;
         const discRate = parseFloat(discount.value) / 100;
         const omRate = parseFloat(om.value) / 100;
-        const years = parseInt(life.value);
+        const years = parseInt(life.value, 10);
 
         const genYear1 = sizeK * SPECIFIC_YIELD;
         const flows = [-totalCost];
@@ -3720,7 +1830,6 @@
             paybackYear = y;
             paybackFraction = netCF !== 0 ? (-prevCum) / netCF : 0;
           }
-
           const discountedCF = netCF / Math.pow(1 + discRate, y);
           const prevDCum = cumulativeDiscounted;
           cumulativeDiscounted += discountedCF;
@@ -3728,7 +1837,6 @@
             dPaybackYear = y;
             dPaybackFraction = discountedCF !== 0 ? (-prevDCum) / discountedCF : 0;
           }
-
           discGenSum += gen / Math.pow(1 + discRate, y);
           discCostSum += omCost / Math.pow(1 + discRate, y);
         }
@@ -3749,14 +1857,12 @@
       }
 
       function drawChart(r) {
-        const svg = el('sc-chart');
+        const svg = $('sc-chart');
         const W = 560, H = 260, padL = 46, padR = 16, padT = 16, padB = 30;
         const plotW = W - padL - padR, plotH = H - padT - padB;
-
         const maxVal = Math.max(...r.series, 0);
         const minVal = Math.min(...r.series, 0);
         const range = (maxVal - minVal) || 1;
-
         const xFor = i => padL + (i / r.years) * plotW;
         const yFor = v => padT + plotH - ((v - minVal) / range) * plotH;
         const zeroY = yFor(0);
@@ -3766,7 +1872,6 @@
           const x = xFor(i), y = yFor(v);
           path += (i === 0 ? 'M' : 'L') + x.toFixed(1) + ',' + y.toFixed(1) + ' ';
         });
-
         const areaPath = path + `L${xFor(r.series.length - 1).toFixed(1)},${zeroY} L${xFor(0).toFixed(1)},${zeroY} Z`;
 
         let markerX = null, markerY = null;
@@ -3779,48 +1884,44 @@
         svg.innerHTML = `
           <defs>
             <linearGradient id="scAreaGrad" x1="0" y1="0" x2="0" y2="1">
-              <stop offset="0%" stop-color="#2DE2E6" stop-opacity="0.28"/>
-              <stop offset="100%" stop-color="#2DE2E6" stop-opacity="0"/>
+              <stop offset="0%" stop-color="#2e5c8f" stop-opacity="0.28"/>
+              <stop offset="100%" stop-color="#2e5c8f" stop-opacity="0"/>
             </linearGradient>
           </defs>
-          <line x1="${padL}" y1="${zeroY}" x2="${W - padR}" y2="${zeroY}" stroke="#93A4C8" stroke-width="1" stroke-dasharray="3,4" opacity="0.6"/>
+          <line x1="${padL}" y1="${zeroY}" x2="${W - padR}" y2="${zeroY}" stroke="#4a5568" stroke-width="1" stroke-dasharray="3,4" opacity="0.6"/>
           <path d="${areaPath}" fill="url(#scAreaGrad)" stroke="none"/>
-          <path d="${path.trim()}" fill="none" stroke="#2DE2E6" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="${path.trim()}" fill="none" stroke="#2e5c8f" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round"/>
           ${markerX !== null ? `
-            <line x1="${markerX.toFixed(1)}" y1="${padT}" x2="${markerX.toFixed(1)}" y2="${H - padB}" stroke="#4CE6A6" stroke-width="1" stroke-dasharray="2,3" opacity="0.7"/>
-            <circle cx="${markerX.toFixed(1)}" cy="${markerY.toFixed(1)}" r="5" fill="#4CE6A6" stroke="#070D18" stroke-width="2"/>
+            <line x1="${markerX.toFixed(1)}" y1="${padT}" x2="${markerX.toFixed(1)}" y2="${H - padB}" stroke="#4caf7d" stroke-width="1" stroke-dasharray="2,3" opacity="0.7"/>
+            <circle cx="${markerX.toFixed(1)}" cy="${markerY.toFixed(1)}" r="5" fill="#4caf7d" stroke="#ffffff" stroke-width="2"/>
           ` : ''}
-          <text x="${padL}" y="${H - 8}" font-family="JetBrains Mono" font-size="9" fill="#93A4C8">Year 0</text>
-          <text x="${W - padR}" y="${H - 8}" font-family="JetBrains Mono" font-size="9" fill="#93A4C8" text-anchor="end">Year ${r.years}</text>
-          <text x="${padL - 6}" y="${padT + 8}" font-family="JetBrains Mono" font-size="9" fill="#93A4C8" text-anchor="end">${fmtR(maxVal)}</text>
-          <text x="${padL - 6}" y="${H - padB}" font-family="JetBrains Mono" font-size="9" fill="#93A4C8" text-anchor="end">${fmtR(minVal)}</text>
+          <text x="${padL}" y="${H - 8}" font-family="JetBrains Mono, monospace" font-size="9" fill="#4a5568">Year 0</text>
+          <text x="${W - padR}" y="${H - 8}" text-anchor="end" font-family="JetBrains Mono, monospace" font-size="9" fill="#4a5568">Year ${r.years}</text>
         `;
       }
 
       function update() {
-        el('sc-v-size').textContent = parseFloat(size.value).toFixed(1) + ' kWp';
-        el('sc-v-battery').textContent = parseFloat(battery.value).toFixed(1) + ' kWh';
-        el('sc-v-usage').textContent = usage.value + ' kWh';
-        el('sc-v-tariff').textContent = 'R' + parseFloat(tariff.value).toFixed(2) + ' / kWh';
-        el('sc-v-selfcons').textContent = selfcons.value + '%';
-        el('sc-v-escalation').textContent = escalation.value + '%';
-        el('sc-v-degradation').textContent = degradation.value + '%';
-        el('sc-v-discount').textContent = discount.value + '%';
-        el('sc-v-om').textContent = om.value + '% of system cost';
-        el('sc-v-life').textContent = life.value + ' years';
+        Object.keys(labels).forEach(id => {
+          const el = $(id);
+          if (el) el.textContent = labels[id]();
+        });
 
         const r = model();
 
-        el('sc-r-payback').innerHTML = r.paybackYear !== null
-          ? (r.paybackYear - 1 + r.paybackFraction).toFixed(1) + '<span> years</span>'
-          : (life.value) + '+<span> years</span>';
-        el('sc-r-dpayback').textContent = r.dPaybackYear !== null
-          ? (r.dPaybackYear - 1 + r.dPaybackFraction).toFixed(1) + ' yrs'
-          : life.value + '+ yrs';
-        el('sc-r-irr').textContent = isFinite(r.irrVal) ? (r.irrVal * 100).toFixed(1) + '%' : '—';
-        el('sc-r-npv').textContent = fmtR(r.npvVal);
-        el('sc-r-lcoe').textContent = 'R' + r.lcoe.toFixed(2) + ' / kWh';
-        el('sc-r-y1').textContent = fmtR(r.year1Savings);
+        const paybackEl = $('sc-r-payback');
+        if (r.paybackYear !== null) {
+          paybackEl.innerHTML = fmtYears(r.paybackYear - 1 + r.paybackFraction) + '<small>years</small>';
+        } else {
+          paybackEl.innerHTML = '—<small>years</small>';
+        }
+
+        $('sc-r-dpayback').textContent =
+          r.dPaybackYear !== null ? fmtYears(r.dPaybackYear - 1 + r.dPaybackFraction) + 'y' : '—';
+        $('sc-r-irr').textContent =
+          isFinite(r.irrVal) && r.irrVal > -0.99 ? (r.irrVal * 100).toFixed(1) + '%' : '—';
+        $('sc-r-npv').textContent = fmtR(r.npvVal);
+        $('sc-r-lcoe').textContent = 'R ' + r.lcoe.toFixed(2);
+        $('sc-r-y1').textContent = fmtR(r.year1Savings);
 
         drawChart(r);
       }
